@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}AI багш — Заавар{% endblock %}
+{% block content %}
+<div x-data="tutor({{ ai_enabled | tojson }})" x-init="init()" class="max-w-2xl mx-auto flex flex-col" style="min-height:70vh">
+
+  <div class="mb-3">
+    <h1 class="text-2xl font-extrabold text-ink-900 flex items-center gap-2">
+      <span class="grid place-items-center w-9 h-9 rounded-xl bg-brand-600 text-white">✦</span> AI багш
+    </h1>
+    <p class="text-sm text-slate-500">Асуултаа бич — аль хичээлийн аль хэсгийг үзэхийг хэлээд, бодоход чинь Сократын аргаар хөтөлнө.</p>
+  </div>
+
+  <div x-show="!aiEnabled" x-cloak class="card p-4 mb-3 bg-amber-50 border-amber-200 text-amber-800 text-sm">
+    🔑 AI багш одоогоор идэвхгүй. Терминал дээр <code class="bg-amber-100 px-1 rounded">export ANTHROPIC_API_KEY=...</code> тохируулаад апп-аа дахин ажиллуулна уу.
+  </div>
+
+  <!-- Thread -->
+  <div class="flex-1 space-y-3 mb-3" x-ref="thread">
+    <template x-if="!msgs.length">
+      <div class="text-center text-slate-400 text-sm py-8">
+        <p class="mb-3">Жишээ асуултууд:</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <template x-for="ex in examples" :key="ex">
+            <button @click="input=ex; send()" :disabled="!aiEnabled" class="text-xs px-3 py-1.5 rounded-full bg-white border border-slate-200 hover:border-brand-300 text-ink-700 disabled:opacity-40" x-text="ex"></button>
+          </template>
+        </div>
+      </div>
+    </template>
+
+    <template x-for="(m,i) in msgs" :key="i">
+      <div>
+        <!-- user -->
+        <template x-if="m.type==='user'">
+          <div class="flex justify-end"><div class="bubble bubble-user" x-text="m.text"></div></div>
+        </template>
+
+        <!-- routing card -->
+        <template x-if="m.type==='route'">
+          <div class="card p-3 border-l-4 border-l-accent-500" x-show="m.data" x-cloak>
+            <div class="text-xs font-bold text-accent-600 mb-1">📍 ЮУ ҮЗЭХ ВЭ</div>
+            <template x-if="m.data && m.data.match">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <div class="text-sm">
+                    <span class="font-semibold text-ink-900" x-text="m.data.match.title_mn"></span>
+                    <span class="text-slate-500" x-text="` · ${m.data.match.grade}-р анги, бүлэг ${m.data.match.chapter}`"></span>
+                  </div>
+                  <template x-if="m.data.match.lesson_id">
+                    <a :href="`/lesson/${m.data.match.lesson_id}`" class="shrink-0 text-xs px-3 py-1.5 rounded-lg bg-brand-600 text-white font-semibold">Хичээл рүү →</a>
+                  </template>
+                </div>
+                <p x-show="m.data.reason_mn" class="text-xs text-slate-500 mt-1" x-text="m.data.reason_mn"></p>
+                <template x-if="m.data.prerequisites && m.data.prerequisites.length">
+                  <div class="mt-2 pt-2 border-t border-slate-100">
+                    <span class="text-xs text-slate-500">Эхлээд бэхжүүл: </span>
+                    <template x-for="p in m.data.prerequisites" :key="p.skill_id">
+                      <template x-if="p.lesson_id">
+                        <a :href="`/lesson/${p.lesson_id}`" class="text-xs text-amber-800 underline mr-2" x-text="p.title_mn"></a>
+                      </template>
+                    </template>
+                  </div>
+                </template>
+              </div>
+            </template>
+            <template x-if="m.data && !m.data.match">
+              <p class="text-sm text-slate-500">Тохирох хичээл олдсонгүй — асуултаа тодруулж бичээрэй.</p>
+            </template>
+          </div>
+        </template>
+
+        <!-- ai socratic -->
+        <template x-if="m.type==='ai'">
+          <div class="flex justify-start"><div class="bubble bubble-ai" x-html="m.html || '<span class=\'text-slate-400\'>…</span>'"></div></div>
+        </template>
+      </div>
+    </template>
+  </div>
+
+  <!-- Input -->
+  <form @submit.prevent="send()" class="sticky bottom-20 sm:bottom-0 flex gap-2 bg-[#f6f7fb] pt-2">
+    <input x-model="input" :disabled="!aiEnabled||busy" type="text" placeholder="Асуултаа бичээрэй…"
+           class="flex-1 rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-brand-400 focus:outline-none">
+    <button :disabled="!aiEnabled||busy||!input.trim()" class="px-5 rounded-xl bg-brand-600 text-white font-semibold disabled:opacity-40">↑</button>
+  </form>
+</div>
+
+<script>
+function tutor(aiEnabled) {
+  return {
+    aiEnabled, input:'', busy:false, msgs:[],
+    examples:[
+      'Яагаад уламжлал нь шүргэгчийн налуу болдог вэ?',
+      'x^3-ийн уламжлалыг яаж олох вэ?',
+      'Экстремум олоход юу мэдэх хэрэгтэй вэ?'
+    ],
+    init(){},
+    apiHistory(){
+      const out=[];
+      for(const m of this.msgs){
+        if(m.type==='user') out.push({role:'user', content:m.text});
+        else if(m.type==='ai' && m.raw) out.push({role:'assistant', content:m.raw});
+      }
+      return out;
+    },
+    send(){
+      const q=this.input.trim(); if(!q||this.busy||!this.aiEnabled) return;
+      this.input=''; this.busy=true;
+      this.msgs.push({type:'user', text:q});
+      const routeMsg={type:'route', data:null}; this.msgs.push(routeMsg);
+      const ai={type:'ai', html:'', raw:''}; this.msgs.push(ai);
+      this.scroll();
+      // 1) fast routing (Haiku)
+      postJSON('/api/route', {question:q}).then(d=>{ routeMsg.data=d; this.scroll(); }).catch(()=>{ routeMsg.data={match:null}; });
+      // 2) socratic stream (Sonnet)
+      sseStream('/api/tutor', {messages:this.apiHistory()},
+        (t)=>{ ai.raw+=t; ai.html=ai.raw.replace(/</g,'&lt;'); this.$nextTick(()=>{renderMath(this.$root); this.scroll();}); },
+        ()=>{ this.busy=false; this.$nextTick(()=>renderMath(this.$root)); });
+    },
+    scroll(){ this.$nextTick(()=>{ const t=this.$refs.thread; if(t) t.scrollIntoView({block:'end',behavior:'smooth'}); }); }
+  }
+}
+</script>
+{% endblock %}

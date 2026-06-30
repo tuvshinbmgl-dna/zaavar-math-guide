@@ -1,0 +1,16 @@
+# Render.com deploy config (one-click "Blueprint" deploy).
+# Render runs Flask natively, free tier, supports streaming + a server-side
+# ANTHROPIC_API_KEY env var. After connecting the repo, set ANTHROPIC_API_KEY
+# in the Render dashboard (Environment) to enable the AI tutor.
+services:
+  - type: web
+    name: zaavar-math-guide
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app -k gthread -w 2 --threads 8 --timeout 120 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false          # set this secret in the Render dashboard, not in git
+      - key: PYTHON_VERSION
+        value: "3.12.6"

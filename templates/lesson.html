@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% block title %}{{ lesson.title_mn }} — Заавар{% endblock %}
+{% block content %}
+
+<!-- Header -->
+<div class="mb-4">
+  <a href="/curriculum" class="text-xs text-slate-500 hover:text-brand-700">← Хөтөлбөр</a>
+  <div class="flex items-start justify-between gap-3 mt-1">
+    <div>
+      <div class="text-xs font-semibold text-brand-600">{{ lesson.grade }}-р анги · Бүлэг {{ lesson.chapter_num }} · {{ lesson.chapter_title_mn }} · {{ lesson.lesson_num }}</div>
+      <h1 class="text-2xl font-extrabold text-ink-900">{{ lesson.title_mn }}</h1>
+    </div>
+  </div>
+  <div class="flex flex-wrap items-center gap-2 mt-2">
+    <a href="{{ lesson.textbook.reader_url }}" target="_blank" rel="noopener"
+       class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">📖 Сурах бичиг ({{ lesson.textbook.pages_mn }}) ↗</a>
+    {% for p in prereqs %}
+      {% if p.lesson_id %}
+      <a href="/lesson/{{ p.lesson_id }}" class="text-xs px-2.5 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100">↩ {{ p.title_mn }}</a>
+      {% else %}
+      <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-500 border border-slate-200" title="{{ p.grade }}-р анги, бүлэг {{ p.chapter }}">↩ {{ p.title_mn }} ({{ p.grade }}-р анги)</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Objectives -->
+<section class="card p-4 mb-4 border-l-4 border-l-brand-500">
+  <p class="text-sm font-bold text-ink-900 mb-1.5">Энэ хичээлээр та:</p>
+  <ul class="space-y-1">
+    {% for o in lesson.objectives_mn %}
+    <li class="text-sm text-ink-700 flex gap-2"><span class="text-brand-500">◆</span><span>{{ o }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<!-- Pretest -->
+{% if lesson.pretest %}
+{% set pt = lesson.pretest %}
+<section class="card p-4 mb-4" x-data="{chosen:null}">
+  <div class="flex items-center gap-2 mb-2">
+    <span class="text-xs font-bold px-2 py-0.5 rounded bg-accent-100 text-accent-600">ЭХЛЭЭД ОРОЛД</span>
+    <span class="text-xs text-slate-500">Үзэхээсээ өмнө бодоод үз — алдвал зүгээр</span>
+  </div>
+  <p class="text-ink-900 mb-3">{{ pt.stem_mn }}</p>
+  <div class="grid sm:grid-cols-2 gap-2">
+    {% for c in pt.choices %}
+    <button class="choice" :class="chosen===null ? '' : ({{ loop.index0 }}==={{ pt.answer }} ? 'is-correct' : (chosen==={{ loop.index0 }} ? 'is-wrong':''))"
+            @click="chosen={{ loop.index0 }}" :disabled="chosen!==null">{{ c }}</button>
+    {% endfor %}
+  </div>
+  <div x-show="chosen!==null" x-cloak class="mt-3 text-sm rounded-lg p-3"
+       :class="chosen==={{ pt.answer }} ? 'bg-emerald-50 text-emerald-800' : 'bg-rose-50 text-rose-800'">
+    <span x-text="chosen==={{ pt.answer }} ? '✓ Зөв! ' : '✗ Дахин бодъё. '"></span>{{ pt.explanation_mn }}
+  </div>
+</section>
+{% endif %}
+
+<!-- Sections -->
+{% for s in lesson.sections %}
+  {% if s.type == 'concept' %}
+  <section class="card p-5 mb-4">
+    <h2 class="font-bold text-ink-900 mb-2">{{ s.title_mn }}</h2>
+    <div class="rich text-ink-700">{{ s.body_mn | richtext }}</div>
+  </section>
+  {% elif s.type == 'definition' %}
+  <section class="card p-5 mb-4 border-l-4 border-l-emerald-500 bg-emerald-50/40">
+    <div class="text-xs font-bold text-emerald-700 mb-1">ТОДОРХОЙЛОЛТ</div>
+    <h2 class="font-bold text-ink-900 mb-1">{{ s.term_mn }}</h2>
+    <div class="rich text-ink-700">{{ s.body_mn | richtext }}</div>
+    {% if s.latex %}<div class="mt-2 text-lg">$${{ s.latex }}$$</div>{% endif %}
+  </section>
+  {% elif s.type == 'example' %}
+  <section class="card p-5 mb-4" x-data="{r:1}">
+    <div class="text-xs font-bold text-brand-600 mb-1">ЖИШЭЭ</div>
+    <p class="text-ink-900 mb-3">{{ s.prompt_mn }}</p>
+    <div class="space-y-2">
+      {% for step in s.steps %}
+      <div x-show="r > {{ loop.index0 }}" x-cloak class="flex gap-3 items-start text-sm">
+        <span class="shrink-0 grid place-items-center w-6 h-6 rounded-full bg-brand-100 text-brand-700 text-xs font-bold">{{ loop.index }}</span>
+        <div>
+          <span class="text-ink-700">{{ step.text_mn }}</span>
+          {% if step.latex %}<div class="mt-1">$${{ step.latex }}$$</div>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <button x-show="r <= {{ s.steps | length }}" @click="r++" class="mt-3 text-sm px-3 py-1.5 rounded-lg bg-brand-50 text-brand-700 hover:bg-brand-100 font-medium">Дараагийн алхам →</button>
+    <div x-show="r > {{ s.steps | length }}" x-cloak class="mt-3 text-sm rounded-lg p-3 bg-emerald-50 text-emerald-800 font-medium">{{ s.answer_mn }}</div>
+  </section>
+  {% endif %}
+{% endfor %}
+
+<!-- Practice -->
+{% if lesson.practice %}
+<section class="mb-4">
+  <h2 class="font-bold text-ink-900 mb-2 px-1">Бие даан бод</h2>
+  <div class="space-y-3">
+    {% for item in lesson.practice %}
+    <div class="card p-4" x-data="{chosen:null, hint:false}">
+      <p class="text-ink-900 mb-2"><span class="text-slate-400 mr-1">{{ loop.index }}.</span>{{ item.stem_mn }}</p>
+      {% if item.latex %}<div class="text-sm text-slate-500 mb-2">${{ item.latex }}$</div>{% endif %}
+      <div class="grid sm:grid-cols-2 gap-2">
+        {% for c in item.choices %}
+        <button class="choice" :class="chosen===null ? '' : ({{ loop.index0 }}==={{ item.answer }} ? 'is-correct' : (chosen==={{ loop.index0 }} ? 'is-wrong':''))"
+                @click="chosen={{ loop.index0 }}" :disabled="chosen!==null">{{ c }}</button>
+        {% endfor %}
+      </div>
+      <div class="flex items-center gap-3 mt-2">
+        <button @click="hint=!hint" class="text-xs text-brand-600 hover:underline">💡 Сэжүүр</button>
+      </div>
+      <div x-show="hint" x-cloak class="mt-2 text-sm text-amber-800 bg-amber-50 rounded-lg p-2">{{ item.hint_mn }}</div>
+      <div x-show="chosen!==null" x-cloak class="mt-2 text-sm rounded-lg p-3"
+           :class="chosen==={{ item.answer }} ? 'bg-emerald-50 text-emerald-800':'bg-rose-50 text-rose-800'">
+        <span x-text="chosen==={{ item.answer }} ? '✓ Зөв! ':'✗ '"></span>{{ item.solution_mn }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Mastery gate -->
+{% if lesson.mastery_check %}
+<section class="card p-5 mb-4 border-2 border-brand-200" x-data="mastery({{ lesson.mastery_check | length }}, '{{ lesson.id }}')">
+  <div class="flex items-center justify-between mb-2">
+    <h2 class="font-bold text-ink-900">Эзэмшлийн шалгалт</h2>
+    <span class="text-xs text-slate-500">80+ оноо авбал хичээл дуусна</span>
+  </div>
+  <div class="space-y-3">
+    {% for item in lesson.mastery_check %}
+    {% set qi = loop.index0 %}
+    <div>
+      <p class="text-ink-900 mb-2">{{ item.stem_mn }}</p>
+      {% if item.latex %}<div class="text-sm text-slate-500 mb-2">${{ item.latex }}$</div>{% endif %}
+      <div class="grid sm:grid-cols-2 gap-2">
+        {% for c in item.choices %}
+        <button class="choice" :class="answered[{{ qi }}]!==undefined ? ({{ loop.index0 }}==={{ item.answer }} ? 'is-correct' : (answered[{{ qi }}]==={{ loop.index0 }} ? 'is-wrong':'')) : ''"
+                @click="pick({{ qi }}, {{ loop.index0 }}, {{ item.answer }})"
+                :disabled="answered[{{ qi }}]!==undefined">{{ c }}</button>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div x-show="finished()" x-cloak class="mt-4 pt-4 border-t border-slate-100">
+    <div class="flex items-center gap-3">
+      <div class="text-3xl font-extrabold" :class="score()>=80?'text-emerald-600':'text-amber-600'" x-text="score()"></div>
+      <div class="text-sm">
+        <div class="font-semibold" x-text="score()>=80 ? '🎉 Гайхалтай! Энэ хичээлийг эзэмшлээ.' : 'Бараг боллоо — дахин үзээд оролдоорой.'"></div>
+        <a x-show="score()<80" href="/chat" class="text-brand-700 hover:underline">AI багшаас тусламж авах →</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Inline AI tutor -->
+<section class="card p-4 mb-6" x-data="lessonTutor('{{ lesson.id }}', {{ ai_enabled | tojson }})">
+  <div class="flex items-center gap-2 mb-2">
+    <span class="grid place-items-center w-7 h-7 rounded-lg bg-brand-600 text-white text-sm">✦</span>
+    <div>
+      <div class="font-bold text-ink-900 leading-tight">Энэ хичээлийн талаар асуу</div>
+      <div class="text-xs text-slate-500">AI багш хариултыг шууд хэлэхгүй — бодоход чинь хөтөлнө</div>
+    </div>
+  </div>
+  <div x-show="msgs.length" x-cloak class="space-y-2 mb-2" x-ref="thread">
+    <template x-for="(m,i) in msgs" :key="i">
+      <div class="flex" :class="m.role==='user'?'justify-end':'justify-start'">
+        <div class="bubble" :class="m.role==='user'?'bubble-user':'bubble-ai'" x-html="m.html"></div>
+      </div>
+    </template>
+  </div>
+  <form @submit.prevent="send()" class="flex gap-2">
+    <input x-model="input" :disabled="!aiEnabled||busy" type="text"
+           :placeholder="aiEnabled ? 'Жишээ: яагаад уламжлал нь налуу болдог вэ?' : 'AI идэвхгүй — ANTHROPIC_API_KEY тохируул'"
+           class="flex-1 rounded-xl border border-slate-200 px-3 py-2 text-sm focus:border-brand-400 focus:outline-none">
+    <button :disabled="!aiEnabled||busy||!input.trim()" class="px-4 rounded-xl bg-brand-600 text-white text-sm font-semibold disabled:opacity-40">Илгээх</button>
+  </form>
+</section>
+
+<!-- Prev / next -->
+<div class="flex justify-between mb-6">
+  {% set ids = all_lessons | map(attribute='id') | list %}
+  {% set idx = ids.index(lesson.id) %}
+  {% if idx > 0 %}<a href="/lesson/{{ ids[idx-1] }}" class="text-sm text-brand-700 hover:underline">← Өмнөх</a>{% else %}<span></span>{% endif %}
+  {% if idx < ids|length - 1 %}<a href="/lesson/{{ ids[idx+1] }}" class="text-sm text-brand-700 hover:underline">Дараах →</a>{% endif %}
+</div>
+
+<script>
+function mastery(n, lessonId) {
+  return {
+    answered: {}, correct: {},
+    pick(qi, choice, ans) {
+      if (this.answered[qi] !== undefined) return;
+      this.answered[qi] = choice;
+      this.correct[qi] = (choice === ans);
+      if (this.finished() && this.score() >= 80) Progress.markLesson(lessonId, this.score());
+    },
+    finished() { return Object.keys(this.answered).length >= n; },
+    score() {
+      const c = Object.values(this.correct).filter(Boolean).length;
+      return Math.round(100 * c / n);
+    }
+  }
+}
+function lessonTutor(lessonId, aiEnabled) {
+  return {
+    lessonId, aiEnabled, input: "", busy: false, msgs: [],
+    send() {
+      const q = this.input.trim(); if (!q || this.busy) return;
+      this.input = ""; this.busy = true;
+      this.msgs.push({ role:'user', html: q.replace(/</g,'&lt;') });
+      const ai = { role:'ai', html:'', raw:'' }; this.msgs.push(ai);
+      const history = this.msgs.filter(m=>m.role==='user'||m.role==='ai')
+        .map(m => ({ role: m.role==='user'?'user':'assistant', content: m.raw!==undefined?m.raw:m.html }))
+        .filter(m=>m.content);
+      // build clean message history for the API
+      const apiMsgs = [];
+      for (const m of this.msgs) {
+        if (m.role==='user') apiMsgs.push({role:'user', content: m.html.replace(/&lt;/g,'<')});
+        else if (m.raw) apiMsgs.push({role:'assistant', content: m.raw});
+      }
+      this.$nextTick(()=> this.$refs.thread && this.$refs.thread.scrollIntoView({block:'end'}));
+      sseStream('/api/tutor', { messages: apiMsgs, lesson_id: this.lessonId },
+        (t)=>{ ai.raw += t; ai.html = ai.raw.replace(/</g,'&lt;'); this.$nextTick(()=>renderMath(this.$root)); },
+        ()=>{ this.busy=false; this.$nextTick(()=>renderMath(this.$root)); });
+    }
+  }
+}
+</script>
+{% endblock %}

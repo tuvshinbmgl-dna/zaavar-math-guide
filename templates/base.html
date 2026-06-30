@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Заавар — Математик 10·11·12{% endblock %}</title>
+
+  <!-- Tailwind (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Golos Text"', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' },
+            accent:{ 50:'#fffbeb',100:'#fef3c7',400:'#fbbf24',500:'#f59e0b',600:'#d97706' },
+            ink:   { 700:'#334155',800:'#1e293b',900:'#0f172a' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts (Cyrillic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Alpine -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body class="bg-[#f6f7fb] text-ink-800 antialiased min-h-screen pb-20 sm:pb-0">
+
+  <!-- Top bar -->
+  <header class="sticky top-0 z-30 bg-white/85 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-extrabold text-brand-700 text-lg">
+        <span class="grid place-items-center w-8 h-8 rounded-xl bg-brand-600 text-white text-sm">∫</span>
+        Заавар
+      </a>
+      <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
+        {% set nav = [('/', 'Нүүр'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Оношлох'), ('/chat','AI багш')] %}
+        {% for href, label in nav %}
+        <a href="{{ href }}" class="px-3 py-1.5 rounded-lg hover:bg-brand-50 hover:text-brand-700 transition {{ 'bg-brand-50 text-brand-700' if request.path == href else 'text-ink-700' }}">{{ label }}</a>
+        {% endfor %}
+      </nav>
+      {% if ai_enabled is defined %}
+      <span class="hidden sm:inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-full {{ 'bg-emerald-50 text-emerald-700' if ai_enabled else 'bg-slate-100 text-slate-500' }}">
+        <span class="w-1.5 h-1.5 rounded-full {{ 'bg-emerald-500' if ai_enabled else 'bg-slate-400' }}"></span>
+        AI {{ 'идэвхтэй' if ai_enabled else 'идэвхгүй' }}
+      </span>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-6">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Bottom tab bar (mobile) -->
+  <nav class="sm:hidden fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 grid grid-cols-4 text-[11px]">
+    {% set tabs = [('/', 'Нүүр','⌂'), ('/curriculum','Хөтөлбөр','▦'), ('/diagnostic','Оношлох','✓'), ('/chat','AI багш','✦')] %}
+    {% for href, label, icon in tabs %}
+    <a href="{{ href }}" class="flex flex-col items-center gap-0.5 py-2 {{ 'text-brand-700' if request.path == href else 'text-slate-500' }}">
+      <span class="text-base leading-none">{{ icon }}</span>{{ label }}
+    </a>
+    {% endfor %}
+  </nav>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-8 text-center max-w-md mx-auto">
+  <div class="text-4xl mb-2">🔍</div>
+  <h1 class="text-xl font-bold text-ink-900 mb-1">Хичээл олдсонгүй</h1>
+  <p class="text-sm text-slate-500 mb-4">"{{ lesson_id }}" гэсэн хичээл байхгүй эсвэл удахгүй нэмэгдэнэ.</p>
+  <a href="/curriculum" class="px-4 py-2 rounded-xl bg-brand-600 text-white text-sm font-semibold">Хөтөлбөр рүү</a>
+</div>
+{% endblock %}

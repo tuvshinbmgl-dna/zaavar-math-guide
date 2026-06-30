@@ -1,0 +1,44 @@
+{
+  "note": "Урьдчилсан-нөхцөлийн граф. status=available → гүнзгий боловсруулсан хичээл. status=prerequisite → өмнөх ангийн суурь ойлголт (граф дахь холбоос, гүнзгий контентгүй ч чиглүүлэхэд ашиглана).",
+  "nodes": [
+    {"skill_id": "slope-of-line", "title_mn": "Шулууны налуу", "grade": 10, "chapter": "4.2", "lesson_id": "g10-4-2", "status": "prerequisite"},
+    {"skill_id": "function-basics", "title_mn": "Функц, тодорхойлогдох/утгын муж", "grade": 10, "chapter": "5.1", "lesson_id": null, "status": "prerequisite"},
+    {"skill_id": "power-function-g10", "title_mn": "y = ax^n функц", "grade": 10, "chapter": "5.4", "lesson_id": null, "status": "prerequisite"},
+    {"skill_id": "tangent-curve-intro", "title_mn": "Муруйд татсан шүргэгч", "grade": 10, "chapter": "5.6", "lesson_id": null, "status": "prerequisite"},
+    {"skill_id": "function-definition", "title_mn": "Функц ба түүнийг өгөх аргууд", "grade": 11, "chapter": "3.1", "lesson_id": "g11-3-1", "status": "prerequisite"},
+    {"skill_id": "power-function", "title_mn": "Зэргийн функц", "grade": 11, "chapter": "3.2", "lesson_id": "g11-3-2", "status": "prerequisite"},
+    {"skill_id": "monotonic-function", "title_mn": "Өсөх, буурах функц", "grade": 11, "chapter": "3.6", "lesson_id": null, "status": "prerequisite"},
+
+    {"skill_id": "tangent-slope", "title_mn": "Шүргэгчийн налуу", "grade": 11, "chapter": "8.1", "lesson_id": "g11-8-1", "status": "available"},
+    {"skill_id": "derivative-definition", "title_mn": "Уламжлал ба дифференциалчлал", "grade": 11, "chapter": "8.2", "lesson_id": "g11-8-2", "status": "available"},
+    {"skill_id": "power-rule", "title_mn": "x^n-ийн уламжлал", "grade": 11, "chapter": "8.3", "lesson_id": "g11-8-3", "status": "available"},
+    {"skill_id": "sum-diff-rule", "title_mn": "Нийлбэр, ялгавар, тогтмол үржигдэхүүний дүрэм", "grade": 11, "chapter": "8.4", "lesson_id": "g11-8-4", "status": "available"},
+    {"skill_id": "chain-rule", "title_mn": "Гинжин дүрэм", "grade": 11, "chapter": "8.5", "lesson_id": "g11-8-5", "status": "available"},
+    {"skill_id": "tangent-normal-line", "title_mn": "Шүргэгч ба нормаль шулууны тэгшитгэл", "grade": 11, "chapter": "8.6", "lesson_id": "g11-8-6", "status": "available"},
+    {"skill_id": "increasing-decreasing", "title_mn": "Өсөх, буурах завсар", "grade": 11, "chapter": "8.7", "lesson_id": "g11-8-7", "status": "available"},
+    {"skill_id": "extrema", "title_mn": "Экстремум (их, бага утга)", "grade": 11, "chapter": "8.8", "lesson_id": "g11-8-8", "status": "available"},
+    {"skill_id": "curve-sketching", "title_mn": "Уламжлалаар график байгуулах", "grade": 11, "chapter": "8.9", "lesson_id": "g11-8-9", "status": "available"}
+  ],
+  "edges": [
+    {"from": "slope-of-line", "to": "tangent-slope"},
+    {"from": "tangent-curve-intro", "to": "tangent-slope"},
+    {"from": "function-basics", "to": "function-definition"},
+    {"from": "function-definition", "to": "derivative-definition"},
+    {"from": "tangent-slope", "to": "derivative-definition"},
+    {"from": "power-function-g10", "to": "power-function"},
+    {"from": "power-function", "to": "power-rule"},
+    {"from": "derivative-definition", "to": "power-rule"},
+    {"from": "power-rule", "to": "sum-diff-rule"},
+    {"from": "derivative-definition", "to": "chain-rule"},
+    {"from": "power-rule", "to": "chain-rule"},
+    {"from": "power-rule", "to": "tangent-normal-line"},
+    {"from": "slope-of-line", "to": "tangent-normal-line"},
+    {"from": "derivative-definition", "to": "increasing-decreasing"},
+    {"from": "monotonic-function", "to": "increasing-decreasing"},
+    {"from": "sum-diff-rule", "to": "increasing-decreasing"},
+    {"from": "increasing-decreasing", "to": "extrema"},
+    {"from": "extrema", "to": "curve-sketching"},
+    {"from": "increasing-decreasing", "to": "curve-sketching"},
+    {"from": "chain-rule", "to": "curve-sketching"}
+  ]
+}

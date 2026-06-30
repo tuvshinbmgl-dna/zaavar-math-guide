@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Оношлох тест — Заавар{% endblock %}
+{% block content %}
+<div x-data="diagnostic()" x-init="init()" class="max-w-2xl mx-auto">
+
+  <!-- Intro -->
+  <section x-show="stage==='intro'" class="card p-6 text-center">
+    <div class="text-4xl mb-2">🎯</div>
+    <h1 class="text-2xl font-extrabold text-ink-900 mb-2">Оношлох тест</h1>
+    <p class="text-slate-600 mb-4">Богино адаптив тест таны мэдлэгийн төлөвийг тогтоож, юунаас эхлэхийг харуулна. Алдвал зүгээр — энэ нь дүн биш.</p>
+    <button @click="start()" class="px-6 py-2.5 rounded-xl bg-brand-600 text-white font-semibold">Эхлэх</button>
+  </section>
+
+  <!-- Quiz -->
+  <section x-show="stage==='quiz'" x-cloak class="card p-5">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="flex-1 skill-track"><div class="skill-fill bg-brand-500" :style="`width:${(progress.answered/progress.total)*100}%`"></div></div>
+      <span class="text-xs text-slate-500" x-text="`${progress.answered}/${progress.total}`"></span>
+    </div>
+    <template x-if="item">
+      <div>
+        <p class="text-ink-900 text-lg mb-1" x-text="item.stem_mn" x-effect="renderMath($el)"></p>
+        <div x-show="item.latex" class="text-sm text-slate-500 mb-3"><span x-text="item.latex ? '$'+item.latex+'$' : ''" x-effect="renderMath($el)"></span></div>
+        <div class="grid sm:grid-cols-2 gap-2 mt-3">
+          <template x-for="(c,i) in item.choices" :key="i">
+            <button class="choice" x-text="c" x-effect="renderMath($el)"
+                    :class="checked ? (i===answer ? 'is-correct' : (chosen===i ? 'is-wrong':'')) : (chosen===i?'is-chosen':'')"
+                    @click="pick(i)" :disabled="checked"></button>
+          </template>
+        </div>
+        <div class="mt-4 flex justify-end">
+          <button x-show="!checked" @click="check()" :disabled="chosen===null" class="px-5 py-2 rounded-xl bg-brand-600 text-white text-sm font-semibold disabled:opacity-40">Хариулах</button>
+          <button x-show="checked" @click="next()" class="px-5 py-2 rounded-xl bg-ink-800 text-white text-sm font-semibold">Дараах →</button>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <!-- Result -->
+  <section x-show="stage==='result'" x-cloak>
+    <div class="card p-5 mb-4">
+      <h1 class="text-xl font-extrabold text-ink-900 mb-1">Таны чадварын зураглал</h1>
+      <p class="text-sm text-slate-500 mb-4">Ногоон = эзэмшсэн (80+), шар = бэхжүүлэх, улаан = дутагдалтай.</p>
+      <div class="space-y-2.5">
+        <template x-for="s in result.pie.filter(p=>p.score!==null)" :key="s.skill_id">
+          <div class="flex items-center gap-3">
+            <div class="w-40 sm:w-56 text-sm text-ink-700 truncate" x-text="s.title_mn"></div>
+            <div class="flex-1 skill-track"><div class="skill-fill" :style="`width:${s.score}%;background:${s.score>=80?'#10b981':s.score>=50?'#f59e0b':'#ef4444'}`"></div></div>
+            <div class="w-10 text-right text-sm font-semibold" x-text="s.score"></div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <div class="card p-5 mb-4" x-show="result.playlist && result.playlist.length">
+      <h2 class="font-bold text-ink-900 mb-1">📌 Хувийн төлөвлөгөө</h2>
+      <p class="text-sm text-slate-500 mb-3">Урьдчилсан нөхцлөөр эрэмбэлсэн — эхнээс нь дараалан үз.</p>
+      <div class="space-y-2">
+        <template x-for="(p,i) in result.playlist" :key="p.skill_id">
+          <a :href="`/lesson/${p.lesson_id}`" class="flex items-center justify-between p-3 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200">
+            <span class="text-sm font-medium text-amber-900"><span class="text-amber-500 mr-2" x-text="i+1"></span><span x-text="p.title_mn"></span></span>
+            <span class="text-xs text-amber-700">Үзэх →</span>
+          </a>
+        </template>
+      </div>
+    </div>
+
+    <div class="flex gap-2">
+      <a href="/" class="flex-1 text-center px-4 py-2.5 rounded-xl bg-brand-600 text-white font-semibold text-sm">Нүүр хуудас</a>
+      <button @click="start()" class="px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-ink-700 font-semibold text-sm">Дахин өгөх</button>
+    </div>
+  </section>
+</div>
+
+<script>
+function diagnostic() {
+  return {
+    stage:'intro', item:null, chosen:null, checked:false, answer:null,
+    responses:[], progress:{answered:0,total:{{ total }}}, result:null,
+    init() {},
+    async start() {
+      this.stage='quiz'; this.responses=[]; this.result=null;
+      this.progress={answered:0,total:{{ total }}};
+      await this.loadNext();
+    },
+    async loadNext() {
+      this.chosen=null; this.checked=false; this.answer=null;
+      const data = await postJSON('/api/diagnostic/next', {responses:this.responses});
+      if (data.done) { return this.finish(); }
+      this.item = data.item; this.progress = data.progress;
+      this.$nextTick(()=>renderMath(this.$root));
+    },
+    pick(i){ if(!this.checked) this.chosen=i; },
+    async check() {
+      if (this.chosen===null) return;
+      const r = await postJSON('/api/diagnostic/check', {item_id:this.item.id, choice:this.chosen});
+      this.checked=true; this.answer=r.answer;
+      this.responses.push({item_id:this.item.id, correct:r.correct});
+    },
+    next(){ this.loadNext(); },
+    async finish() {
+      this.result = await postJSON('/api/diagnostic/grade', {responses:this.responses});
+      Progress.saveDiagnostic(this.result);
+      this.stage='result';
+      this.$nextTick(()=>renderMath(this.$root));
+    }
+  }
+}
+</script>
+{% endblock %}

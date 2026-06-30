@@ -1,0 +1,117 @@
+{
+  "source": "econtent.edu.mn — Боловсрол, Соёл, ШУ, Спортын Яам (MECSS) албан ёсны сурах бичиг",
+  "note": "Бүтэн агуулга (бүх 3 анги) — навигацийн араг яс. Гүнзгий боловсруулсан хэсэг: 11-р анги, VIII. Уламжлал.",
+  "grades": [
+    {
+      "grade": 10,
+      "title_mn": "Математик X",
+      "book_id": 279,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=279",
+      "chapters": [
+        {"num": "I", "title_mn": "Олонлог", "title_en": "Sets", "lessons": []},
+        {"num": "II", "title_mn": "Тоон ба үсэгт илэрхийлэл", "title_en": "Numeric & literal expressions", "lessons": [
+          {"num": "2.1", "title_mn": "Бүхэл илтгэгчтэй зэрэг ба түүний чанар"},
+          {"num": "2.2", "title_mn": "n-р язгуур ба арифметик n-р язгуур"},
+          {"num": "2.3", "title_mn": "Рациональ илтгэгчтэй зэрэг"},
+          {"num": "2.4", "title_mn": "Стандарт хэлбэр"},
+          {"num": "2.5", "title_mn": "Бодит тооны үйлдлийн чанар"}
+        ]},
+        {"num": "III", "title_mn": "Алгебрын илэрхийлэл", "title_en": "Algebraic expressions", "lessons": [
+          {"num": "3.1", "title_mn": "Рациональ илтгэгчтэй алгебрын илэрхийлэл"},
+          {"num": "3.2", "title_mn": "Үржвэрт задлах"},
+          {"num": "3.3", "title_mn": "Алгебрын бутархайг үржүүлэх, хуваах"},
+          {"num": "3.4", "title_mn": "Алгебрын бутархайг нэмэх, хасах"}
+        ]},
+        {"num": "IV", "title_mn": "Координатын арга", "title_en": "Coordinate method", "lessons": [
+          {"num": "4.1", "title_mn": "Тэгш өнцөгт координатын систем"},
+          {"num": "4.2", "title_mn": "Шулууны налуу", "skill_id": "slope-of-line", "lesson_id": "g10-4-2"},
+          {"num": "4.3", "title_mn": "Шулууны тэгшитгэл"},
+          {"num": "4.4", "title_mn": "Төвтэй тойргийн тэгшитгэл"}
+        ]},
+        {"num": "V", "title_mn": "Функц ба график", "title_en": "Functions & graphs", "lessons": [
+          {"num": "5.1", "title_mn": "Функц, тодорхойлогдох ба утгын муж", "skill_id": "function-basics"},
+          {"num": "5.2", "title_mn": "Квадрат функц"},
+          {"num": "5.3", "title_mn": "y = a/x функц"},
+          {"num": "5.4", "title_mn": "y = ax^n функц", "skill_id": "power-function-g10"},
+          {"num": "5.5", "title_mn": "y = a^x функц"},
+          {"num": "5.6", "title_mn": "Муруйд татсан шүргэгч ба түүний налуу", "skill_id": "tangent-curve-intro"}
+        ]},
+        {"num": "VI", "title_mn": "Тэгшитгэл, тэнцэтгэл биш", "title_en": "Equations & inequalities", "lessons": [
+          {"num": "6.1", "title_mn": "Нэг хувьсагчтай шугаман тэнцэтгэл биш"},
+          {"num": "6.2", "title_mn": "Квадрат тэгшитгэл"},
+          {"num": "6.3", "title_mn": "Квадрат тэгшитгэлд шилждэг тэгшитгэл"},
+          {"num": "6.4", "title_mn": "Хоёр хувьсагчтай шугаман тэнцэтгэл биш"},
+          {"num": "6.5", "title_mn": "Илтгэгч тэгшитгэл"}
+        ]},
+        {"num": "VII", "title_mn": "Тойрог ба олон өнцөгт", "title_en": "Circle & polygons", "lessons": []},
+        {"num": "VIII", "title_mn": "Тригонометр харьцаа", "title_en": "Trig ratios", "lessons": []},
+        {"num": "IX", "title_mn": "Хавтгай дээрх вектор", "title_en": "Vectors in the plane", "lessons": []},
+        {"num": "X", "title_mn": "Матриц", "title_en": "Matrices", "lessons": []},
+        {"num": "XI", "title_mn": "Геометрийн хувиргалт", "title_en": "Geometric transformations", "lessons": []},
+        {"num": "XII", "title_mn": "Өгөгдлийн шинжилгээ", "title_en": "Data analysis", "lessons": []},
+        {"num": "XIII", "title_mn": "Комбинаторик", "title_en": "Combinatorics", "lessons": []},
+        {"num": "XIV", "title_mn": "Магадлал", "title_en": "Probability", "lessons": []},
+        {"num": "XV", "title_mn": "Хэмжигдэхүүн", "title_en": "Measurement / solids", "lessons": []}
+      ]
+    },
+    {
+      "grade": 11,
+      "title_mn": "Математик XI",
+      "book_id": 273,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=273",
+      "chapters": [
+        {"num": "I", "title_mn": "Квадрат тэгшитгэл ба тэнцэтгэл биш", "title_en": "Quadratic equations & inequalities", "lessons": []},
+        {"num": "II", "title_mn": "Тэгшитгэлийн систем", "title_en": "Systems of equations", "lessons": []},
+        {"num": "III", "title_mn": "Функц ба график", "title_en": "Functions & graphs", "lessons": [
+          {"num": "3.1", "title_mn": "Функц ба түүнийг өгөх аргууд", "skill_id": "function-definition", "lesson_id": "g11-3-1"},
+          {"num": "3.2", "title_mn": "Зэргийн функц", "skill_id": "power-function", "lesson_id": "g11-3-2"},
+          {"num": "3.3", "title_mn": "Харилцан нэг утгат функц"},
+          {"num": "3.4", "title_mn": "Нийлмэл функц"},
+          {"num": "3.5", "title_mn": "Урвуу функц"},
+          {"num": "3.6", "title_mn": "Өсөх, буурах функц", "skill_id": "monotonic-function"},
+          {"num": "3.7", "title_mn": "Тэгш, сондгой функц"}
+        ]},
+        {"num": "IV", "title_mn": "Прогресс ба бином задаргаа", "title_en": "Progressions & binomial expansion", "lessons": []},
+        {"num": "V", "title_mn": "Координатын геометр", "title_en": "Coordinate geometry", "lessons": []},
+        {"num": "VI", "title_mn": "Тригонометр", "title_en": "Trigonometry", "lessons": []},
+        {"num": "VII", "title_mn": "Огторгуй дахь вектор", "title_en": "Vectors in space", "lessons": []},
+        {"num": "VIII", "title_mn": "Уламжлал", "title_en": "Derivatives", "deep": true, "lessons": [
+          {"num": "8.1", "title_mn": "Шүргэгчийн налуу", "lesson_id": "g11-8-1", "skill_id": "tangent-slope"},
+          {"num": "8.2", "title_mn": "Уламжлал ба дифференциалчлал", "lesson_id": "g11-8-2", "skill_id": "derivative-definition"},
+          {"num": "8.3", "title_mn": "x^n-ийн уламжлал", "lesson_id": "g11-8-3", "skill_id": "power-rule"},
+          {"num": "8.4", "title_mn": "Нийлбэр, ялгавар, тогтмол үржигдэхүүний дүрэм", "lesson_id": "g11-8-4", "skill_id": "sum-diff-rule"},
+          {"num": "8.5", "title_mn": "Нийлмэл функцийн уламжлал (гинжин дүрэм)", "lesson_id": "g11-8-5", "skill_id": "chain-rule"},
+          {"num": "8.6", "title_mn": "Шүргэгч ба нормаль шулууны тэгшитгэл", "lesson_id": "g11-8-6", "skill_id": "tangent-normal-line"},
+          {"num": "8.7", "title_mn": "Өсөх, буурах завсар ба өөрчлөлтийн хурд", "lesson_id": "g11-8-7", "skill_id": "increasing-decreasing"},
+          {"num": "8.8", "title_mn": "Экстремум (их, бага утга)", "lesson_id": "g11-8-8", "skill_id": "extrema"},
+          {"num": "8.9", "title_mn": "Уламжлалаар график байгуулах", "lesson_id": "g11-8-9", "skill_id": "curve-sketching"}
+        ]},
+        {"num": "IX", "title_mn": "Интеграл", "title_en": "Integrals", "lessons": []},
+        {"num": "X", "title_mn": "Өгөгдлийн шинжилгээ", "title_en": "Data analysis", "lessons": []}
+      ]
+    },
+    {
+      "grade": 12,
+      "title_mn": "Математик XII",
+      "book_id": 343,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=343",
+      "chapters": [
+        {"num": "I", "title_mn": "Тэгшитгэл, тэнцэтгэл биш", "title_en": "Equations & inequalities (abs value)", "lessons": []},
+        {"num": "II", "title_mn": "Олон гишүүнт", "title_en": "Polynomials", "lessons": []},
+        {"num": "III", "title_mn": "Функц ба график (логарифм)", "title_en": "Functions & graphs (logarithms)", "lessons": []},
+        {"num": "IV", "title_mn": "Функцийн уламжлал", "title_en": "Derivatives (exp/log/trig)", "lessons": [
+          {"num": "4.1", "title_mn": "e^x-ийн уламжлал"},
+          {"num": "4.2", "title_mn": "ln x-ийн уламжлал"},
+          {"num": "4.3", "title_mn": "sin x ба cos x-ийн уламжлал"},
+          {"num": "4.4", "title_mn": "Үржвэрийн дүрэм"},
+          {"num": "4.5", "title_mn": "Ноогдворын дүрэм"},
+          {"num": "4.6", "title_mn": "tan x-ийн уламжлал"},
+          {"num": "4.7", "title_mn": "Гинжин дүрэм"}
+        ]},
+        {"num": "V", "title_mn": "Интеграл", "title_en": "Integrals", "lessons": []},
+        {"num": "VI", "title_mn": "Магадлал ба статистик", "title_en": "Probability & statistics", "lessons": []},
+        {"num": "VII", "title_mn": "Комплекс тоо", "title_en": "Complex numbers", "lessons": []}
+      ]
+    }
+  ]
+}
