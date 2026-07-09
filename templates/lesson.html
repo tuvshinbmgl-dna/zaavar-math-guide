@@ -36,7 +36,7 @@
 </style>
 
 <div id="lesson-root"
-     x-data="lessonPage('{{ lesson.id }}', {{ stage_ids | tojson }})"
+     x-data="lessonPage('{{ lesson.id }}', [{% for sid in stage_ids %}'{{ sid }}'{% if not loop.last %},{% endif %}{% endfor %}])"
      @mastery-finished.window="onFinish($event.detail.score)">
 
 <!-- Header -->
