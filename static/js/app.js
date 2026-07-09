@@ -46,6 +46,13 @@ const Progress = {
     p.lessons[id] = { done: true, score, ts: Date.now() };
     this.write(p);
   },
+  setLastLesson(id, title) {
+    const p = this.read();
+    p.last = { id, title: title || "", ts: Date.now() };
+    this.write(p);
+  },
+  get last() { return this.read().last || null; },
+  get doneCount() { return Object.keys(this.read().lessons || {}).length; },
   saveDiagnostic(result) {
     const p = this.read();
     p.diagnostic = { ...result, ts: Date.now() };

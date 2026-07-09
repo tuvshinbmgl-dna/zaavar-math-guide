@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Хөтөлбөр — Заавар{% endblock %}
 {% block content %}
-<div x-data="{ grade: 11 }">
-  <h1 class="text-2xl font-extrabold text-ink-900 mb-1">Бүх хөтөлбөр</h1>
+<div x-data="{ grade: 11, prog: {} }" x-init="prog = (window.Progress ? Progress.lessons : {})">
+  <div class="flex items-start justify-between gap-3 mb-1">
+    <h1 class="text-2xl font-extrabold text-ink-900">Бүх хөтөлбөр</h1>
+    <template x-if="Object.keys(prog).length">
+      <span class="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700">
+        ✓ <span x-text="`${Object.keys(prog).length} хичээл эзэмшсэн`"></span>
+      </span>
+    </template>
+  </div>
   <p class="text-sm text-slate-500 mb-4">Математик 10·11·12 — үндэсний сурах бичгийн бүтэн агуулга. Гэрэлтсэн хичээлүүд бэлэн.</p>
 
   <!-- Grade tabs -->
@@ -34,9 +41,15 @@
         <div class="divide-y divide-slate-50">
           {% for l in ch.lessons %}
           {% if l.lesson_id %}
-          <a href="/lesson/{{ l.lesson_id }}" class="flex items-center justify-between py-2.5 group">
-            <span class="text-sm text-ink-700 group-hover:text-brand-700"><span class="text-slate-400 mr-2">{{ l.num }}</span>{{ l.title_mn }}</span>
-            <span class="text-xs text-brand-600 opacity-0 group-hover:opacity-100">Үзэх →</span>
+          <a href="/lesson/{{ l.lesson_id }}" class="flex items-center justify-between py-2.5 group min-h-[44px]">
+            <span class="text-sm text-ink-700 group-hover:text-brand-700 flex items-center gap-2">
+              <span class="text-slate-400">{{ l.num }}</span>{{ l.title_mn }}
+              <span x-show="prog['{{ l.lesson_id }}']" x-cloak class="shrink-0 grid place-items-center w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 text-[11px]">✓</span>
+            </span>
+            <span class="flex items-center gap-2 shrink-0">
+              <span x-show="prog['{{ l.lesson_id }}'] && prog['{{ l.lesson_id }}'].score!=null" x-cloak class="text-[11px] font-bold text-emerald-600" x-text="prog['{{ l.lesson_id }}'] ? prog['{{ l.lesson_id }}'].score : ''"></span>
+              <span class="text-xs text-brand-600 opacity-0 group-hover:opacity-100">Үзэх →</span>
+            </span>
           </a>
           {% else %}
           <div class="flex items-center justify-between py-2.5">

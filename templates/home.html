@@ -13,6 +13,18 @@
     </div>
   </section>
 
+  <!-- Continue where you left off -->
+  <template x-if="last">
+    <a :href="`/lesson/${last.id}`" class="card p-4 mb-6 flex items-center justify-between gap-3 hover:border-brand-300 hover:shadow-md transition group">
+      <div class="min-w-0">
+        <div class="text-xs font-semibold text-brand-600 mb-0.5">↩ Үргэлжлүүлэх</div>
+        <div class="font-semibold text-ink-900 group-hover:text-brand-700 truncate" x-text="last.title || 'Сүүлд үзсэн хичээл'"></div>
+        <div class="text-xs text-slate-500 mt-0.5" x-show="doneCount>0" x-text="`${doneCount} хичээл эзэмшсэн`"></div>
+      </div>
+      <span class="shrink-0 grid place-items-center min-h-[44px] px-4 rounded-xl bg-brand-600 text-white text-sm font-semibold">Үзэх →</span>
+    </a>
+  </template>
+
   <!-- Diagnostic result (if any) -->
   <template x-if="diag">
     <section class="card p-5 mb-6">
@@ -76,11 +88,13 @@
 <script>
 function homeView() {
   return {
-    diag: null, done: {},
+    diag: null, done: {}, last: null, doneCount: 0,
     init() {
       this.diag = Progress.diagnostic;
       const ls = Progress.lessons;
       for (const k in ls) this.done[k] = ls[k].done;
+      this.doneCount = Progress.doneCount;
+      this.last = Progress.last;
       this.$nextTick(() => renderMath(this.$root));
     }
   }

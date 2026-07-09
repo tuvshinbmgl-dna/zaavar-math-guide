@@ -1,9 +1,46 @@
 {% extends "base.html" %}
 {% block title %}{{ lesson.title_mn }} — Заавар{% endblock %}
 {% block content %}
+{# ---- Stage list (which stages this lesson actually has) ---- #}
+{% set concept_secs = lesson.sections | selectattr('type', 'ne', 'example') | list %}
+{% set example_secs = lesson.sections | selectattr('type', 'equalto', 'example') | list %}
+{% set stage_list = [] %}
+{% if lesson.pretest %}{% set _ = stage_list.append(('stage-warmup', 'Сэргээх')) %}{% endif %}
+{% if concept_secs %}{% set _ = stage_list.append(('stage-concept', 'Ойлголт')) %}{% endif %}
+{% if example_secs %}{% set _ = stage_list.append(('stage-example', 'Жишээ')) %}{% endif %}
+{% if lesson.practice %}{% set _ = stage_list.append(('stage-practice', 'Дасгал')) %}{% endif %}
+{% if lesson.mastery_check %}{% set _ = stage_list.append(('stage-mastery', 'Шалгалт')) %}{% endif %}
+{% set stage_ids = stage_list | map(attribute=0) | list %}
+
+{# ---- Prev / next lesson ---- #}
+{% set ids = all_lessons | map(attribute='id') | list %}
+{% set idx = ids.index(lesson.id) %}
+
+<style>
+  /* Lesson-page-only polish (scoped by #lesson-root) */
+  #lesson-root .choice { min-height: 44px; }
+  #lesson-root .choice:active { transform: scale(.985); }
+  @keyframes zv-pop { 0% { transform: scale(1); } 40% { transform: scale(1.035); } 100% { transform: scale(1); } }
+  @keyframes zv-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+  #lesson-root .choice.is-correct { animation: zv-pop .35s ease; }
+  #lesson-root .choice.is-wrong { animation: zv-shake .3s ease; }
+  /* Anchors land below sticky header + stepper */
+  #lesson-root section[id^="stage-"] { scroll-margin-top: 7.5rem; }
+  /* Stepper: horizontal scroll without scrollbar */
+  #lesson-stepper { scrollbar-width: none; -ms-overflow-style: none; }
+  #lesson-stepper::-webkit-scrollbar { display: none; }
+  /* No horizontal page overflow: math scrolls inside its own block */
+  #lesson-root { overflow-wrap: anywhere; }
+  #lesson-root .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  #lesson-root .latex-scroll { overflow-x: auto; max-width: 100%; }
+</style>
+
+<div id="lesson-root"
+     x-data="lessonPage('{{ lesson.id }}', {{ stage_ids | tojson }})"
+     @mastery-finished.window="onFinish($event.detail.score)">
 
 <!-- Header -->
-<div class="mb-4">
+<div class="mb-3">
   <a href="/curriculum" class="text-xs text-slate-500 hover:text-brand-700">← Хөтөлбөр</a>
   <div class="flex items-start justify-between gap-3 mt-1">
     <div>
@@ -13,16 +50,37 @@
   </div>
   <div class="flex flex-wrap items-center gap-2 mt-2">
     <a href="{{ lesson.textbook.reader_url }}" target="_blank" rel="noopener"
-       class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">📖 Сурах бичиг ({{ lesson.textbook.pages_mn }}) ↗</a>
+       class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">📖 Сурах бичиг ({{ lesson.textbook.pages_mn }}) ↗</a>
     {% for p in prereqs %}
       {% if p.lesson_id %}
-      <a href="/lesson/{{ p.lesson_id }}" class="text-xs px-2.5 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100">↩ {{ p.title_mn }}</a>
+      <a href="/lesson/{{ p.lesson_id }}" class="text-xs px-2.5 py-1.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100">↩ {{ p.title_mn }}</a>
       {% else %}
-      <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-500 border border-slate-200" title="{{ p.grade }}-р анги, бүлэг {{ p.chapter }}">↩ {{ p.title_mn }} ({{ p.grade }}-р анги)</span>
+      <span class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-50 text-slate-500 border border-slate-200" title="{{ p.grade }}-р анги, бүлэг {{ p.chapter }}">↩ {{ p.title_mn }} ({{ p.grade }}-р анги)</span>
       {% endif %}
     {% endfor %}
   </div>
 </div>
+
+<!-- Sticky stage stepper -->
+{% if stage_list %}
+<div class="sticky top-14 z-20 -mx-4 px-4 bg-[#f6f7fb]/90 backdrop-blur border-b border-slate-200/70 mb-4">
+  <div id="lesson-stepper" class="flex items-center gap-1.5 overflow-x-auto pt-2 pb-1.5">
+    {% for sid, label in stage_list %}
+    <a href="#{{ sid }}" @click.prevent="go('{{ sid }}')"
+       class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[36px] rounded-full text-xs font-semibold transition-colors"
+       :class="active === '{{ sid }}'
+                 ? 'bg-brand-600 text-white shadow-sm'
+                 : (stageDone('{{ sid }}') ? 'bg-emerald-50 text-emerald-700' : 'bg-white text-slate-500 border border-slate-200')">
+      <span x-text="stageDone('{{ sid }}') && active !== '{{ sid }}' ? '✓' : '{{ loop.index }}'"></span>
+      <span>{{ label }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="h-1 rounded-full bg-slate-200 mb-2 overflow-hidden">
+    <div class="h-full rounded-full bg-brand-500 transition-all duration-500" :style="'width:' + pct() + '%'"></div>
+  </div>
+</div>
+{% endif %}
 
 <!-- Objectives -->
 <section class="card p-4 mb-4 border-l-4 border-l-brand-500">
@@ -34,10 +92,10 @@
   </ul>
 </section>
 
-<!-- Pretest -->
+<!-- Pretest (warm-up) -->
 {% if lesson.pretest %}
 {% set pt = lesson.pretest %}
-<section class="card p-4 mb-4" x-data="{chosen:null}">
+<section id="stage-warmup" class="card p-4 mb-4" x-data="{chosen:null}">
   <div class="flex items-center gap-2 mb-2">
     <span class="text-xs font-bold px-2 py-0.5 rounded bg-accent-100 text-accent-600">ЭХЛЭЭД ОРОЛД</span>
     <span class="text-xs text-slate-500">Үзэхээсээ өмнө бодоод үз — алдвал зүгээр</span>
@@ -49,70 +107,88 @@
             @click="chosen={{ loop.index0 }}" :disabled="chosen!==null">{{ c }}</button>
     {% endfor %}
   </div>
-  <div x-show="chosen!==null" x-cloak class="mt-3 text-sm rounded-lg p-3"
+  <div x-show="chosen!==null" x-cloak x-transition.opacity.duration.300ms class="mt-3 text-sm rounded-lg p-3"
        :class="chosen==={{ pt.answer }} ? 'bg-emerald-50 text-emerald-800' : 'bg-rose-50 text-rose-800'">
-    <span x-text="chosen==={{ pt.answer }} ? '✓ Зөв! ' : '✗ Дахин бодъё. '"></span>{{ pt.explanation_mn }}
+    <span class="font-semibold" x-text="chosen==={{ pt.answer }} ? 'Маш сайн! 🎉 ' : 'Зүгээр, алдаж болно — яг үүнийг одоо сурна. '"></span>{{ pt.explanation_mn }}
   </div>
 </section>
 {% endif %}
 
 <!-- Sections -->
+{% set ns = namespace(concept_anchored=false, example_anchored=false) %}
 {% for s in lesson.sections %}
   {% if s.type == 'concept' %}
-  <section class="card p-5 mb-4">
+  <section {% if not ns.concept_anchored %}id="stage-concept"{% set ns.concept_anchored = true %}{% endif %} class="card p-5 mb-4">
     <h2 class="font-bold text-ink-900 mb-2">{{ s.title_mn }}</h2>
     <div class="rich text-ink-700">{{ s.body_mn | richtext }}</div>
   </section>
   {% elif s.type == 'definition' %}
-  <section class="card p-5 mb-4 border-l-4 border-l-emerald-500 bg-emerald-50/40">
+  <section {% if not ns.concept_anchored %}id="stage-concept"{% set ns.concept_anchored = true %}{% endif %} class="card p-5 mb-4 border-l-4 border-l-emerald-500 bg-emerald-50/40">
     <div class="text-xs font-bold text-emerald-700 mb-1">ТОДОРХОЙЛОЛТ</div>
     <h2 class="font-bold text-ink-900 mb-1">{{ s.term_mn }}</h2>
     <div class="rich text-ink-700">{{ s.body_mn | richtext }}</div>
-    {% if s.latex %}<div class="mt-2 text-lg">$${{ s.latex }}$$</div>{% endif %}
+    {% if s.latex %}<div class="mt-2 text-lg latex-scroll">$${{ s.latex }}$$</div>{% endif %}
   </section>
   {% elif s.type == 'example' %}
-  <section class="card p-5 mb-4" x-data="{r:1}">
+  <section {% if not ns.example_anchored %}id="stage-example"{% set ns.example_anchored = true %}{% endif %} class="card p-5 mb-4" x-data="{r:1}">
     <div class="text-xs font-bold text-brand-600 mb-1">ЖИШЭЭ</div>
     <p class="text-ink-900 mb-3">{{ s.prompt_mn }}</p>
     <div class="space-y-2">
       {% for step in s.steps %}
-      <div x-show="r > {{ loop.index0 }}" x-cloak class="flex gap-3 items-start text-sm">
-        <span class="shrink-0 grid place-items-center w-6 h-6 rounded-full bg-brand-100 text-brand-700 text-xs font-bold">{{ loop.index }}</span>
-        <div>
+      <div x-show="r > {{ loop.index0 }}" x-cloak
+           x-transition:enter="transition ease-out duration-300"
+           x-transition:enter-start="opacity-0 translate-y-1"
+           x-transition:enter-end="opacity-100 translate-y-0"
+           class="flex gap-3 items-start text-sm">
+        <span class="shrink-0 grid place-items-center w-6 h-6 rounded-full text-xs font-bold transition-colors duration-300"
+              :class="r > {{ loop.index }} ? 'bg-emerald-100 text-emerald-700' : 'bg-brand-100 text-brand-700'"
+              x-text="r > {{ loop.index }} ? '✓' : '{{ loop.index }}'"></span>
+        <div class="min-w-0">
           <span class="text-ink-700">{{ step.text_mn }}</span>
-          {% if step.latex %}<div class="mt-1">$${{ step.latex }}$$</div>{% endif %}
+          {% if step.latex %}<div class="mt-1 latex-scroll">$${{ step.latex }}$$</div>{% endif %}
         </div>
       </div>
       {% endfor %}
     </div>
-    <button x-show="r <= {{ s.steps | length }}" @click="r++" class="mt-3 text-sm px-3 py-1.5 rounded-lg bg-brand-50 text-brand-700 hover:bg-brand-100 font-medium">Дараагийн алхам →</button>
-    <div x-show="r > {{ s.steps | length }}" x-cloak class="mt-3 text-sm rounded-lg p-3 bg-emerald-50 text-emerald-800 font-medium">{{ s.answer_mn }}</div>
+    <button x-show="r <= {{ s.steps | length }}" @click="r++"
+            class="mt-3 inline-flex items-center min-h-[44px] text-sm px-4 py-2 rounded-xl bg-brand-50 text-brand-700 hover:bg-brand-100 active:scale-95 transition font-medium">
+      Дараагийн алхам →
+    </button>
+    <div x-show="r > {{ s.steps | length }}" x-cloak
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-1"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         class="mt-3 text-sm rounded-lg p-3 bg-emerald-50 text-emerald-800 font-medium">✓ {{ s.answer_mn }}</div>
   </section>
   {% endif %}
 {% endfor %}
 
 <!-- Practice -->
 {% if lesson.practice %}
-<section class="mb-4">
+<section id="stage-practice" class="mb-4">
   <h2 class="font-bold text-ink-900 mb-2 px-1">Бие даан бод</h2>
   <div class="space-y-3">
     {% for item in lesson.practice %}
-    <div class="card p-4" x-data="{chosen:null, hint:false}">
+    <div class="card p-4" x-data="{chosen:null, wrong:[], hint:false}">
       <p class="text-ink-900 mb-2"><span class="text-slate-400 mr-1">{{ loop.index }}.</span>{{ item.stem_mn }}</p>
-      {% if item.latex %}<div class="text-sm text-slate-500 mb-2">${{ item.latex }}$</div>{% endif %}
+      {% if item.latex %}<div class="text-sm text-slate-500 mb-2 latex-scroll">${{ item.latex }}$</div>{% endif %}
       <div class="grid sm:grid-cols-2 gap-2">
         {% for c in item.choices %}
-        <button class="choice" :class="chosen===null ? '' : ({{ loop.index0 }}==={{ item.answer }} ? 'is-correct' : (chosen==={{ loop.index0 }} ? 'is-wrong':''))"
-                @click="chosen={{ loop.index0 }}" :disabled="chosen!==null">{{ c }}</button>
+        <button class="choice"
+                :class="chosen!==null && {{ loop.index0 }}==={{ item.answer }} ? 'is-correct' : (wrong.includes({{ loop.index0 }}) ? 'is-wrong' : '')"
+                @click="if ({{ loop.index0 }} === {{ item.answer }}) { chosen = {{ loop.index0 }} } else { if (!wrong.includes({{ loop.index0 }})) wrong.push({{ loop.index0 }}); hint = true }"
+                :disabled="chosen!==null || wrong.includes({{ loop.index0 }})">{{ c }}</button>
         {% endfor %}
       </div>
       <div class="flex items-center gap-3 mt-2">
-        <button @click="hint=!hint" class="text-xs text-brand-600 hover:underline">💡 Сэжүүр</button>
+        <button @click="hint=!hint" class="inline-flex items-center min-h-[44px] px-2 text-xs text-brand-600 hover:underline">💡 Сэжүүр</button>
       </div>
-      <div x-show="hint" x-cloak class="mt-2 text-sm text-amber-800 bg-amber-50 rounded-lg p-2">{{ item.hint_mn }}</div>
-      <div x-show="chosen!==null" x-cloak class="mt-2 text-sm rounded-lg p-3"
-           :class="chosen==={{ item.answer }} ? 'bg-emerald-50 text-emerald-800':'bg-rose-50 text-rose-800'">
-        <span x-text="chosen==={{ item.answer }} ? '✓ Зөв! ':'✗ '"></span>{{ item.solution_mn }}
+      <div x-show="hint" x-cloak x-transition.opacity.duration.300ms class="mt-1 text-sm text-amber-800 bg-amber-50 rounded-lg p-2">{{ item.hint_mn }}</div>
+      <div x-show="wrong.length>0 && chosen===null" x-cloak x-transition.opacity.duration.300ms
+           class="mt-2 text-sm rounded-lg p-3 bg-rose-50 text-rose-800 font-medium">Дахин оролдоорой — сэжүүрийг үз 💡</div>
+      <div x-show="chosen!==null" x-cloak x-transition.opacity.duration.300ms
+           class="mt-2 text-sm rounded-lg p-3 bg-emerald-50 text-emerald-800">
+        <span class="font-semibold">Маш сайн! 🎉 </span>{{ item.solution_mn }}
       </div>
     </div>
     {% endfor %}
@@ -122,7 +198,7 @@
 
 <!-- Mastery gate -->
 {% if lesson.mastery_check %}
-<section class="card p-5 mb-4 border-2 border-brand-200" x-data="mastery({{ lesson.mastery_check | length }}, '{{ lesson.id }}')">
+<section id="stage-mastery" class="card p-5 mb-4 border-2 border-brand-200" x-data="mastery({{ lesson.mastery_check | length }}, '{{ lesson.id }}')">
   <div class="flex items-center justify-between mb-2">
     <h2 class="font-bold text-ink-900">Эзэмшлийн шалгалт</h2>
     <span class="text-xs text-slate-500">80+ оноо авбал хичээл дуусна</span>
@@ -132,7 +208,7 @@
     {% set qi = loop.index0 %}
     <div>
       <p class="text-ink-900 mb-2">{{ item.stem_mn }}</p>
-      {% if item.latex %}<div class="text-sm text-slate-500 mb-2">${{ item.latex }}$</div>{% endif %}
+      {% if item.latex %}<div class="text-sm text-slate-500 mb-2 latex-scroll">${{ item.latex }}$</div>{% endif %}
       <div class="grid sm:grid-cols-2 gap-2">
         {% for c in item.choices %}
         <button class="choice" :class="answered[{{ qi }}]!==undefined ? ({{ loop.index0 }}==={{ item.answer }} ? 'is-correct' : (answered[{{ qi }}]==={{ loop.index0 }} ? 'is-wrong':'')) : ''"
@@ -140,20 +216,53 @@
                 :disabled="answered[{{ qi }}]!==undefined">{{ c }}</button>
         {% endfor %}
       </div>
+      <div x-show="answered[{{ qi }}]!==undefined" x-cloak x-transition.opacity.duration.300ms
+           class="mt-2 text-sm rounded-lg p-3"
+           :class="correct[{{ qi }}] ? 'bg-emerald-50 text-emerald-800' : 'bg-rose-50 text-rose-800'">
+        <span class="font-semibold" x-text="correct[{{ qi }}] ? '✓ Зөв! ' : '✗ '"></span>{{ item.solution_mn }}
+      </div>
     </div>
     {% endfor %}
   </div>
-  <div x-show="finished()" x-cloak class="mt-4 pt-4 border-t border-slate-100">
+  <div x-show="finished()" x-cloak x-transition.opacity.duration.300ms class="mt-4 pt-4 border-t border-slate-100">
     <div class="flex items-center gap-3">
       <div class="text-3xl font-extrabold" :class="score()>=80?'text-emerald-600':'text-amber-600'" x-text="score()"></div>
       <div class="text-sm">
-        <div class="font-semibold" x-text="score()>=80 ? '🎉 Гайхалтай! Энэ хичээлийг эзэмшлээ.' : 'Бараг боллоо — дахин үзээд оролдоорой.'"></div>
-        <a x-show="score()<80" href="/chat" class="text-brand-700 hover:underline">AI багшаас тусламж авах →</a>
+        <div class="font-semibold" x-text="score()>=80 ? 'Маш сайн! 🎉 Энэ хичээлийг эзэмшлээ.' : 'Бараг боллоо — жишээнүүдийг дахин үзээд оролдоорой.'"></div>
+        <a x-show="score()<80" href="/chat?lesson={{ lesson.id }}" class="text-brand-700 hover:underline">AI багшаас тусламж авах →</a>
       </div>
     </div>
+    <button x-show="score()<80" @click="reset()"
+            class="mt-3 inline-flex items-center min-h-[44px] text-sm px-4 py-2 rounded-xl bg-amber-50 text-amber-800 hover:bg-amber-100 active:scale-95 transition font-semibold">
+      🔄 Дахин оролдох
+    </button>
   </div>
 </section>
 {% endif %}
+
+<!-- Completion screen -->
+<section id="lesson-complete" x-show="passed" x-cloak
+         x-transition:enter="transition ease-out duration-500"
+         x-transition:enter-start="opacity-0 scale-95"
+         x-transition:enter-end="opacity-100 scale-100"
+         class="card p-6 mb-4 text-center border-2 border-emerald-300 bg-emerald-50/60">
+  <div class="text-4xl mb-2">🎉</div>
+  <h2 class="text-xl font-extrabold text-ink-900 mb-1">Хичээл дууслаа!</h2>
+  <p class="text-sm text-slate-600 mb-4">
+    Таны оноо: <span class="font-extrabold text-emerald-700" x-text="finalScore !== null ? finalScore : ''"></span> — үргэлжлүүлээрэй 💪
+  </p>
+  {% if idx < ids|length - 1 %}
+  <a href="/lesson/{{ ids[idx+1] }}"
+     class="inline-flex items-center justify-center min-h-[44px] px-5 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 active:scale-95 transition">
+    Дараагийн хичээл: {{ all_lessons[idx+1].title_mn }} →
+  </a>
+  {% else %}
+  <a href="/curriculum"
+     class="inline-flex items-center justify-center min-h-[44px] px-5 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 active:scale-95 transition">
+    Хөтөлбөр рүү буцах →
+  </a>
+  {% endif %}
+</section>
 
 <!-- Inline AI tutor -->
 <section class="card p-4 mb-6" x-data="lessonTutor('{{ lesson.id }}', {{ ai_enabled | tojson }})">
@@ -174,20 +283,86 @@
   <form @submit.prevent="send()" class="flex gap-2">
     <input x-model="input" :disabled="!aiEnabled||busy" type="text"
            :placeholder="aiEnabled ? 'Жишээ: яагаад уламжлал нь налуу болдог вэ?' : 'AI идэвхгүй — ANTHROPIC_API_KEY тохируул'"
-           class="flex-1 rounded-xl border border-slate-200 px-3 py-2 text-sm focus:border-brand-400 focus:outline-none">
-    <button :disabled="!aiEnabled||busy||!input.trim()" class="px-4 rounded-xl bg-brand-600 text-white text-sm font-semibold disabled:opacity-40">Илгээх</button>
+           class="flex-1 min-h-[44px] rounded-xl border border-slate-200 px-3 py-2 text-sm focus:border-brand-400 focus:outline-none">
+    <button :disabled="!aiEnabled||busy||!input.trim()" class="px-4 min-h-[44px] rounded-xl bg-brand-600 text-white text-sm font-semibold disabled:opacity-40">Илгээх</button>
   </form>
 </section>
 
 <!-- Prev / next -->
 <div class="flex justify-between mb-6">
-  {% set ids = all_lessons | map(attribute='id') | list %}
-  {% set idx = ids.index(lesson.id) %}
-  {% if idx > 0 %}<a href="/lesson/{{ ids[idx-1] }}" class="text-sm text-brand-700 hover:underline">← Өмнөх</a>{% else %}<span></span>{% endif %}
-  {% if idx < ids|length - 1 %}<a href="/lesson/{{ ids[idx+1] }}" class="text-sm text-brand-700 hover:underline">Дараах →</a>{% endif %}
+  {% if idx > 0 %}<a href="/lesson/{{ ids[idx-1] }}" class="inline-flex items-center min-h-[44px] px-2 text-sm text-brand-700 hover:underline">← Өмнөх</a>{% else %}<span></span>{% endif %}
+  {% if idx < ids|length - 1 %}<a href="/lesson/{{ ids[idx+1] }}" class="inline-flex items-center min-h-[44px] px-2 text-sm text-brand-700 hover:underline">Дараах →</a>{% endif %}
 </div>
 
+<!-- Floating "ask the AI tutor" button -->
+<a href="/chat?lesson={{ lesson.id }}"
+   class="fixed z-20 right-4 bottom-20 sm:bottom-6 inline-flex items-center gap-2 min-h-[48px] rounded-full bg-brand-600 text-white pl-4 pr-5 py-3 text-sm font-semibold shadow-lg shadow-brand-600/30 hover:bg-brand-700 active:scale-95 transition">
+  <span class="text-base leading-none">✦</span> AI багшаас асуух
+</a>
+
+</div><!-- /#lesson-root -->
+
 <script>
+function lessonPage(lessonId, stageIds) {
+  return {
+    lessonId,
+    stages: stageIds,
+    active: stageIds[0] || null,
+    passed: false,
+    finalScore: null,
+    init() {
+      try {
+        localStorage.setItem('zaavar.lastLesson', this.lessonId);
+        if (window.Progress) Progress.setLastLesson(this.lessonId, {{ lesson.title_mn | tojson }});
+      } catch (e) {}
+      const saved = this.readSaved();
+      if (saved && saved.done) { this.passed = true; this.finalScore = saved.score; }
+      // Scroll-spy: highlight the stage currently in the middle of the viewport
+      if ('IntersectionObserver' in window && this.stages.length) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) this.active = e.target.id; });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        this.stages.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) io.observe(el);
+        });
+      }
+    },
+    readSaved() {
+      try { return JSON.parse(localStorage.getItem('zaavar.progress.' + this.lessonId)); }
+      catch (e) { return null; }
+    },
+    go(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+    stageDone(id) {
+      if (this.passed) return true;
+      const i = this.stages.indexOf(id);
+      const a = this.stages.indexOf(this.active);
+      return i > -1 && a > -1 && i < a;
+    },
+    pct() {
+      if (this.passed) return 100;
+      const a = this.stages.indexOf(this.active);
+      if (a < 0 || !this.stages.length) return 0;
+      return Math.round(((a + 1) / this.stages.length) * 90); // 100% only when passed
+    },
+    onFinish(score) {
+      if (score < 80) return;
+      this.passed = true;
+      this.finalScore = score;
+      try {
+        localStorage.setItem('zaavar.progress.' + this.lessonId,
+          JSON.stringify({ done: true, score: score, ts: new Date().toISOString() }));
+      } catch (e) {}
+      this.$nextTick(() => {
+        const el = document.getElementById('lesson-complete');
+        if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 350);
+      });
+    }
+  }
+}
 function mastery(n, lessonId) {
   return {
     answered: {}, correct: {},
@@ -195,8 +370,13 @@ function mastery(n, lessonId) {
       if (this.answered[qi] !== undefined) return;
       this.answered[qi] = choice;
       this.correct[qi] = (choice === ans);
-      if (this.finished() && this.score() >= 80) Progress.markLesson(lessonId, this.score());
+      if (this.finished()) {
+        const s = this.score();
+        if (s >= 80) Progress.markLesson(lessonId, s);
+        this.$dispatch('mastery-finished', { score: s });
+      }
     },
+    reset() { this.answered = {}; this.correct = {}; },
     finished() { return Object.keys(this.answered).length >= n; },
     score() {
       const c = Object.values(this.correct).filter(Boolean).length;
@@ -212,9 +392,6 @@ function lessonTutor(lessonId, aiEnabled) {
       this.input = ""; this.busy = true;
       this.msgs.push({ role:'user', html: q.replace(/</g,'&lt;') });
       const ai = { role:'ai', html:'', raw:'' }; this.msgs.push(ai);
-      const history = this.msgs.filter(m=>m.role==='user'||m.role==='ai')
-        .map(m => ({ role: m.role==='user'?'user':'assistant', content: m.raw!==undefined?m.raw:m.html }))
-        .filter(m=>m.content);
       // build clean message history for the API
       const apiMsgs = [];
       for (const m of this.msgs) {

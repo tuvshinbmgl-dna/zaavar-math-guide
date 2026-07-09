@@ -10,6 +10,10 @@
     <p class="text-sm text-slate-500">Асуултаа бич — аль хичээлийн аль хэсгийг үзэхийг хэлээд, бодоход чинь Сократын аргаар хөтөлнө.</p>
   </div>
 
+  <div x-show="lessonId" x-cloak class="card p-3 mb-3 border-l-4 border-l-brand-500 bg-brand-50/50 text-sm text-brand-800">
+    📘 Тодорхой хичээлийн хүрээнд асууж байна. <a :href="`/lesson/${lessonId}`" class="underline font-semibold">Хичээл рүү буцах →</a>
+  </div>
+
   <div x-show="!aiEnabled" x-cloak class="card p-4 mb-3 bg-amber-50 border-amber-200 text-amber-800 text-sm">
     🔑 AI багш одоогоор идэвхгүй. Терминал дээр <code class="bg-amber-100 px-1 rounded">export ANTHROPIC_API_KEY=...</code> тохируулаад апп-аа дахин ажиллуулна уу.
   </div>
@@ -87,13 +91,15 @@
 <script>
 function tutor(aiEnabled) {
   return {
-    aiEnabled, input:'', busy:false, msgs:[],
+    aiEnabled, input:'', busy:false, msgs:[], lessonId:null,
     examples:[
       'Яагаад уламжлал нь шүргэгчийн налуу болдог вэ?',
       'x^3-ийн уламжлалыг яаж олох вэ?',
       'Экстремум олоход юу мэдэх хэрэгтэй вэ?'
     ],
-    init(){},
+    init(){
+      try { this.lessonId = new URLSearchParams(location.search).get('lesson') || null; } catch(e){ this.lessonId = null; }
+    },
     apiHistory(){
       const out=[];
       for(const m of this.msgs){
@@ -112,7 +118,7 @@ function tutor(aiEnabled) {
       // 1) fast routing (Haiku)
       postJSON('/api/route', {question:q}).then(d=>{ routeMsg.data=d; this.scroll(); }).catch(()=>{ routeMsg.data={match:null}; });
       // 2) socratic stream (Sonnet)
-      sseStream('/api/tutor', {messages:this.apiHistory()},
+      sseStream('/api/tutor', {messages:this.apiHistory(), lesson_id:this.lessonId},
         (t)=>{ ai.raw+=t; ai.html=ai.raw.replace(/</g,'&lt;'); this.$nextTick(()=>{renderMath(this.$root); this.scroll();}); },
         ()=>{ this.busy=false; this.$nextTick(()=>renderMath(this.$root)); });
     },
