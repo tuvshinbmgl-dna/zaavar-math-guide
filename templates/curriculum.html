@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Хөтөлбөр — Заавар{% endblock %}
 {% block content %}
-<div x-data="{ grade: 11, prog: {} }" x-init="prog = (window.Progress ? Progress.lessons : {})">
+<div x-data="{ grade: 11, prog: {} }" x-init="prog = (typeof Progress !== 'undefined' ? Progress.lessons : {})">
   <div class="flex items-start justify-between gap-3 mb-1">
     <h1 class="text-2xl font-extrabold text-ink-900">Бүх хөтөлбөр</h1>
     <template x-if="Object.keys(prog).length">

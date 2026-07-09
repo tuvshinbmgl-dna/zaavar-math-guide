@@ -313,7 +313,7 @@ function lessonPage(lessonId, stageIds) {
     init() {
       try {
         localStorage.setItem('zaavar.lastLesson', this.lessonId);
-        if (window.Progress) Progress.setLastLesson(this.lessonId, {{ lesson.title_mn | tojson }});
+        if (typeof Progress !== 'undefined') Progress.setLastLesson(this.lessonId, {{ lesson.title_mn | tojson }});
       } catch (e) {}
       const saved = this.readSaved();
       if (saved && saved.done) { this.passed = true; this.finalScore = saved.score; }
