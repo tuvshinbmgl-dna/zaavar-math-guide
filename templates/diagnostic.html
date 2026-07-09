@@ -84,7 +84,7 @@
         <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-red-50 text-red-700"><span class="w-2 h-2 rounded-full bg-red-500"></span>Дутагдалтай (&lt;50)</span>
       </div>
       <div class="space-y-2.5">
-        <template x-for="s in result.pie.filter(p=>p.score!==null)" :key="s.skill_id">
+        <template x-for="s in (result?.pie||[]).filter(p=>p.score!==null)" :key="s.skill_id">
           <div class="flex items-center gap-3">
             <div class="w-32 sm:w-56 text-sm text-ink-700 truncate" x-text="s.title_mn"></div>
             <div class="flex-1 skill-track"><div class="skill-fill" :style="`width:${s.score}%;background:${s.score>=80?'#10b981':s.score>=50?'#f59e0b':'#ef4444'}`"></div></div>
@@ -96,11 +96,11 @@
       </div>
     </div>
 
-    <div class="card p-5 mb-4" x-show="result.playlist && result.playlist.length">
+    <div class="card p-5 mb-4" x-show="result?.playlist && result.playlist.length">
       <h2 class="font-bold text-ink-900 mb-1">📌 Хувийн төлөвлөгөө</h2>
       <p class="text-sm text-slate-500 mb-3">Хамгийн сул сэдвээс эхэлж эрэмбэлсэн — дээрээс нь дараалан үз.</p>
       <div class="space-y-2">
-        <template x-for="(p,i) in result.playlist" :key="p.skill_id">
+        <template x-for="(p,i) in (result?.playlist||[])" :key="p.skill_id">
           <a :href="`/lesson/${p.lesson_id}`" class="flex items-center justify-between gap-3 min-h-[44px] p-3 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200">
             <span class="text-sm font-medium text-amber-900 min-w-0">
               <span class="inline-grid place-items-center w-6 h-6 mr-2 rounded-full bg-amber-200 text-amber-800 text-xs font-bold align-middle" x-text="i+1"></span><span x-text="p.title_mn"></span>
@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <div class="card p-5 mb-4 text-center" x-show="result.playlist && !result.playlist.length">
+    <div class="card p-5 mb-4 text-center" x-show="result?.playlist && !result.playlist.length">
       <p class="text-emerald-700 font-semibold">🎉 Маш сайн! Сул сэдэв олдсонгүй — AI багшаас гүнзгийрүүлсэн асуулт асууж болно.</p>
     </div>
 
