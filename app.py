@@ -93,6 +93,32 @@ def chat():
     )
 
 
+@app.route("/mastery")
+def mastery():
+    return render_template(
+        "mastery.html",
+        topics=store.mastery_topics(),
+        ai_enabled=claude.is_configured(),
+    )
+
+
+@app.route("/mock")
+def mock():
+    return render_template(
+        "mock.html",
+        versions=store.MOCK_VERSIONS,
+        ai_enabled=claude.is_configured(),
+    )
+
+
+@app.route("/report")
+def report():
+    return render_template(
+        "report.html",
+        ai_enabled=claude.is_configured(),
+    )
+
+
 # --------------------------------------------------------------------------- #
 # API — config
 # --------------------------------------------------------------------------- #
@@ -178,6 +204,54 @@ def api_leveltest_grade():
     if result is None:
         return jsonify({"error": "unknown topic"}), 404
     return jsonify(result)
+
+
+# --------------------------------------------------------------------------- #
+# API — mastery confirmation (Баталгаа) + mock test
+# --------------------------------------------------------------------------- #
+
+@app.route("/api/mastery/check", methods=["POST"])
+def api_mastery_check():
+    payload = request.get_json(force=True) or {}
+    items = store.mastery_items(payload.get("topic"))
+    if items is None:
+        return jsonify({"error": "unknown topic"}), 404
+    return jsonify(items)
+
+
+@app.route("/api/mastery/grade", methods=["POST"])
+def api_mastery_grade():
+    payload = request.get_json(force=True) or {}
+    responses = payload.get("responses") or {}
+    if not isinstance(responses, dict):
+        return jsonify({"error": "responses must be an object"}), 400
+    result = store.grade_mastery(payload.get("topic"), responses)
+    if result is None:
+        return jsonify({"error": "unknown topic"}), 404
+    return jsonify(result)
+
+
+@app.route("/api/mock/version", methods=["POST"])
+def api_mock_version():
+    payload = request.get_json(force=True) or {}
+    try:
+        v = int(payload.get("v", 0))
+    except (TypeError, ValueError):
+        v = 0
+    return jsonify(store.mock_version(v))
+
+
+@app.route("/api/mock/grade", methods=["POST"])
+def api_mock_grade():
+    payload = request.get_json(force=True) or {}
+    responses = payload.get("responses", [])
+    if not isinstance(responses, list):
+        return jsonify({"error": "responses must be a list"}), 400
+    try:
+        v = int(payload.get("v", 0))
+    except (TypeError, ValueError):
+        v = 0
+    return jsonify(store.grade_mock(v, responses))
 
 
 # --------------------------------------------------------------------------- #

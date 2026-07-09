@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Тайлан — Заавар{% endblock %}
+{% block content %}
+<div x-data="reportView()" x-init="init()" class="max-w-2xl mx-auto">
+
+  <div class="flex items-start justify-between gap-3 mb-4">
+    <div>
+      <h1 class="text-2xl font-extrabold text-ink-900">📈 Ахицын тайлан</h1>
+      <p class="text-sm text-slate-500 mt-0.5" x-text="name ? `${name}-ийн бүртгэл` : 'Ахиц дэвшлээ хянах'"></p>
+    </div>
+    <button @click="if(window.Profile)Profile.openModal()" class="shrink-0 text-xs text-brand-700 hover:underline" x-text="name ? 'Профайл' : 'Нэвтрэх'"></button>
+  </div>
+
+  <!-- empty -->
+  <template x-if="!hasAny">
+    <div class="card p-6 text-center">
+      <div class="text-4xl mb-2">🌱</div>
+      <p class="text-ink-800 font-semibold mb-1">Бүртгэл хоосон байна</p>
+      <p class="text-sm text-slate-500 mb-4">Түвшин тогтоох, ойлголтоо батлах шалгалт өгвөл энд ахиц чинь харагдана.</p>
+      <div class="flex flex-col sm:flex-row gap-2 justify-center">
+        <a href="/diagnostic" class="min-h-[44px] inline-flex items-center justify-center px-5 rounded-xl bg-brand-600 text-white font-semibold text-sm">Түвшин тогтоох →</a>
+        <a href="/mastery" class="min-h-[44px] inline-flex items-center justify-center px-5 rounded-xl bg-white border border-slate-200 text-ink-700 font-semibold text-sm">Ойлголтоо батал</a>
+      </div>
+    </div>
+  </template>
+
+  <!-- understanding per topic -->
+  <template x-if="topics.length">
+    <section class="card p-5 mb-4">
+      <h2 class="font-bold text-ink-900 mb-1">Сэдэв бүрийн ойлголт</h2>
+      <p class="text-xs text-slate-500 mb-3">Хамгийн сүүлийн батлах шалгалтын дүн. Улаан/шар нь дахин анхаарах сэдэв.</p>
+      <div class="space-y-2">
+        <template x-for="t in topics" :key="t.skill_id">
+          <div class="rounded-xl border p-3" :class="bandBorder(t.band)">
+            <div class="flex items-center justify-between gap-2">
+              <div class="min-w-0">
+                <div class="font-semibold text-ink-900 text-sm truncate" x-text="t.title_mn"></div>
+                <div class="text-xs text-slate-500" x-text="`${t.attempts} удаа · сүүлд ${t.when}`"></div>
+              </div>
+              <span class="shrink-0 text-xs font-bold px-2 py-1 rounded-full" :class="bandCls(t.band)" x-text="(t.band==='ready'?'🟢 ':t.band==='mid'?'🟡 ':'🔴 ')+t.verdict"></span>
+            </div>
+            <p x-show="t.gap" class="text-xs text-slate-600 mt-1.5" x-text="t.gap"></p>
+            <div x-show="t.trend!==null" class="text-xs mt-1 font-semibold" :class="t.trend>=0?'text-emerald-600':'text-rose-600'" x-text="t.trend!==null ? `Ахиц: ${t.trend>=0?'+':''}${t.trend} (батлагдсан оноо)` : ''"></div>
+            <a :href="`/mastery?topic=${t.skill_id}`" class="inline-block mt-1.5 text-xs text-brand-700 hover:underline">Дахин батлах →</a>
+          </div>
+        </template>
+      </div>
+    </section>
+  </template>
+
+  <!-- mock history -->
+  <template x-if="mocks.length">
+    <section class="card p-5 mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-bold text-ink-900">Mock тестийн түүх</h2>
+        <a href="/mock" class="text-xs text-brand-700 hover:underline">Шинэ mock →</a>
+      </div>
+      <div class="space-y-2">
+        <template x-for="(m,i) in mocksView" :key="i">
+          <div class="flex items-center gap-3">
+            <div class="w-16 text-xs text-slate-500 shrink-0" x-text="m.when"></div>
+            <div class="flex-1 skill-track"><div class="skill-fill bg-brand-500" :style="`width:${m.score}%`"></div></div>
+            <div class="w-10 text-right text-sm font-bold text-ink-800" x-text="m.score"></div>
+            <div class="w-12 text-right text-xs font-semibold shrink-0" :class="m.delta===null?'text-slate-300':m.delta>=0?'text-emerald-600':'text-rose-600'" x-text="m.delta===null?'—':(m.delta>=0?'+':'')+m.delta"></div>
+          </div>
+        </template>
+      </div>
+      <p x-show="mocks.length>=2" class="text-xs text-slate-500 mt-3" x-text="mockTrend"></p>
+    </section>
+  </template>
+
+  <!-- guessing flag -->
+  <template x-if="flags.length">
+    <section class="card p-4 mb-4 border-l-4 border-l-amber-500 bg-amber-50/40">
+      <p class="text-sm font-bold text-amber-900 mb-1">⚠ Анхаарах: оноо өндөр ч ойлголт бүрэн бус</p>
+      <p class="text-xs text-slate-600 mb-2">Эдгээр сэдэвт зөв хариулсан ч <b>шалтгаан сул</b> эсвэл <b>хэт хурдан</b> хариулсан тул үнэхээр ойлгосон эсэхийг дахин шалгаарай:</p>
+      <div class="flex flex-wrap gap-2">
+        <template x-for="f in flags" :key="f.skill_id">
+          <a :href="`/mastery?topic=${f.skill_id}`" class="text-xs px-3 py-1.5 rounded-lg bg-white border border-amber-200 text-amber-900 hover:bg-amber-100" x-text="f.title_mn"></a>
+        </template>
+      </div>
+    </section>
+  </template>
+</div>
+
+<script>
+function reportView() {
+  return {
+    name: null, hasAny: false, topics: [], mocks: [], mocksView: [], flags: [], mockTrend: '',
+    init() {
+      this.name = (window.Profile && Profile.name()) || null;
+      let m = {};
+      try { m = JSON.parse(localStorage.getItem('zaavar.mastery')) || {}; } catch (e) { m = {}; }
+      const tmap = m.topics || {}, latest = m.latest || {};
+      // per-topic
+      this.topics = Object.keys(tmap).map(sk => {
+        const arr = tmap[sk]; const last = arr[arr.length - 1]; const first = arr[0];
+        const lat = latest[sk] || {};
+        const bandScore = a => (a.answerPct + a.reasonPct + a.orderPct) / 3;
+        return {
+          skill_id: sk, title_mn: lat.title_mn || sk, verdict: last.verdict, band: last.band,
+          gap: last.gap, attempts: arr.length, when: fmt(last.ts),
+          trend: arr.length >= 2 ? Math.round(bandScore(last) - bandScore(first)) : null,
+          answerPct: last.answerPct, reasonPct: last.reasonPct, rapidPct: last.rapidPct,
+        };
+      }).sort((a, b) => rank(a.band) - rank(b.band));
+      // flags: answered ok but reason weak or rapid high
+      this.flags = this.topics.filter(t => t.band !== 'ready' && t.answerPct >= 70 && (t.reasonPct < 70 || t.rapidPct >= 20))
+        .map(t => ({ skill_id: t.skill_id, title_mn: t.title_mn }));
+      // mocks
+      const mocks = m.mocks || [];
+      this.mocks = mocks;
+      this.mocksView = mocks.map((x, i) => ({ when: fmt(x.ts), score: x.score, delta: i === 0 ? null : x.score - mocks[i - 1].score })).reverse();
+      if (mocks.length >= 2) {
+        const d = mocks[mocks.length - 1].score - mocks[0].score;
+        this.mockTrend = `Эхнээсээ ${d >= 0 ? 'дээшилсэн +' + d : d} оноо. ${d >= 0 ? 'Сайжирч байна! 💪' : 'Сул сэдвүүдээ дахин үз.'}`;
+      }
+      this.hasAny = this.topics.length > 0 || this.mocks.length > 0;
+      this.$nextTick(() => { if (window.renderMath) renderMath(this.$root); });
+    },
+    bandCls(b) { return { ready: 'bg-emerald-100 text-emerald-700', mid: 'bg-amber-100 text-amber-700', low: 'bg-rose-100 text-rose-700' }[b] || 'bg-slate-100 text-slate-600'; },
+    bandBorder(b) { return { ready: 'border-emerald-200', mid: 'border-amber-200', low: 'border-rose-200' }[b] || 'border-slate-200'; },
+  }
+}
+function rank(b) { return { low: 0, mid: 1, ready: 2 }[b] ?? 1; }
+function fmt(ts) { try { const d = new Date(ts); return (d.getMonth() + 1) + '/' + d.getDate(); } catch (e) { return ''; } }
+</script>
+{% endblock %}

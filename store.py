@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import pathlib
+import random
 
 DATA = pathlib.Path(__file__).parent / "data"
 
@@ -22,6 +23,7 @@ CURRICULUM = _load("curriculum.json")
 GRAPH = _load("knowledge_graph.json")
 DIAGNOSTIC = _load("diagnostic.json")
 LEVELTEST = _load("level_test.json")
+MASTERY = _load("mastery_bank.json")
 
 LESSONS: dict[str, dict] = {}
 for path in sorted((DATA / "lessons").glob("*.json")):
@@ -276,4 +278,200 @@ def grade_level_topic(topic_id: str, answers: list) -> dict | None:
         "level_mn": label,
         "band": band,
         "feedback": feedback,
+    }
+
+
+# --------------------------------------------------------------------------- #
+# Mastery confirmation (Баталгаа) — ordering + two-tier "why" items
+# --------------------------------------------------------------------------- #
+
+_MASTERY = {t["skill_id"]: t for t in MASTERY["topics"]}
+
+# A response answered faster than this (ms) is a likely non-effortful "rapid guess".
+RAPID_MS = {"two_tier": 2500, "order": 5000}
+
+
+def mastery_topics() -> list[dict]:
+    return [
+        {
+            "skill_id": t["skill_id"],
+            "title_mn": t["title_mn"],
+            "lesson_id": t.get("lesson_id"),
+            "n_order": len(t["ordering"]),
+            "n_tier": len(t["two_tier"]),
+        }
+        for t in MASTERY["topics"]
+    ]
+
+
+def mastery_items(topic_id: str) -> dict | None:
+    """Safe items for a topic: ordering steps SHUFFLED (no correct order leaked),
+    two-tier without answer indices / misconception."""
+    topic = _MASTERY.get(topic_id)
+    if not topic:
+        return None
+    ordering = []
+    for o in topic["ordering"]:
+        steps = list(o["steps"])
+        random.shuffle(steps)  # display order; grading compares text to canonical
+        ordering.append({"id": o["id"], "stem_mn": o["stem_mn"], "latex": o.get("latex", ""), "steps": steps})
+    two_tier = [
+        {
+            "id": q["id"], "stem_mn": q["stem_mn"], "latex": q.get("latex", ""),
+            "t1_choices": q["t1_choices"], "t2_prompt_mn": q["t2_prompt_mn"], "t2_choices": q["t2_choices"],
+        }
+        for q in topic["two_tier"]
+    ]
+    return {"skill_id": topic_id, "title_mn": topic["title_mn"], "lesson_id": topic.get("lesson_id"),
+            "ordering": ordering, "two_tier": two_tier}
+
+
+def _verdict(answer_pct, reason_pct, order_pct, rapid_pct) -> tuple[str, str, str]:
+    """(verdict_mn, band, gap_mn) from the four signals. Formative, multi-signal."""
+    if answer_pct >= 80 and reason_pct >= 80 and rapid_pct < 20 and order_pct >= 70:
+        return "Батлагдсан", "ready", "Ойлголт бат — үндэслэлээ ч зөв тайлбарлаж байна. 🎉"
+    gaps = []
+    if answer_pct >= 80 and reason_pct < 80:
+        gaps.append("хариу зөв ч шалтгаан сул → цээжилсэн байж магадгүй")
+    if rapid_pct >= 20:
+        gaps.append("зарим асуултыг хэт хурдан хариулсан → дахин анхааралтай бод")
+    if order_pct < 70:
+        gaps.append("бодолтын алхмуудын дараалал бүрхэг")
+    if answer_pct < 80 and reason_pct < 80 and not gaps:
+        gaps.append("үндсэн ойлголт сул — хичээлээ дахин үз")
+    band = "mid" if (answer_pct >= 50 or reason_pct >= 50) else "low"
+    label = "Гүйцэд биш" if band == "mid" else "Сул"
+    return label, band, "; ".join(gaps) if gaps else "Бэхжүүлэх шаардлагатай."
+
+
+def grade_mastery(topic_id: str, responses: dict) -> dict | None:
+    """responses = {ordering:[{id, order:[step_text,...], ms}], two_tier:[{id, t1, t2, ms}]}"""
+    topic = _MASTERY.get(topic_id)
+    if not topic:
+        return None
+    ord_by = {o["id"]: o for o in topic["ordering"]}
+    tt_by = {q["id"]: q for q in topic["two_tier"]}
+    feedback = {"ordering": [], "two_tier": []}
+    rapid_n = 0
+    total_items = 0
+
+    order_fracs = []
+    for r in (responses.get("ordering") or []):
+        item = ord_by.get(r.get("id"))
+        if not item:
+            continue
+        total_items += 1
+        canonical = item["steps"]
+        submitted = r.get("order") or []
+        n = len(canonical)
+        correct_pos = sum(1 for i in range(min(n, len(submitted))) if submitted[i] == canonical[i])
+        frac = correct_pos / n if n else 0
+        order_fracs.append(frac)
+        rapid = (r.get("ms") or 0) < RAPID_MS["order"] and (r.get("ms") or 0) > 0
+        if rapid:
+            rapid_n += 1
+        feedback["ordering"].append({"id": item["id"], "correct_order": canonical, "frac": round(frac, 2), "rapid": rapid})
+
+    t1_correct = 0
+    t2_correct = 0
+    tt_n = 0
+    for r in (responses.get("two_tier") or []):
+        item = tt_by.get(r.get("id"))
+        if not item:
+            continue
+        tt_n += 1
+        total_items += 1
+        ok1 = (r.get("t1") == item["t1_answer"])
+        ok2 = (r.get("t2") == item["t2_answer"])
+        if ok1:
+            t1_correct += 1
+        if ok2:
+            t2_correct += 1
+        rote = ok1 and not ok2
+        rapid = (r.get("ms") or 0) < RAPID_MS["two_tier"] and (r.get("ms") or 0) > 0
+        if rapid:
+            rapid_n += 1
+        feedback["two_tier"].append({
+            "id": item["id"], "t1_answer": item["t1_answer"], "t2_answer": item["t2_answer"],
+            "ok1": ok1, "ok2": ok2, "rote": rote, "rapid": rapid,
+            "misconception_mn": item.get("misconception_mn", "") if not ok2 else "",
+        })
+
+    answer_pct = round(100 * t1_correct / tt_n) if tt_n else 0
+    reason_pct = round(100 * t2_correct / tt_n) if tt_n else 0
+    order_pct = round(100 * sum(order_fracs) / len(order_fracs)) if order_fracs else 0
+    rapid_pct = round(100 * rapid_n / total_items) if total_items else 0
+    label, band, gap = _verdict(answer_pct, reason_pct, order_pct, rapid_pct)
+    return {
+        "skill_id": topic_id, "title_mn": topic["title_mn"], "lesson_id": topic.get("lesson_id"),
+        "answerPct": answer_pct, "reasonPct": reason_pct, "orderPct": order_pct, "rapidPct": rapid_pct,
+        "verdict": label, "band": band, "gap": gap, "feedback": feedback,
+    }
+
+
+# --------------------------------------------------------------------------- #
+# Mock test — 10 formative versions sampled from the level-test pool
+# --------------------------------------------------------------------------- #
+
+MOCK_VERSIONS = 10
+MOCK_RAPID_MS = 3000
+
+
+def _level_index() -> dict:
+    idx = {}
+    for tp in LEVELTEST["topics"]:
+        for q in tp["questions"]:
+            idx[q["id"]] = {**q, "topic": tp["skill_id"], "topic_mn": tp["title_mn"]}
+    return idx
+
+
+_LEVEL_IDX = _level_index()
+
+
+def mock_version(v: int) -> dict:
+    """Deterministic per-version sample: 1–2 items from each topic (structure fixed,
+    numbers/items vary by seed). Returns SAFE items (no answer/solution)."""
+    v = int(v) % MOCK_VERSIONS
+    rng = random.Random(1000 + v)
+    items = []
+    for tp in LEVELTEST["topics"]:
+        pool = list(tp["questions"])
+        rng.shuffle(pool)
+        for q in pool[:2]:  # 2 per topic → ~18 items
+            items.append({"id": q["id"], "topic": tp["skill_id"], "topic_mn": tp["title_mn"],
+                          "stem_mn": q["stem_mn"], "latex": q.get("latex", ""), "choices": q["choices"]})
+    rng.shuffle(items)
+    return {"version": v, "n": len(items), "items": items}
+
+
+def grade_mock(v: int, responses: list) -> dict:
+    """responses = [{id, choice, ms}]. Returns overall + per-topic pct + rapid + review."""
+    by_topic_hits: dict[str, list[bool]] = {}
+    correct_n = 0
+    rapid_n = 0
+    review = []
+    for r in responses:
+        q = _LEVEL_IDX.get(r.get("id"))
+        if not q:
+            continue
+        ok = (r.get("choice") == q["answer"])
+        if ok:
+            correct_n += 1
+        by_topic_hits.setdefault(q["topic"], []).append(ok)
+        rapid = 0 < (r.get("ms") or 0) < MOCK_RAPID_MS
+        if rapid:
+            rapid_n += 1
+        review.append({"id": q["id"], "answer": q["answer"], "chosen": r.get("choice"),
+                       "correct": ok, "solution_mn": q.get("solution_mn", ""), "rapid": rapid})
+    total = len(responses) or 1
+    by_topic = {t: round(100 * sum(h) / len(h)) for t, h in by_topic_hits.items()}
+    topic_names = {tp["skill_id"]: tp["title_mn"] for tp in LEVELTEST["topics"]}
+    return {
+        "version": int(v) % MOCK_VERSIONS,
+        "score": round(100 * correct_n / total),
+        "correct": correct_n, "total": total,
+        "rapidPct": round(100 * rapid_n / total),
+        "byTopic": by_topic,
+        "topicNames": topic_names,
+        "review": review,
     }

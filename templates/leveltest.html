@@ -98,7 +98,8 @@
         <template x-if="graded && graded.lesson_id">
           <a :href="`/lesson/${graded.lesson_id}`" class="min-h-[44px] inline-flex items-center justify-center px-5 rounded-xl bg-brand-600 text-white font-semibold text-sm">Энэ хичээлийг үзэх →</a>
         </template>
-        <button @click="backToPick()" class="min-h-[44px] inline-flex items-center justify-center px-5 rounded-xl bg-white border border-slate-200 text-ink-700 font-semibold text-sm">Өөр сэдэв шалгах</button>
+        <a :href="`/mastery?topic=${graded && graded.skill_id}`" class="min-h-[44px] inline-flex items-center justify-center px-5 rounded-xl bg-accent-500 text-white font-semibold text-sm">🧠 Ойлголтоо батал</a>
+        <button @click="backToPick()" class="min-h-[44px] inline-flex items-center justify-center px-5 rounded-xl bg-white border border-slate-200 text-ink-700 font-semibold text-sm">Өөр сэдэв</button>
       </div>
       <p x-show="graded && graded.pages_mn" class="text-xs text-slate-400 mt-3" x-text="graded && `📖 Сурах бичиг: ${graded.pages_mn}`"></p>
     </div>

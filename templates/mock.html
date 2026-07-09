@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Mock тест — Заавар{% endblock %}
+{% block content %}
+<div x-data="mockTest({{ versions }})" x-init="init()" class="max-w-2xl mx-auto">
+
+  <!-- pick version -->
+  <section x-show="stage==='pick'">
+    <div class="mb-4">
+      <h1 class="text-2xl font-extrabold text-ink-900">📝 Mock тест</h1>
+      <p class="text-sm text-slate-500 mt-1">Бүх уламжлалын сэдвийг хамарсан цогц шалгалт. <b>10 хувилбар</b> — тоо нь өөр өөр тул хариу цээжлэхгүй. Ерөнхий ойлголтоо шалга.</p>
+    </div>
+    <p class="text-xs font-semibold text-slate-600 mb-2" x-text="mocksDone()>0 ? `${mocksDone()} удаа өгсөн` : 'Хувилбар сонго:'"></p>
+    <div class="grid grid-cols-5 gap-2 mb-3">
+      <template x-for="v in versions" :key="v">
+        <button @click="start(v-1)" :disabled="loading"
+                class="min-h-[52px] rounded-xl bg-white border border-slate-200 hover:border-brand-300 font-bold text-ink-800 disabled:opacity-50" x-text="v"></button>
+      </template>
+    </div>
+    <button @click="start(randomV())" :disabled="loading" class="w-full min-h-[44px] rounded-xl bg-brand-50 text-brand-700 font-semibold text-sm">🎲 Санамсаргүй хувилбар</button>
+  </section>
+
+  <section x-show="loading" x-cloak class="card p-10 text-center mt-4">
+    <div class="inline-block w-8 h-8 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin"></div>
+    <p class="mt-3 text-sm text-slate-500" x-text="slowWake ? 'Сервер сэрж байна, түр хүлээнэ үү…' : 'Ачаалж байна…'"></p>
+  </section>
+
+  <!-- quiz -->
+  <section x-show="stage==='quiz' && !loading" x-cloak>
+    <div class="flex items-center gap-2 mb-1">
+      <button @click="stage='pick'" class="text-xs text-slate-500 hover:text-brand-700 min-h-[44px] inline-flex items-center pr-2">← Хувилбар</button>
+      <h1 class="text-lg font-extrabold text-ink-900 flex-1" x-text="`Mock тест · хувилбар ${version+1}`"></h1>
+    </div>
+    <div class="sticky top-14 z-20 -mx-4 px-4 py-2 bg-[#f6f7fb]/90 backdrop-blur mb-3">
+      <div class="flex items-center gap-3">
+        <div class="flex-1 skill-track"><div class="skill-fill bg-brand-500 transition-all duration-300" :style="`width:${(answered()/items.length)*100}%`"></div></div>
+        <span class="text-xs font-semibold text-slate-600 whitespace-nowrap" x-text="`${answered()}/${items.length}`"></span>
+      </div>
+    </div>
+    <div class="space-y-3">
+      <template x-for="(q,qi) in items" :key="q.id">
+        <div class="card p-4" :class="picks[qi]!==null ? 'border-brand-200' : ''">
+          <div class="text-[10px] font-semibold text-slate-400 mb-0.5" x-text="q.topic_mn"></div>
+          <p class="text-ink-900 mb-2"><span class="text-slate-400 mr-1" x-text="(qi+1)+'.'"></span><span x-text="q.stem_mn" x-effect="renderMath($el)"></span></p>
+          <div x-show="q.latex" class="text-sm text-slate-500 mb-2 overflow-x-auto"><span x-text="q.latex?'$'+q.latex+'$':''" x-effect="renderMath($el)"></span></div>
+          <div class="grid sm:grid-cols-2 gap-2">
+            <template x-for="(c,ci) in q.choices" :key="ci">
+              <button class="choice min-h-[44px]" x-text="c" x-effect="renderMath($el)" :class="picks[qi]===ci?'is-chosen':''" @click="pick(qi,ci)"></button>
+            </template>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div class="sticky bottom-16 sm:bottom-3 mt-4">
+      <button @click="submit()" :disabled="busy" class="w-full min-h-[52px] rounded-2xl bg-brand-600 text-white font-bold text-base shadow-lg shadow-brand-600/25 active:scale-95 transition disabled:opacity-50">
+        <span x-show="!busy" x-text="answered()<items.length ? `Дуусгах (${answered()}/${items.length})` : 'Дуусгах ✓'"></span><span x-show="busy" x-cloak>Шалгаж байна…</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- result -->
+  <section x-show="stage==='result' && graded" x-cloak>
+    <div class="card p-5 mb-4 text-center border-2 border-brand-200">
+      <div class="text-xs font-semibold text-slate-500 mb-1" x-text="`Хувилбар ${(graded&&graded.version)+1}`"></div>
+      <div class="text-5xl font-extrabold text-brand-600 mb-1" x-text="graded&&graded.score"></div>
+      <p class="text-sm text-slate-600" x-text="graded&&`${graded.correct}/${graded.total} зөв`"></p>
+      <div x-show="graded && graded.rapidPct>=20" x-cloak class="mt-2 text-xs font-semibold text-amber-700" x-text="graded&&`⚠ ${graded.rapidPct}% асуултыг хэт хурдан хариулсан — анхааралтай бод.`"></div>
+      <template x-if="delta!==null">
+        <p class="mt-2 text-sm font-semibold" :class="delta>=0?'text-emerald-600':'text-rose-600'" x-text="`Өмнөх удаагаас: ${delta>=0?'+':''}${delta}`"></p>
+      </template>
+    </div>
+
+    <div class="card p-5 mb-4">
+      <h2 class="font-bold text-ink-900 mb-3">Сэдэв тус бүрээр</h2>
+      <div class="space-y-2.5">
+        <template x-for="(pct,sk) in (graded?graded.byTopic:{})" :key="sk">
+          <div class="flex items-center gap-3">
+            <div class="w-40 sm:w-56 text-sm text-ink-700 truncate" x-text="graded.topicNames[sk]||sk"></div>
+            <div class="flex-1 skill-track"><div class="skill-fill" :style="`width:${pct}%;background:${pct>=80?'#10b981':pct>=50?'#f59e0b':'#ef4444'}`"></div></div>
+            <div class="w-10 text-right text-sm font-semibold" x-text="pct"></div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <div class="flex gap-2 mb-4">
+      <a href="/report" class="flex-1 grid place-items-center min-h-[44px] rounded-xl bg-brand-600 text-white font-semibold text-sm">Тайлан харах →</a>
+      <button @click="stage='pick';graded=null" class="min-h-[44px] px-4 rounded-xl bg-white border border-slate-200 text-ink-700 font-semibold text-sm">Өөр хувилбар</button>
+    </div>
+
+    <h2 class="font-bold text-ink-900 mb-2 px-1">Хариултын тайлбар</h2>
+    <div class="space-y-2">
+      <template x-for="(q,qi) in items" :key="'r'+q.id">
+        <div class="card p-3">
+          <p class="text-sm text-ink-900 mb-1"><span class="text-slate-400 mr-1" x-text="(qi+1)+'.'"></span><span x-text="q.stem_mn" x-effect="renderMath($el)"></span></p>
+          <div class="text-sm rounded-lg p-2" :class="rv(qi)&&rv(qi).correct?'bg-emerald-50 text-emerald-800':'bg-rose-50 text-rose-800'">
+            <span class="font-semibold" x-text="rv(qi)&&rv(qi).correct?'✓ Зөв. ':'✗ Зөв нь: '"></span><span x-show="rv(qi)&&!rv(qi).correct" x-text="rv(qi)?q.choices[rv(qi).answer]:''" x-effect="renderMath($el)"></span>
+            <span x-text="rv(qi)?rv(qi).solution_mn:''" x-effect="renderMath($el)"></span>
+          </div>
+        </div>
+      </template>
+    </div>
+  </section>
+</div>
+
+<script>
+function mockTest(versions) {
+  return {
+    versions: versions, stage: 'pick', version: 0, items: [], picks: [], graded: null, delta: null,
+    loading: false, slowWake: false, busy: false, _wake: null, lastTs: 0, _ms: [],
+
+    init() {},
+    randomV() { return Math.floor(Math.random() * this.versions); },
+    mocksDone() { try { return ((JSON.parse(localStorage.getItem('zaavar.mastery')) || {}).mocks || []).length; } catch (e) { return 0; } },
+
+    async api(url, body) {
+      this.loading = true; this.slowWake = false;
+      clearTimeout(this._wake); this._wake = setTimeout(() => { this.slowWake = true; }, 4000);
+      try {
+        const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return await r.json();
+      } finally { clearTimeout(this._wake); this.loading = false; this.slowWake = false; }
+    },
+
+    async start(v) {
+      if (this.loading) return;
+      this.version = v; this.graded = null;
+      let d;
+      try { d = await this.api('/api/mock/version', { v: v }); } catch (e) { this.stage = 'pick'; return; }
+      this.items = d.items || [];
+      this.picks = this.items.map(() => null);
+      this._ms = this.items.map(() => 0);
+      this.lastTs = Date.now();
+      this.stage = 'quiz';
+      window.scrollTo({ top: 0 });
+      this.$nextTick(() => renderMath(this.$root));
+    },
+    answered() { return this.picks.filter(p => p !== null).length; },
+    pick(qi, ci) { if (this._ms[qi] === 0) { this._ms[qi] = Date.now() - this.lastTs; this.lastTs = Date.now(); } this.picks[qi] = ci; },
+
+    async submit() {
+      if (this.busy) return;
+      this.busy = true;
+      const responses = this.items.map((q, i) => ({ id: q.id, choice: this.picks[i], ms: this._ms[i] || 1 }));
+      let g;
+      try { g = await this.api('/api/mock/grade', { v: this.version, responses: responses }); } catch (e) { this.busy = false; return; }
+      this.busy = false; this.graded = g;
+      try {
+        const store = JSON.parse(localStorage.getItem('zaavar.mastery')) || {};
+        store.mocks = store.mocks || [];
+        const prev = store.mocks.length ? store.mocks[store.mocks.length - 1].score : null;
+        this.delta = prev !== null ? (g.score - prev) : null;
+        store.mocks.push({ ts: new Date().toISOString(), version: g.version, score: g.score, byTopic: g.byTopic, rapidPct: g.rapidPct });
+        localStorage.setItem('zaavar.mastery', JSON.stringify(store));
+      } catch (e) {}
+      this.stage = 'result';
+      window.scrollTo({ top: 0 });
+      this.$nextTick(() => renderMath(this.$root));
+    },
+    rv(qi) { return this.graded && this.graded.review ? this.graded.review[qi] : null; },
+  }
+}
+</script>
+{% endblock %}

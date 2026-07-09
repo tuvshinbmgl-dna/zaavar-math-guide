@@ -47,17 +47,20 @@
         Заавар
       </a>
       <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
-        {% set nav = [('/', 'Нүүр'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Түвшин тогтоох'), ('/chat','AI багш')] %}
+        {% set nav = [('/', 'Нүүр'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Түвшин тогтоох'), ('/report','Тайлан'), ('/chat','AI багш')] %}
         {% for href, label in nav %}
         <a href="{{ href }}" class="px-3 py-1.5 rounded-lg hover:bg-brand-50 hover:text-brand-700 transition {{ 'bg-brand-50 text-brand-700' if request.path == href else 'text-ink-700' }}">{{ label }}</a>
         {% endfor %}
       </nav>
-      {% if ai_enabled is defined %}
-      <span class="hidden sm:inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-full {{ 'bg-emerald-50 text-emerald-700' if ai_enabled else 'bg-slate-100 text-slate-500' }}">
-        <span class="w-1.5 h-1.5 rounded-full {{ 'bg-emerald-500' if ai_enabled else 'bg-slate-400' }}"></span>
-        AI {{ 'идэвхтэй' if ai_enabled else 'идэвхгүй' }}
-      </span>
-      {% endif %}
+      <div class="flex items-center gap-2">
+        <div id="profile-slot"></div>
+        {% if ai_enabled is defined %}
+        <span class="hidden sm:inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-full {{ 'bg-emerald-50 text-emerald-700' if ai_enabled else 'bg-slate-100 text-slate-500' }}">
+          <span class="w-1.5 h-1.5 rounded-full {{ 'bg-emerald-500' if ai_enabled else 'bg-slate-400' }}"></span>
+          AI {{ 'идэвхтэй' if ai_enabled else 'идэвхгүй' }}
+        </span>
+        {% endif %}
+      </div>
     </div>
   </header>
 
@@ -66,8 +69,8 @@
   </main>
 
   <!-- Bottom tab bar (mobile) -->
-  <nav class="sm:hidden fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 grid grid-cols-4 text-[11px]">
-    {% set tabs = [('/', 'Нүүр','⌂'), ('/curriculum','Хөтөлбөр','▦'), ('/diagnostic','Түвшин','✓'), ('/chat','AI багш','✦')] %}
+  <nav class="sm:hidden fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 grid grid-cols-5 text-[10px]">
+    {% set tabs = [('/', 'Нүүр','⌂'), ('/curriculum','Хөтөлбөр','▦'), ('/diagnostic','Түвшин','✓'), ('/report','Тайлан','📈'), ('/chat','AI багш','✦')] %}
     {% for href, label, icon in tabs %}
     <a href="{{ href }}" class="flex flex-col items-center gap-0.5 py-2 {{ 'text-brand-700' if request.path == href else 'text-slate-500' }}">
       <span class="text-base leading-none">{{ icon }}</span>{{ label }}
@@ -76,6 +79,7 @@
   </nav>
 
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
   {% block scripts %}{% endblock %}
 </body>
 </html>
