@@ -47,7 +47,7 @@
         Заавар
       </a>
       <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
-        {% set nav = [('/', 'Нүүр'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Оношлох'), ('/chat','AI багш')] %}
+        {% set nav = [('/', 'Нүүр'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Түвшин тогтоох'), ('/chat','AI багш')] %}
         {% for href, label in nav %}
         <a href="{{ href }}" class="px-3 py-1.5 rounded-lg hover:bg-brand-50 hover:text-brand-700 transition {{ 'bg-brand-50 text-brand-700' if request.path == href else 'text-ink-700' }}">{{ label }}</a>
         {% endfor %}
@@ -67,7 +67,7 @@
 
   <!-- Bottom tab bar (mobile) -->
   <nav class="sm:hidden fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 grid grid-cols-4 text-[11px]">
-    {% set tabs = [('/', 'Нүүр','⌂'), ('/curriculum','Хөтөлбөр','▦'), ('/diagnostic','Оношлох','✓'), ('/chat','AI багш','✦')] %}
+    {% set tabs = [('/', 'Нүүр','⌂'), ('/curriculum','Хөтөлбөр','▦'), ('/diagnostic','Түвшин','✓'), ('/chat','AI багш','✦')] %}
     {% for href, label, icon in tabs %}
     <a href="{{ href }}" class="flex flex-col items-center gap-0.5 py-2 {{ 'text-brand-700' if request.path == href else 'text-slate-500' }}">
       <span class="text-base leading-none">{{ icon }}</span>{{ label }}

@@ -26,6 +26,26 @@
       <span class="text-sm font-semibold text-ink-800">{{ g.title_mn }}</span>
       <a href="{{ g.reader_url }}" target="_blank" rel="noopener" class="text-xs text-slate-500 hover:text-brand-700">📖 Эх сурах бичиг ↗</a>
     </div>
+
+    {# Quick access to ready lessons — findability above the placeholder chapters #}
+    {% set ns = namespace(ready=[]) %}
+    {% for ch in g.chapters %}{% for l in (ch.lessons or []) %}{% if l.lesson_id %}{% set ns.ready = ns.ready + [l] %}{% endif %}{% endfor %}{% endfor %}
+    {% if ns.ready %}
+    <div class="card p-4 border-l-4 border-l-emerald-500 bg-emerald-50/40">
+      <div class="flex items-center justify-between mb-2">
+        <p class="text-sm font-bold text-ink-900">✅ Одоо үзэж болох хичээлүүд</p>
+        <span class="text-xs text-emerald-700 font-semibold">{{ ns.ready | length }} бэлэн</span>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {% for l in ns.ready %}
+        <a href="/lesson/{{ l.lesson_id }}" class="text-sm px-3 py-1.5 rounded-lg bg-white border border-emerald-200 text-emerald-900 hover:bg-emerald-100 min-h-[40px] inline-flex items-center gap-1.5">
+          <span x-show="prog['{{ l.lesson_id }}']" x-cloak class="text-emerald-600 font-bold">✓</span>{{ l.title_mn }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
     {% for ch in g.chapters %}
     <div class="card overflow-hidden" x-data="{open: {{ 'true' if ch.deep else 'false' }} }">
       <button @click="open=!open" class="w-full flex items-center justify-between p-4 text-left hover:bg-slate-50">

@@ -6,10 +6,15 @@
   <section class="card p-6 sm:p-8 mb-6 bg-gradient-to-br from-brand-600 to-brand-800 text-white border-0">
     <p class="text-brand-100 text-sm font-medium mb-1">Математик 10 · 11 · 12 — өөрөө сурах платформ</p>
     <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-2">Сурах бичгээ <span class="text-accent-400">ганцаараа</span> сурахад туслах заавар</h1>
-    <p class="text-brand-100/90 max-w-xl">Үндэсний сурах бичигт суурилсан алхам алхмаар хөтлөх заавар, өөрийгөө сорих оношлох тест, мөн "аль хичээлийг үзэх вэ" гэдгийг хэлдэг AI багш.</p>
+    <p class="text-brand-100/90 max-w-xl">Үндэсний сурах бичигт суурилсан алхам алхмаар хөтлөх заавар, түвшнээ мэдэх шалгалт, мөн "аль хичээлийг үзэх вэ" гэдгийг хэлдэг AI багш.</p>
     <div class="flex flex-wrap gap-2 mt-4">
-      <a href="/diagnostic" class="px-4 py-2 rounded-xl bg-accent-500 hover:bg-accent-600 text-white font-semibold text-sm">Оношлох тест өгөх →</a>
+      <a href="/diagnostic" class="px-4 py-2 rounded-xl bg-accent-500 hover:bg-accent-600 text-white font-semibold text-sm">Түвшин тогтоох шалгалт →</a>
       <a href="/chat" class="px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 font-semibold text-sm">AI багшаас асуух</a>
+    </div>
+    <div class="grid grid-cols-3 gap-2 mt-5 text-center text-[11px] sm:text-xs">
+      <div class="rounded-xl bg-white/10 py-2 px-1"><div class="text-lg font-extrabold text-accent-400">1</div>Түвшнээ мэд</div>
+      <div class="rounded-xl bg-white/10 py-2 px-1"><div class="text-lg font-extrabold text-accent-400">2</div>Заавраар сур</div>
+      <div class="rounded-xl bg-white/10 py-2 px-1"><div class="text-lg font-extrabold text-accent-400">3</div>AI-аас асуу</div>
     </div>
   </section>
 
@@ -25,36 +30,24 @@
     </a>
   </template>
 
-  <!-- Diagnostic result (if any) -->
-  <template x-if="diag">
+  <!-- Level-test summary (if any topic tested) -->
+  <template x-if="levels.length">
     <section class="card p-5 mb-6">
       <div class="flex items-center justify-between mb-3">
-        <h2 class="font-bold text-ink-900">Таны чадварын зураглал</h2>
-        <a href="/diagnostic" class="text-xs text-brand-700 hover:underline">Дахин өгөх</a>
+        <h2 class="font-bold text-ink-900">Таны түвшин</h2>
+        <a href="/diagnostic" class="text-xs text-brand-700 hover:underline">Үлдсэн сэдвүүд →</a>
       </div>
       <div class="space-y-2.5">
-        <template x-for="s in diag.pie.filter(p=>p.score!==null)" :key="s.skill_id">
+        <template x-for="s in levels" :key="s.skill_id">
           <div class="flex items-center gap-3">
-            <div class="w-40 sm:w-56 text-sm text-ink-700 truncate" x-text="s.title_mn"></div>
+            <div class="w-40 sm:w-60 text-sm text-ink-700 truncate" x-text="s.title_mn"></div>
             <div class="flex-1 skill-track">
-              <div class="skill-fill" :style="`width:${s.score}%;background:${s.score>=80?'#10b981':s.score>=50?'#f59e0b':'#ef4444'}`"></div>
+              <div class="skill-fill" :style="`width:${s.score}%;background:${s.band==='ready'?'#10b981':s.band==='good'?'#6366f1':s.band==='mid'?'#f59e0b':'#ef4444'}`"></div>
             </div>
-            <div class="w-10 text-right text-sm font-semibold" x-text="s.score"></div>
+            <div class="w-16 text-right text-xs font-bold" :class="s.band==='ready'?'text-emerald-600':s.band==='good'?'text-brand-600':s.band==='mid'?'text-amber-600':'text-rose-600'" x-text="`${s.level_mn}`"></div>
           </div>
         </template>
       </div>
-      <template x-if="diag.playlist && diag.playlist.length">
-        <div class="mt-4 pt-4 border-t border-slate-100">
-          <p class="text-sm font-semibold text-ink-900 mb-2">Дараа нь үзэх (сул талаас эхэлж):</p>
-          <div class="flex flex-wrap gap-2">
-            <template x-for="p in diag.playlist" :key="p.skill_id">
-              <a :href="`/lesson/${p.lesson_id}`" class="text-sm px-3 py-1.5 rounded-lg bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200">
-                <span x-text="p.title_mn"></span>
-              </a>
-            </template>
-          </div>
-        </div>
-      </template>
     </section>
   </template>
 
@@ -88,13 +81,18 @@
 <script>
 function homeView() {
   return {
-    diag: null, done: {}, last: null, doneCount: 0,
+    done: {}, last: null, doneCount: 0, levels: [],
     init() {
-      this.diag = Progress.diagnostic;
       const ls = Progress.lessons;
       for (const k in ls) this.done[k] = ls[k].done;
       this.doneCount = Progress.doneCount;
       this.last = Progress.last;
+      // level-test results
+      try {
+        const lt = (JSON.parse(localStorage.getItem('zaavar.leveltest')) || {}).topics || {};
+        this.levels = Object.keys(lt).map(k => Object.assign({ skill_id: k }, lt[k]))
+          .sort((a, b) => (a.score - b.score));
+      } catch (e) { this.levels = []; }
       this.$nextTick(() => renderMath(this.$root));
     }
   }

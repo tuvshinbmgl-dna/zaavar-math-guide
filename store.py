@@ -21,6 +21,7 @@ def _load(name: str) -> dict:
 CURRICULUM = _load("curriculum.json")
 GRAPH = _load("knowledge_graph.json")
 DIAGNOSTIC = _load("diagnostic.json")
+LEVELTEST = _load("level_test.json")
 
 LESSONS: dict[str, dict] = {}
 for path in sorted((DATA / "lessons").glob("*.json")):
@@ -192,3 +193,87 @@ def grade_diagnostic(responses: list[dict]) -> dict:
         key=lambda w: (w["grade"] or 99, str(w["chapter"])),
     )
     return {"pie": pie, "weak": weak, "playlist": playlist}
+
+
+# --------------------------------------------------------------------------- #
+# Level test (Түвшин тогтоох шалгалт) — topic blocks, 10 questions each
+# --------------------------------------------------------------------------- #
+
+_LEVEL_TOPICS = {t["skill_id"]: t for t in LEVELTEST["topics"]}
+
+
+def _level_label(score: int) -> tuple[str, str]:
+    """(label_mn, band) for a 0-100 topic score."""
+    if score >= 85:
+        return "Бэлэн", "ready"
+    if score >= 60:
+        return "Сайн", "good"
+    if score >= 35:
+        return "Дунд", "mid"
+    return "Эхлэн суралцах", "low"
+
+
+def level_topics() -> list[dict]:
+    """Topic cards (no questions/answers) in authored order."""
+    return [
+        {
+            "skill_id": t["skill_id"],
+            "title_mn": t["title_mn"],
+            "lesson_id": t.get("lesson_id"),
+            "pages_mn": t.get("pages_mn", ""),
+            "count": len(t["questions"]),
+        }
+        for t in LEVELTEST["topics"]
+    ]
+
+
+def level_questions(topic_id: str) -> list[dict] | None:
+    """Questions for one topic, WITHOUT the answer index or solution (safe to send)."""
+    topic = _LEVEL_TOPICS.get(topic_id)
+    if not topic:
+        return None
+    return [
+        {k: q[k] for k in ("id", "difficulty", "stem_mn", "latex", "choices") if k in q}
+        for q in topic["questions"]
+    ]
+
+
+def grade_level_topic(topic_id: str, answers: list) -> dict | None:
+    """
+    answers: list of chosen indices (or None) aligned to the topic's questions.
+    Returns per-question feedback (correct + answer + solution) plus the topic
+    score, level label and the lesson to study.
+    """
+    topic = _LEVEL_TOPICS.get(topic_id)
+    if not topic:
+        return None
+    qs = topic["questions"]
+    feedback = []
+    correct_n = 0
+    for i, q in enumerate(qs):
+        chosen = answers[i] if i < len(answers) else None
+        ok = (chosen == q["answer"])
+        if ok:
+            correct_n += 1
+        feedback.append({
+            "id": q["id"],
+            "chosen": chosen,
+            "answer": q["answer"],
+            "correct": ok,
+            "solution_mn": q.get("solution_mn", ""),
+        })
+    total = len(qs) or 1
+    score = round(100 * correct_n / total)
+    label, band = _level_label(score)
+    return {
+        "skill_id": topic_id,
+        "title_mn": topic["title_mn"],
+        "lesson_id": topic.get("lesson_id"),
+        "pages_mn": topic.get("pages_mn", ""),
+        "correct": correct_n,
+        "total": total,
+        "score": score,
+        "level_mn": label,
+        "band": band,
+        "feedback": feedback,
+    }

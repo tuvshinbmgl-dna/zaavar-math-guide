@@ -79,8 +79,8 @@ def lesson(lesson_id: str):
 @app.route("/diagnostic")
 def diagnostic():
     return render_template(
-        "diagnostic.html",
-        total=min(MAX_DIAGNOSTIC_ITEMS, len(store.diagnostic_items())),
+        "leveltest.html",
+        topics=store.level_topics(),
         ai_enabled=claude.is_configured(),
     )
 
@@ -151,6 +151,33 @@ def api_diagnostic_grade():
     payload = request.get_json(force=True) or {}
     responses = payload.get("responses", [])
     return jsonify(store.grade_diagnostic(responses))
+
+
+# --------------------------------------------------------------------------- #
+# API — level test (Түвшин тогтоох шалгалт)
+# --------------------------------------------------------------------------- #
+
+@app.route("/api/leveltest/questions", methods=["POST"])
+def api_leveltest_questions():
+    payload = request.get_json(force=True) or {}
+    topic_id = payload.get("topic")
+    qs = store.level_questions(topic_id)
+    if qs is None:
+        return jsonify({"error": "unknown topic"}), 404
+    return jsonify({"topic": topic_id, "questions": qs})
+
+
+@app.route("/api/leveltest/grade", methods=["POST"])
+def api_leveltest_grade():
+    payload = request.get_json(force=True) or {}
+    topic_id = payload.get("topic")
+    answers = payload.get("answers", [])
+    if not isinstance(answers, list):
+        return jsonify({"error": "answers must be a list"}), 400
+    result = store.grade_level_topic(topic_id, answers)
+    if result is None:
+        return jsonify({"error": "unknown topic"}), 404
+    return jsonify(result)
 
 
 # --------------------------------------------------------------------------- #

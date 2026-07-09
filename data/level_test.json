@@ -1,0 +1,1427 @@
+{
+ "note": "Түвшин тогтоох шалгалт — сэдэв тус бүрд 10 асуулт. AI-аар зохиож, бие даан шалгасан.",
+ "topics": [
+  {
+   "skill_id": "tangent-slope",
+   "title_mn": "Шүргэгчийн налуу",
+   "lesson_id": "g11-8-1",
+   "pages_mn": "118–120",
+   "questions": [
+    {
+     "id": "lt-tangent-slope-1",
+     "skill_id": "tangent-slope",
+     "difficulty": 1,
+     "stem_mn": "$y=f(x)$ муруйн $x_0$ цэг дээрх шүргэгчийн налууг олох зөв томьёо аль нь вэ?",
+     "latex": "k=\\lim_{h\\to 0}\\dfrac{f(x_0+h)-f(x_0)}{h}",
+     "choices": [
+      "$\\lim\\limits_{h\\to 0}\\dfrac{f(x_0+h)-f(x_0)}{h}$",
+      "$\\dfrac{f(x_0+h)-f(x_0)}{h}$",
+      "$\\lim\\limits_{h\\to 0}\\dfrac{f(x_0+h)+f(x_0)}{h}$",
+      "$\\lim\\limits_{h\\to 0}\\big(f(x_0+h)-f(x_0)\\big)$"
+     ],
+     "answer": 0,
+     "solution_mn": "Шүргэгчийн налуу нь секансын налуу $\\dfrac{f(x_0+h)-f(x_0)}{h}$-ийн $h\\to 0$ үеийн хязгаартай тэнцүү."
+    },
+    {
+     "id": "lt-tangent-slope-2",
+     "skill_id": "tangent-slope",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2$ функцийн $x_0=1$ цэг дээрх шүргэгчийн налуу хэд вэ?",
+     "latex": "k=2x_0",
+     "choices": [
+      "1",
+      "2",
+      "3",
+      "0"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\dfrac{(1+h)^2-1}{h}=\\dfrac{2h+h^2}{h}=2+h\\to 2$, эсвэл $k=2x_0=2\\cdot 1=2$. ($1$ гэдэг нь $f(1)$-ийн утга болохоос налуу биш.)"
+    },
+    {
+     "id": "lt-tangent-slope-3",
+     "skill_id": "tangent-slope",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=5x-3$ шугаман функцийн дурын цэг дээрх шүргэгчийн налуу хэд вэ?",
+     "latex": "",
+     "choices": [
+      "5",
+      "-3",
+      "2",
+      "$x$-ээс хамаарна"
+     ],
+     "answer": 0,
+     "solution_mn": "Шулууны налуу хаа сайгүй тогтмол бөгөөд $x$-ийн коэффициенттэй тэнцүү тул $k=5$."
+    },
+    {
+     "id": "lt-tangent-slope-4",
+     "skill_id": "tangent-slope",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2$ функцийн $x_0=-3$ цэг дээрх шүргэгчийн налуу хэд вэ?",
+     "latex": "k=2x_0",
+     "choices": [
+      "6",
+      "9",
+      "-6",
+      "-9"
+     ],
+     "answer": 2,
+     "solution_mn": "$k=2x_0=2\\cdot(-3)=-6$. Тэмдгийг алдалгүй анхаар ($9$ бол $f(-3)$-ийн утга)."
+    },
+    {
+     "id": "lt-tangent-slope-5",
+     "skill_id": "tangent-slope",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ функцийн дурын $x_0$ цэг дээрх шүргэгчийн налуу юутай тэнцүү вэ?",
+     "latex": "k=\\lim_{h\\to 0}(2x_0+h)=2x_0",
+     "choices": [
+      "$2x_0$",
+      "$x_0^2$",
+      "$2x_0+h$",
+      "$x_0$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\dfrac{(x_0+h)^2-x_0^2}{h}=\\dfrac{2x_0h+h^2}{h}=2x_0+h$, $h\\to 0$ үед $2x_0+h\\to 2x_0$. ($2x_0+h$ бол хязгаар аваагүй завсрын хариу.)"
+    },
+    {
+     "id": "lt-tangent-slope-6",
+     "skill_id": "tangent-slope",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2+1$ функцийн $x_0=3$ цэг дээрх шүргэгчийн налуу хэд вэ?",
+     "latex": "",
+     "choices": [
+      "7",
+      "10",
+      "6",
+      "9"
+     ],
+     "answer": 2,
+     "solution_mn": "Тогтмол нэмэгдэхүүн $+1$ налууг өөрчлөхгүй: $\\dfrac{(3+h)^2+1-10}{h}=\\dfrac{6h+h^2}{h}=6+h\\to 6$. ($10$ нь $f(3)$, $7$ бол алдаатайгаар $+1$-ийг налууд нэмсэн хариу.)"
+    },
+    {
+     "id": "lt-tangent-slope-7",
+     "skill_id": "tangent-slope",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ функцийн $x_0=2$-оос $2+h$ хүртэлх секансын налууг ($h\\neq 0$) хялбарчилбал юутай тэнцүү вэ?",
+     "latex": "\\dfrac{(2+h)^2-4}{h}=4+h",
+     "choices": [
+      "$4+h$",
+      "$4h$",
+      "$2+h$",
+      "$4$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\dfrac{(2+h)^2-4}{h}=\\dfrac{4h+h^2}{h}=4+h$. Энэ нь секанс тул $h$ хараахан үлдэнэ; $4$ бол хязгаар аваад дуусгасны дараах утга."
+    },
+    {
+     "id": "lt-tangent-slope-8",
+     "skill_id": "tangent-slope",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ муруйн аль цэг дээр шүргэгчийн налуу нь $10$-тай тэнцүү вэ?",
+     "latex": "2x_0=10",
+     "choices": [
+      "$x_0=20$",
+      "$x_0=10$",
+      "$x_0=\\sqrt{10}$",
+      "$x_0=5$"
+     ],
+     "answer": 3,
+     "solution_mn": "Налуу нь $2x_0$ тул $2x_0=10\\Rightarrow x_0=5$. ($x_0=10$ бол $2$-т хуваахаа мартсан, $\\sqrt{10}$ бол $x_0^2=10$ гэж андуурсан хариу.)"
+    },
+    {
+     "id": "lt-tangent-slope-9",
+     "skill_id": "tangent-slope",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^2$ муруйн аль цэг дээр ($x_0\\neq 0$) шүргэгчийн налуу нь тухайн цэгийн функцийн утга $f(x_0)$-тэй тэнцүү вэ?",
+     "latex": "2x_0=x_0^2",
+     "choices": [
+      "$x_0=1$",
+      "$x_0=2$",
+      "$x_0=4$",
+      "$x_0=\\dfrac{1}{2}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Налуу $2x_0$, функцийн утга $x_0^2$. $2x_0=x_0^2\\Rightarrow x_0(x_0-2)=0$; $x_0\\neq 0$ тул $x_0=2$ (энэ үед налуу ба утга хоюул $4$)."
+    },
+    {
+     "id": "lt-tangent-slope-10",
+     "skill_id": "tangent-slope",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^2-4x$ функцийн $x_0=3$ цэг дээрх шүргэгчийн налууг хязгаарын тодорхойлолтоор ол.",
+     "latex": "k=\\lim_{h\\to 0}\\dfrac{f(3+h)-f(3)}{h}",
+     "choices": [
+      "6",
+      "-3",
+      "2",
+      "10"
+     ],
+     "answer": 2,
+     "solution_mn": "$f(3)=-3$, $f(3+h)=h^2+2h-3$ тул $\\dfrac{h^2+2h}{h}=h+2\\to 2$. ($6$ бол зөвхөн $x^2$ хэсгийн $2x_0$-г авсан, $-3$ бол $f(3)$-ийн утга.)"
+    }
+   ]
+  },
+  {
+   "skill_id": "derivative-definition",
+   "title_mn": "Уламжлалын тодорхойлолт",
+   "lesson_id": "g11-8-2",
+   "pages_mn": "120–123",
+   "questions": [
+    {
+     "id": "lt-derivative-definition-1",
+     "skill_id": "derivative-definition",
+     "difficulty": 1,
+     "stem_mn": "Функцийн уламжлалын тодорхойлолтыг аль илэрхийлэл зөв өгсөн бэ?",
+     "latex": "f'(x)=\\lim_{h\\to 0}\\dfrac{f(x+h)-f(x)}{h}",
+     "choices": [
+      "$\\lim_{h\\to 0}\\dfrac{f(x+h)-f(x)}{h}$",
+      "$\\lim_{h\\to 0}\\dfrac{f(x+h)+f(x)}{h}$",
+      "$\\lim_{h\\to 0}\\dfrac{f(x)-f(x+h)}{h}$",
+      "$\\lim_{h\\to 0}\\dfrac{f(x+h)-f(x)}{x}$"
+     ],
+     "answer": 0,
+     "solution_mn": "Уламжлал нь ялгаврын харьцаа $\\dfrac{f(x+h)-f(x)}{h}$-ийн $h\\to 0$ үеийн хязгаар: тоологчид ялгавар, хуваарьт $h$ байна."
+    },
+    {
+     "id": "lt-derivative-definition-2",
+     "skill_id": "derivative-definition",
+     "difficulty": 1,
+     "stem_mn": "Тогтмол $f(x)=7$ функцийн уламжлал хэдтэй тэнцүү вэ?",
+     "latex": "f'(x)=\\lim_{h\\to 0}\\dfrac{7-7}{h}",
+     "choices": [
+      "$7$",
+      "$1$",
+      "$0$",
+      "$x$"
+     ],
+     "answer": 2,
+     "solution_mn": "Тогтмол функцийн график хэвтээ шулуун тул налуу нь тэг: $\\dfrac{7-7}{h}=0$, иймд $f'(x)=0$."
+    },
+    {
+     "id": "lt-derivative-definition-3",
+     "skill_id": "derivative-definition",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x$ функцийн уламжлал хэдтэй тэнцүү вэ?",
+     "latex": "f'(x)=\\lim_{h\\to 0}\\dfrac{(x+h)-x}{h}",
+     "choices": [
+      "$0$",
+      "$1$",
+      "$x$",
+      "$2x$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\dfrac{(x+h)-x}{h}=\\dfrac{h}{h}=1$, иймд $f'(x)=1$ — $y=x$ шулууны налуу хаа сайгүй $1$."
+    },
+    {
+     "id": "lt-derivative-definition-4",
+     "skill_id": "derivative-definition",
+     "difficulty": 1,
+     "stem_mn": "Дараах тэмдэглэгээнүүдээс аль нь уламжлалыг илэрхийлдэггүй вэ?",
+     "latex": "",
+     "choices": [
+      "$y'$",
+      "$f'(x)$",
+      "$\\dfrac{dy}{dx}$",
+      "$\\Delta x$"
+     ],
+     "answer": 3,
+     "solution_mn": "$y'$, $f'(x)$, $\\dfrac{dy}{dx}$ нь бүгд уламжлалын тэмдэглэгээ. $\\Delta x$ нь зөвхөн аргументийн өсөлт (приращение) бөгөөд уламжлал биш."
+    },
+    {
+     "id": "lt-derivative-definition-5",
+     "skill_id": "derivative-definition",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ функцийн уламжлалыг тодорхойлолтоор бодоход юутай тэнцүү вэ?",
+     "latex": "f'(x)=\\lim_{h\\to 0}\\dfrac{(x+h)^2-x^2}{h}",
+     "choices": [
+      "$x$",
+      "$2x$",
+      "$x^2$",
+      "$2x+h$"
+     ],
+     "answer": 1,
+     "solution_mn": "$(x+h)^2-x^2=2xh+h^2$, $h$-д хуваавал $2x+h$, $h\\to 0$ үед $2x$. Иймд $f'(x)=2x$ (хязгаар аваагүй бол $2x+h$ гэсэн алдаа гарна)."
+    },
+    {
+     "id": "lt-derivative-definition-6",
+     "skill_id": "derivative-definition",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ бол $f'(-2)$ хэдтэй тэнцүү вэ?",
+     "latex": "f'(x)=2x",
+     "choices": [
+      "$4$",
+      "$-4$",
+      "$-2$",
+      "$2$"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)=2x$ тул $f'(-2)=2\\cdot(-2)=-4$. Сөрөг тоог орлуулахдаа тэмдгийг анхаарна."
+    },
+    {
+     "id": "lt-derivative-definition-7",
+     "skill_id": "derivative-definition",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=3x+2$ функцийн уламжлал хэдтэй тэнцүү вэ?",
+     "latex": "f'(x)=\\lim_{h\\to 0}\\dfrac{[3(x+h)+2]-[3x+2]}{h}",
+     "choices": [
+      "$2$",
+      "$3$",
+      "$5$",
+      "$3x+2$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\dfrac{3(x+h)+2-3x-2}{h}=\\dfrac{3h}{h}=3$. Тогтмол нэмэгдэхүүн $2$ нь уламжлалд нөлөөлөхгүй тул $f'(x)=3$."
+    },
+    {
+     "id": "lt-derivative-definition-8",
+     "skill_id": "derivative-definition",
+     "difficulty": 2,
+     "stem_mn": "Биет $s(t)=t^2$ (метр) хуулиар хөдөлж байв. $t=4$ секунд дэх агшин зуурын хурд хэд вэ? ($v(t)=s'(t)$)",
+     "latex": "v(t)=s'(t)=2t",
+     "choices": [
+      "$4$",
+      "$8$",
+      "$16$",
+      "$2$"
+     ],
+     "answer": 1,
+     "solution_mn": "$s'(t)=2t$ тул $v(4)=2\\cdot 4=8$ м/с. $16$ гэвэл байрлал $s(4)$-ийг хурдтай андуурсан алдаа."
+    },
+    {
+     "id": "lt-derivative-definition-9",
+     "skill_id": "derivative-definition",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^2+x$ функцийн уламжлалыг тодорхойлолтоор бодоход юутай тэнцүү вэ?",
+     "latex": "f'(x)=\\lim_{h\\to 0}\\dfrac{[(x+h)^2+(x+h)]-[x^2+x]}{h}",
+     "choices": [
+      "$2x$",
+      "$2x+1$",
+      "$2x+2$",
+      "$x+1$"
+     ],
+     "answer": 1,
+     "solution_mn": "Тоологч $2xh+h^2+h$, $h$-д хуваавал $2x+h+1$, $h\\to 0$ үед $2x+1$. $+x$ гишүүнийг мартвал $2x$ гэсэн алдаа гарна."
+    },
+    {
+     "id": "lt-derivative-definition-10",
+     "skill_id": "derivative-definition",
+     "difficulty": 3,
+     "stem_mn": "$\\lim_{h\\to 0}\\dfrac{f(3+h)-f(3)}{h}=5$ бол энэ юуг илэрхийлж байна вэ?",
+     "latex": "f'(3)=\\lim_{h\\to 0}\\dfrac{f(3+h)-f(3)}{h}",
+     "choices": [
+      "$f(3)=5$",
+      "$f(x)$-ийн $x=3$ цэг дээрх шүргэгчийн налуу $5$-тай тэнцүү",
+      "$f(5)=3$",
+      "$f(x)$-ийн дундаж өөрчлөлтийн хурд $5$"
+     ],
+     "answer": 1,
+     "solution_mn": "Энэ хязгаар нь тодорхойлолтоор $f'(3)$ буюу $x=3$ цэг дээрх уламжлал — геометрийн хувьд шүргэгчийн налуу. Хязгаар авсан тул дундаж биш агшин зуурын хурд."
+    }
+   ]
+  },
+  {
+   "skill_id": "power-rule",
+   "title_mn": "Зэрэгт функцийн уламжлал (xⁿ)",
+   "lesson_id": "g11-8-3",
+   "pages_mn": "124–127",
+   "questions": [
+    {
+     "id": "lt-power-rule-1",
+     "skill_id": "power-rule",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^6$ функцийн уламжлал $f'(x)$-ийг ол.",
+     "latex": "(x^n)'=nx^{n-1}",
+     "choices": [
+      "$6x^6$",
+      "$5x^5$",
+      "$6x^5$",
+      "$x^5$"
+     ],
+     "answer": 2,
+     "solution_mn": "Зэрэгт функцийн дүрмээр $(x^n)'=nx^{n-1}$ тул $(x^6)'=6x^{6-1}=6x^5$."
+    },
+    {
+     "id": "lt-power-rule-2",
+     "skill_id": "power-rule",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=12$ тогтмол функцийн уламжлал $f'(x)$ юутай тэнцүү вэ?",
+     "latex": "(c)'=0",
+     "choices": [
+      "$12$",
+      "$0$",
+      "$1$",
+      "$12x$"
+     ],
+     "answer": 1,
+     "solution_mn": "Тогтмол тооны уламжлал үргэлж тэг байдаг тул $f'(x)=0$."
+    },
+    {
+     "id": "lt-power-rule-3",
+     "skill_id": "power-rule",
+     "difficulty": 1,
+     "stem_mn": "$(x)'$ уламжлалыг ол.",
+     "latex": "(x)'=1",
+     "choices": [
+      "$0$",
+      "$x$",
+      "$2x$",
+      "$1$"
+     ],
+     "answer": 3,
+     "solution_mn": "$x=x^1$ гэж бичвэл $(x^1)'=1\\cdot x^{0}=1$."
+    },
+    {
+     "id": "lt-power-rule-4",
+     "skill_id": "power-rule",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2$ функцийн уламжлалыг ол.",
+     "latex": "(x^2)'=2x",
+     "choices": [
+      "$2x$",
+      "$x^2$",
+      "$2x^2$",
+      "$2$"
+     ],
+     "answer": 0,
+     "solution_mn": "Зэрэгт функцийн дүрмээр $(x^2)'=2x^{2-1}=2x$."
+    },
+    {
+     "id": "lt-power-rule-5",
+     "skill_id": "power-rule",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=3x^4$ функцийн уламжлал $f'(x)$-ийг ол.",
+     "latex": "(cx^n)'=c\\,n\\,x^{n-1}",
+     "choices": [
+      "$3x^3$",
+      "$12x^3$",
+      "$12x^4$",
+      "$4x^3$"
+     ],
+     "answer": 1,
+     "solution_mn": "Тогтмол үржигдэхүүнийг хэвээр авч $(3x^4)'=3\\cdot4x^{4-1}=12x^3$."
+    },
+    {
+     "id": "lt-power-rule-6",
+     "skill_id": "power-rule",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^{-3}$ функцийн уламжлалыг ол.",
+     "latex": "(x^{-3})'=-3x^{-4}",
+     "choices": [
+      "$3x^{-4}$",
+      "$-3x^{-2}$",
+      "$-3x^{-4}$",
+      "$-3x^{-3}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Сөрөг зэрэгт ч дүрэм үйлчилнэ: $(x^{-3})'=-3x^{-3-1}=-3x^{-4}$."
+    },
+    {
+     "id": "lt-power-rule-7",
+     "skill_id": "power-rule",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=\\sqrt{x}$ функцийн уламжлалыг ол.",
+     "latex": "(\\sqrt{x})'=\\frac{1}{2\\sqrt{x}}",
+     "choices": [
+      "$\\frac{1}{2}\\sqrt{x}$",
+      "$2\\sqrt{x}$",
+      "$\\frac{1}{\\sqrt{x}}$",
+      "$\\frac{1}{2\\sqrt{x}}$"
+     ],
+     "answer": 3,
+     "solution_mn": "$\\sqrt{x}=x^{1/2}$ тул $(x^{1/2})'=\\frac12 x^{-1/2}=\\frac{1}{2\\sqrt{x}}$."
+    },
+    {
+     "id": "lt-power-rule-8",
+     "skill_id": "power-rule",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3$ бол $f'(2)$-ийн утгыг ол.",
+     "latex": "f'(x)=3x^2",
+     "choices": [
+      "$8$",
+      "$12$",
+      "$6$",
+      "$24$"
+     ],
+     "answer": 1,
+     "solution_mn": "Эхлээд $f'(x)=3x^2$, дараа нь $f'(2)=3\\cdot2^2=12$."
+    },
+    {
+     "id": "lt-power-rule-9",
+     "skill_id": "power-rule",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=\\dfrac{1}{\\sqrt{x}}$ функцийн уламжлалыг ол.",
+     "latex": "\\left(x^{-1/2}\\right)'=-\\tfrac12 x^{-3/2}",
+     "choices": [
+      "$\\frac{1}{2\\sqrt{x^3}}$",
+      "$-\\frac{1}{2\\sqrt{x}}$",
+      "$-\\frac{1}{2\\sqrt{x^3}}$",
+      "$-\\frac{3}{2\\sqrt{x^5}}$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\frac{1}{\\sqrt{x}}=x^{-1/2}$ тул $(x^{-1/2})'=-\\frac12 x^{-3/2}=-\\frac{1}{2\\sqrt{x^3}}$."
+    },
+    {
+     "id": "lt-power-rule-10",
+     "skill_id": "power-rule",
+     "difficulty": 3,
+     "stem_mn": "$y=x^3$ муруйн шүргэгчийн налуу нь $12$-тай тэнцүү байх $x$ цэгийг ол.",
+     "latex": "y'=3x^2=12",
+     "choices": [
+      "$x=2$",
+      "$x=4$",
+      "$x=\\pm2\\sqrt{3}$",
+      "$x=\\pm2$"
+     ],
+     "answer": 3,
+     "solution_mn": "Шүргэгчийн налуу нь уламжлал тул $3x^2=12$, эндээс $x^2=4$, $x=\\pm2$."
+    }
+   ]
+  },
+  {
+   "skill_id": "sum-diff-rule",
+   "title_mn": "Нийлбэр, ялгавар, тогтмолын дүрэм",
+   "lesson_id": "g11-8-4",
+   "pages_mn": "128–131",
+   "questions": [
+    {
+     "id": "lt-sum-diff-rule-1",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 1,
+     "stem_mn": "Нийлбэрийн уламжлалын дүрмээр $(f+g)'$ илэрхийлэл юутай тэнцэх вэ?",
+     "latex": "(f\\pm g)'=f'\\pm g'",
+     "choices": [
+      "$f'\\cdot g'$",
+      "$f'+g'$",
+      "$f'\\cdot g+f\\cdot g'$",
+      "$f+g'$"
+     ],
+     "answer": 1,
+     "solution_mn": "Нийлбэрийн дүрмээр гишүүн тус бүрийн уламжлалыг нэмнэ: $(f+g)'=f'+g'$. Үржвэрийн дүрэмтэй андуурч үржүүлж болохгүй."
+    },
+    {
+     "id": "lt-sum-diff-rule-2",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2+x^3$ функцийн уламжлалыг ол.",
+     "latex": "(x^n)'=n\\,x^{n-1}",
+     "choices": [
+      "$x+x^2$",
+      "$6x^3$",
+      "$2x+3x^2$",
+      "$2x+3x$"
+     ],
+     "answer": 2,
+     "solution_mn": "Гишүүн тус бүрт зэргийн дүрмийг хэрэглэвэл $(x^2)'=2x$, $(x^3)'=3x^2$, иймд нийлбэр нь $2x+3x^2$."
+    },
+    {
+     "id": "lt-sum-diff-rule-3",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=5x^2$ функцийн уламжлал $f'(x)$ юутай тэнцэх вэ?",
+     "latex": "(c\\,f)'=c\\,f'",
+     "choices": [
+      "$10x^2$",
+      "$5x$",
+      "$7x$",
+      "$10x$"
+     ],
+     "answer": 3,
+     "solution_mn": "Тогтмол үржигчийг тэмдгийн өмнө гаргавал $(5x^2)'=5\\cdot(x^2)'=5\\cdot2x=10x$."
+    },
+    {
+     "id": "lt-sum-diff-rule-4",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^3-7$ функцийн уламжлалыг ол.",
+     "latex": "(c)'=0",
+     "choices": [
+      "$3x^2$",
+      "$3x^2-7$",
+      "$3x^2-1$",
+      "$3x^3$"
+     ],
+     "answer": 0,
+     "solution_mn": "$(x^3)'=3x^2$ ба тогтмол $-7$-ийн уламжлал $0$ тул $f'(x)=3x^2$."
+    },
+    {
+     "id": "lt-sum-diff-rule-5",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=2x^3-4x^2+5x-1$ олон гишүүнтийн уламжлалыг ол.",
+     "latex": "(2x^3-4x^2+5x-1)'=6x^2-8x+5",
+     "choices": [
+      "$2x^2-4x+5$",
+      "$6x^2-8x+5$",
+      "$6x^2-8x+4$",
+      "$6x^2-8x$"
+     ],
+     "answer": 1,
+     "solution_mn": "Гишүүн тус бүрээр бодвол $6x^2-8x+5$; тогтмол $-1$-ийн уламжлал $0$ болохыг мартаж болохгүй."
+    },
+    {
+     "id": "lt-sum-diff-rule-6",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2-3x$ бол $f'(2)$ хэдтэй тэнцэх вэ?",
+     "latex": "f'(x)=2x-3",
+     "choices": [
+      "$-2$",
+      "$4$",
+      "$1$",
+      "$7$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=2x-3$ тул $f'(2)=2\\cdot2-3=1$. Энэ нь $f(2)=-2$-той адилгүй бөгөөд уламжлалын утгыг тавьж бодно."
+    },
+    {
+     "id": "lt-sum-diff-rule-7",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=3x^4-\\dfrac{1}{2}x^2$ функцийн уламжлалыг ол.",
+     "latex": "12x^3-x",
+     "choices": [
+      "$12x^3-\\dfrac{1}{2}x$",
+      "$12x^3-x$",
+      "$12x^4-x$",
+      "$12x^3+x$"
+     ],
+     "answer": 1,
+     "solution_mn": "$(3x^4)'=12x^3$, $\\left(\\tfrac12x^2\\right)'=\\tfrac12\\cdot2x=x$ тул $f'(x)=12x^3-x$."
+    },
+    {
+     "id": "lt-sum-diff-rule-8",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^3-12x$ функцийн уламжлал тэгтэй тэнцэх $x$-ийн утгыг ол.",
+     "latex": "3x^2-12=0",
+     "choices": [
+      "$x=\\pm2\\sqrt{3}$",
+      "$x=0$",
+      "$x=\\pm2$",
+      "$x=\\pm4$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=3x^2-12=0$ тэгшитгэлийг бодвол $x^2=4$, иймд $x=\\pm2$. $3$-т хуваахаа мартвал буруу $\\pm2\\sqrt3$ гарна."
+    },
+    {
+     "id": "lt-sum-diff-rule-9",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^2+bx$ функцийн $x=1$ цэг дэх шүргэгчийн налуу (уламжлал) $5$-тай тэнцүү бол $b$-г ол.",
+     "latex": "f'(1)=2+b=5",
+     "choices": [
+      "$4$",
+      "$3$",
+      "$5$",
+      "$7$"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)=2x+b$ тул $f'(1)=2+b=5$, эндээс $b=3$. $f(1)=1+b=5$ гэж бодвол буруу $b=4$ гарна."
+    },
+    {
+     "id": "lt-sum-diff-rule-10",
+     "skill_id": "sum-diff-rule",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=(x-2)(x+3)$ функцийн уламжлалыг ол.",
+     "latex": "(x-2)(x+3)=x^2+x-6",
+     "choices": [
+      "$1$",
+      "$2x-1$",
+      "$2x+1$",
+      "$2x+5$"
+     ],
+     "answer": 2,
+     "solution_mn": "Үржвэрийн дүрэм энэ хичээлд ороогүй тул эхлээд задалбал $x^2+x-6$, уламжлал нь $2x+1$. Уламжлалуудыг үржүүлж $1$ гэж бодвол алдаа болно."
+    }
+   ]
+  },
+  {
+   "skill_id": "chain-rule",
+   "title_mn": "Нийлмэл функц (гинжин дүрэм)",
+   "lesson_id": "g11-8-5",
+   "pages_mn": "132–135",
+   "questions": [
+    {
+     "id": "lt-chain-rule-1",
+     "skill_id": "chain-rule",
+     "difficulty": 1,
+     "stem_mn": "Нийлмэл функцийн уламжлалын (гинжин дүрэм) зөв томьёог сонго: $\\big(f(g(x))\\big)'=?$",
+     "latex": "\\big(f(g(x))\\big)'=f'(g(x))\\cdot g'(x)",
+     "choices": [
+      "$f'(g(x))$",
+      "$f'(x)\\cdot g'(x)$",
+      "$f'(g(x))\\cdot g'(x)$",
+      "$f'(g'(x))$"
+     ],
+     "answer": 2,
+     "solution_mn": "Гинжин дүрмээр гадна функцийн уламжлалыг дотор функц дээр бодоод, дотор функцийн уламжлалаар үржинэ: $\\big(f(g(x))\\big)'=f'(g(x))\\cdot g'(x)$."
+    },
+    {
+     "id": "lt-chain-rule-2",
+     "skill_id": "chain-rule",
+     "difficulty": 1,
+     "stem_mn": "$y=(2x+3)^5$ функцийн уламжлалыг ол.",
+     "latex": "y'=5(2x+3)^4\\cdot 2=10(2x+3)^4",
+     "choices": [
+      "$10(2x+3)^4$",
+      "$5(2x+3)^4$",
+      "$10(2x+3)^5$",
+      "$5(2x+3)^4\\cdot 2x$"
+     ],
+     "answer": 0,
+     "solution_mn": "Зэргийн уламжлал $5(2x+3)^4$-г дотор функцийн уламжлал $(2x+3)'=2$-оор үржвэл $10(2x+3)^4$ болно."
+    },
+    {
+     "id": "lt-chain-rule-3",
+     "skill_id": "chain-rule",
+     "difficulty": 1,
+     "stem_mn": "$y=\\sin(3x)$ функцийн уламжлалыг ол.",
+     "latex": "y'=\\cos(3x)\\cdot 3=3\\cos(3x)",
+     "choices": [
+      "$\\cos(3x)$",
+      "$3\\cos(3x)$",
+      "$-3\\cos(3x)$",
+      "$3\\sin(3x)$"
+     ],
+     "answer": 1,
+     "solution_mn": "$(\\sin u)'=\\cos u\\cdot u'$ тул $y'=\\cos(3x)\\cdot 3=3\\cos(3x)$."
+    },
+    {
+     "id": "lt-chain-rule-4",
+     "skill_id": "chain-rule",
+     "difficulty": 1,
+     "stem_mn": "$y=(x^2+1)^3$ функцийн уламжлалыг ол.",
+     "latex": "y'=3(x^2+1)^2\\cdot 2x=6x(x^2+1)^2",
+     "choices": [
+      "$3(x^2+1)^2$",
+      "$6x(x^2+1)^3$",
+      "$6x(x^2+1)^2$",
+      "$2x(x^2+1)^2$"
+     ],
+     "answer": 2,
+     "solution_mn": "$3(x^2+1)^2$-г дотор функцийн уламжлал $(x^2+1)'=2x$-оор үржвэл $6x(x^2+1)^2$ болно."
+    },
+    {
+     "id": "lt-chain-rule-5",
+     "skill_id": "chain-rule",
+     "difficulty": 2,
+     "stem_mn": "$y=\\sqrt{x^2+1}$ функцийн уламжлалыг ол.",
+     "latex": "y'=\\frac{2x}{2\\sqrt{x^2+1}}=\\frac{x}{\\sqrt{x^2+1}}",
+     "choices": [
+      "$\\dfrac{x}{\\sqrt{x^2+1}}$",
+      "$\\dfrac{1}{2\\sqrt{x^2+1}}$",
+      "$\\dfrac{2x}{\\sqrt{x^2+1}}$",
+      "$\\dfrac{x}{2\\sqrt{x^2+1}}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\big(\\sqrt{u}\\big)'=\\dfrac{u'}{2\\sqrt{u}}$ тул $y'=\\dfrac{2x}{2\\sqrt{x^2+1}}=\\dfrac{x}{\\sqrt{x^2+1}}$."
+    },
+    {
+     "id": "lt-chain-rule-6",
+     "skill_id": "chain-rule",
+     "difficulty": 2,
+     "stem_mn": "$y=\\cos^2 x$ буюу $(\\cos x)^2$ функцийн уламжлалыг ол.",
+     "latex": "y'=2\\cos x\\cdot(-\\sin x)=-2\\sin x\\cos x",
+     "choices": [
+      "$2\\cos x\\sin x$",
+      "$-2\\sin x\\cos x$",
+      "$-2\\sin x$",
+      "$2\\cos x$"
+     ],
+     "answer": 1,
+     "solution_mn": "$2\\cos x$-г дотор функц $\\cos x$-ийн уламжлал $-\\sin x$-ээр үржвэл $y'=2\\cos x\\cdot(-\\sin x)=-2\\sin x\\cos x$."
+    },
+    {
+     "id": "lt-chain-rule-7",
+     "skill_id": "chain-rule",
+     "difficulty": 2,
+     "stem_mn": "$y=\\sin(x^2)$ функцийн уламжлалыг ол.",
+     "latex": "y'=\\cos(x^2)\\cdot 2x=2x\\cos(x^2)",
+     "choices": [
+      "$\\cos(x^2)$",
+      "$2x\\cos(2x)$",
+      "$2x\\cos(x^2)$",
+      "$\\cos(2x)$"
+     ],
+     "answer": 2,
+     "solution_mn": "$(\\sin u)'=\\cos u\\cdot u'$, $u=x^2$ тул $y'=\\cos(x^2)\\cdot 2x=2x\\cos(x^2)$. Дотор функц $x^2$ хэвээр аргументад үлдэнэ."
+    },
+    {
+     "id": "lt-chain-rule-8",
+     "skill_id": "chain-rule",
+     "difficulty": 2,
+     "stem_mn": "$y=(3x-1)^4$ бол $y'(1)$ утгыг ол.",
+     "latex": "y'=12(3x-1)^3,\\quad y'(1)=12\\cdot 8=96",
+     "choices": [
+      "$96$",
+      "$32$",
+      "$192$",
+      "$48$"
+     ],
+     "answer": 0,
+     "solution_mn": "$y'=4(3x-1)^3\\cdot 3=12(3x-1)^3$. $x=1$ үед $12\\cdot 2^3=12\\cdot 8=96$."
+    },
+    {
+     "id": "lt-chain-rule-9",
+     "skill_id": "chain-rule",
+     "difficulty": 3,
+     "stem_mn": "$y=\\sin^3(2x)$ буюу $(\\sin 2x)^3$ функцийн уламжлалыг ол.",
+     "latex": "y'=3\\sin^2(2x)\\cdot\\cos(2x)\\cdot 2=6\\sin^2(2x)\\cos(2x)",
+     "choices": [
+      "$3\\sin^2(2x)\\cos(2x)$",
+      "$6\\sin^2(2x)\\cos(2x)$",
+      "$6\\sin^2(2x)$",
+      "$3\\sin^2(2x)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Давхар гинжин дүрэм: $y'=3\\sin^2(2x)\\cdot\\cos(2x)\\cdot 2=6\\sin^2(2x)\\cos(2x)$. $\\sin 2x$-ийн уламжлал $2\\cos 2x$-ийг мартаж болохгүй."
+    },
+    {
+     "id": "lt-chain-rule-10",
+     "skill_id": "chain-rule",
+     "difficulty": 3,
+     "stem_mn": "$y=(x^2-2x+3)^4$ функцийн уламжлал тэгтэй тэнцэх $x$-ийн утгыг ол.",
+     "latex": "y'=4(x^2-2x+3)^3(2x-2)=0\\Rightarrow x=1",
+     "choices": [
+      "$x=0$",
+      "$x=2$",
+      "$x=1$",
+      "Шийдгүй"
+     ],
+     "answer": 2,
+     "solution_mn": "$y'=4(x^2-2x+3)^3(2x-2)$. $x^2-2x+3=(x-1)^2+2>0$ тул зөвхөн $2x-2=0$ буюу $x=1$ үед $y'=0$."
+    }
+   ]
+  },
+  {
+   "skill_id": "tangent-normal-line",
+   "title_mn": "Шүргэгч ба нормаль тэгшитгэл",
+   "lesson_id": "g11-8-6",
+   "pages_mn": "133–136",
+   "questions": [
+    {
+     "id": "lt-tangent-normal-line-1",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 1,
+     "stem_mn": "Функц $f(x)$-ийн график дээрх $x_0$ цэгт татсан шүргэгчийн налуу (өнцгийн коэффициент) юутай тэнцүү вэ?",
+     "latex": "k=f'(x_0)",
+     "choices": [
+      "$f(x_0)$",
+      "$f'(x_0)$",
+      "$-\\dfrac{1}{f'(x_0)}$",
+      "$x_0$"
+     ],
+     "answer": 1,
+     "solution_mn": "Шүргэгчийн налуу нь тухайн цэг дэх уламжлалын утгатай тэнцүү, өөрөөр хэлбэл $k=f'(x_0)$. $-\\frac{1}{f'(x_0)}$ нь нормалийн налуу тул буруу."
+    },
+    {
+     "id": "lt-tangent-normal-line-2",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2$ функцийн $x_0=3$ цэгт татсан шүргэгчийн налууг ол.",
+     "latex": "f'(x)=2x",
+     "choices": [
+      "$3$",
+      "$2$",
+      "$6$",
+      "$9$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=2x$ тул налуу нь $f'(3)=2\\cdot 3=6$. $9$ гэдэг нь $f(3)=3^2$ буюу функцийн утга, налуу биш."
+    },
+    {
+     "id": "lt-tangent-normal-line-3",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2$ функцийн $x_0=1$ цэгт татсан шүргэгчийн тэгшитгэлийг ол.",
+     "latex": "y=f(x_0)+f'(x_0)(x-x_0)",
+     "choices": [
+      "$y=2x-1$",
+      "$y=2x+1$",
+      "$y=x-1$",
+      "$y=2x-2$"
+     ],
+     "answer": 0,
+     "solution_mn": "$f(1)=1,\\ f'(1)=2$ тул $y=1+2(x-1)=2x-1$."
+    },
+    {
+     "id": "lt-tangent-normal-line-4",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 1,
+     "stem_mn": "Аль нэг цэг дэх шүргэгчийн налуу $2$ бол мөн цэгт татсан нормаль шулууны налуу хэдтэй тэнцүү вэ?",
+     "latex": "k_n=-\\dfrac{1}{k}",
+     "choices": [
+      "$\\dfrac{1}{2}$",
+      "$-2$",
+      "$2$",
+      "$-\\dfrac{1}{2}$"
+     ],
+     "answer": 3,
+     "solution_mn": "Нормаль нь шүргэгчид перпендикуляр тул налуу нь $-\\frac{1}{k}=-\\frac{1}{2}$. $-2$ бол урвуу утгыг авахаа мартсан алдаа."
+    },
+    {
+     "id": "lt-tangent-normal-line-5",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3-2x$ функцийн $x_0=2$ цэгт татсан шүргэгчийн налууг ол.",
+     "latex": "f'(x)=3x^2-2",
+     "choices": [
+      "$4$",
+      "$12$",
+      "$10$",
+      "$8$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=3x^2-2$ тул $f'(2)=3\\cdot 4-2=10$. $12$ бол $-2$ гишүүнийг мартсан, $4$ бол $f(2)$ функцийн утга."
+    },
+    {
+     "id": "lt-tangent-normal-line-6",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ функцийн $x_0=1$ цэгт татсан нормаль шулууны тэгшитгэлийг ол.",
+     "latex": "y=f(x_0)-\\dfrac{1}{f'(x_0)}(x-x_0)",
+     "choices": [
+      "$y=2x-1$",
+      "$y=-2x+3$",
+      "$y=-\\dfrac{1}{2}x+\\dfrac{1}{2}$",
+      "$y=-\\dfrac{1}{2}x+\\dfrac{3}{2}$"
+     ],
+     "answer": 3,
+     "solution_mn": "$f(1)=1,\\ f'(1)=2$ тул нормалийн налуу $-\\frac{1}{2}$. $y=1-\\frac{1}{2}(x-1)=-\\frac{1}{2}x+\\frac{3}{2}$. $y=2x-1$ бол шүргэгчийн тэгшитгэл."
+    },
+    {
+     "id": "lt-tangent-normal-line-7",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2-4x+3$ функцийн шүргэгч аль $x$ утганд абсцисс тэнхлэгтэй параллель (хэвтээ) болох вэ?",
+     "latex": "f'(x)=0",
+     "choices": [
+      "$x=2$",
+      "$x=4$",
+      "$x=-2$",
+      "$x=0$"
+     ],
+     "answer": 0,
+     "solution_mn": "Хэвтээ шүргэгчийн налуу тэг тул $f'(x)=2x-4=0\\Rightarrow x=2$."
+    },
+    {
+     "id": "lt-tangent-normal-line-8",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ функцийн шүргэгч $y=6x+1$ шулуунтай параллель байх $x_0$ цэгийг ол.",
+     "latex": "f'(x_0)=6",
+     "choices": [
+      "$x_0=6$",
+      "$x_0=12$",
+      "$x_0=1$",
+      "$x_0=3$"
+     ],
+     "answer": 3,
+     "solution_mn": "Параллель шулуудын налуу тэнцүү тул $f'(x_0)=2x_0=6\\Rightarrow x_0=3$. $x_0=6$ бол $2$-т хуваахаа мартсан алдаа."
+    },
+    {
+     "id": "lt-tangent-normal-line-9",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=\\dfrac{1}{x}$ функцийн $x_0=2$ цэгт татсан шүргэгчийн тэгшитгэлийг ол.",
+     "latex": "f'(x)=-\\dfrac{1}{x^2}",
+     "choices": [
+      "$y=\\dfrac{1}{4}x+1$",
+      "$y=-\\dfrac{1}{4}x+1$",
+      "$y=-\\dfrac{1}{4}x+\\dfrac{1}{2}$",
+      "$y=-\\dfrac{1}{2}x+\\dfrac{3}{2}$"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)=-\\frac{1}{x^2}$ тул $f'(2)=-\\frac{1}{4},\\ f(2)=\\frac{1}{2}$. $y=\\frac{1}{2}-\\frac{1}{4}(x-2)=-\\frac{1}{4}x+1$."
+    },
+    {
+     "id": "lt-tangent-normal-line-10",
+     "skill_id": "tangent-normal-line",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^2$ функцийн шүргэгч абсцисс тэнхлэгийн эерэг чиглэлтэй $45^\\circ$ өнцөг үүсгэдэг $x_0$ цэгийг ол.",
+     "latex": "f'(x_0)=\\tan 45^\\circ",
+     "choices": [
+      "$x_0=1$",
+      "$x_0=\\dfrac{\\sqrt{2}}{2}$",
+      "$x_0=\\dfrac{1}{2}$",
+      "$x_0=2$"
+     ],
+     "answer": 2,
+     "solution_mn": "Шүргэгчийн налуу $=\\tan45^\\circ=1$. $f'(x_0)=2x_0=1\\Rightarrow x_0=\\frac{1}{2}$. $x_0=1$ бол $2$-т хуваахаа мартсан алдаа."
+    }
+   ]
+  },
+  {
+   "skill_id": "increasing-decreasing",
+   "title_mn": "Өсөх, буурах завсар",
+   "lesson_id": "g11-8-7",
+   "pages_mn": "139–142",
+   "questions": [
+    {
+     "id": "lt-increasing-decreasing-1",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 1,
+     "stem_mn": "$f$ функц нэг завсарт дифференциалчлагдах бөгөөд уг завсрын бүх $x$-д $f'(x)>0$ бол функц энэ завсарт ямар байх вэ?",
+     "latex": "f'(x)>0\\ \\Rightarrow\\ \\nearrow",
+     "choices": [
+      "БУУРНА",
+      "ӨСНӨ",
+      "тогтмол байна",
+      "тодорхойлогдоогүй"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)$ нь шүргэгчийн налуу тул $f'(x)>0$ үед налуу эерэг, улмаар функц өснө."
+    },
+    {
+     "id": "lt-increasing-decreasing-2",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2-8x$ функц аль завсарт өсөх вэ?",
+     "latex": "f'(x)=2x-8",
+     "choices": [
+      "$x<4$",
+      "$x>-4$",
+      "$x>4$",
+      "$x<-4$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=2x-8>0\\ \\Rightarrow\\ 2x>8\\ \\Rightarrow\\ x>4$, тиймээс $x>4$ завсарт өснө."
+    },
+    {
+     "id": "lt-increasing-decreasing-3",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2-2x$ функцийн эгзэгтэй цэгийг ($f'(x)=0$ болох $x$) ол.",
+     "latex": "f'(x)=2x-2",
+     "choices": [
+      "$x=1$",
+      "$x=2$",
+      "$x=0$",
+      "$x=-1$"
+     ],
+     "answer": 0,
+     "solution_mn": "$f'(x)=2x-2=0\\ \\Rightarrow\\ x=1$. (Харин $f(x)=0$ бодвол $x=0$ буюу $x=2$ гарах бөгөөд энэ нь эгзэгтэй цэг биш.)"
+    },
+    {
+     "id": "lt-increasing-decreasing-4",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 1,
+     "stem_mn": "Функцийн тодорхой цэг дэх агшин зуурын өөрчлөлтийн хурдыг юугаар тодорхойлох вэ?",
+     "latex": "",
+     "choices": [
+      "функц $f(x)$-ийн утгаар",
+      "аргумент $x$-ийн утгаар",
+      "$\\frac{f(x)}{x}$ харьцаагаар",
+      "уламжлал $f'(x)$-ийн утгаар"
+     ],
+     "answer": 3,
+     "solution_mn": "Уламжлал $f'(x)$ нь функцийн агшин зуурын өөрчлөлтийн хурдыг илэрхийлдэг."
+    },
+    {
+     "id": "lt-increasing-decreasing-5",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=-x^2+6x$ функц аль завсарт өсөх вэ?",
+     "latex": "f'(x)=-2x+6",
+     "choices": [
+      "$x>3$",
+      "$x<3$",
+      "$x>-3$",
+      "$x<-3$"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)=-2x+6>0\\ \\Rightarrow\\ -2x>-6\\ \\Rightarrow\\ x<3$ (сөрөг тоонд хуваахад тэнцэтгэл бишийн тэмдэг эргэнэ)."
+    },
+    {
+     "id": "lt-increasing-decreasing-6",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3-27x$ функц аль завсарт буурах вэ?",
+     "latex": "f'(x)=3(x-3)(x+3)",
+     "choices": [
+      "$x<-3$",
+      "$x>3$",
+      "$-3<x<3$",
+      "$x<-3$ ба $x>3$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=3x^2-27=3(x-3)(x+3)$. Үржвэр язгууруудын хооронд сөрөг тул $-3<x<3$ завсарт буурна."
+    },
+    {
+     "id": "lt-increasing-decreasing-7",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2$ функцийн $x=3$ цэг дэх өөрчлөлтийн хурд хэдтэй тэнцүү вэ?",
+     "latex": "f'(x)=2x",
+     "choices": [
+      "$6$",
+      "$9$",
+      "$3$",
+      "$2$"
+     ],
+     "answer": 0,
+     "solution_mn": "$f'(x)=2x$ тул өөрчлөлтийн хурд $f'(3)=2\\cdot 3=6$. ($f(3)=9$ нь функцийн утга болохоос хурд биш.)"
+    },
+    {
+     "id": "lt-increasing-decreasing-8",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 2,
+     "stem_mn": "Биеийн байрлал $s(t)=t^2-6t$ (метр, $t$ секундээр) хуулиар өгөгдсөн бол $t=1$ секунд дэх хурд хэдтэй тэнцүү вэ?",
+     "latex": "s'(t)=2t-6",
+     "choices": [
+      "$-5$",
+      "$4$",
+      "$-4$",
+      "$2$"
+     ],
+     "answer": 2,
+     "solution_mn": "Хурд нь байрлалын уламжлал: $s'(t)=2t-6$, тиймээс $s'(1)=2\\cdot 1-6=-4$. ($s(1)=-5$ нь байрлал болохоос хурд биш.)"
+    },
+    {
+     "id": "lt-increasing-decreasing-9",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^3-6x^2+9x$ функц аль завсруудад өсөх вэ?",
+     "latex": "f'(x)=3(x-1)(x-3)",
+     "choices": [
+      "$1<x<3$",
+      "$x>1$",
+      "$x<3$",
+      "$x<1$ ба $x>3$"
+     ],
+     "answer": 3,
+     "solution_mn": "$f'(x)=3x^2-12x+9=3(x-1)(x-3)$. Үржвэр язгууруудын гадна эерэг тул $x<1$ ба $x>3$ завсруудад өснө ($1<x<3$-д буурна)."
+    },
+    {
+     "id": "lt-increasing-decreasing-10",
+     "skill_id": "increasing-decreasing",
+     "difficulty": 3,
+     "stem_mn": "Функцийн уламжлал $f'(x)=(x-2)(x+3)$ бол функц аль завсарт буурах вэ?",
+     "latex": "f'(x)=(x-2)(x+3)",
+     "choices": [
+      "$x<-3$ ба $x>2$",
+      "$-3<x<2$",
+      "$2<x<3$",
+      "$x<-3$"
+     ],
+     "answer": 1,
+     "solution_mn": "$(x-2)(x+3)<0$ нь язгууруудын хооронд буюу $-3<x<2$ үед биелэх тул уг завсарт функц буурна."
+    }
+   ]
+  },
+  {
+   "skill_id": "extrema",
+   "title_mn": "Экстремум (их/бага утга)",
+   "lesson_id": "g11-8-8",
+   "pages_mn": "150–153",
+   "questions": [
+    {
+     "id": "lt-extrema-1",
+     "skill_id": "extrema",
+     "difficulty": 1,
+     "stem_mn": "Функцийн эгзэгтэй (критик) цэгийг олохын тулд аль тэгшитгэлийг бодох вэ?",
+     "latex": "f'(x)=0",
+     "choices": [
+      "$f'(x)=0$",
+      "$f(x)=0$",
+      "$f'(x)=1$",
+      "$f''(x)=0$"
+     ],
+     "answer": 0,
+     "solution_mn": "Эгзэгтэй цэг дээр шүргэгчийн налуу $0$ болдог тул $f'(x)=0$ тэгшитгэлийг бодно."
+    },
+    {
+     "id": "lt-extrema-2",
+     "skill_id": "extrema",
+     "difficulty": 1,
+     "stem_mn": "Эгзэгтэй цэгийг дайрахад уламжлалын тэмдэг $(-)$-ээс $(+)$ рүү өөрчлөгдвөл функц тэр цэг дээр ямар утга авах вэ?",
+     "latex": "f':\\ (-)\\to(+)",
+     "choices": [
+      "Их утга (максимум)",
+      "Утга байхгүй",
+      "Бага утга (минимум)",
+      "Тогтмол утга"
+     ],
+     "answer": 2,
+     "solution_mn": "Тэмдэг $(-)\\to(+)$ болвол функц буурахаас өсөх рүү шилждэг тул тэр цэг дээр бага утга (минимум) гарна."
+    },
+    {
+     "id": "lt-extrema-3",
+     "skill_id": "extrema",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2-10x$ функцийн эгзэгтэй цэгийг ол.",
+     "latex": "f(x)=x^2-10x",
+     "choices": [
+      "$x=10$",
+      "$x=5$",
+      "$x=-5$",
+      "$x=0$"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)=2x-10=0\\Rightarrow 2x=10\\Rightarrow x=5$."
+    },
+    {
+     "id": "lt-extrema-4",
+     "skill_id": "extrema",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2-4x$ функц эгзэгтэй цэг дээрээ их утга авах уу, бага утга авах уу?",
+     "latex": "f(x)=x^2-4x",
+     "choices": [
+      "Их утга (максимум)",
+      "Экстремумгүй",
+      "Их ба бага утга хоёуланг",
+      "Бага утга (минимум)"
+     ],
+     "answer": 3,
+     "solution_mn": "$x^2$-ийн коэффициент эерэг тул парабол дээшээ нээгдэнэ; $f'(x)=2x-4$-ийн тэмдэг $(-)\\to(+)$ болох тул $x=2$ дээр бага утга авна."
+    },
+    {
+     "id": "lt-extrema-5",
+     "skill_id": "extrema",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2-4x$ функцийн бага утга (минимум) хэдтэй тэнцүү вэ?",
+     "latex": "f(x)=x^2-4x",
+     "choices": [
+      "$-4$",
+      "$2$",
+      "$4$",
+      "$-2$"
+     ],
+     "answer": 0,
+     "solution_mn": "$f'(x)=2x-4=0\\Rightarrow x=2$; $f(2)=2^2-4\\cdot2=4-8=-4$."
+    },
+    {
+     "id": "lt-extrema-6",
+     "skill_id": "extrema",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3-3x$ функцийн их утга (максимум) аль цэг дээр гарах вэ?",
+     "latex": "f(x)=x^3-3x",
+     "choices": [
+      "$x=1$",
+      "$x=0$",
+      "$x=-1$",
+      "$x=3$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=3x^2-3=0\\Rightarrow x=\\pm1$. $x=-1$ дээр тэмдэг $(+)\\to(-)$ тул их утга энд гарна (харин $x=1$ дээр бага утга)."
+    },
+    {
+     "id": "lt-extrema-7",
+     "skill_id": "extrema",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3-12x$ функцийн эгзэгтэй цэгүүдийг ол.",
+     "latex": "f(x)=x^3-12x",
+     "choices": [
+      "зөвхөн $x=2$",
+      "$x=2$ ба $x=-2$",
+      "$x=4$ ба $x=-4$",
+      "$x=0$ ба $x=2$"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)=3x^2-12=0\\Rightarrow x^2=4\\Rightarrow x=\\pm2$. Сөрөг язгуур $x=-2$-ыг мартаж болохгүй."
+    },
+    {
+     "id": "lt-extrema-8",
+     "skill_id": "extrema",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=-x^2+6x$ функцийн их утга (максимум) хэдтэй тэнцүү вэ?",
+     "latex": "f(x)=-x^2+6x",
+     "choices": [
+      "$-9$",
+      "$3$",
+      "$6$",
+      "$9$"
+     ],
+     "answer": 3,
+     "solution_mn": "$f'(x)=-2x+6=0\\Rightarrow x=3$; $f(3)=-3^2+6\\cdot3=-9+18=9$."
+    },
+    {
+     "id": "lt-extrema-9",
+     "skill_id": "extrema",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^3-6x^2+9x$ функцийн их утга (максимум) хэдтэй тэнцүү вэ?",
+     "latex": "f(x)=x^3-6x^2+9x",
+     "choices": [
+      "$4$",
+      "$0$",
+      "$1$",
+      "$-4$"
+     ],
+     "answer": 0,
+     "solution_mn": "$f'(x)=3x^2-12x+9=3(x-1)(x-3)=0\\Rightarrow x=1,3$. $x=1$ дээр тэмдэг $(+)\\to(-)$ тул их утга: $f(1)=1-6+9=4$ ($x=3$ дээр бага утга $0$ гарна)."
+    },
+    {
+     "id": "lt-extrema-10",
+     "skill_id": "extrema",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^3-3x^2$ функцийн бага утга (минимум) хэдтэй тэнцүү вэ?",
+     "latex": "f(x)=x^3-3x^2",
+     "choices": [
+      "$0$",
+      "$2$",
+      "$-4$",
+      "$4$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=3x^2-6x=3x(x-2)=0\\Rightarrow x=0,2$. $x=2$ дээр тэмдэг $(-)\\to(+)$ тул бага утга: $f(2)=2^3-3\\cdot2^2=8-12=-4$ ($x=0$ дээр их утга $0$)."
+    }
+   ]
+  },
+  {
+   "skill_id": "curve-sketching",
+   "title_mn": "Уламжлалаар график шинжлэх",
+   "lesson_id": "g11-8-9",
+   "pages_mn": "152–155",
+   "questions": [
+    {
+     "id": "lt-curve-sketching-1",
+     "skill_id": "curve-sketching",
+     "difficulty": 1,
+     "stem_mn": "Функцийн эгзэгтэй (критик) цэг гэж алийг нь хэлэх вэ?",
+     "latex": "f'(x)=0",
+     "choices": [
+      "$f(x)=0$ болох $x$ цэгийг",
+      "$f'(x)=0$ (эсвэл уламжлал оршихгүй) болох $x$ цэгийг",
+      "$f''(x)=0$ болох $x$ цэгийг",
+      "График $y$-тэнхлэгийг огтлох цэгийг"
+     ],
+     "answer": 1,
+     "solution_mn": "Эгзэгтэй цэг нь уламжлал тэгтэй тэнцүү (эсвэл оршин байхгүй) болох цэг; локал их/бага утга зөвхөн ийм цэг дээр үүсэх боломжтой."
+    },
+    {
+     "id": "lt-curve-sketching-2",
+     "skill_id": "curve-sketching",
+     "difficulty": 1,
+     "stem_mn": "Тодорхой завсарт $f'(x)>0$ бол функцийн график тэр завсартаа ямар байх вэ?",
+     "latex": "f'(x)>0",
+     "choices": [
+      "Буурах",
+      "Тогтмол",
+      "Өсөх",
+      "Тасалдах"
+     ],
+     "answer": 2,
+     "solution_mn": "Уламжлалын эерэг тэмдэг нь шүргэгчийн налуу эерэг гэсэн үг тул график тэр завсартаа өснө."
+    },
+    {
+     "id": "lt-curve-sketching-3",
+     "skill_id": "curve-sketching",
+     "difficulty": 1,
+     "stem_mn": "Эгзэгтэй цэгийн орчимд $f'(x)$ нь эерэгээс сөрөг рүү тэмдгээ өөрчилбөл тэр цэг ямар цэг болох вэ?",
+     "latex": "f'(x):\\ (+)\\to(-)",
+     "choices": [
+      "Локал их (максимум)",
+      "Локал бага (минимум)",
+      "Гулзайлтын цэг",
+      "Тодорхойлогдохгүй цэг"
+     ],
+     "answer": 0,
+     "solution_mn": "$f'$ эерэгээс сөрөг болбол функц өсөхөө болиод буурч эхэлдэг тул тэр цэг дээр оргил буюу локал их утга үүснэ."
+    },
+    {
+     "id": "lt-curve-sketching-4",
+     "skill_id": "curve-sketching",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2-6x$ функцийн эгзэгтэй цэг дэх $x$-ийн утгыг ол.",
+     "latex": "f'(x)=2x-6",
+     "choices": [
+      "$x=6$",
+      "$x=-3$",
+      "$x=3$",
+      "$x=0$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=2x-6=0\\Rightarrow x=3$. Энэ нь параболын оройн байрлал юм."
+    },
+    {
+     "id": "lt-curve-sketching-5",
+     "skill_id": "curve-sketching",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2-4x+3$ функцийн локал бага утга авах цэгийн координатыг ол.",
+     "latex": "f'(x)=2x-4",
+     "choices": [
+      "$(2;\\,3)$",
+      "$(2;\\,-1)$",
+      "$(-2;\\,15)$",
+      "$(4;\\,3)$"
+     ],
+     "answer": 1,
+     "solution_mn": "$2x-4=0\\Rightarrow x=2$; $f(2)=4-8+3=-1$ тул локал бага цэг нь $(2;-1)$."
+    },
+    {
+     "id": "lt-curve-sketching-6",
+     "skill_id": "curve-sketching",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3-3x^2$ функцийн эгзэгтэй цэгүүдийг ол.",
+     "latex": "f'(x)=3x^2-6x=3x(x-2)",
+     "choices": [
+      "$x=0,\\ x=3$",
+      "Зөвхөн $x=2$",
+      "$x=\\pm\\sqrt{2}$",
+      "$x=0,\\ x=2$"
+     ],
+     "answer": 3,
+     "solution_mn": "$f'(x)=3x^2-6x=3x(x-2)=0\\Rightarrow x=0$ буюу $x=2$."
+    },
+    {
+     "id": "lt-curve-sketching-7",
+     "skill_id": "curve-sketching",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3-3x$ функц аль завсруудад өсөх вэ?",
+     "latex": "f'(x)=3(x-1)(x+1)",
+     "choices": [
+      "$(-1;\\,1)$",
+      "$(0;\\,\\infty)$",
+      "$(-\\infty;\\,-1)\\cup(1;\\,\\infty)$",
+      "Бүх бодит тоонд"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'(x)=3(x-1)(x+1)>0$ нь $x<-1$ эсвэл $x>1$ үед үнэн тул функц $(-\\infty;-1)$ ба $(1;\\infty)$ завсруудад өснө."
+    },
+    {
+     "id": "lt-curve-sketching-8",
+     "skill_id": "curve-sketching",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^3-12x$ функцийн локал их утга авах цэгийн координатыг ол.",
+     "latex": "f'(x)=3(x-2)(x+2)",
+     "choices": [
+      "$(2;\\,-16)$",
+      "$(-2;\\,16)$",
+      "$(-2;\\,-16)$",
+      "$(2;\\,16)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Эгзэгтэй цэг $x=\\pm2$. $x=-2$ дээр $f'$ эерэгээс сөрөг болох тул локал их; $f(-2)=(-2)^3-12(-2)=-8+24=16$ тул цэг нь $(-2;16)$."
+    },
+    {
+     "id": "lt-curve-sketching-9",
+     "skill_id": "curve-sketching",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^3$ функцийн хувьд $f'(0)=0$ боловч $x=0$-ийн орчимд $f'(x)\\ge 0$ хэвээр байна. Тэгвэл $x=0$ цэг ямар цэг вэ?",
+     "latex": "f'(x)=3x^2\\ge 0",
+     "choices": [
+      "Локал бага (минимум)",
+      "Локал их (максимум)",
+      "Экстремум биш — уламжлалын тэмдэг өөрчлөгддөггүй (гулзайлтын цэг)",
+      "Тодорхойлогдохгүй цэг"
+     ],
+     "answer": 2,
+     "solution_mn": "$f'$-ийн тэмдэг $x=0$-ийн орчимд өөрчлөгдөхгүй тул экстремум үүсэхгүй; график энэ цэгээр дайрсан (горизонталь шүргэгчтэй) гулзайлтын цэг болно."
+    },
+    {
+     "id": "lt-curve-sketching-10",
+     "skill_id": "curve-sketching",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^4-2x^2$ функц хэдэн локал бага (минимум) цэгтэй вэ?",
+     "latex": "f'(x)=4x^3-4x=4x(x-1)(x+1)",
+     "choices": [
+      "1",
+      "2",
+      "3",
+      "0"
+     ],
+     "answer": 1,
+     "solution_mn": "Эгзэгтэй цэгүүд $x=-1,0,1$. Тэмдгийн шинжилгээгээр $x=-1$ ба $x=1$ дээр $f'$ сөрөгөөс эерэг болж хоёр локал бага үүснэ ($x=0$ нь локал их) тул 2 локал бага цэгтэй."
+    }
+   ]
+  }
+ ]
+}
