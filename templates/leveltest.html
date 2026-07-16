@@ -8,16 +8,29 @@
   <section x-show="stage==='pick'">
     <div class="mb-4">
       <h1 class="text-2xl font-extrabold text-ink-900 flex items-center gap-2">🎯 Түвшин тогтоох шалгалт</h1>
-      <p class="text-sm text-slate-500 mt-1">Сэдэв бүрд <b>10 асуулт</b>. Хариулаад дуусахад тухайн сэдвийн <b>түвшин</b> чинь гарч, аль хичээлийг үзэхийг зөвлөнө. Цаг хэмжихгүй — алдвал зүгээр. 🌱</p>
+      <p class="text-sm text-slate-500 mt-1">Ангиа сонгоод сэдэв бүрийн <b>түвшин</b>ээ шалга. Хариулаад дуусахад аль хичээлийг үзэхийг зөвлөнө. Цаг хэмжихгүй — алдвал зүгээр. 🌱</p>
+    </div>
+
+    <!-- grade selector -->
+    <div class="flex gap-2 mb-3">
+      <template x-for="g in grades" :key="g">
+        <button @click="grade=g"
+                :class="grade===g ? 'bg-brand-600 text-white' : 'bg-white text-ink-700 border border-slate-200'"
+                class="px-4 py-2 rounded-xl text-sm font-semibold min-h-[44px]" x-text="`${g}-р анги`"></button>
+      </template>
     </div>
 
     <div class="flex items-center justify-between mb-2 px-1">
-      <span class="text-xs font-semibold text-slate-600" x-text="`${doneCount()}/${topics.length} сэдэв шалгасан`"></span>
+      <span class="text-xs font-semibold text-slate-600" x-text="`${gradeDoneCount()}/${gradeTopics().length} сэдэв шалгасан`"></span>
       <button x-show="doneCount()>0" @click="resetAll()" class="text-xs text-slate-400 hover:text-slate-600">Дахин эхлэх</button>
     </div>
 
+    <template x-if="!gradeTopics().length">
+      <div class="card p-6 text-center text-sm text-slate-500">Энэ ангийн сэдэв тун удахгүй нэмэгдэнэ.</div>
+    </template>
+
     <div class="grid sm:grid-cols-2 gap-3">
-      <template x-for="(t,i) in topics" :key="t.skill_id">
+      <template x-for="(t,i) in gradeTopics()" :key="t.skill_id">
         <button @click="start(t)" :disabled="loading"
                 class="card p-4 text-left hover:border-brand-300 hover:shadow-md transition group disabled:opacity-60">
           <div class="flex items-start justify-between gap-2">
@@ -128,14 +141,19 @@
 <script>
 function levelTest(topics) {
   return {
-    topics: topics, done: {}, stage: 'pick',
+    topics: topics, done: {}, stage: 'pick', grades: [10, 11, 12], grade: 11,
     current: null, questions: [], answers: [], graded: null,
     loading: false, slowWake: false, busy: false, error: null, _wake: null,
 
     init() {
       try { this.done = (JSON.parse(localStorage.getItem('zaavar.leveltest')) || {}).topics || {}; }
       catch (e) { this.done = {}; }
+      // default to the first grade that actually has topics
+      const present = this.grades.filter(g => this.topics.some(t => t.grade === g));
+      if (present.length && !present.includes(this.grade)) this.grade = present[0];
     },
+    gradeTopics() { return this.topics.filter(t => t.grade === this.grade); },
+    gradeDoneCount() { return this.gradeTopics().filter(t => this.done[t.skill_id]).length; },
     doneCount() { return Object.keys(this.done).length; },
 
     async api(url, body) {

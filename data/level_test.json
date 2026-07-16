@@ -157,7 +157,8 @@
      "answer": 2,
      "solution_mn": "$f(3)=-3$, $f(3+h)=h^2+2h-3$ тул $\\dfrac{h^2+2h}{h}=h+2\\to 2$. ($6$ бол зөвхөн $x^2$ хэсгийн $2x_0$-г авсан, $-3$ бол $f(3)$-ийн утга.)"
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "derivative-definition",
@@ -315,7 +316,8 @@
      "answer": 1,
      "solution_mn": "Энэ хязгаар нь тодорхойлолтоор $f'(3)$ буюу $x=3$ цэг дээрх уламжлал — геометрийн хувьд шүргэгчийн налуу. Хязгаар авсан тул дундаж биш агшин зуурын хурд."
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "power-rule",
@@ -473,7 +475,8 @@
      "answer": 3,
      "solution_mn": "Шүргэгчийн налуу нь уламжлал тул $3x^2=12$, эндээс $x^2=4$, $x=\\pm2$."
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "sum-diff-rule",
@@ -631,7 +634,8 @@
      "answer": 2,
      "solution_mn": "Үржвэрийн дүрэм энэ хичээлд ороогүй тул эхлээд задалбал $x^2+x-6$, уламжлал нь $2x+1$. Уламжлалуудыг үржүүлж $1$ гэж бодвол алдаа болно."
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "chain-rule",
@@ -789,7 +793,8 @@
      "answer": 2,
      "solution_mn": "$y'=4(x^2-2x+3)^3(2x-2)$. $x^2-2x+3=(x-1)^2+2>0$ тул зөвхөн $2x-2=0$ буюу $x=1$ үед $y'=0$."
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "tangent-normal-line",
@@ -947,7 +952,8 @@
      "answer": 2,
      "solution_mn": "Шүргэгчийн налуу $=\\tan45^\\circ=1$. $f'(x_0)=2x_0=1\\Rightarrow x_0=\\frac{1}{2}$. $x_0=1$ бол $2$-т хуваахаа мартсан алдаа."
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "increasing-decreasing",
@@ -1105,7 +1111,8 @@
      "answer": 1,
      "solution_mn": "$(x-2)(x+3)<0$ нь язгууруудын хооронд буюу $-3<x<2$ үед биелэх тул уг завсарт функц буурна."
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "extrema",
@@ -1263,7 +1270,8 @@
      "answer": 2,
      "solution_mn": "$f'(x)=3x^2-6x=3x(x-2)=0\\Rightarrow x=0,2$. $x=2$ дээр тэмдэг $(-)\\to(+)$ тул бага утга: $f(2)=2^3-3\\cdot2^2=8-12=-4$ ($x=0$ дээр их утга $0$)."
     }
-   ]
+   ],
+   "grade": 11
   },
   {
    "skill_id": "curve-sketching",
@@ -1420,6 +1428,4006 @@
      ],
      "answer": 1,
      "solution_mn": "Эгзэгтэй цэгүүд $x=-1,0,1$. Тэмдгийн шинжилгээгээр $x=-1$ ба $x=1$ дээр $f'$ сөрөгөөс эерэг болж хоёр локал бага үүснэ ($x=0$ нь локал их) тул 2 локал бага цэгтэй."
+    }
+   ],
+   "grade": 11
+  },
+  {
+   "skill_id": "g10-sets",
+   "title_mn": "Олонлог",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-sets-1",
+     "skill_id": "g10-sets",
+     "difficulty": 1,
+     "stem_mn": "$A=\\{1,2,3\\}$, $B=\\{3,4,5\\}$ бол $A\\cup B$ олонлогийг ол.",
+     "latex": "A\\cup B=\\{1,2,3,4,5\\}",
+     "choices": [
+      "$\\{3\\}$",
+      "$\\{1,2,4,5\\}$",
+      "$\\{1,2,3,4,5\\}$",
+      "$\\{1,2,3\\}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Нэгдэл нь хоёр олонлогийн бүх элементийг давхардуулалгүй агуулна тул $A\\cup B=\\{1,2,3,4,5\\}$."
+    },
+    {
+     "id": "lt-g10-sets-2",
+     "skill_id": "g10-sets",
+     "difficulty": 1,
+     "stem_mn": "$A=\\{2,4,6,8\\}$, $B=\\{4,8,12\\}$ бол $A\\cap B$ олонлогийг ол.",
+     "latex": "A\\cap B=\\{4,8\\}",
+     "choices": [
+      "$\\{2,4,6,8,12\\}$",
+      "$\\{4,8\\}$",
+      "$\\{4\\}$",
+      "$\\{2,6\\}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Огтлолцол нь хоёуланд нь нийтлэг элементүүдээс тогтоно: $A\\cap B=\\{4,8\\}$."
+    },
+    {
+     "id": "lt-g10-sets-3",
+     "skill_id": "g10-sets",
+     "difficulty": 1,
+     "stem_mn": "$\\{a,b,c\\}$ олонлог нийт хэдэн дэд олонлогтой вэ?",
+     "latex": "2^{n}",
+     "choices": [
+      "$6$",
+      "$3$",
+      "$9$",
+      "$8$"
+     ],
+     "answer": 3,
+     "solution_mn": "$n$ элементтэй олонлог $2^n$ дэд олонлогтой тул $2^3=8$."
+    },
+    {
+     "id": "lt-g10-sets-4",
+     "skill_id": "g10-sets",
+     "difficulty": 2,
+     "stem_mn": "$|A|=20$, $|B|=15$, $|A\\cap B|=8$ бол $|A\\cup B|$-г ол.",
+     "latex": "|A\\cup B|=|A|+|B|-|A\\cap B|",
+     "choices": [
+      "$27$",
+      "$35$",
+      "$43$",
+      "$23$"
+     ],
+     "answer": 0,
+     "solution_mn": "Нэгдэл-огтлолцлын томьёогоор $|A\\cup B|=20+15-8=27$."
+    },
+    {
+     "id": "lt-g10-sets-5",
+     "skill_id": "g10-sets",
+     "difficulty": 2,
+     "stem_mn": "Дараах тоонуудаас алийг нь иррационал тоо вэ?",
+     "latex": "\\sqrt{2}\\notin\\mathbb{Q}",
+     "choices": [
+      "$\\sqrt{16}$",
+      "$\\dfrac{2}{3}$",
+      "$\\sqrt{2}$",
+      "$-5$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\sqrt{16}=4$, $\\frac{2}{3}$, $-5$ нь бүгд рационал; зөвхөн $\\sqrt{2}$ нь иррационал тоо."
+    },
+    {
+     "id": "lt-g10-sets-6",
+     "skill_id": "g10-sets",
+     "difficulty": 2,
+     "stem_mn": "$A=[-2,5]$, $B=(0,8)$ завсрууд өгөгдөв. $A\\cap B$-г ол.",
+     "latex": "A\\cap B=(0,5]",
+     "choices": [
+      "$[-2,8)$",
+      "$(0,5]$",
+      "$(0,5)$",
+      "$[-2,5]$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хоёуланд нь зэрэг хамаарах $x$-ийн утга нь $0<x\\le 5$ буюу $(0,5]$."
+    },
+    {
+     "id": "lt-g10-sets-7",
+     "skill_id": "g10-sets",
+     "difficulty": 3,
+     "stem_mn": "50 сурагчийн 30 нь англи, 25 нь хятад хэл, 12 нь хоёуланг нь судалдаг. Зөвхөн нэг хэл судалдаг сурагч хэд вэ?",
+     "latex": "(30-12)+(25-12)",
+     "choices": [
+      "$43$",
+      "$55$",
+      "$25$",
+      "$31$"
+     ],
+     "answer": 3,
+     "solution_mn": "Зөвхөн англи $30-12=18$, зөвхөн хятад $25-12=13$ тул нийт $18+13=31$ сурагч."
+    },
+    {
+     "id": "lt-g10-sets-8",
+     "skill_id": "g10-sets",
+     "difficulty": 3,
+     "stem_mn": "$\\{1,2\\}\\subseteq X\\subseteq\\{1,2,3,4,5\\}$ нөхцөлийг хангах хэдэн $X$ олонлог байх вэ?",
+     "latex": "\\{1,2\\}\\subseteq X\\subseteq\\{1,2,3,4,5\\}",
+     "choices": [
+      "$8$",
+      "$4$",
+      "$16$",
+      "$32$"
+     ],
+     "answer": 0,
+     "solution_mn": "$X$ нь $1,2$-ыг заавал агуулна, харин $3,4,5$ тус бүр орох эсэх нь чөлөөтэй тул $2^3=8$ олонлог болно."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-numeric-literal",
+   "title_mn": "Тоон ба үсэгт илэрхийлэл",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-numeric-literal-1",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 1,
+     "stem_mn": "$2^3 \\cdot 2^4$ илэрхийллийн утгыг ол.",
+     "latex": "2^3 \\cdot 2^4 = 2^7 = 128",
+     "choices": [
+      "$4096$",
+      "$64$",
+      "$128$",
+      "$256$"
+     ],
+     "answer": 2,
+     "solution_mn": "Ижил суурьтай зэргийг үржүүлэхэд зэрэг индексүүд нэмэгдэнэ: $2^{3+4}=2^7=128$."
+    },
+    {
+     "id": "lt-g10-numeric-literal-2",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 1,
+     "stem_mn": "$\\dfrac{2}{3}+\\dfrac{1}{4}$ нийлбэрийг ол.",
+     "latex": "\\frac{2}{3}+\\frac{1}{4}=\\frac{11}{12}",
+     "choices": [
+      "$\\dfrac{3}{7}$",
+      "$\\dfrac{11}{12}$",
+      "$\\dfrac{3}{12}$",
+      "$\\dfrac{2}{12}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хамгийн бага ерөнхий хуваарь нь $12$ тул $\\dfrac{8}{12}+\\dfrac{3}{12}=\\dfrac{11}{12}$."
+    },
+    {
+     "id": "lt-g10-numeric-literal-3",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 1,
+     "stem_mn": "$45000$ тоог стандарт хэлбэрээр бич.",
+     "latex": "45000 = 4.5\\times10^4",
+     "choices": [
+      "$4.5\\times10^3$",
+      "$45\\times10^3$",
+      "$4.5\\times10^5$",
+      "$4.5\\times10^4$"
+     ],
+     "answer": 3,
+     "solution_mn": "Таслалыг зүүн тийш 4 оронгоор шилжүүлэхэд $45000=4.5\\times10^4$ болно."
+    },
+    {
+     "id": "lt-g10-numeric-literal-4",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 2,
+     "stem_mn": "$2(3x-1)-3(x-2)$ илэрхийллийг хялбарчил.",
+     "latex": "2(3x-1)-3(x-2)=3x+4",
+     "choices": [
+      "$3x+4$",
+      "$3x-8$",
+      "$3x-4$",
+      "$9x+4$"
+     ],
+     "answer": 0,
+     "solution_mn": "Хаалт задалж тэмдгийг зөв тавибал $6x-2-3x+6=3x+4$."
+    },
+    {
+     "id": "lt-g10-numeric-literal-5",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 2,
+     "stem_mn": "$\\left(\\dfrac{2}{3}\\right)^{-2}$ илэрхийллийн утгыг ол.",
+     "latex": "\\left(\\frac{2}{3}\\right)^{-2}=\\frac{9}{4}",
+     "choices": [
+      "$\\dfrac{4}{9}$",
+      "$-\\dfrac{9}{4}$",
+      "$\\dfrac{9}{4}$",
+      "$-\\dfrac{4}{9}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Сөрөг зэрэг нь суурийн урвуугаа авна: $\\left(\\dfrac{3}{2}\\right)^2=\\dfrac{9}{4}$."
+    },
+    {
+     "id": "lt-g10-numeric-literal-6",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 2,
+     "stem_mn": "$x\\neq-3$ үед $\\dfrac{x^2-9}{x+3}$ илэрхийллийг хялбарчил.",
+     "latex": "\\frac{x^2-9}{x+3}=x-3",
+     "choices": [
+      "$x+3$",
+      "$x-3$",
+      "$x^2-3$",
+      "$-3$"
+     ],
+     "answer": 1,
+     "solution_mn": "Квадратуудын ялгаврыг задалж хураана: $\\dfrac{(x-3)(x+3)}{x+3}=x-3$."
+    },
+    {
+     "id": "lt-g10-numeric-literal-7",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 3,
+     "stem_mn": "$\\dfrac{a^3 b^{-2}}{a^{-1} b^3}$ илэрхийллийг зөвхөн эерэг зэрэг индекстэй хэлбэрт хялбарчил.",
+     "latex": "\\frac{a^3 b^{-2}}{a^{-1} b^3}=\\frac{a^4}{b^5}",
+     "choices": [
+      "$\\dfrac{a^2}{b}$",
+      "$a^4 b^5$",
+      "$\\dfrac{a^2}{b^5}$",
+      "$\\dfrac{a^4}{b^5}$"
+     ],
+     "answer": 3,
+     "solution_mn": "Ижил суурийн зэргийг хасна: $a^{3-(-1)}b^{-2-3}=a^4 b^{-5}=\\dfrac{a^4}{b^5}$."
+    },
+    {
+     "id": "lt-g10-numeric-literal-8",
+     "skill_id": "g10-numeric-literal",
+     "difficulty": 3,
+     "stem_mn": "$8^{\\frac{2}{3}}+16^{-\\frac{1}{2}}$ илэрхийллийн утгыг ол.",
+     "latex": "8^{2/3}+16^{-1/2}=\\frac{17}{4}",
+     "choices": [
+      "$\\dfrac{17}{4}$",
+      "$\\dfrac{15}{4}$",
+      "$4$",
+      "$\\dfrac{9}{2}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$8^{2/3}=(2^3)^{2/3}=4$, $16^{-1/2}=\\dfrac{1}{\\sqrt{16}}=\\dfrac{1}{4}$ тул нийлбэр нь $4+\\dfrac{1}{4}=\\dfrac{17}{4}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-algebraic-expr",
+   "title_mn": "Алгебрын илэрхийлэл",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-algebraic-expr-1",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 1,
+     "stem_mn": "$(x+3)^2$ илэрхийллийг задалбал юутай тэнцүү вэ?",
+     "latex": "(x+3)^2=x^2+6x+9",
+     "choices": [
+      "$x^2+9$",
+      "$x^2+6x+9$",
+      "$x^2+3x+9$",
+      "$x^2+6x+3$"
+     ],
+     "answer": 1,
+     "solution_mn": "Нийлбэрийн квадратын томьёогоор $(x+3)^2=x^2+2\\cdot x\\cdot 3+3^2=x^2+6x+9$. Дунд гишүүн $6x$ орхигдвол алдаа гарна."
+    },
+    {
+     "id": "lt-g10-algebraic-expr-2",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 1,
+     "stem_mn": "$x^2-25$ илэрхийллийг үржвэрт задал.",
+     "latex": "x^2-25=(x-5)(x+5)",
+     "choices": [
+      "$(x-5)^2$",
+      "$(x+5)^2$",
+      "$(x-5)(x+5)$",
+      "$(x-25)(x+1)$"
+     ],
+     "answer": 2,
+     "solution_mn": "Квадратуудын ялгаврын томьёогоор $x^2-25=x^2-5^2=(x-5)(x+5)$."
+    },
+    {
+     "id": "lt-g10-algebraic-expr-3",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 1,
+     "stem_mn": "$3x^2+2x-x^2+5x$ илэрхийллийг хураангуйл.",
+     "latex": "3x^2+2x-x^2+5x=2x^2+7x",
+     "choices": [
+      "$2x^2+7x$",
+      "$4x^2+7x$",
+      "$2x^2+3x$",
+      "$2x^2-3x$"
+     ],
+     "answer": 0,
+     "solution_mn": "Ижил төст гишүүдийг нэгтгэвэл $(3x^2-x^2)+(2x+5x)=2x^2+7x$."
+    },
+    {
+     "id": "lt-g10-algebraic-expr-4",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 2,
+     "stem_mn": "$x^2-5x+6$ гурван гишүүнтийг үржвэрт задал.",
+     "latex": "x^2-5x+6=(x-2)(x-3)",
+     "choices": [
+      "$(x+2)(x+3)$",
+      "$(x-2)(x-3)$",
+      "$(x-1)(x-6)$",
+      "$(x-2)(x+3)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Нийлбэр нь $-5$, үржвэр нь $6$ болох хоёр тоо бол $-2$ ба $-3$ тул $x^2-5x+6=(x-2)(x-3)$."
+    },
+    {
+     "id": "lt-g10-algebraic-expr-5",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 2,
+     "stem_mn": "$\\dfrac{x^2-9}{x^2+6x+9}$ алгебрын бутархайг хураангуйл.",
+     "latex": "\\frac{x^2-9}{x^2+6x+9}=\\frac{x-3}{x+3}",
+     "choices": [
+      "$\\dfrac{x+3}{x-3}$",
+      "$\\dfrac{x-3}{x+3}$",
+      "$\\dfrac{-3}{2x+3}$",
+      "$x-3$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хүртвэр $=(x-3)(x+3)$, хуваарь $=(x+3)^2$ тул нийтлэг үржигдэхүүн $(x+3)$-аар хураавал $\\frac{x-3}{x+3}$."
+    },
+    {
+     "id": "lt-g10-algebraic-expr-6",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 2,
+     "stem_mn": "$\\dfrac{1}{x-1}+\\dfrac{1}{x+1}$ нийлбэрийг нэг бутархай болгон бич.",
+     "latex": "\\frac{1}{x-1}+\\frac{1}{x+1}=\\frac{2x}{x^2-1}",
+     "choices": [
+      "$\\dfrac{2}{x^2-1}$",
+      "$\\dfrac{1}{x}$",
+      "$\\dfrac{2x}{x^2-1}$",
+      "$\\dfrac{2x}{x^2+1}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Ерөнхий хуваарь $(x-1)(x+1)=x^2-1$; хүртвэр $(x+1)+(x-1)=2x$ тул үр дүн $\\frac{2x}{x^2-1}$."
+    },
+    {
+     "id": "lt-g10-algebraic-expr-7",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 3,
+     "stem_mn": "$x^4-16$ илэрхийллийг бодит тоон дээр бүрэн үржвэрт задал.",
+     "latex": "x^4-16=(x-2)(x+2)(x^2+4)",
+     "choices": [
+      "$(x^2-4)(x^2+4)$",
+      "$(x-2)(x+2)(x^2+4)$",
+      "$(x-2)^2(x+2)^2$",
+      "$(x^2-4)^2$"
+     ],
+     "answer": 1,
+     "solution_mn": "$x^4-16=(x^2-4)(x^2+4)=(x-2)(x+2)(x^2+4)$; $x^2+4$ нь бодит тоон дээр цаашид задрахгүй тул $(x^2-4)(x^2+4)$ дээр зогсвол дутуу."
+    },
+    {
+     "id": "lt-g10-algebraic-expr-8",
+     "skill_id": "g10-algebraic-expr",
+     "difficulty": 3,
+     "stem_mn": "$a+b=5$, $ab=6$ бол $a^2+b^2$-ын утгыг ол.",
+     "latex": "a^2+b^2=(a+b)^2-2ab",
+     "choices": [
+      "$25$",
+      "$13$",
+      "$19$",
+      "$37$"
+     ],
+     "answer": 1,
+     "solution_mn": "$(a+b)^2=a^2+2ab+b^2$ тул $a^2+b^2=(a+b)^2-2ab=5^2-2\\cdot 6=25-12=13$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-coordinate",
+   "title_mn": "Координатын арга",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-coordinate-1",
+     "skill_id": "g10-coordinate",
+     "difficulty": 1,
+     "stem_mn": "$A(1,2)$ ба $B(4,6)$ цэгүүдийн хоорондох зайг ол.",
+     "latex": "d=\\sqrt{(4-1)^2+(6-2)^2}",
+     "choices": [
+      "$5$",
+      "$7$",
+      "$\\sqrt{7}$",
+      "$25$"
+     ],
+     "answer": 0,
+     "solution_mn": "Хоёр цэгийн зайн томьёогоор $d=\\sqrt{(4-1)^2+(6-2)^2}=\\sqrt{9+16}=\\sqrt{25}=5$."
+    },
+    {
+     "id": "lt-g10-coordinate-2",
+     "skill_id": "g10-coordinate",
+     "difficulty": 1,
+     "stem_mn": "$A(-2,3)$ ба $B(6,1)$ цэгүүдийг холбосон хэрчмийн дундаж цэгийг ол.",
+     "latex": "\\left(\\frac{-2+6}{2},\\frac{3+1}{2}\\right)",
+     "choices": [
+      "$(4,4)$",
+      "$(8,4)$",
+      "$(2,2)$",
+      "$(2,-1)$"
+     ],
+     "answer": 2,
+     "solution_mn": "Дундаж цэгийн координат нь $\\left(\\frac{-2+6}{2},\\frac{3+1}{2}\\right)=(2,2)$."
+    },
+    {
+     "id": "lt-g10-coordinate-3",
+     "skill_id": "g10-coordinate",
+     "difficulty": 1,
+     "stem_mn": "$A(1,2)$ ба $B(3,8)$ цэгүүдээр дайрсан шулууны налууг ол.",
+     "latex": "k=\\frac{8-2}{3-1}",
+     "choices": [
+      "$\\frac{1}{3}$",
+      "$3$",
+      "$-3$",
+      "$6$"
+     ],
+     "answer": 1,
+     "solution_mn": "Налууг $k=\\frac{y_2-y_1}{x_2-x_1}=\\frac{8-2}{3-1}=\\frac{6}{2}=3$ гэж олно."
+    },
+    {
+     "id": "lt-g10-coordinate-4",
+     "skill_id": "g10-coordinate",
+     "difficulty": 2,
+     "stem_mn": "$A(2,-1)$ цэгээр дайрсан, налуу нь $3$ байх шулууны тэгшитгэлийг ол.",
+     "latex": "y-(-1)=3(x-2)",
+     "choices": [
+      "$y=3x+5$",
+      "$y=3x-7$",
+      "$y=3x-5$",
+      "$y=-3x+7$"
+     ],
+     "answer": 1,
+     "solution_mn": "Цэг-налуугийн тэгшитгэлээр $y-(-1)=3(x-2)$, задалбал $y=3x-6-1=3x-7$."
+    },
+    {
+     "id": "lt-g10-coordinate-5",
+     "skill_id": "g10-coordinate",
+     "difficulty": 2,
+     "stem_mn": "$A(0,4)$ ба $B(2,0)$ цэгүүдээр дайрсан шулууны тэгшитгэлийг ол.",
+     "latex": "k=\\frac{0-4}{2-0}=-2",
+     "choices": [
+      "$y=2x+4$",
+      "$y=-2x+4$",
+      "$y=-2x-4$",
+      "$y=-\\frac{1}{2}x+4$"
+     ],
+     "answer": 1,
+     "solution_mn": "Налуу нь $k=\\frac{0-4}{2-0}=-2$, шулуун $y$ тэнхлэгийг $(0,4)$-т огтолно тул $y=-2x+4$."
+    },
+    {
+     "id": "lt-g10-coordinate-6",
+     "skill_id": "g10-coordinate",
+     "difficulty": 2,
+     "stem_mn": "$AB$ хэрчмийн дундаж цэг нь $M(3,5)$, $A(1,2)$ бол $B$ цэгийн координатыг ол.",
+     "latex": "B=(2x_M-x_A,\\,2y_M-y_A)",
+     "choices": [
+      "$(2,3)$",
+      "$(4,7)$",
+      "$(7,12)$",
+      "$(5,8)$"
+     ],
+     "answer": 3,
+     "solution_mn": "$M$ нь дундаж цэг тул $B=(2x_M-x_A,\\,2y_M-y_A)=(2\\cdot3-1,\\,2\\cdot5-2)=(5,8)$."
+    },
+    {
+     "id": "lt-g10-coordinate-7",
+     "skill_id": "g10-coordinate",
+     "difficulty": 3,
+     "stem_mn": "$A(a,1)$ ба $B(2,4)$ цэгүүдийн хоорондох зай $5$ байх бол $a$-г ол.",
+     "latex": "(2-a)^2+(4-1)^2=25",
+     "choices": [
+      "$a=-2$ эсвэл $a=4$",
+      "зөвхөн $a=6$",
+      "$a=-2$ эсвэл $a=6$",
+      "$a=1$ эсвэл $a=3$"
+     ],
+     "answer": 2,
+     "solution_mn": "Зайн томьёогоор $(2-a)^2+9=25\\Rightarrow(2-a)^2=16\\Rightarrow 2-a=\\pm4$, эндээс $a=-2$ буюу $a=6$."
+    },
+    {
+     "id": "lt-g10-coordinate-8",
+     "skill_id": "g10-coordinate",
+     "difficulty": 3,
+     "stem_mn": "$A(1,2)$ ба $B(5,k)$ цэгүүдээр дайрсан шулуун нь $y=2x+3$ шулуунтай перпендикуляр байх бол $k$-г ол.",
+     "latex": "\\frac{k-2}{4}=-\\frac{1}{2}",
+     "choices": [
+      "$k=10$",
+      "$k=4$",
+      "$k=-6$",
+      "$k=0$"
+     ],
+     "answer": 3,
+     "solution_mn": "Өгсөн шулууны налуу $2$ тул перпендикуляр шулууны налуу $-\\frac{1}{2}$. $\\frac{k-2}{4}=-\\frac{1}{2}\\Rightarrow k-2=-2\\Rightarrow k=0$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-functions",
+   "title_mn": "Функц ба график",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-functions-1",
+     "skill_id": "g10-functions",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=\\dfrac{1}{x-3}$ функцийн тодорхойлогдох мужийг ол.",
+     "latex": "f(x)=\\dfrac{1}{x-3}",
+     "choices": [
+      "$x\\neq -3$",
+      "$x>3$",
+      "$x\\neq 3$",
+      "$x\\in\\mathbb{R}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Хуваарь тэгтэй тэнцэж болохгүй тул $x-3\\neq 0$, өөрөөр хэлбэл $x\\neq 3$."
+    },
+    {
+     "id": "lt-g10-functions-2",
+     "skill_id": "g10-functions",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=2x-5$ шугаман функцийн $f(3)$ утгыг ол.",
+     "latex": "f(3)=2\\cdot 3-5",
+     "choices": [
+      "$1$",
+      "$11$",
+      "$-1$",
+      "$6$"
+     ],
+     "answer": 0,
+     "solution_mn": "$x=3$-ыг орлуулбал $f(3)=2\\cdot 3-5=6-5=1$."
+    },
+    {
+     "id": "lt-g10-functions-3",
+     "skill_id": "g10-functions",
+     "difficulty": 1,
+     "stem_mn": "$y=(x-2)^2+1$ параболын оройн (вершин) координатыг ол.",
+     "latex": "y=(x-2)^2+1",
+     "choices": [
+      "$(-2,\\,1)$",
+      "$(2,\\,-1)$",
+      "$(2,\\,1)$",
+      "$(-2,\\,-1)$"
+     ],
+     "answer": 2,
+     "solution_mn": "$y=a(x-h)^2+k$ хэлбэрт орой нь $(h,\\,k)$ цэг байдаг. Иймд орой нь $(2,\\,1)$."
+    },
+    {
+     "id": "lt-g10-functions-4",
+     "skill_id": "g10-functions",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=\\dfrac{\\sqrt{x+1}}{x-2}$ функцийн тодорхойлогдох мужийг ол.",
+     "latex": "f(x)=\\dfrac{\\sqrt{x+1}}{x-2}",
+     "choices": [
+      "$x\\geq -1,\\ x\\neq 2$",
+      "$x>-1,\\ x\\neq 2$",
+      "$x\\geq -1$",
+      "$x\\geq 1,\\ x\\neq 2$"
+     ],
+     "answer": 0,
+     "solution_mn": "Язгуур дор $x+1\\geq 0\\Rightarrow x\\geq -1$, хуваарь $x-2\\neq 0\\Rightarrow x\\neq 2$. Иймд $x\\geq -1$ ба $x\\neq 2$."
+    },
+    {
+     "id": "lt-g10-functions-5",
+     "skill_id": "g10-functions",
+     "difficulty": 2,
+     "stem_mn": "$y=x^2-6x+5$ квадрат функцийн хамгийн бага утгыг ол.",
+     "latex": "y=x^2-6x+5",
+     "choices": [
+      "$5$",
+      "$-3$",
+      "$4$",
+      "$-4$"
+     ],
+     "answer": 3,
+     "solution_mn": "Орой нь $x=-\\dfrac{-6}{2}=3$, тэнд $y=9-18+5=-4$. $a>0$ тул энэ нь хамгийн бага утга."
+    },
+    {
+     "id": "lt-g10-functions-6",
+     "skill_id": "g10-functions",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=-x^2+4x-1$ функцийн утгын мужийг ол.",
+     "latex": "f(x)=-x^2+4x-1",
+     "choices": [
+      "$y\\geq 3$",
+      "$y\\leq 3$",
+      "$y\\leq -1$",
+      "$y\\geq -1$"
+     ],
+     "answer": 1,
+     "solution_mn": "$a=-1<0$ тул парабол доош нээгдэж дээд утгатай. Орой $x=2$, $y=-4+8-1=3$. Иймд $y\\leq 3$."
+    },
+    {
+     "id": "lt-g10-functions-7",
+     "skill_id": "g10-functions",
+     "difficulty": 3,
+     "stem_mn": "Оройн цэг нь $(1,\\,-2)$ бөгөөд координатын эх $(0,\\,0)$-оор дайрсан параболын тэгшитгэлийг ол.",
+     "latex": "y=a(x-1)^2-2",
+     "choices": [
+      "$y=2x^2-4x$",
+      "$y=2x^2+4x$",
+      "$y=x^2-2x$",
+      "$y=2x^2-4x+2$"
+     ],
+     "answer": 0,
+     "solution_mn": "$y=a(x-1)^2-2$ гэж бичээд $(0,\\,0)$-г орлуулбал $0=a-2\\Rightarrow a=2$. Задалбал $y=2(x-1)^2-2=2x^2-4x$."
+    },
+    {
+     "id": "lt-g10-functions-8",
+     "skill_id": "g10-functions",
+     "difficulty": 3,
+     "stem_mn": "$y=x+k$ шулуун $y=x^2$ параболыг шүргэх (нэг л цэгт огтлолцох) бол $k$-г ол.",
+     "latex": "x^2-x-k=0",
+     "choices": [
+      "$\\frac{1}{4}$",
+      "$-\\frac{1}{2}$",
+      "$-\\frac{1}{4}$",
+      "$1$"
+     ],
+     "answer": 2,
+     "solution_mn": "$x^2=x+k\\Rightarrow x^2-x-k=0$. Шүргэх нөхцөл нь $D=0$: $(-1)^2+4k=0\\Rightarrow 1+4k=0\\Rightarrow k=-\\dfrac{1}{4}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-equations",
+   "title_mn": "Тэгшитгэл, тэнцэтгэл биш",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-equations-1",
+     "skill_id": "g10-equations",
+     "difficulty": 1,
+     "stem_mn": "$3x - 7 = 2x + 5$ тэгшитгэлийн шийдийг ол.",
+     "latex": "3x - 7 = 2x + 5",
+     "choices": [
+      "$x = -2$",
+      "$x = 12$",
+      "$x = 2$",
+      "$x = -12$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хувьсагчтай гишүүдийг нэг тал руу, тоог нөгөө тал руу шилжүүлбэл $3x - 2x = 5 + 7$ буюу $x = 12$."
+    },
+    {
+     "id": "lt-g10-equations-2",
+     "skill_id": "g10-equations",
+     "difficulty": 1,
+     "stem_mn": "$x^2 - 5x + 6 = 0$ квадрат тэгшитгэлийн язгууруудыг ол.",
+     "latex": "x^2 - 5x + 6 = 0",
+     "choices": [
+      "$x_1=1,\\ x_2=6$",
+      "$x_1=-2,\\ x_2=-3$",
+      "$x_1=2,\\ x_2=3$",
+      "$x_1=-1,\\ x_2=-6$"
+     ],
+     "answer": 2,
+     "solution_mn": "Виетийн теоремоор язгууруудын нийлбэр $5$, үржвэр $6$ байх тул язгуурууд нь $2$ ба $3$ болно."
+    },
+    {
+     "id": "lt-g10-equations-3",
+     "skill_id": "g10-equations",
+     "difficulty": 1,
+     "stem_mn": "$2x - 4 > 0$ тэнцэтгэл бишийн шийдийг завсараар илэрхийл.",
+     "latex": "2x - 4 > 0",
+     "choices": [
+      "$(-\\infty,\\ 2)$",
+      "$[2,\\ +\\infty)$",
+      "$(2,\\ +\\infty)$",
+      "$(-\\infty,\\ 2]$"
+     ],
+     "answer": 2,
+     "solution_mn": "$2x > 4$ тул $x > 2$. Хатуу тэнцэтгэл биш учир $2$ шийдэд орохгүй, хариу нь $(2,\\ +\\infty)$."
+    },
+    {
+     "id": "lt-g10-equations-4",
+     "skill_id": "g10-equations",
+     "difficulty": 2,
+     "stem_mn": "$|2x - 3| = 5$ модультай тэгшитгэлийн бүх шийдийг ол.",
+     "latex": "|2x - 3| = 5",
+     "choices": [
+      "$x = 4$",
+      "$x = 4$ эсвэл $x = -1$",
+      "$x = 1$ эсвэл $x = -4$",
+      "$x = -1$"
+     ],
+     "answer": 1,
+     "solution_mn": "$2x - 3 = 5$ бол $x = 4$; $2x - 3 = -5$ бол $x = -1$. Иймд хоёр шийдтэй."
+    },
+    {
+     "id": "lt-g10-equations-5",
+     "skill_id": "g10-equations",
+     "difficulty": 2,
+     "stem_mn": "$x^2 - x - 6 < 0$ квадрат тэнцэтгэл бишийн шийдийг завсараар илэрхийл.",
+     "latex": "x^2 - x - 6 < 0",
+     "choices": [
+      "$(-\\infty,-2)\\cup(3,+\\infty)$",
+      "$(-2,\\ 3)$",
+      "$[-2,\\ 3]$",
+      "$(-3,\\ 2)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Язгуурууд нь $-2$ ба $3$. Парабол дээшээ нээлттэй тул $< 0$ нь язгуурын хооронд биелнэ: $(-2,\\ 3)$."
+    },
+    {
+     "id": "lt-g10-equations-6",
+     "skill_id": "g10-equations",
+     "difficulty": 2,
+     "stem_mn": "$|x - 1| \\le 3$ тэнцэтгэл бишийн шийдийг завсараар илэрхийл.",
+     "latex": "|x - 1| \\le 3",
+     "choices": [
+      "$(-2,\\ 4)$",
+      "$[-4,\\ 2]$",
+      "$[-2,\\ 4]$",
+      "$(-\\infty,-2]\\cup[4,+\\infty)$"
+     ],
+     "answer": 2,
+     "solution_mn": "$|x-1| \\le 3 \\Leftrightarrow -3 \\le x - 1 \\le 3$ тул $-2 \\le x \\le 4$ буюу $[-2,\\ 4]$."
+    },
+    {
+     "id": "lt-g10-equations-7",
+     "skill_id": "g10-equations",
+     "difficulty": 3,
+     "stem_mn": "$\\dfrac{2x-1}{x+3} \\ge 1$ тэнцэтгэл бишийн шийдийг завсараар илэрхийл.",
+     "latex": "\\dfrac{2x-1}{x+3} \\ge 1",
+     "choices": [
+      "$(-3,\\ 4]$",
+      "$(-\\infty,-3]\\cup[4,+\\infty)$",
+      "$[-3,\\ 4]$",
+      "$(-\\infty,-3)\\cup[4,+\\infty)$"
+     ],
+     "answer": 3,
+     "solution_mn": "Нэг талд шилжүүлбэл $\\frac{x-4}{x+3} \\ge 0$. Тэмдгийн аргаар $x < -3$ эсвэл $x \\ge 4$. $x = -3$ дээр илэрхийлэл тодорхойгүй тул орохгүй."
+    },
+    {
+     "id": "lt-g10-equations-8",
+     "skill_id": "g10-equations",
+     "difficulty": 3,
+     "stem_mn": "$|2x - 1| > x + 2$ тэнцэтгэл бишийн шийдийг завсараар илэрхийл.",
+     "latex": "|2x - 1| > x + 2",
+     "choices": [
+      "$(-\\tfrac13,\\ 3)$",
+      "$(3,\\ +\\infty)$",
+      "$(-\\infty,-\\tfrac13)$",
+      "$(-\\infty,-\\tfrac13)\\cup(3,+\\infty)$"
+     ],
+     "answer": 3,
+     "solution_mn": "$2x-1 \\ge 0$ тохиолдолд $2x-1 > x+2$ тул $x > 3$; $2x-1 < 0$ тохиолдолд $-(2x-1) > x+2$ тул $x < -\\frac13$. Нэгтгэвэл $(-\\infty,-\\frac13)\\cup(3,+\\infty)$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-circle-polygon",
+   "title_mn": "Тойрог ба олон өнцөгт",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-circle-polygon-1",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 1,
+     "stem_mn": "Радиус нь $r=5$ см тойргийн уртыг ол.",
+     "latex": "C=2\\pi r",
+     "choices": [
+      "$5\\pi$ см",
+      "$10\\pi$ см",
+      "$25\\pi$ см",
+      "$100\\pi$ см"
+     ],
+     "answer": 1,
+     "solution_mn": "Тойргийн урт $C=2\\pi r=2\\pi\\cdot 5=10\\pi$ см."
+    },
+    {
+     "id": "lt-g10-circle-polygon-2",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 1,
+     "stem_mn": "Радиус нь $r=6$ см тойргийн талбайг ол.",
+     "latex": "S=\\pi r^2",
+     "choices": [
+      "$12\\pi$ см$^2$",
+      "$18\\pi$ см$^2$",
+      "$36\\pi$ см$^2$",
+      "$6\\pi$ см$^2$"
+     ],
+     "answer": 2,
+     "solution_mn": "Тойргийн талбай $S=\\pi r^2=\\pi\\cdot 6^2=36\\pi$ см$^2$."
+    },
+    {
+     "id": "lt-g10-circle-polygon-3",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 1,
+     "stem_mn": "Таван өнцөгтийн дотоод өнцгүүдийн нийлбэр хэдэн градус вэ?",
+     "latex": "(n-2)\\cdot 180^\\circ",
+     "choices": [
+      "$360^\\circ$",
+      "$540^\\circ$",
+      "$450^\\circ$",
+      "$720^\\circ$"
+     ],
+     "answer": 1,
+     "solution_mn": "$n$ өнцөгтийн дотоод өнцгүүдийн нийлбэр $(n-2)\\cdot180^\\circ$ тул $(5-2)\\cdot180^\\circ=540^\\circ$."
+    },
+    {
+     "id": "lt-g10-circle-polygon-4",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 2,
+     "stem_mn": "Тойрогт нэг нумд тулсан төв өнцөг $80^\\circ$ бол мөн тэр нумд тулсан багтсан өнцөг хэдэн градус вэ?",
+     "latex": "\\alpha=\\tfrac{1}{2}\\beta",
+     "choices": [
+      "$80^\\circ$",
+      "$40^\\circ$",
+      "$160^\\circ$",
+      "$20^\\circ$"
+     ],
+     "answer": 1,
+     "solution_mn": "Багтсан өнцөг нь ижил нумд тулсан төв өнцгийн хагастай тэнцүү тул $80^\\circ:2=40^\\circ$."
+    },
+    {
+     "id": "lt-g10-circle-polygon-5",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 2,
+     "stem_mn": "Зөв зургаан өнцөгтийн нэг дотоод өнцөг хэдэн градус вэ?",
+     "latex": "\\dfrac{(n-2)\\cdot 180^\\circ}{n}",
+     "choices": [
+      "$108^\\circ$",
+      "$60^\\circ$",
+      "$120^\\circ$",
+      "$135^\\circ$"
+     ],
+     "answer": 2,
+     "solution_mn": "Дотоод өнцгүүдийн нийлбэр $(6-2)\\cdot180^\\circ=720^\\circ$, нэг өнцөг $720^\\circ:6=120^\\circ$."
+    },
+    {
+     "id": "lt-g10-circle-polygon-6",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 2,
+     "stem_mn": "Радиус нь $r=9$ см тойрогт $60^\\circ$ төв өнцөгт харгалзах нумын уртыг ол.",
+     "latex": "L=\\dfrac{\\alpha}{360^\\circ}\\cdot 2\\pi r",
+     "choices": [
+      "$6\\pi$ см",
+      "$1{,}5\\pi$ см",
+      "$9\\pi$ см",
+      "$3\\pi$ см"
+     ],
+     "answer": 3,
+     "solution_mn": "$L=\\dfrac{60^\\circ}{360^\\circ}\\cdot 2\\pi\\cdot 9=\\dfrac{1}{6}\\cdot 18\\pi=3\\pi$ см."
+    },
+    {
+     "id": "lt-g10-circle-polygon-7",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 3,
+     "stem_mn": "Зөв олон өнцөгтийн нэг дотоод өнцөг $150^\\circ$ бол уг олон өнцөгт хэдэн талтай вэ?",
+     "latex": "n=\\dfrac{360^\\circ}{180^\\circ-150^\\circ}",
+     "choices": [
+      "$10$",
+      "$15$",
+      "$12$",
+      "$8$"
+     ],
+     "answer": 2,
+     "solution_mn": "Нэг гадаад өнцөг $180^\\circ-150^\\circ=30^\\circ$, харин гадаад өнцгүүдийн нийлбэр $360^\\circ$ тул $n=360^\\circ:30^\\circ=12$."
+    },
+    {
+     "id": "lt-g10-circle-polygon-8",
+     "skill_id": "g10-circle-polygon",
+     "difficulty": 3,
+     "stem_mn": "Тойргийн нэг нум нь бүхэл тойргийн $\\dfrac{1}{5}$-тэй тэнцүү. Энэ нумд тулсан багтсан өнцөг хэдэн градус вэ?",
+     "latex": "\\dfrac{1}{2}\\cdot\\dfrac{1}{5}\\cdot 360^\\circ",
+     "choices": [
+      "$72^\\circ$",
+      "$36^\\circ$",
+      "$144^\\circ$",
+      "$18^\\circ$"
+     ],
+     "answer": 1,
+     "solution_mn": "Нумд харгалзах төв өнцөг $\\dfrac{1}{5}\\cdot360^\\circ=72^\\circ$, багтсан өнцөг түүний хагас буюу $72^\\circ:2=36^\\circ$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-trig-ratio",
+   "title_mn": "Тригонометр харьцаа",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-trig-ratio-1",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 1,
+     "stem_mn": "Тэгш өнцөгт гурвалжны хурц өнцөг $A$-гийн эсрэг тал $3$, гипотенуз нь $5$ бол $\\sin A$-г ол.",
+     "latex": "\\sin A=\\frac{3}{5}",
+     "choices": [
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{5}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{5}{3}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\sin A=\\dfrac{\\text{эсрэг тал}}{\\text{гипотенуз}}=\\dfrac{3}{5}$ болно."
+    },
+    {
+     "id": "lt-g10-trig-ratio-2",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 1,
+     "stem_mn": "$\\cos 60^\\circ$-ийн утга хэдэн вэ?",
+     "latex": "\\cos 60^\\circ=\\frac{1}{2}",
+     "choices": [
+      "$\\frac{1}{2}$",
+      "$\\frac{\\sqrt{3}}{2}$",
+      "$\\frac{\\sqrt{2}}{2}$",
+      "$1$"
+     ],
+     "answer": 0,
+     "solution_mn": "Тусгай өнцгийн утгаар $\\cos 60^\\circ=\\dfrac{1}{2}$. ($\\dfrac{\\sqrt3}{2}$ нь $\\sin 60^\\circ$-ийн утга.)"
+    },
+    {
+     "id": "lt-g10-trig-ratio-3",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 1,
+     "stem_mn": "Тэгш өнцөгт гурвалжинд хурц өнцөг $B$-гийн эсрэг тал $12$, залгаа тал $5$ бол $\\tan B$-г ол.",
+     "latex": "\\tan B=\\frac{12}{5}",
+     "choices": [
+      "$\\frac{12}{5}$",
+      "$\\frac{5}{12}$",
+      "$\\frac{12}{13}$",
+      "$\\frac{5}{13}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\tan B=\\dfrac{\\text{эсрэг тал}}{\\text{залгаа тал}}=\\dfrac{12}{5}$. ($\\dfrac{12}{13}$ нь $\\sin B$, $\\dfrac{5}{13}$ нь $\\cos B$.)"
+    },
+    {
+     "id": "lt-g10-trig-ratio-4",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 2,
+     "stem_mn": "Хурц өнцөг $\\theta$-ийн хувьд $\\sin\\theta=\\dfrac{3}{5}$ бол $\\cos\\theta$-г ол.",
+     "latex": "\\cos\\theta=\\sqrt{1-\\sin^2\\theta}=\\frac{4}{5}",
+     "choices": [
+      "$\\frac{4}{5}$",
+      "$\\frac{5}{4}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{2}{5}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\cos\\theta=\\sqrt{1-\\left(\\tfrac{3}{5}\\right)^2}=\\sqrt{\\tfrac{16}{25}}=\\dfrac{4}{5}$ (хурц өнцөг тул эерэг)."
+    },
+    {
+     "id": "lt-g10-trig-ratio-5",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 2,
+     "stem_mn": "Цамхагийн оройг $30^\\circ$-ийн өндрийн өнцгөөр харах цэг нь цамхагийн ёроолоос $30$ м зайд байв. Цамхагийн өндрийг ол.",
+     "latex": "h=30\\tan 30^\\circ=10\\sqrt{3}",
+     "choices": [
+      "$10\\sqrt{3}$ м",
+      "$30\\sqrt{3}$ м",
+      "$15$ м",
+      "$10$ м"
+     ],
+     "answer": 0,
+     "solution_mn": "$h=30\\cdot\\tan 30^\\circ=30\\cdot\\dfrac{1}{\\sqrt3}=10\\sqrt3\\approx17.3$ м."
+    },
+    {
+     "id": "lt-g10-trig-ratio-6",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 2,
+     "stem_mn": "Хурц өнцөг $\\alpha$-ийн хувьд $\\tan\\alpha=\\dfrac{4}{3}$ бол $\\sin\\alpha$-г ол.",
+     "latex": "\\sin\\alpha=\\frac{4}{5}",
+     "choices": [
+      "$\\frac{4}{5}$",
+      "$\\frac{3}{5}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{3}{4}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\tan\\alpha=\\tfrac{4}{3}$ тул эсрэг тал $4$, залгаа тал $3$, гипотенуз $\\sqrt{4^2+3^2}=5$. Иймд $\\sin\\alpha=\\dfrac{4}{5}$."
+    },
+    {
+     "id": "lt-g10-trig-ratio-7",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 3,
+     "stem_mn": "Ажиглагч газраас цамхагийн оройг $60^\\circ$-ийн өндрийн өнцгөөр харав. $10$ м ухраад дахин харахад өнцөг нь $30^\\circ$ болов. Цамхагийн өндрийг ол.",
+     "latex": "h\\left(\\sqrt{3}-\\tfrac{1}{\\sqrt{3}}\\right)=10\\Rightarrow h=5\\sqrt{3}",
+     "choices": [
+      "$5\\sqrt{3}$ м",
+      "$10\\sqrt{3}$ м",
+      "$5$ м",
+      "$10$ м"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\tan 60^\\circ=\\tfrac{h}{x}$, $\\tan 30^\\circ=\\tfrac{h}{x+10}$-аас $x=\\tfrac{h}{\\sqrt3}$, $x+10=h\\sqrt3$. Хасаж $h\\sqrt3-\\tfrac{h}{\\sqrt3}=10\\Rightarrow \\tfrac{2h}{\\sqrt3}=10\\Rightarrow h=5\\sqrt3$ м."
+    },
+    {
+     "id": "lt-g10-trig-ratio-8",
+     "skill_id": "g10-trig-ratio",
+     "difficulty": 3,
+     "stem_mn": "Хурц өнцөг $\\theta$-ийн хувьд $3\\sin\\theta=4\\cos\\theta$ бол $\\dfrac{2\\sin\\theta-\\cos\\theta}{2\\sin\\theta+\\cos\\theta}$-ийн утгыг ол.",
+     "latex": "\\tan\\theta=\\frac{4}{3}\\Rightarrow\\frac{2\\tan\\theta-1}{2\\tan\\theta+1}=\\frac{5}{11}",
+     "choices": [
+      "$\\frac{5}{11}$",
+      "$\\frac{7}{11}$",
+      "$\\frac{5}{7}$",
+      "$\\frac{3}{5}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$3\\sin\\theta=4\\cos\\theta$-аас $\\tan\\theta=\\tfrac{4}{3}$. Хүртвэр хуваарийг $\\cos\\theta$-д хуваавал $\\dfrac{2\\tan\\theta-1}{2\\tan\\theta+1}=\\dfrac{\\tfrac{8}{3}-1}{\\tfrac{8}{3}+1}=\\dfrac{5}{11}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-vectors",
+   "title_mn": "Хавтгай дээрх вектор",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-vectors-1",
+     "skill_id": "g10-vectors",
+     "difficulty": 1,
+     "stem_mn": "$\\vec{a}=(2,-3)$, $\\vec{b}=(-1,5)$ векторууд өгөгдөв. $\\vec{a}+\\vec{b}$-г ол.",
+     "latex": "\\vec{a}+\\vec{b}=(2+(-1),\\,-3+5)",
+     "choices": [
+      "$(3,-8)$",
+      "$(-3,8)$",
+      "$(1,2)$",
+      "$(1,-8)$"
+     ],
+     "answer": 2,
+     "solution_mn": "Векторыг нэмэхэд компонент бүрийг тус тусад нь нэмнэ: $(2+(-1),\\,-3+5)=(1,2)$."
+    },
+    {
+     "id": "lt-g10-vectors-2",
+     "skill_id": "g10-vectors",
+     "difficulty": 1,
+     "stem_mn": "$\\vec{a}=(4,-6)$ бол $3\\vec{a}$-г ол.",
+     "latex": "3\\vec{a}=(3\\cdot4,\\,3\\cdot(-6))",
+     "choices": [
+      "$(7,-3)$",
+      "$(12,-18)$",
+      "$(12,-6)$",
+      "$(4,-2)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Скаляраар үржихэд компонент бүрийг үржинэ: $3\\cdot4=12$, $3\\cdot(-6)=-18$, тэгэхээр $(12,-18)$."
+    },
+    {
+     "id": "lt-g10-vectors-3",
+     "skill_id": "g10-vectors",
+     "difficulty": 1,
+     "stem_mn": "$\\vec{a}=(3,4)$ векторын урт $|\\vec{a}|$-г ол.",
+     "latex": "|\\vec{a}|=\\sqrt{3^2+4^2}",
+     "choices": [
+      "$5$",
+      "$7$",
+      "$25$",
+      "$\\sqrt{7}$"
+     ],
+     "answer": 0,
+     "solution_mn": "Векторын урт $|\\vec{a}|=\\sqrt{3^2+4^2}=\\sqrt{25}=5$."
+    },
+    {
+     "id": "lt-g10-vectors-4",
+     "skill_id": "g10-vectors",
+     "difficulty": 2,
+     "stem_mn": "$\\vec{a}=(2,3)$, $\\vec{b}=(-1,4)$ бол скаляр үржвэр $\\vec{a}\\cdot\\vec{b}$-г ол.",
+     "latex": "\\vec{a}\\cdot\\vec{b}=2\\cdot(-1)+3\\cdot4",
+     "choices": [
+      "$-14$",
+      "$14$",
+      "$2$",
+      "$10$"
+     ],
+     "answer": 3,
+     "solution_mn": "Скаляр үржвэр нь харгалзах компонентуудын үржвэрийн нийлбэр: $2\\cdot(-1)+3\\cdot4=-2+12=10$."
+    },
+    {
+     "id": "lt-g10-vectors-5",
+     "skill_id": "g10-vectors",
+     "difficulty": 2,
+     "stem_mn": "$\\vec{a}=(3,-2)$ ба $\\vec{b}=(k,6)$ векторууд перпендикуляр бол $k$-г ол.",
+     "latex": "\\vec{a}\\cdot\\vec{b}=3k-12=0",
+     "choices": [
+      "$4$",
+      "$-4$",
+      "$12$",
+      "$9$"
+     ],
+     "answer": 0,
+     "solution_mn": "Перпендикуляр байх нөхцөл $\\vec{a}\\cdot\\vec{b}=0$: $3k+(-2)\\cdot6=3k-12=0$, эндээс $k=4$."
+    },
+    {
+     "id": "lt-g10-vectors-6",
+     "skill_id": "g10-vectors",
+     "difficulty": 2,
+     "stem_mn": "$\\vec{a}=(1,2)$, $\\vec{b}=(3,-1)$ бол $2\\vec{a}-\\vec{b}$-г ол.",
+     "latex": "2\\vec{a}-\\vec{b}=(2\\cdot1-3,\\,2\\cdot2-(-1))",
+     "choices": [
+      "$(5,3)$",
+      "$(-4,5)$",
+      "$(-1,5)$",
+      "$(-1,3)$"
+     ],
+     "answer": 2,
+     "solution_mn": "$2\\vec{a}=(2,4)$ бодоод $\\vec{b}$-г хасна: $(2-3,\\,4-(-1))=(-1,5)$."
+    },
+    {
+     "id": "lt-g10-vectors-7",
+     "skill_id": "g10-vectors",
+     "difficulty": 3,
+     "stem_mn": "$\\vec{a}=(1,\\sqrt{3})$, $\\vec{b}=(\\sqrt{3},1)$ векторуудын хоорондох өнцгийг ол.",
+     "latex": "\\cos\\theta=\\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{a}|\\,|\\vec{b}|}",
+     "choices": [
+      "$60^\\circ$",
+      "$30^\\circ$",
+      "$45^\\circ$",
+      "$90^\\circ$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\vec{a}\\cdot\\vec{b}=2\\sqrt{3}$, $|\\vec{a}|=|\\vec{b}|=2$ тул $\\cos\\theta=\\dfrac{2\\sqrt{3}}{4}=\\dfrac{\\sqrt{3}}{2}$, эндээс $\\theta=30^\\circ$."
+    },
+    {
+     "id": "lt-g10-vectors-8",
+     "skill_id": "g10-vectors",
+     "difficulty": 3,
+     "stem_mn": "$|\\vec{a}|=3$, $|\\vec{b}|=4$ ба тэдгээрийн хоорондох өнцөг $60^\\circ$ бол $|\\vec{a}+\\vec{b}|$-г ол.",
+     "latex": "|\\vec{a}+\\vec{b}|^2=|\\vec{a}|^2+|\\vec{b}|^2+2\\vec{a}\\cdot\\vec{b}",
+     "choices": [
+      "$\\sqrt{37}$",
+      "$7$",
+      "$5$",
+      "$\\sqrt{13}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$|\\vec{a}+\\vec{b}|^2=9+16+2\\cdot3\\cdot4\\cos60^\\circ=25+12=37$ тул $|\\vec{a}+\\vec{b}|=\\sqrt{37}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-matrix",
+   "title_mn": "Матриц",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-matrix-1",
+     "skill_id": "g10-matrix",
+     "difficulty": 1,
+     "stem_mn": "$A=\\begin{pmatrix}2&1\\\\3&0\\end{pmatrix}$, $B=\\begin{pmatrix}1&4\\\\-2&5\\end{pmatrix}$ бол $A+B$-г ол.",
+     "latex": "A+B=\\begin{pmatrix}3&5\\\\1&5\\end{pmatrix}",
+     "choices": [
+      "$\\begin{pmatrix}3&5\\\\1&5\\end{pmatrix}$",
+      "$\\begin{pmatrix}3&5\\\\5&5\\end{pmatrix}$",
+      "$\\begin{pmatrix}1&-3\\\\5&-5\\end{pmatrix}$",
+      "$\\begin{pmatrix}2&4\\\\-6&0\\end{pmatrix}$"
+     ],
+     "answer": 0,
+     "solution_mn": "Матрицуудыг нэмэхдээ ижил байрлалын элементүүдийг нэмнэ: $2+1=3,\\;1+4=5,\\;3+(-2)=1,\\;0+5=5$."
+    },
+    {
+     "id": "lt-g10-matrix-2",
+     "skill_id": "g10-matrix",
+     "difficulty": 1,
+     "stem_mn": "$A=\\begin{pmatrix}3&2\\\\1&4\\end{pmatrix}$ матрицын тодорхойлогч $\\det A$-г ол.",
+     "latex": "\\det A=3\\cdot4-2\\cdot1",
+     "choices": [
+      "$14$",
+      "$10$",
+      "$-10$",
+      "$-5$"
+     ],
+     "answer": 1,
+     "solution_mn": "$2\\times2$ матрицын тодорхойлогч нь $ad-bc$: $3\\cdot4-2\\cdot1=12-2=10$."
+    },
+    {
+     "id": "lt-g10-matrix-3",
+     "skill_id": "g10-matrix",
+     "difficulty": 1,
+     "stem_mn": "$2\\times2$ хэмжээст нэгж матриц аль нь вэ?",
+     "latex": "I=\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}",
+     "choices": [
+      "$\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$",
+      "$\\begin{pmatrix}1&1\\\\0&0\\end{pmatrix}$",
+      "$\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}$",
+      "$\\begin{pmatrix}1&1\\\\1&1\\end{pmatrix}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Нэгж матрицын гол диагональ дээр $1$, бусад бүх элемент нь $0$ байна."
+    },
+    {
+     "id": "lt-g10-matrix-4",
+     "skill_id": "g10-matrix",
+     "difficulty": 2,
+     "stem_mn": "$A=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}$, $B=\\begin{pmatrix}2&0\\\\1&3\\end{pmatrix}$ бол $A\\cdot B$ үржвэрийг ол.",
+     "latex": "A\\cdot B=\\begin{pmatrix}4&6\\\\10&12\\end{pmatrix}",
+     "choices": [
+      "$\\begin{pmatrix}2&0\\\\3&12\\end{pmatrix}$",
+      "$\\begin{pmatrix}4&6\\\\10&12\\end{pmatrix}$",
+      "$\\begin{pmatrix}2&4\\\\10&14\\end{pmatrix}$",
+      "$\\begin{pmatrix}4&6\\\\6&12\\end{pmatrix}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Мөрийг баганаар үржинэ: $1\\cdot2+2\\cdot1=4,\\;1\\cdot0+2\\cdot3=6,\\;3\\cdot2+4\\cdot1=10,\\;3\\cdot0+4\\cdot3=12$."
+    },
+    {
+     "id": "lt-g10-matrix-5",
+     "skill_id": "g10-matrix",
+     "difficulty": 2,
+     "stem_mn": "$A=\\begin{pmatrix}k&4\\\\2&3\\end{pmatrix}$ матрицын тодорхойлогч $7$-тэй тэнцүү бол $k=?$",
+     "latex": "3k-8=7",
+     "choices": [
+      "$k=1$",
+      "$k=-5$",
+      "$k=\\dfrac{7}{3}$",
+      "$k=5$"
+     ],
+     "answer": 3,
+     "solution_mn": "$\\det A=k\\cdot3-4\\cdot2=3k-8=7$, эндээс $3k=15,\\;k=5$."
+    },
+    {
+     "id": "lt-g10-matrix-6",
+     "skill_id": "g10-matrix",
+     "difficulty": 2,
+     "stem_mn": "$A=\\begin{pmatrix}5&-2\\\\3&7\\end{pmatrix}$, $I$ нь $2\\times2$ нэгж матриц бол $A\\cdot I=?$",
+     "latex": "A\\cdot I=A",
+     "choices": [
+      "$\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}$",
+      "$\\begin{pmatrix}5&-2\\\\3&7\\end{pmatrix}$",
+      "$\\begin{pmatrix}5&0\\\\0&7\\end{pmatrix}$",
+      "$\\begin{pmatrix}7&3\\\\-2&5\\end{pmatrix}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Дурын матрицыг нэгж матрицаар үржихэд тэр матриц өөрөө хэвээр үлдэнэ: $A\\cdot I=A$."
+    },
+    {
+     "id": "lt-g10-matrix-7",
+     "skill_id": "g10-matrix",
+     "difficulty": 3,
+     "stem_mn": "$\\begin{vmatrix}x&2\\\\3&x\\end{vmatrix}=10$ бол $x$-ийн бүх утгыг ол.",
+     "latex": "x^2-6=10",
+     "choices": [
+      "$x=\\pm4$",
+      "$x=4$",
+      "$x=\\pm2$",
+      "$x=16$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\det=x\\cdot x-2\\cdot3=x^2-6=10$, тэгэхээр $x^2=16$ буюу $x=\\pm4$."
+    },
+    {
+     "id": "lt-g10-matrix-8",
+     "skill_id": "g10-matrix",
+     "difficulty": 3,
+     "stem_mn": "$A=\\begin{pmatrix}2&1\\\\1&3\\end{pmatrix}$, $B=\\begin{pmatrix}1&0\\\\2&1\\end{pmatrix}$ бол $\\det(A\\cdot B)=?$",
+     "latex": "\\det(AB)=\\det A\\cdot\\det B",
+     "choices": [
+      "$6$",
+      "$5$",
+      "$10$",
+      "$-5$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\det(AB)=\\det A\\cdot\\det B$. $\\det A=2\\cdot3-1\\cdot1=5$, $\\det B=1\\cdot1-0\\cdot2=1$, тиймээс $5\\cdot1=5$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-geo-transform",
+   "title_mn": "Геометрийн хувиргалт",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-geo-transform-1",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 1,
+     "stem_mn": "$A(2; 3)$ цэгийг $\\vec{v}(4; -1)$ вектороор параллель зөөвөл үүсэх дүрс цэгийн координатыг ол.",
+     "latex": "A'=(2+4;\\ 3-1)=(6;2)",
+     "choices": [
+      "$(6; 2)$",
+      "$(6; 4)$",
+      "$(-2; 4)$",
+      "$(8; -3)$"
+     ],
+     "answer": 0,
+     "solution_mn": "Параллель зөөлтөд векторын координатыг цэгийнхтэй нэмнэ: $A'=(2+4;\\ 3+(-1))=(6;2)$."
+    },
+    {
+     "id": "lt-g10-geo-transform-2",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 1,
+     "stem_mn": "$M(-3; 5)$ цэгийн координатын эх $O$-гийн хувьд төвийн тэгш хэмтэй цэгийг ол.",
+     "latex": "M(-3;5)\\to M'(3;-5)",
+     "choices": [
+      "$(-3; -5)$",
+      "$(3; 5)$",
+      "$(3; -5)$",
+      "$(5; -3)$"
+     ],
+     "answer": 2,
+     "solution_mn": "Төвийн тэгш хэмд хоёр координат хоёулаа тэмдгээ солино: $M'=(3;-5)$."
+    },
+    {
+     "id": "lt-g10-geo-transform-3",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 1,
+     "stem_mn": "$A(3; -1)$ цэгийг координатын эх төвтэй, $k=2$ коэффициенттэй гомотетоор буулгахад үүсэх дүрс цэгийг ол.",
+     "latex": "A'=(2\\cdot3;\\ 2\\cdot(-1))=(6;-2)",
+     "choices": [
+      "$(6; 2)$",
+      "$(6; -2)$",
+      "$(1{,}5; -0{,}5)$",
+      "$(5; 1)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Эх төвтэй гомотетод координатыг $k$-аар үржүүлнэ: $A'=(2\\cdot3;\\ 2\\cdot(-1))=(6;-2)$."
+    },
+    {
+     "id": "lt-g10-geo-transform-4",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 2,
+     "stem_mn": "$A(2; 5)$ цэгийг координатын эх $O$-г тойруулан цагийн зүүний эсрэг $90^\\circ$-аар эргүүлэхэд үүсэх дүрс цэгийг ол.",
+     "latex": "(x;y)\\to(-y;x)",
+     "choices": [
+      "$(5; -2)$",
+      "$(-2; 5)$",
+      "$(2; -5)$",
+      "$(-5; 2)$"
+     ],
+     "answer": 3,
+     "solution_mn": "$90^\\circ$ эсрэг эргүүлэлтэд $(x;y)\\to(-y;x)$ тул $(2;5)\\to(-5;2)$."
+    },
+    {
+     "id": "lt-g10-geo-transform-5",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 2,
+     "stem_mn": "$\\vec{v}(-3; 4)$ вектороор параллель зөөвөл $B$ цэг нь $B'(1; -2)$ болов. $B$ цэгийн координатыг ол.",
+     "latex": "B=B'-\\vec v",
+     "choices": [
+      "$(4; -6)$",
+      "$(-2; 2)$",
+      "$(4; 6)$",
+      "$(-4; -6)$"
+     ],
+     "answer": 0,
+     "solution_mn": "Эх дүрсийг олохын тулд векторыг хасна: $B=(1-(-3);\\ -2-4)=(4;-6)$."
+    },
+    {
+     "id": "lt-g10-geo-transform-6",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 2,
+     "stem_mn": "$C(1; 1)$ төвтэй, $k=2$ коэффициенттэй гомотетоор $A(4; 3)$ цэгийг буулгав. Дүрс цэгийг ол.",
+     "latex": "A'=C+k(A-C)",
+     "choices": [
+      "$(8; 6)$",
+      "$(7; 5)$",
+      "$(9; 7)$",
+      "$(5; 4)$"
+     ],
+     "answer": 1,
+     "solution_mn": "$A'=C+k(A-C)=(1+2\\cdot3;\\ 1+2\\cdot2)=(7;5)$; төвийг тооцохгүй бол $(8;6)$ гэсэн алдаа гарна."
+    },
+    {
+     "id": "lt-g10-geo-transform-7",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 3,
+     "stem_mn": "$A(3; -2)$ цэгийг эхлээд $Oy$ тэнхлэгийн хувьд тусгаж, дараа нь $\\vec{v}(1; 5)$ вектороор зөөв. Эцсийн дүрс цэгийг ол.",
+     "latex": "(3;-2)\\to(-3;-2)\\to(-2;3)",
+     "choices": [
+      "$(-4; 3)$",
+      "$(-2; 3)$",
+      "$(4; 7)$",
+      "$(4; 3)$"
+     ],
+     "answer": 1,
+     "solution_mn": "$Oy$-д тусгахад $(3;-2)\\to(-3;-2)$, дараа нь зөөвөл $(-3+1;\\ -2+5)=(-2;3)$."
+    },
+    {
+     "id": "lt-g10-geo-transform-8",
+     "skill_id": "g10-geo-transform",
+     "difficulty": 3,
+     "stem_mn": "Координатын эх төвтэй, $k=-2$ коэффициенттэй гомотетоор талбай нь $5$ нэгж квадрат гурвалжныг буулгав. Дүрс гурвалжны талбайг ол.",
+     "latex": "S'=k^2\\cdot S",
+     "choices": [
+      "$10$ нэгж кв.",
+      "$-10$ нэгж кв.",
+      "$20$ нэгж кв.",
+      "$40$ нэгж кв."
+     ],
+     "answer": 2,
+     "solution_mn": "Гомотетод талбай $k^2$ дахин өснө: $(-2)^2\\cdot5=20$ нэгж квадрат."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-data",
+   "title_mn": "Өгөгдлийн шинжилгээ",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-data-1",
+     "skill_id": "g10-data",
+     "difficulty": 1,
+     "stem_mn": "$4,\\ 6,\\ 8,\\ 10,\\ 12$ тоонуудын арифметик дунджийг ол.",
+     "latex": "\\bar{x}=\\dfrac{4+6+8+10+12}{5}",
+     "choices": [
+      "$6$",
+      "$8$",
+      "$10$",
+      "$40$"
+     ],
+     "answer": 1,
+     "solution_mn": "Тоонуудын нийлбэр $40$-ийг тооны тоо $5$-д хуваахад дундаж нь $\\dfrac{40}{5}=8$ болно."
+    },
+    {
+     "id": "lt-g10-data-2",
+     "skill_id": "g10-data",
+     "difficulty": 1,
+     "stem_mn": "$12,\\ 7,\\ 9,\\ 15,\\ 10$ өгөгдлийн медианыг ол.",
+     "latex": "",
+     "choices": [
+      "$9$",
+      "$10$",
+      "$11$",
+      "$12$"
+     ],
+     "answer": 1,
+     "solution_mn": "Өсөх дарааллаар эрэмбэлбэл $7,\\ 9,\\ 10,\\ 12,\\ 15$ болно. Голын буюу $3$ дахь утга $10$ нь медиан."
+    },
+    {
+     "id": "lt-g10-data-3",
+     "skill_id": "g10-data",
+     "difficulty": 1,
+     "stem_mn": "$4,\\ 7,\\ 4,\\ 9,\\ 4,\\ 7,\\ 2$ өгөгдлийн модыг (хамгийн олон давтагдсан утга) ол.",
+     "latex": "",
+     "choices": [
+      "$2$",
+      "$4$",
+      "$7$",
+      "$9$"
+     ],
+     "answer": 1,
+     "solution_mn": "$4$ гэсэн утга $3$ удаа орсон нь бусад бүх утгаас олон давтагдсан тул мод нь $4$."
+    },
+    {
+     "id": "lt-g10-data-4",
+     "skill_id": "g10-data",
+     "difficulty": 2,
+     "stem_mn": "Давтамжийн хүснэгтэд утгууд $15,\\ 18,\\ 20,\\ 25,\\ 30$, харгалзах давтамж нь $2,\\ 4,\\ 5,\\ 3,\\ 1$ байв. Өгөгдлийн далайцыг ол.",
+     "latex": "R=x_{\\max}-x_{\\min}",
+     "choices": [
+      "$15$",
+      "$4$",
+      "$45$",
+      "$30$"
+     ],
+     "answer": 0,
+     "solution_mn": "Далайц нь хамгийн их ба хамгийн бага УТГЫН зөрүү тул $30-15=15$ (давтамжийн зөрүүг авах нь алдаа)."
+    },
+    {
+     "id": "lt-g10-data-5",
+     "skill_id": "g10-data",
+     "difficulty": 2,
+     "stem_mn": "Утга $1,\\ 2,\\ 3,\\ 4$-т харгалзах давтамж нь $3,\\ 5,\\ 7,\\ 5$ байв. Өгөгдлийн арифметик дунджийг ол.",
+     "latex": "\\bar{x}=\\dfrac{\\sum f_i x_i}{\\sum f_i}",
+     "choices": [
+      "$2.5$",
+      "$2.7$",
+      "$3$",
+      "$10$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\bar{x}=\\dfrac{1\\cdot3+2\\cdot5+3\\cdot7+4\\cdot5}{3+5+7+5}=\\dfrac{54}{20}=2.7$ (давтамжийг тооцохгүй бол $2.5$ гэсэн алдаа гарна)."
+    },
+    {
+     "id": "lt-g10-data-6",
+     "skill_id": "g10-data",
+     "difficulty": 2,
+     "stem_mn": "Дугуй диаграмд өрхийн сарын зарлагыг хоол хүнс $35\\%$, орон сууц $25\\%$, тээвэр $15\\%$, бусад $25\\%$ гэж үзүүлжээ. Нийт зарлага $800\\,000$₮ бол тээвэрт хэдэн төгрөг зарцуулсан бэ?",
+     "latex": "",
+     "choices": [
+      "$200\\,000$₮",
+      "$120\\,000$₮",
+      "$280\\,000$₮",
+      "$90\\,000$₮"
+     ],
+     "answer": 1,
+     "solution_mn": "Тээвэр нийт зарлагын $15\\%$-ийг эзэлж буй тул $800\\,000\\times0.15=120\\,000$₮."
+    },
+    {
+     "id": "lt-g10-data-7",
+     "skill_id": "g10-data",
+     "difficulty": 3,
+     "stem_mn": "$5$ тооны арифметик дундаж $14$. Тэдгээрийн дөрөв нь $10,\\ 11,\\ 15,\\ 20$ бол тав дахь тоог ол.",
+     "latex": "\\sum x=\\bar{x}\\cdot n",
+     "choices": [
+      "$11$",
+      "$14$",
+      "$16$",
+      "$18$"
+     ],
+     "answer": 1,
+     "solution_mn": "Бүх тооны нийлбэр $14\\cdot5=70$. Мэдэгдэж буй дөрвийн нийлбэр $10+11+15+20=56$ тул тав дахь тоо $70-56=14$."
+    },
+    {
+     "id": "lt-g10-data-8",
+     "skill_id": "g10-data",
+     "difficulty": 3,
+     "stem_mn": "Багийн $6$ хүний дундаж жин $60$ кг. Нэг хүн багаас гарахад үлдсэн $5$ хүний дундаж жин $62$ кг болов. Багаас гарсан хүний жинг ол.",
+     "latex": "",
+     "choices": [
+      "$48$ кг",
+      "$52$ кг",
+      "$50$ кг",
+      "$58$ кг"
+     ],
+     "answer": 2,
+     "solution_mn": "$6$ хүний нийт жин $6\\cdot60=360$ кг, үлдсэн $5$ хүнийх $5\\cdot62=310$ кг тул гарсан хүний жин $360-310=50$ кг."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-combinatorics",
+   "title_mn": "Комбинаторик",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-combinatorics-1",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 1,
+     "stem_mn": "Хоолны газар $3$ төрлийн шөл, $4$ төрлийн үндсэн хоол бэлтгэдэг. Нэг шөл, нэг үндсэн хоолыг хамтад нь захиалах аргын тоо хэд вэ?",
+     "latex": "3\\cdot 4 = 12",
+     "choices": [
+      "12",
+      "7",
+      "24",
+      "34"
+     ],
+     "answer": 0,
+     "solution_mn": "Үржих зарчмаар нэг шөл ($3$ сонголт), нэг үндсэн хоол ($4$ сонголт) сонгоно: $3\\cdot4=12$ янз."
+    },
+    {
+     "id": "lt-g10-combinatorics-2",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 1,
+     "stem_mn": "$4$ өөр номыг номын тавиур дээр эгнүүлэн байрлуулах бүх боломжит аргын тоо хэд вэ?",
+     "latex": "P_4 = 4! = 24",
+     "choices": [
+      "16",
+      "12",
+      "24",
+      "8"
+     ],
+     "answer": 2,
+     "solution_mn": "$4$ ялгаатай элементийн сэлгэмэл: $P_4=4!=4\\cdot3\\cdot2\\cdot1=24$ янз."
+    },
+    {
+     "id": "lt-g10-combinatorics-3",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 1,
+     "stem_mn": "Ангийн $7$ сурагчаас $2$ жижүүрийг сонгоно. Сонгогдох дараалал хамаагүй бол хичнээн янзаар сонгож болох вэ?",
+     "latex": "C_7^2 = 21",
+     "choices": [
+      "14",
+      "21",
+      "42",
+      "49"
+     ],
+     "answer": 1,
+     "solution_mn": "Дараалал хамаагүй тул хэсэглэл ашиглана: $C_7^2=\\dfrac{7\\cdot6}{2}=21$ янз."
+    },
+    {
+     "id": "lt-g10-combinatorics-4",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 2,
+     "stem_mn": "$8$ гүйгч оролцсон уралдаанд алт, мөнгө, хүрэл медалийг ($1,2,3$-р байр) олгоно. Ялагчид хэдэн янзаар тодорч болох вэ?",
+     "latex": "A_8^3 = 8\\cdot 7\\cdot 6 = 336",
+     "choices": [
+      "336",
+      "56",
+      "512",
+      "24"
+     ],
+     "answer": 0,
+     "solution_mn": "Байр эзлэх дараалал чухал тул гүйлгээ: $A_8^3=8\\cdot7\\cdot6=336$ янз."
+    },
+    {
+     "id": "lt-g10-combinatorics-5",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 2,
+     "stem_mn": "$12$ сурагчтай ангиас $3$ хүний бүрэлдэхүүнтэй баг сонгоно. Хэдэн янзаар байгуулж болох вэ?",
+     "latex": "C_{12}^3 = 220",
+     "choices": [
+      "1320",
+      "36",
+      "220",
+      "1728"
+     ],
+     "answer": 2,
+     "solution_mn": "Багийн доторх дараалал хамаагүй тул хэсэглэл: $C_{12}^3=\\dfrac{12\\cdot11\\cdot10}{3\\cdot2\\cdot1}=220$ янз."
+    },
+    {
+     "id": "lt-g10-combinatorics-6",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 2,
+     "stem_mn": "$0, 1, 2, 3, 4$ цифрүүдийг ашиглан цифр давтагдахгүйгээр $3$ оронтой тоо хэдийг зохиож болох вэ?",
+     "latex": "4\\cdot 4\\cdot 3 = 48",
+     "choices": [
+      "60",
+      "100",
+      "48",
+      "125"
+     ],
+     "answer": 2,
+     "solution_mn": "Зуутын орон $0$ байж болохгүй тул $4$ сонголт, аравтын орон $4$, нэгжийн орон $3$ сонголт: $4\\cdot4\\cdot3=48$ тоо."
+    },
+    {
+     "id": "lt-g10-combinatorics-7",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 3,
+     "stem_mn": "Ангид $6$ хүү, $5$ охин байна. Тэдгээрээс $2$ хүү, $2$ охин бүхий $4$ хүний баг хэдэн янзаар байгуулж болох вэ?",
+     "latex": "C_6^2\\cdot C_5^2 = 150",
+     "choices": [
+      "25",
+      "330",
+      "150",
+      "75"
+     ],
+     "answer": 2,
+     "solution_mn": "Хүү, охиныг тусад нь сонгоод үржих зарчмаар үржүүлнэ: $C_6^2\\cdot C_5^2=15\\cdot10=150$ янз."
+    },
+    {
+     "id": "lt-g10-combinatorics-8",
+     "skill_id": "g10-combinatorics",
+     "difficulty": 3,
+     "stem_mn": "«МОНГОЛ» гэсэн үгийн үсгүүдийн байрлалыг сольж хэдэн янзаар эгнүүлэн бичиж болох вэ?",
+     "latex": "\\dfrac{6!}{2!} = 360",
+     "choices": [
+      "720",
+      "360",
+      "120",
+      "180"
+     ],
+     "answer": 1,
+     "solution_mn": "$6$ үсгээс «О» үсэг $2$ удаа давтагдах тул давталттай сэлгэмэл: $\\dfrac{6!}{2!}=\\dfrac{720}{2}=360$ янз."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-probability",
+   "title_mn": "Магадлал",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-probability-1",
+     "skill_id": "g10-probability",
+     "difficulty": 1,
+     "stem_mn": "Тэгш хэмт шоог нэг удаа орхиход тэгш тоо буух магадлалыг ол.",
+     "latex": "P=\\frac{3}{6}=\\frac{1}{2}",
+     "choices": [
+      "$\\frac{1}{3}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{6}$",
+      "$\\frac{2}{3}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Тэгш тоо буух таатай тохиолдол $\\{2,4,6\\}$ буюу 3, бүх тохиолдол 6. Иймд $P=\\frac{3}{6}=\\frac{1}{2}$."
+    },
+    {
+     "id": "lt-g10-probability-2",
+     "skill_id": "g10-probability",
+     "difficulty": 1,
+     "stem_mn": "Уутанд 5 улаан, 3 хөх бөмбөг байна. Санамсаргүйгээр нэгийг авахад улаан бөмбөг гарах магадлалыг ол.",
+     "latex": "P=\\frac{5}{8}",
+     "choices": [
+      "$\\frac{3}{8}$",
+      "$\\frac{5}{8}$",
+      "$\\frac{5}{3}$",
+      "$\\frac{1}{5}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Нийт $5+3=8$ бөмбөгнөөс улаан нь 5. Иймд $P=\\frac{5}{8}$."
+    },
+    {
+     "id": "lt-g10-probability-3",
+     "skill_id": "g10-probability",
+     "difficulty": 1,
+     "stem_mn": "$1$-ээс $10$ хүртэлх бүхэл тоонуудаас нэгийг санамсаргүйгээр сонгоход $3$-т хуваагдах тоо гарах магадлалыг ол.",
+     "latex": "P=\\frac{3}{10}",
+     "choices": [
+      "$\\frac{1}{10}$",
+      "$\\frac{3}{10}$",
+      "$\\frac{1}{3}$",
+      "$\\frac{7}{10}$"
+     ],
+     "answer": 1,
+     "solution_mn": "$3$-т хуваагдах тоонууд $\\{3,6,9\\}$ буюу 3, бүх тохиолдол 10. Иймд $P=\\frac{3}{10}$."
+    },
+    {
+     "id": "lt-g10-probability-4",
+     "skill_id": "g10-probability",
+     "difficulty": 2,
+     "stem_mn": "52 хөзрөөс нэгийг авахад тэр нь хаан ЭСВЭЛ дөрвөлж (черв) байх магадлалыг ол.",
+     "latex": "P=\\frac{4}{52}+\\frac{13}{52}-\\frac{1}{52}=\\frac{4}{13}",
+     "choices": [
+      "$\\frac{17}{52}$",
+      "$\\frac{4}{13}$",
+      "$\\frac{1}{4}$",
+      "$\\frac{4}{52}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Нэмэх дүрмээр $P=\\frac{4}{52}+\\frac{13}{52}-\\frac{1}{52}=\\frac{16}{52}=\\frac{4}{13}$ (черв хаан давхардаж байгааг хасна)."
+    },
+    {
+     "id": "lt-g10-probability-5",
+     "skill_id": "g10-probability",
+     "difficulty": 2,
+     "stem_mn": "Хоёр тэгш хэмт шоог зэрэг орхиход хоёулаа $6$ буух магадлалыг ол.",
+     "latex": "P=\\frac{1}{6}\\cdot\\frac{1}{6}=\\frac{1}{36}",
+     "choices": [
+      "$\\frac{1}{6}$",
+      "$\\frac{1}{12}$",
+      "$\\frac{1}{36}$",
+      "$\\frac{2}{6}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Хоёр шоо бие даасан тул үржих дүрмээр $P=\\frac{1}{6}\\cdot\\frac{1}{6}=\\frac{1}{36}$."
+    },
+    {
+     "id": "lt-g10-probability-6",
+     "skill_id": "g10-probability",
+     "difficulty": 2,
+     "stem_mn": "Уутанд 4 цагаан, 6 хар бөмбөг байна. Дараалан хоёр бөмбөгийг буцааж хийхгүйгээр авахад хоёулаа цагаан байх магадлалыг ол.",
+     "latex": "P=\\frac{4}{10}\\cdot\\frac{3}{9}=\\frac{2}{15}",
+     "choices": [
+      "$\\frac{4}{25}$",
+      "$\\frac{2}{5}$",
+      "$\\frac{2}{15}$",
+      "$\\frac{1}{15}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Буцааж хийхгүй тул $P=\\frac{4}{10}\\cdot\\frac{3}{9}=\\frac{12}{90}=\\frac{2}{15}$."
+    },
+    {
+     "id": "lt-g10-probability-7",
+     "skill_id": "g10-probability",
+     "difficulty": 3,
+     "stem_mn": "Зоосыг $3$ удаа шидэхэд ядаж нэг удаа сүлд (толгой) буух магадлалыг ол.",
+     "latex": "P=1-\\left(\\frac{1}{2}\\right)^3=\\frac{7}{8}",
+     "choices": [
+      "$\\frac{1}{8}$",
+      "$\\frac{3}{8}$",
+      "$\\frac{7}{8}$",
+      "$\\frac{1}{2}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Эсрэг үзэгдэл нь бүгд сэлэм буух буюу $\\left(\\frac{1}{2}\\right)^3=\\frac{1}{8}$. Иймд $P=1-\\frac{1}{8}=\\frac{7}{8}$."
+    },
+    {
+     "id": "lt-g10-probability-8",
+     "skill_id": "g10-probability",
+     "difficulty": 3,
+     "stem_mn": "Хайрцагт 5 сайн, 3 гэмтэлтэй эд анги байна. Хоёрыг санамсаргүйгээр зэрэг авахад яг нэг нь гэмтэлтэй байх магадлалыг ол.",
+     "latex": "P=\\frac{C_3^1\\cdot C_5^1}{C_8^2}=\\frac{15}{28}",
+     "choices": [
+      "$\\frac{3}{28}$",
+      "$\\frac{15}{56}$",
+      "$\\frac{15}{28}$",
+      "$\\frac{5}{14}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Бүх тохиолдол $C_8^2=28$. Таатай нь 1 гэмтэлтэй, 1 сайн сонгох $C_3^1\\cdot C_5^1=15$. Иймд $P=\\frac{15}{28}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g10-measurement",
+   "title_mn": "Хэмжигдэхүүн",
+   "grade": 10,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g10-measurement-1",
+     "skill_id": "g10-measurement",
+     "difficulty": 1,
+     "stem_mn": "$3\\,\\text{м}^2$-ыг $\\text{см}^2$-руу шилжүүлбэл хэдэн $\\text{см}^2$ болох вэ?",
+     "latex": "1\\,\\text{м}^2 = 10000\\,\\text{см}^2",
+     "choices": [
+      "$300\\,\\text{см}^2$",
+      "$3000\\,\\text{см}^2$",
+      "$30000\\,\\text{см}^2$",
+      "$300000\\,\\text{см}^2$"
+     ],
+     "answer": 2,
+     "solution_mn": "$1\\,\\text{м}^2 = 100^2 = 10000\\,\\text{см}^2$ тул $3\\,\\text{м}^2 = 3\\cdot 10000 = 30000\\,\\text{см}^2$ болно."
+    },
+    {
+     "id": "lt-g10-measurement-2",
+     "skill_id": "g10-measurement",
+     "difficulty": 1,
+     "stem_mn": "Ирмэгийн урт нь $4\\,\\text{см}$ шоо биетийн эзэлхүүнийг ол.",
+     "latex": "V=a^3",
+     "choices": [
+      "$16\\,\\text{см}^3$",
+      "$48\\,\\text{см}^3$",
+      "$64\\,\\text{см}^3$",
+      "$96\\,\\text{см}^3$"
+     ],
+     "answer": 2,
+     "solution_mn": "Шооны эзэлхүүн $V=a^3=4^3=64\\,\\text{см}^3$. ($96$ нь гадаргуугийн талбай $6a^2$ юм.)"
+    },
+    {
+     "id": "lt-g10-measurement-3",
+     "skill_id": "g10-measurement",
+     "difficulty": 1,
+     "stem_mn": "Хэмжээ нь $5\\,\\text{см}\\times 3\\,\\text{см}\\times 2\\,\\text{см}$ тэгш өнцөгт параллелепипедын эзэлхүүнийг ол.",
+     "latex": "V=abc",
+     "choices": [
+      "$30\\,\\text{см}^3$",
+      "$31\\,\\text{см}^3$",
+      "$60\\,\\text{см}^3$",
+      "$62\\,\\text{см}^3$"
+     ],
+     "answer": 0,
+     "solution_mn": "$V=a\\cdot b\\cdot c=5\\cdot 3\\cdot 2=30\\,\\text{см}^3$. ($62$ нь бүтэн гадаргуугийн талбай.)"
+    },
+    {
+     "id": "lt-g10-measurement-4",
+     "skill_id": "g10-measurement",
+     "difficulty": 2,
+     "stem_mn": "Суурийн радиус нь $r=3\\,\\text{см}$, өндөр нь $h=10\\,\\text{см}$ цилиндрийн эзэлхүүнийг ол.",
+     "latex": "V=\\pi r^2 h",
+     "choices": [
+      "$60\\pi\\,\\text{см}^3$",
+      "$90\\pi\\,\\text{см}^3$",
+      "$180\\pi\\,\\text{см}^3$",
+      "$360\\pi\\,\\text{см}^3$"
+     ],
+     "answer": 1,
+     "solution_mn": "$V=\\pi r^2 h=\\pi\\cdot 3^2\\cdot 10=90\\pi\\,\\text{см}^3$. ($60\\pi$ нь хажуу гадаргуугийн талбай $2\\pi rh$.)"
+    },
+    {
+     "id": "lt-g10-measurement-5",
+     "skill_id": "g10-measurement",
+     "difficulty": 2,
+     "stem_mn": "Радиус нь $r=3\\,\\text{см}$ бөмбөрцгийн эзэлхүүнийг ол.",
+     "latex": "V=\\tfrac{4}{3}\\pi r^3",
+     "choices": [
+      "$9\\pi\\,\\text{см}^3$",
+      "$27\\pi\\,\\text{см}^3$",
+      "$36\\pi\\,\\text{см}^3$",
+      "$108\\pi\\,\\text{см}^3$"
+     ],
+     "answer": 2,
+     "solution_mn": "$V=\\dfrac{4}{3}\\pi r^3=\\dfrac{4}{3}\\pi\\cdot 27=36\\pi\\,\\text{см}^3$. ($108\\pi$ нь $\\tfrac{1}{3}$-д хуваахаа мартсан алдаа.)"
+    },
+    {
+     "id": "lt-g10-measurement-6",
+     "skill_id": "g10-measurement",
+     "difficulty": 2,
+     "stem_mn": "Радиус нь $r=5\\,\\text{см}$ бөмбөрцгийн гадаргуугийн талбайг ол.",
+     "latex": "S=4\\pi r^2",
+     "choices": [
+      "$25\\pi\\,\\text{см}^2$",
+      "$50\\pi\\,\\text{см}^2$",
+      "$100\\pi\\,\\text{см}^2$",
+      "$400\\pi\\,\\text{см}^2$"
+     ],
+     "answer": 2,
+     "solution_mn": "$S=4\\pi r^2=4\\pi\\cdot 5^2=100\\pi\\,\\text{см}^2$. ($25\\pi$ нь зөвхөн $\\pi r^2$, $400\\pi$ нь диаметрийг радиус болгосон алдаа.)"
+    },
+    {
+     "id": "lt-g10-measurement-7",
+     "skill_id": "g10-measurement",
+     "difficulty": 3,
+     "stem_mn": "Суурийн радиус нь $r=4\\,\\text{см}$, өндөр нь $h=6\\,\\text{см}$ цилиндрийн бүтэн гадаргуугийн талбайг ол.",
+     "latex": "S=2\\pi r^2+2\\pi r h",
+     "choices": [
+      "$48\\pi\\,\\text{см}^2$",
+      "$64\\pi\\,\\text{см}^2$",
+      "$80\\pi\\,\\text{см}^2$",
+      "$96\\pi\\,\\text{см}^2$"
+     ],
+     "answer": 2,
+     "solution_mn": "$S=2\\pi r^2+2\\pi rh=2\\pi\\cdot16+2\\pi\\cdot4\\cdot6=32\\pi+48\\pi=80\\pi\\,\\text{см}^2$. ($48\\pi$ нь зөвхөн хажуу гадаргуу, $64\\pi$ нь нэг л сууриа тооцсон алдаа.)"
+    },
+    {
+     "id": "lt-g10-measurement-8",
+     "skill_id": "g10-measurement",
+     "difficulty": 3,
+     "stem_mn": "Радиус нь $r$ бөмбөрцөг радиус нь $r$, өндөр нь $2r$ цилиндр дотор яг багтжээ. Бөмбөрцгийн эзэлхүүний цилиндрийн эзэлхүүнд харьцах харьцаа хэд вэ?",
+     "latex": "\\frac{V_{\\text{бөмб}}}{V_{\\text{цил}}}=\\frac{\\tfrac{4}{3}\\pi r^3}{2\\pi r^3}",
+     "choices": [
+      "$1:2$",
+      "$2:3$",
+      "$3:4$",
+      "$1:3$"
+     ],
+     "answer": 1,
+     "solution_mn": "Бөмбөрцөг $V=\\tfrac{4}{3}\\pi r^3$, цилиндр $V=\\pi r^2\\cdot 2r=2\\pi r^3$. Харьцаа $\\dfrac{4/3}{2}=\\dfrac{2}{3}$, өөрөөр хэлбэл $2:3$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-quadratic",
+   "title_mn": "Квадрат тэгшитгэл ба тэнцэтгэл биш",
+   "grade": 11,
+   "lesson_id": "g11-1-1",
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-quadratic-1",
+     "skill_id": "g11-quadratic",
+     "difficulty": 1,
+     "stem_mn": "$x^2-5x+6=0$ тэгшитгэлийн дискриминантыг ол.",
+     "latex": "D=b^2-4ac",
+     "choices": [
+      "$-1$",
+      "$5$",
+      "$1$",
+      "$49$"
+     ],
+     "answer": 2,
+     "solution_mn": "$D=(-5)^2-4\\cdot1\\cdot6=25-24=1$."
+    },
+    {
+     "id": "lt-g11-quadratic-2",
+     "skill_id": "g11-quadratic",
+     "difficulty": 1,
+     "stem_mn": "$x^2-7x+12=0$ тэгшитгэлийг бод.",
+     "latex": "x^2-7x+12=0",
+     "choices": [
+      "$x_1=3,\\ x_2=4$",
+      "$x_1=-3,\\ x_2=-4$",
+      "$x_1=2,\\ x_2=6$",
+      "$x_1=-2,\\ x_2=-6$"
+     ],
+     "answer": 0,
+     "solution_mn": "Үржвэр нь $12$, нийлбэр нь $7$ болох тоонууд $3$ ба $4$ тул $x_1=3,\\ x_2=4$."
+    },
+    {
+     "id": "lt-g11-quadratic-3",
+     "skill_id": "g11-quadratic",
+     "difficulty": 1,
+     "stem_mn": "$x^2-8x+15=0$ тэгшитгэлийн язгууруудын нийлбэрийг Виетийн теоремоор ол.",
+     "latex": "x_1+x_2=-\\dfrac{b}{a}",
+     "choices": [
+      "$15$",
+      "$-8$",
+      "$-15$",
+      "$8$"
+     ],
+     "answer": 3,
+     "solution_mn": "Виетийн теоремоор $x_1+x_2=-\\dfrac{-8}{1}=8$."
+    },
+    {
+     "id": "lt-g11-quadratic-4",
+     "skill_id": "g11-quadratic",
+     "difficulty": 2,
+     "stem_mn": "$x^2-5x+6>0$ тэнцэтгэл бишийг бод.",
+     "latex": "x^2-5x+6>0",
+     "choices": [
+      "$2<x<3$",
+      "$x<2$ эсвэл $x>3$",
+      "$-3<x<-2$",
+      "$x<-3$ эсвэл $x>-2$"
+     ],
+     "answer": 1,
+     "solution_mn": "Язгуурууд нь $2$ ба $3$; парабол дээшээ нээлттэй тул тэг цэгүүдийн гаднах $x<2$ эсвэл $x>3$ мужид эерэг."
+    },
+    {
+     "id": "lt-g11-quadratic-5",
+     "skill_id": "g11-quadratic",
+     "difficulty": 2,
+     "stem_mn": "$x^2-6x+m=0$ тэгшитгэлийн язгуурууд $x_1=2x_2$ нөхцөлийг хангадаг бол $m$-г ол.",
+     "latex": "x_1=2x_2",
+     "choices": [
+      "$9$",
+      "$6$",
+      "$8$",
+      "$12$"
+     ],
+     "answer": 2,
+     "solution_mn": "Виетээр $x_1+x_2=6\\Rightarrow 3x_2=6\\Rightarrow x_2=2,\\ x_1=4$; иймд $m=x_1x_2=8$."
+    },
+    {
+     "id": "lt-g11-quadratic-6",
+     "skill_id": "g11-quadratic",
+     "difficulty": 2,
+     "stem_mn": "$x^2+kx+9=0$ тэгшитгэл давхар (тэнцүү) язгууртай байх $k$-гийн утгыг ол.",
+     "latex": "D=k^2-36=0",
+     "choices": [
+      "$k=\\pm 6$",
+      "$k=6$",
+      "$k=\\pm 3$",
+      "$k=\\pm 9$"
+     ],
+     "answer": 0,
+     "solution_mn": "Давхар язгуурт $D=k^2-4\\cdot9=0\\Rightarrow k^2=36\\Rightarrow k=\\pm6$."
+    },
+    {
+     "id": "lt-g11-quadratic-7",
+     "skill_id": "g11-quadratic",
+     "difficulty": 3,
+     "stem_mn": "$x^2-4x+2=0$ тэгшитгэлийн язгуурууд $x_1,\\ x_2$ бол $x_1^2+x_2^2$-ыг ол.",
+     "latex": "x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2",
+     "choices": [
+      "$16$",
+      "$12$",
+      "$20$",
+      "$14$"
+     ],
+     "answer": 1,
+     "solution_mn": "Виетээр $x_1+x_2=4,\\ x_1x_2=2$; иймд $x_1^2+x_2^2=4^2-2\\cdot2=16-4=12$."
+    },
+    {
+     "id": "lt-g11-quadratic-8",
+     "skill_id": "g11-quadratic",
+     "difficulty": 3,
+     "stem_mn": "$x^2-2mx+(m+6)>0$ тэнцэтгэл биш бүх бодит $x$-д биелэх $m$-гийн утгуудын мужийг ол.",
+     "latex": "D<0",
+     "choices": [
+      "$m<-2$ эсвэл $m>3$",
+      "$-3<m<2$",
+      "$2<m<3$",
+      "$-2<m<3$"
+     ],
+     "answer": 3,
+     "solution_mn": "Парабол дээшээ нээлттэй тул бүх $x$-д эерэг байх нөхцөл нь $D<0$: $4m^2-4(m+6)<0\\Rightarrow m^2-m-6<0\\Rightarrow (m-3)(m+2)<0\\Rightarrow -2<m<3$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-systems",
+   "title_mn": "Тэгшитгэлийн систем",
+   "grade": 11,
+   "lesson_id": "g11-2-1",
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-systems-1",
+     "skill_id": "g11-systems",
+     "difficulty": 1,
+     "stem_mn": "$\\begin{cases} x+y=5 \\\\ x-y=1 \\end{cases}$ тэгшитгэлийн системийн шийдийг ол.",
+     "latex": "\\begin{cases} x+y=5 \\\\ x-y=1 \\end{cases}",
+     "choices": [
+      "$(2,\\ 3)$",
+      "$(3,\\ 2)$",
+      "$(4,\\ 1)$",
+      "$(1,\\ 4)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хоёр тэгшитгэлийг нэмэх аргаар нэмбэл $2x=6$ буюу $x=3$, дараа нь $y=5-3=2$."
+    },
+    {
+     "id": "lt-g11-systems-2",
+     "skill_id": "g11-systems",
+     "difficulty": 1,
+     "stem_mn": "Нэмэх аргыг ашиглан $\\begin{cases} 2x+y=7 \\\\ x-y=2 \\end{cases}$ системийг бод.",
+     "latex": "\\begin{cases} 2x+y=7 \\\\ x-y=2 \\end{cases}",
+     "choices": [
+      "$(1,\\ 3)$",
+      "$(3,\\ -1)$",
+      "$(3,\\ 1)$",
+      "$(2,\\ 3)$"
+     ],
+     "answer": 2,
+     "solution_mn": "Тэгшитгэлүүдийг нэмбэл $3x=9$, тэгэхээр $x=3$; $y=x-2=1$ болно."
+    },
+    {
+     "id": "lt-g11-systems-3",
+     "skill_id": "g11-systems",
+     "difficulty": 1,
+     "stem_mn": "$\\begin{cases} 2x+3y=6 \\\\ 4x+6y=5 \\end{cases}$ системийн шийдийн тоо хэд вэ?",
+     "latex": "\\begin{cases} 2x+3y=6 \\\\ 4x+6y=5 \\end{cases}",
+     "choices": [
+      "$0$ (шийдгүй)",
+      "$1$",
+      "$2$",
+      "Төгсгөлгүй олон"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\frac{2}{4}=\\frac{3}{6}=\\frac12$ боловч $\\frac{6}{5}\\neq\\frac12$ тул шулуунууд параллель, огтлолцохгүй учир шийдгүй."
+    },
+    {
+     "id": "lt-g11-systems-4",
+     "skill_id": "g11-systems",
+     "difficulty": 2,
+     "stem_mn": "$\\begin{cases} x+y=5 \\\\ xy=6 \\end{cases}$ бол $x^2+y^2$-ын утгыг ол.",
+     "latex": "x^2+y^2=(x+y)^2-2xy",
+     "choices": [
+      "$1$",
+      "$13$",
+      "$25$",
+      "$37$"
+     ],
+     "answer": 1,
+     "solution_mn": "$x^2+y^2=(x+y)^2-2xy=5^2-2\\cdot 6=25-12=13$."
+    },
+    {
+     "id": "lt-g11-systems-5",
+     "skill_id": "g11-systems",
+     "difficulty": 2,
+     "stem_mn": "$\\begin{cases} x+2y=3 \\\\ 2x+my=6 \\end{cases}$ систем төгсгөлгүй олон шийдтэй байх $m$-ийн утгыг ол.",
+     "latex": "\\frac{1}{2}=\\frac{2}{m}=\\frac{3}{6}",
+     "choices": [
+      "$2$",
+      "$1$",
+      "$4$",
+      "$-4$"
+     ],
+     "answer": 2,
+     "solution_mn": "Төгсгөлгүй олон шийдтэй бол коэффициент ба чөлөөт гишүүд бүгд пропорциональ: $\\frac{1}{2}=\\frac{2}{m}=\\frac{3}{6}$, эндээс $m=4$."
+    },
+    {
+     "id": "lt-g11-systems-6",
+     "skill_id": "g11-systems",
+     "difficulty": 2,
+     "stem_mn": "$\\begin{cases} x+y=7 \\\\ x^2+y^2=25 \\end{cases}$ бол $xy$-г ол.",
+     "latex": "(x+y)^2=x^2+y^2+2xy",
+     "choices": [
+      "$6$",
+      "$12$",
+      "$24$",
+      "$7$"
+     ],
+     "answer": 1,
+     "solution_mn": "$(x+y)^2=x^2+y^2+2xy$ тул $49=25+2xy$, эндээс $2xy=24$ буюу $xy=12$."
+    },
+    {
+     "id": "lt-g11-systems-7",
+     "skill_id": "g11-systems",
+     "difficulty": 3,
+     "stem_mn": "$\\begin{cases} x+y=a \\\\ x^2+y^2=1 \\end{cases}$ систем яг нэг шийдтэй байх $a$-гийн утгыг ол.",
+     "latex": "\\frac{|a|}{\\sqrt{2}}=1",
+     "choices": [
+      "$a=\\pm 1$",
+      "$a=\\pm 2$",
+      "$a=\\pm\\sqrt{2}$",
+      "$a=0$"
+     ],
+     "answer": 2,
+     "solution_mn": "$x+y=a$ шулуун $x^2+y^2=1$ нэгж тойргийг шүргэх (яг нэг цэгээр огтлох) нөхцөл нь төвөөс шулуун хүртэлх зай $1$-тэй тэнцүү байх: $\\frac{|a|}{\\sqrt{2}}=1$, эндээс $a=\\pm\\sqrt{2}$."
+    },
+    {
+     "id": "lt-g11-systems-8",
+     "skill_id": "g11-systems",
+     "difficulty": 3,
+     "stem_mn": "$\\begin{cases} x^2+xy=6 \\\\ y^2+xy=3 \\end{cases}$ системийн бодит шийдийн тоог ол.",
+     "latex": "\\begin{cases} x^2+xy=6 \\\\ y^2+xy=3 \\end{cases}",
+     "choices": [
+      "$4$",
+      "$2$",
+      "$1$",
+      "$0$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хоёр тэгшитгэлийг нэмбэл $(x+y)^2=9$, тэгэхээр $x+y=\\pm3$. $x(x+y)=6$-аас $x+y=3$ үед $(2,1)$, $x+y=-3$ үед $(-2,-1)$ гарах тул нийт $2$ шийдтэй."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-functions",
+   "title_mn": "Функц ба график",
+   "grade": 11,
+   "lesson_id": "g11-3-1",
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-functions-1",
+     "skill_id": "g11-functions",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^4-3x^2+1$ функц ямар төрлийнх вэ?",
+     "latex": "f(-x)=x^4-3x^2+1=f(x)",
+     "choices": [
+      "Тэгш функц",
+      "Сондгой функц",
+      "Тэгш ба сондгой аль аль нь",
+      "Тэгш ч биш, сондгой ч биш"
+     ],
+     "answer": 0,
+     "solution_mn": "$f(-x)=(-x)^4-3(-x)^2+1=x^4-3x^2+1=f(x)$ тул энэ нь тэгш функц."
+    },
+    {
+     "id": "lt-g11-functions-2",
+     "skill_id": "g11-functions",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=2x+3$ шугаман функцийн урвуу функцийг ол.",
+     "latex": "f^{-1}(x)=\\frac{x-3}{2}",
+     "choices": [
+      "$\\frac{x+3}{2}$",
+      "$\\frac{x-3}{2}$",
+      "$\\frac{1}{2x+3}$",
+      "$2x-3$"
+     ],
+     "answer": 1,
+     "solution_mn": "$y=2x+3$ гэж бичээд $x$-ийг илэрхийлбэл $x=\\frac{y-3}{2}$, иймд $f^{-1}(x)=\\frac{x-3}{2}$."
+    },
+    {
+     "id": "lt-g11-functions-3",
+     "skill_id": "g11-functions",
+     "difficulty": 1,
+     "stem_mn": "$f(x)=x^2$, $g(x)=x+1$ бол $(f\\circ g)(2)$-ийн утгыг ол.",
+     "latex": "(f\\circ g)(2)=f(g(2))",
+     "choices": [
+      "$5$",
+      "$6$",
+      "$9$",
+      "$7$"
+     ],
+     "answer": 2,
+     "solution_mn": "Эхлээд $g(2)=2+1=3$, дараа нь $f(3)=3^2=9$. (Дараалал буруу авбал $g(f(2))=5$ гэсэн алдаа гарна.)"
+    },
+    {
+     "id": "lt-g11-functions-4",
+     "skill_id": "g11-functions",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=\\dfrac{x+1}{x-2}$ функцийн урвуу функцийг ол.",
+     "latex": "f^{-1}(x)=\\frac{2x+1}{x-1}",
+     "choices": [
+      "$\\frac{2x+1}{x-1}$",
+      "$\\frac{x-1}{2x+1}$",
+      "$\\frac{2x-1}{x+1}$",
+      "$\\frac{x+2}{x-1}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$y=\\frac{x+1}{x-2}$-аас $y(x-2)=x+1$, эндээс $x(y-1)=2y+1$ болж $f^{-1}(x)=\\frac{2x+1}{x-1}$."
+    },
+    {
+     "id": "lt-g11-functions-5",
+     "skill_id": "g11-functions",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=x^2-4x+3$ функц аль завсарт буурах вэ?",
+     "latex": "x_0=\\frac{4}{2}=2",
+     "choices": [
+      "$(2;+\\infty)$",
+      "$(-\\infty;2)$",
+      "$(0;4)$",
+      "$(-\\infty;-2)$"
+     ],
+     "answer": 1,
+     "solution_mn": "Параболын оройн цэг $x_0=\\frac{-(-4)}{2}=2$, салаанууд нь дээшээ чиглэсэн тул $(-\\infty;2)$ завсарт буурна."
+    },
+    {
+     "id": "lt-g11-functions-6",
+     "skill_id": "g11-functions",
+     "difficulty": 2,
+     "stem_mn": "$f$ нь сондгой, $g$ нь тэгш функц бол тэдгээрийн үржвэр $h(x)=f(x)\\cdot g(x)$ ямар функц болох вэ?",
+     "latex": "h(-x)=-f(x)g(x)=-h(x)",
+     "choices": [
+      "Тэгш функц",
+      "Тодорхойлох боломжгүй",
+      "Тэгш ч биш, сондгой ч биш",
+      "Сондгой функц"
+     ],
+     "answer": 3,
+     "solution_mn": "$h(-x)=f(-x)g(-x)=(-f(x))\\cdot g(x)=-f(x)g(x)=-h(x)$ тул $h$ нь сондгой функц."
+    },
+    {
+     "id": "lt-g11-functions-7",
+     "skill_id": "g11-functions",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=2x-1$ ба $(f\\circ g)(x)=4x+3$ бол $g(x)$-ийг ол.",
+     "latex": "g(x)=2x+2",
+     "choices": [
+      "$2x+1$",
+      "$4x+2$",
+      "$2x+2$",
+      "$2x-2$"
+     ],
+     "answer": 2,
+     "solution_mn": "$f(g(x))=2g(x)-1=4x+3$, эндээс $2g(x)=4x+4$ болж $g(x)=2x+2$."
+    },
+    {
+     "id": "lt-g11-functions-8",
+     "skill_id": "g11-functions",
+     "difficulty": 3,
+     "stem_mn": "$f(x)=x^3+x$ функц бүх $\\mathbb{R}$ дээр өсдөг тул урвуутай. $f^{-1}(2)$-ийн утгыг ол.",
+     "latex": "a^3+a=2\\Rightarrow a=1",
+     "choices": [
+      "$1$",
+      "$2$",
+      "$10$",
+      "$8$"
+     ],
+     "answer": 0,
+     "solution_mn": "$f^{-1}(2)=a$ гэвэл $f(a)=2$, өөрөөр хэлбэл $a^3+a=2$. Эндээс $a=1$ (харин $f(2)=10$ нь урвуу утга биш)."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-progression",
+   "title_mn": "Прогресс ба бином задаргаа",
+   "grade": 11,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-progression-1",
+     "skill_id": "g11-progression",
+     "difficulty": 1,
+     "stem_mn": "Арифметик прогрессийн эхний гишүүн $a_1=3$, ялгавар $d=4$ бол $a_{10}$ гишүүнийг ол.",
+     "latex": "a_{10}=a_1+9d",
+     "choices": [
+      "43",
+      "39",
+      "36",
+      "40"
+     ],
+     "answer": 1,
+     "solution_mn": "$a_{10}=a_1+9d=3+9\\cdot 4=3+36=39$. (Нийтлэг алдаа: $3+10\\cdot4=43$.)"
+    },
+    {
+     "id": "lt-g11-progression-2",
+     "skill_id": "g11-progression",
+     "difficulty": 1,
+     "stem_mn": "Геометр прогрессийн эхний гишүүн $b_1=2$, хуваарь $q=3$ бол $b_5$ гишүүнийг ол.",
+     "latex": "b_5=b_1q^{4}",
+     "choices": [
+      "486",
+      "54",
+      "162",
+      "108"
+     ],
+     "answer": 2,
+     "solution_mn": "$b_5=b_1q^{4}=2\\cdot 3^{4}=2\\cdot 81=162$. (Алдаа: $2\\cdot3^5=486$.)"
+    },
+    {
+     "id": "lt-g11-progression-3",
+     "skill_id": "g11-progression",
+     "difficulty": 1,
+     "stem_mn": "$1,\\ 3,\\ 5,\\dots$ сондгой тоонуудын (арифметик прогресс, $a_1=1,\\ d=2$) эхний 10 гишүүний нийлбэрийг ол.",
+     "latex": "S_n=\\frac{n}{2}\\bigl(2a_1+(n-1)d\\bigr)",
+     "choices": [
+      "100",
+      "81",
+      "110",
+      "90"
+     ],
+     "answer": 0,
+     "solution_mn": "$S_{10}=\\frac{10}{2}(2\\cdot1+9\\cdot2)=5\\cdot20=100$. (Эсвэл эхний $n$ сондгойн нийлбэр $n^2=100$.)"
+    },
+    {
+     "id": "lt-g11-progression-4",
+     "skill_id": "g11-progression",
+     "difficulty": 2,
+     "stem_mn": "$(x+2)^5$ задаргаанд $x^3$-ийн коэффициентийг ол.",
+     "latex": "\\binom{5}{k}x^{5-k}2^{k}",
+     "choices": [
+      "10",
+      "20",
+      "80",
+      "40"
+     ],
+     "answer": 3,
+     "solution_mn": "Ерөнхий гишүүн $\\binom{5}{k}x^{5-k}2^{k}$; $5-k=3\\Rightarrow k=2$, коэффициент $\\binom{5}{2}2^{2}=10\\cdot4=40$."
+    },
+    {
+     "id": "lt-g11-progression-5",
+     "skill_id": "g11-progression",
+     "difficulty": 2,
+     "stem_mn": "Геометр прогрессийн $b_1=3$, хуваарь $q=2$ бол эхний 6 гишүүний нийлбэр $S_6$-ыг ол.",
+     "latex": "S_n=\\frac{b_1(q^{n}-1)}{q-1}",
+     "choices": [
+      "192",
+      "189",
+      "96",
+      "63"
+     ],
+     "answer": 1,
+     "solution_mn": "$S_6=\\frac{3(2^{6}-1)}{2-1}=3\\cdot63=189$. (Алдаа: $3\\cdot2^6=192$, эсвэл зөвхөн $b_6=96$.)"
+    },
+    {
+     "id": "lt-g11-progression-6",
+     "skill_id": "g11-progression",
+     "difficulty": 2,
+     "stem_mn": "Арифметик прогрессийн $a_3=7$, $a_7=19$ бол $a_{10}$ гишүүнийг ол.",
+     "latex": "a_n=a_1+(n-1)d",
+     "choices": [
+      "31",
+      "25",
+      "28",
+      "22"
+     ],
+     "answer": 2,
+     "solution_mn": "$4d=a_7-a_3=12\\Rightarrow d=3$, $a_1=a_3-2d=7-6=1$; $a_{10}=1+9\\cdot3=28$."
+    },
+    {
+     "id": "lt-g11-progression-7",
+     "skill_id": "g11-progression",
+     "difficulty": 3,
+     "stem_mn": "$\\left(x^2+\\dfrac{1}{x}\\right)^6$ задаргааны $x$-ээс хамааралгүй (тогтмол) гишүүнийг ол.",
+     "latex": "\\binom{6}{k}x^{12-3k}",
+     "choices": [
+      "15",
+      "20",
+      "6",
+      "1"
+     ],
+     "answer": 0,
+     "solution_mn": "Ерөнхий гишүүн $\\binom{6}{k}(x^2)^{6-k}(x^{-1})^{k}=\\binom{6}{k}x^{12-3k}$; $12-3k=0\\Rightarrow k=4$, тогтмол гишүүн $\\binom{6}{4}=15$."
+    },
+    {
+     "id": "lt-g11-progression-8",
+     "skill_id": "g11-progression",
+     "difficulty": 3,
+     "stem_mn": "Арифметик прогрессийн эхний $n$ гишүүний нийлбэр $S_n=2n^2+3n$ бол 5 дугаар гишүүн $a_5$-ыг ол.",
+     "latex": "a_n=S_n-S_{n-1}",
+     "choices": [
+      "65",
+      "17",
+      "25",
+      "21"
+     ],
+     "answer": 3,
+     "solution_mn": "$a_n=S_n-S_{n-1}=(2n^2+3n)-(2(n-1)^2+3(n-1))=4n+1$, иймд $a_5=4\\cdot5+1=21$. (Алдаа: $S_5=65$ бол нийлбэр.)"
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-coord-geometry",
+   "title_mn": "Координатын геометр",
+   "grade": 11,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-coord-geometry-1",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 1,
+     "stem_mn": "$A(1,2)$ ба $B(3,6)$ цэгүүдийг дайрсан шулууны налалт (өнцгийн коэффициент) хэд вэ?",
+     "latex": "k=\\frac{y_2-y_1}{x_2-x_1}",
+     "choices": [
+      "$2$",
+      "$\\frac{1}{2}$",
+      "$-2$",
+      "$4$"
+     ],
+     "answer": 0,
+     "solution_mn": "Налалтын томьёогоор $k=\\frac{6-2}{3-1}=\\frac{4}{2}=2$."
+    },
+    {
+     "id": "lt-g11-coord-geometry-2",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 1,
+     "stem_mn": "$(x-2)^2+(y+3)^2=25$ тэгшитгэлтэй тойргийн төв ба радиусыг ол.",
+     "latex": "(x-a)^2+(y-b)^2=r^2",
+     "choices": [
+      "Төв $(2,-3)$, радиус $5$",
+      "Төв $(-2,3)$, радиус $5$",
+      "Төв $(2,-3)$, радиус $25$",
+      "Төв $(-2,3)$, радиус $25$"
+     ],
+     "answer": 0,
+     "solution_mn": "Стандарт хэлбэрээс төв нь $(a,b)=(2,-3)$, радиус нь $r=\\sqrt{25}=5$."
+    },
+    {
+     "id": "lt-g11-coord-geometry-3",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 1,
+     "stem_mn": "$y=3x-4$ шулуунтай зэрэгцээ шулууны налалт хэд вэ?",
+     "latex": "k_1=k_2",
+     "choices": [
+      "$3$",
+      "$-3$",
+      "$\\frac{1}{3}$",
+      "$-\\frac{1}{3}$"
+     ],
+     "answer": 0,
+     "solution_mn": "Зэрэгцээ шулуунуудын налалт тэнцүү тул налалт нь $3$ хэвээр байна."
+    },
+    {
+     "id": "lt-g11-coord-geometry-4",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 2,
+     "stem_mn": "$(2,1)$ цэгийг дайрч, $y=2x+5$ шулуунд перпендикуляр шулууны тэгшитгэлийг ол.",
+     "latex": "k_1\\cdot k_2=-1",
+     "choices": [
+      "$y=-\\frac{1}{2}x+2$",
+      "$y=2x-3$",
+      "$y=-\\frac{1}{2}x+1$",
+      "$y=\\frac{1}{2}x$"
+     ],
+     "answer": 0,
+     "solution_mn": "Перпендикуляр налалт нь $-\\frac{1}{2}$. $(2,1)$-ээр: $y-1=-\\frac{1}{2}(x-2)\\Rightarrow y=-\\frac{1}{2}x+2$."
+    },
+    {
+     "id": "lt-g11-coord-geometry-5",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 2,
+     "stem_mn": "$M(3,4)$ цэгээс $3x+4y-5=0$ шулуун хүрэх зайг ол.",
+     "latex": "d=\\frac{|ax_0+by_0+c|}{\\sqrt{a^2+b^2}}",
+     "choices": [
+      "$4$",
+      "$5$",
+      "$20$",
+      "$2$"
+     ],
+     "answer": 0,
+     "solution_mn": "$d=\\frac{|3\\cdot3+4\\cdot4-5|}{\\sqrt{9+16}}=\\frac{|20|}{5}=4$."
+    },
+    {
+     "id": "lt-g11-coord-geometry-6",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 2,
+     "stem_mn": "$x^2+y^2-6x+8y+9=0$ тэгшитгэлтэй тойргийн төв ба радиусыг ол.",
+     "latex": "(x-3)^2+(y+4)^2=16",
+     "choices": [
+      "Төв $(3,-4)$, радиус $4$",
+      "Төв $(-3,4)$, радиус $4$",
+      "Төв $(3,-4)$, радиус $16$",
+      "Төв $(3,-4)$, радиус $\\sqrt{34}$"
+     ],
+     "answer": 0,
+     "solution_mn": "Бүтэн квадрат ялгаснаар $(x-3)^2+(y+4)^2=9+16-9=16$, тиймээс төв $(3,-4)$, радиус $4$."
+    },
+    {
+     "id": "lt-g11-coord-geometry-7",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 3,
+     "stem_mn": "$y=x+c$ шулуун нь $x^2+y^2=8$ тойрогт шүргэгч байх $c$-ийн утгыг ол.",
+     "latex": "\\frac{|c|}{\\sqrt{2}}=2\\sqrt{2}",
+     "choices": [
+      "$c=\\pm4$",
+      "$c=\\pm2\\sqrt{2}$",
+      "$c=\\pm8$",
+      "$c=\\pm2$"
+     ],
+     "answer": 0,
+     "solution_mn": "Шүргэгчийн нөхцөлөөр төв $(0,0)$-ээс $x-y+c=0$ хүрэх зай радиустай тэнцүү: $\\frac{|c|}{\\sqrt{2}}=2\\sqrt{2}\\Rightarrow|c|=4$."
+    },
+    {
+     "id": "lt-g11-coord-geometry-8",
+     "skill_id": "g11-coord-geometry",
+     "difficulty": 3,
+     "stem_mn": "$A(1,3)$ ба $B(5,1)$ цэгүүдийг холбосон хэрчмийн дундаж перпендикулярын тэгшитгэлийг ол.",
+     "latex": "y-2=2(x-3)",
+     "choices": [
+      "$y=2x-4$",
+      "$y=-\\frac{1}{2}x+\\frac{7}{2}$",
+      "$y=2x+4$",
+      "$y=2x-8$"
+     ],
+     "answer": 0,
+     "solution_mn": "Дундаж цэг $(3,2)$, $AB$-ийн налалт $-\\frac{1}{2}$ тул перпендикуляр налалт $2$: $y-2=2(x-3)\\Rightarrow y=2x-4$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-trigonometry",
+   "title_mn": "Тригонометр",
+   "grade": 11,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-trigonometry-1",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 1,
+     "stem_mn": "$135^\\circ$ өнцгийг радианаар илэрхийл.",
+     "latex": "135^\\circ\\cdot\\dfrac{\\pi}{180^\\circ}=\\dfrac{3\\pi}{4}",
+     "choices": [
+      "$\\dfrac{2\\pi}{3}$",
+      "$\\dfrac{5\\pi}{6}$",
+      "$\\dfrac{5\\pi}{4}$",
+      "$\\dfrac{3\\pi}{4}$"
+     ],
+     "answer": 3,
+     "solution_mn": "Градусыг радиан руу шилжүүлэхдээ $\\dfrac{\\pi}{180^\\circ}$-оор үржүүлнэ: $135\\cdot\\dfrac{\\pi}{180}=\\dfrac{3\\pi}{4}$."
+    },
+    {
+     "id": "lt-g11-trigonometry-2",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 1,
+     "stem_mn": "$\\cos\\dfrac{2\\pi}{3}$-ийн утгыг ол.",
+     "latex": "\\cos\\dfrac{2\\pi}{3}=-\\dfrac{1}{2}",
+     "choices": [
+      "$-\\dfrac{1}{2}$",
+      "$\\dfrac{1}{2}$",
+      "$\\dfrac{\\sqrt{3}}{2}$",
+      "$-\\dfrac{\\sqrt{3}}{2}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\dfrac{2\\pi}{3}=120^\\circ$ нь хоёрдугаар мужид оршино, косинус сөрөг: $\\cos120^\\circ=-\\cos60^\\circ=-\\dfrac{1}{2}$."
+    },
+    {
+     "id": "lt-g11-trigonometry-3",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 1,
+     "stem_mn": "$0<\\alpha<\\dfrac{\\pi}{2}$ ба $\\sin\\alpha=\\dfrac{3}{5}$ бол $\\cos\\alpha$-г ол.",
+     "latex": "\\cos\\alpha=\\sqrt{1-\\sin^2\\alpha}",
+     "choices": [
+      "$\\dfrac{3}{4}$",
+      "$\\dfrac{5}{3}$",
+      "$\\dfrac{4}{5}$",
+      "$-\\dfrac{4}{5}$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\cos^2\\alpha=1-\\left(\\dfrac{3}{5}\\right)^2=\\dfrac{16}{25}$. Эхний мужид косинус эерэг тул $\\cos\\alpha=\\dfrac{4}{5}$."
+    },
+    {
+     "id": "lt-g11-trigonometry-4",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 2,
+     "stem_mn": "$y=2\\cos\\dfrac{x}{2}$ функцийн үечлэлийг (период) ол.",
+     "latex": "T=\\dfrac{2\\pi}{|b|}=\\dfrac{2\\pi}{1/2}=4\\pi",
+     "choices": [
+      "$\\pi$",
+      "$2\\pi$",
+      "$4\\pi$",
+      "$\\dfrac{\\pi}{2}$"
+     ],
+     "answer": 2,
+     "solution_mn": "$y=\\cos(bx)$-ийн үечлэл $T=\\dfrac{2\\pi}{|b|}$. Энд $b=\\dfrac{1}{2}$ тул $T=\\dfrac{2\\pi}{1/2}=4\\pi$."
+    },
+    {
+     "id": "lt-g11-trigonometry-5",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 2,
+     "stem_mn": "Нэмэх томьёо ашиглан $\\sin75^\\circ$-ийн утгыг ол.",
+     "latex": "\\sin75^\\circ=\\sin(45^\\circ+30^\\circ)",
+     "choices": [
+      "$\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}$",
+      "$\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}$",
+      "$\\dfrac{\\sqrt{2}-\\sqrt{6}}{4}$",
+      "$\\dfrac{\\sqrt{6}+\\sqrt{2}}{2}$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\sin(45^\\circ+30^\\circ)=\\sin45\\cos30+\\cos45\\sin30=\\dfrac{\\sqrt2}{2}\\cdot\\dfrac{\\sqrt3}{2}+\\dfrac{\\sqrt2}{2}\\cdot\\dfrac12=\\dfrac{\\sqrt6+\\sqrt2}{4}$."
+    },
+    {
+     "id": "lt-g11-trigonometry-6",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 2,
+     "stem_mn": "$[0;2\\pi)$ завсарт $2\\sin x=1$ тэгшитгэлийг бод.",
+     "latex": "\\sin x=\\dfrac{1}{2}",
+     "choices": [
+      "$\\left\\{\\dfrac{\\pi}{6},\\dfrac{7\\pi}{6}\\right\\}$",
+      "$\\left\\{\\dfrac{\\pi}{6},\\dfrac{5\\pi}{6}\\right\\}$",
+      "$\\left\\{\\dfrac{\\pi}{3},\\dfrac{2\\pi}{3}\\right\\}$",
+      "$\\left\\{\\dfrac{\\pi}{6},\\dfrac{11\\pi}{6}\\right\\}$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\sin x=\\dfrac12$. $[0;2\\pi)$ дээр синус эерэг байх эхний ба хоёрдугаар мужид шийдтэй: $x=\\dfrac{\\pi}{6}$, $x=\\pi-\\dfrac{\\pi}{6}=\\dfrac{5\\pi}{6}$."
+    },
+    {
+     "id": "lt-g11-trigonometry-7",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 3,
+     "stem_mn": "$\\sin\\alpha+\\cos\\alpha=\\dfrac{1}{2}$ бол $\\sin2\\alpha$-г ол.",
+     "latex": "(\\sin\\alpha+\\cos\\alpha)^2=1+\\sin2\\alpha",
+     "choices": [
+      "$\\dfrac{3}{4}$",
+      "$-\\dfrac{1}{4}$",
+      "$\\dfrac{1}{4}$",
+      "$-\\dfrac{3}{4}$"
+     ],
+     "answer": 3,
+     "solution_mn": "Хоёр талыг квадрат зэрэгт дэвшүүлбэл $(\\sin\\alpha+\\cos\\alpha)^2=1+2\\sin\\alpha\\cos\\alpha=1+\\sin2\\alpha=\\dfrac14$, тэгэхээр $\\sin2\\alpha=-\\dfrac34$."
+    },
+    {
+     "id": "lt-g11-trigonometry-8",
+     "skill_id": "g11-trigonometry",
+     "difficulty": 3,
+     "stem_mn": "$[0;2\\pi)$ завсарт $\\cos2x+\\sin x=0$ тэгшитгэлийн бүх шийдийг ол.",
+     "latex": "1-2\\sin^2x+\\sin x=0",
+     "choices": [
+      "$\\left\\{\\dfrac{\\pi}{2},\\dfrac{7\\pi}{6},\\dfrac{11\\pi}{6}\\right\\}$",
+      "$\\left\\{\\dfrac{\\pi}{2},\\dfrac{\\pi}{6},\\dfrac{5\\pi}{6}\\right\\}$",
+      "$\\left\\{\\dfrac{7\\pi}{6},\\dfrac{11\\pi}{6}\\right\\}$",
+      "$\\left\\{\\dfrac{\\pi}{2},\\dfrac{5\\pi}{6},\\dfrac{7\\pi}{6}\\right\\}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\cos2x=1-2\\sin^2x$ орлуулбал $2\\sin^2x-\\sin x-1=0\\Rightarrow(2\\sin x+1)(\\sin x-1)=0$. $\\sin x=1\\Rightarrow x=\\dfrac{\\pi}{2}$; $\\sin x=-\\dfrac12\\Rightarrow x=\\dfrac{7\\pi}{6},\\dfrac{11\\pi}{6}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-vectors-space",
+   "title_mn": "Огторгуй дахь вектор",
+   "grade": 11,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-vectors-space-1",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 1,
+     "stem_mn": "$\\vec a=(2,-1,2)$ вектор өгөгдсөн бол түүний урт $|\\vec a|$-ыг ол.",
+     "latex": "|\\vec a|=\\sqrt{2^2+(-1)^2+2^2}",
+     "choices": [
+      "$9$",
+      "$3$",
+      "$5$",
+      "$\\sqrt5$"
+     ],
+     "answer": 1,
+     "solution_mn": "Векторын урт нь $|\\vec a|=\\sqrt{2^2+(-1)^2+2^2}=\\sqrt{9}=3$. Язгуурыг мартаж $9$ гэвэл алдаа болно."
+    },
+    {
+     "id": "lt-g11-vectors-space-2",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 1,
+     "stem_mn": "$\\vec a=(1,2,3)$, $\\vec b=(2,0,-1)$ бол скаляр үржвэр $\\vec a\\cdot\\vec b$-ыг ол.",
+     "latex": "\\vec a\\cdot\\vec b=1\\cdot2+2\\cdot0+3\\cdot(-1)",
+     "choices": [
+      "$1$",
+      "$-1$",
+      "$-5$",
+      "$5$"
+     ],
+     "answer": 1,
+     "solution_mn": "Харгалзах координатуудын үржвэрийг нэмнэ: $1\\cdot2+2\\cdot0+3\\cdot(-1)=2+0-3=-1$."
+    },
+    {
+     "id": "lt-g11-vectors-space-3",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 1,
+     "stem_mn": "$A(1,2,3)$ ба $B(4,0,5)$ цэгүүд өгөгдсөн бол $\\vec{AB}$ векторын координатыг ол.",
+     "latex": "\\vec{AB}=B-A=(4-1,\\;0-2,\\;5-3)",
+     "choices": [
+      "$(-3,2,-2)$",
+      "$(3,-2,2)$",
+      "$(3,2,2)$",
+      "$(5,2,8)$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\vec{AB}=B-A=(4-1,0-2,5-3)=(3,-2,2)$. $A-B$ гэж эсрэгээр бодвол тэмдэг буруу гарна."
+    },
+    {
+     "id": "lt-g11-vectors-space-4",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 2,
+     "stem_mn": "$\\vec a=(3,-1,2)$ ба $\\vec b=(2,m,-2)$ векторууд перпендикуляр бол $m$-ийг ол.",
+     "latex": "\\vec a\\cdot\\vec b=6-m-4=0",
+     "choices": [
+      "$-2$",
+      "$10$",
+      "$2$",
+      "$5$"
+     ],
+     "answer": 2,
+     "solution_mn": "Перпендикуляр нөхцөл нь $\\vec a\\cdot\\vec b=0$. $3\\cdot2+(-1)\\cdot m+2\\cdot(-2)=2-m=0$ тул $m=2$."
+    },
+    {
+     "id": "lt-g11-vectors-space-5",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 2,
+     "stem_mn": "$\\vec a=(1,0,1)$ ба $\\vec b=(0,1,1)$ векторуудын хоорондох өнцгийг ол.",
+     "latex": "\\cos\\theta=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec b|}=\\dfrac{1}{\\sqrt2\\cdot\\sqrt2}",
+     "choices": [
+      "$30^\\circ$",
+      "$45^\\circ$",
+      "$60^\\circ$",
+      "$90^\\circ$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\vec a\\cdot\\vec b=1$, $|\\vec a|=|\\vec b|=\\sqrt2$ тул $\\cos\\theta=\\dfrac{1}{2}$, өөрөөр хэлбэл $\\theta=60^\\circ$."
+    },
+    {
+     "id": "lt-g11-vectors-space-6",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 2,
+     "stem_mn": "$\\vec a=(1,-1,2)$ ба $\\vec b=(3,0,-1)$ бол $2\\vec a-\\vec b$ векторын уртыг ол.",
+     "latex": "2\\vec a-\\vec b=(-1,-2,5)",
+     "choices": [
+      "$\\sqrt{29}$",
+      "$\\sqrt{21}$",
+      "$30$",
+      "$\\sqrt{30}$"
+     ],
+     "answer": 3,
+     "solution_mn": "$2\\vec a=(2,-2,4)$ тул $2\\vec a-\\vec b=(-1,-2,5)$. Урт нь $\\sqrt{(-1)^2+(-2)^2+5^2}=\\sqrt{30}$."
+    },
+    {
+     "id": "lt-g11-vectors-space-7",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 3,
+     "stem_mn": "$\\vec a=(m,2,-1)$ ба $\\vec b=(m,-m,3)$ векторууд перпендикуляр бол $m$-ийн бүх утгыг ол.",
+     "latex": "m^2-2m-3=0",
+     "choices": [
+      "$m=3$",
+      "$m=-1$",
+      "$m=1$ эсвэл $m=3$",
+      "$m=3$ эсвэл $m=-1$"
+     ],
+     "answer": 3,
+     "solution_mn": "$\\vec a\\cdot\\vec b=m\\cdot m+2\\cdot(-m)+(-1)\\cdot3=m^2-2m-3=0$. $(m-3)(m+1)=0$ тул $m=3$ эсвэл $m=-1$ — хоёулаа хариу."
+    },
+    {
+     "id": "lt-g11-vectors-space-8",
+     "skill_id": "g11-vectors-space",
+     "difficulty": 3,
+     "stem_mn": "$A(1,1,1)$, $B(2,3,1)$, $C(0,1,2)$ гурвалжны $\\angle BAC$ өнцгийн косинусыг ол.",
+     "latex": "\\cos\\angle BAC=\\dfrac{\\vec{AB}\\cdot\\vec{AC}}{|\\vec{AB}|\\,|\\vec{AC}|}",
+     "choices": [
+      "$\\dfrac{1}{\\sqrt{10}}$",
+      "$-\\dfrac{1}{\\sqrt{10}}$",
+      "$-\\dfrac{1}{\\sqrt5}$",
+      "$\\dfrac{1}{\\sqrt2}$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\vec{AB}=(1,2,0)$, $\\vec{AC}=(-1,0,1)$ тул $\\vec{AB}\\cdot\\vec{AC}=-1$, $|\\vec{AB}|=\\sqrt5$, $|\\vec{AC}|=\\sqrt2$. Иймд $\\cos\\angle BAC=\\dfrac{-1}{\\sqrt{10}}$. Скаляр үржвэр сөрөг тул хариу нь сөрөг тэмдэгтэй байна."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-integral",
+   "title_mn": "Интеграл",
+   "grade": 11,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-integral-1",
+     "skill_id": "g11-integral",
+     "difficulty": 1,
+     "stem_mn": "$\\int x^5\\,dx$ интегралыг ол.",
+     "latex": "\\int x^5\\,dx=\\frac{x^6}{6}+C",
+     "choices": [
+      "$x^6+C$",
+      "$\\frac{x^6}{6}+C$",
+      "$\\frac{x^6}{5}+C$",
+      "$5x^4+C$"
+     ],
+     "answer": 1,
+     "solution_mn": "Зэргийн дүрмээр $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ тул $\\int x^5\\,dx=\\frac{x^6}{6}+C$."
+    },
+    {
+     "id": "lt-g11-integral-2",
+     "skill_id": "g11-integral",
+     "difficulty": 1,
+     "stem_mn": "$\\int (4x^3-6x+2)\\,dx$ интегралыг ол.",
+     "latex": "\\int (4x^3-6x+2)\\,dx=x^4-3x^2+2x+C",
+     "choices": [
+      "$x^4-6x^2+2x+C$",
+      "$x^4-3x^2+2+C$",
+      "$12x^2-6+C$",
+      "$x^4-3x^2+2x+C$"
+     ],
+     "answer": 3,
+     "solution_mn": "Гишүүн бүрийг тусад нь интегралчилж $\\frac{4x^4}{4}-\\frac{6x^2}{2}+2x+C=x^4-3x^2+2x+C$."
+    },
+    {
+     "id": "lt-g11-integral-3",
+     "skill_id": "g11-integral",
+     "difficulty": 1,
+     "stem_mn": "$\\int_0^2 x^2\\,dx$ тодорхой интегралыг бод.",
+     "latex": "\\int_0^2 x^2\\,dx=\\frac{8}{3}",
+     "choices": [
+      "$8$",
+      "$4$",
+      "$\\frac{8}{3}$",
+      "$2$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\int_0^2 x^2\\,dx=\\left[\\frac{x^3}{3}\\right]_0^2=\\frac{8}{3}-0=\\frac{8}{3}$."
+    },
+    {
+     "id": "lt-g11-integral-4",
+     "skill_id": "g11-integral",
+     "difficulty": 2,
+     "stem_mn": "$y=x^2$ парабол, $Ox$ тэнхлэг болон $x=3$ шулуунаар хүрээлэгдсэн муруйн доорх талбайг ол.",
+     "latex": "S=\\int_0^3 x^2\\,dx=9",
+     "choices": [
+      "$27$",
+      "$9$",
+      "$3$",
+      "$18$"
+     ],
+     "answer": 1,
+     "solution_mn": "Муруйн доорх талбай $S=\\int_0^3 x^2\\,dx=\\left[\\frac{x^3}{3}\\right]_0^3=\\frac{27}{3}=9$."
+    },
+    {
+     "id": "lt-g11-integral-5",
+     "skill_id": "g11-integral",
+     "difficulty": 2,
+     "stem_mn": "$f(x)=3x^2-4x$ функцийн эх функц $F(x)$ нь $F(1)=2$ нөхцөлийг хангадаг бол $F(x)=?$",
+     "latex": "F(x)=x^3-2x^2+3",
+     "choices": [
+      "$x^3-2x^2+2$",
+      "$x^3-2x^2+3$",
+      "$x^3-2x^2-1$",
+      "$x^3-4x^2+3$"
+     ],
+     "answer": 1,
+     "solution_mn": "Эх функц $F(x)=x^3-2x^2+C$. $F(1)=1-2+C=2$-оос $C=3$, тэгэхээр $F(x)=x^3-2x^2+3$."
+    },
+    {
+     "id": "lt-g11-integral-6",
+     "skill_id": "g11-integral",
+     "difficulty": 2,
+     "stem_mn": "$\\int \\sqrt{x}\\,dx$ интегралыг ол.",
+     "latex": "\\int \\sqrt{x}\\,dx=\\frac{2}{3}x\\sqrt{x}+C",
+     "choices": [
+      "$\\frac{3}{2}x\\sqrt{x}+C$",
+      "$2\\sqrt{x}+C$",
+      "$\\frac{2}{3}x\\sqrt{x}+C$",
+      "$\\frac{1}{2\\sqrt{x}}+C$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\sqrt{x}=x^{1/2}$ тул зэргийн дүрмээр $\\int x^{1/2}\\,dx=\\frac{x^{3/2}}{3/2}+C=\\frac{2}{3}x\\sqrt{x}+C$."
+    },
+    {
+     "id": "lt-g11-integral-7",
+     "skill_id": "g11-integral",
+     "difficulty": 3,
+     "stem_mn": "$y=x^2$ ба $y=x$ муруйнуудаар хүрээлэгдсэн дүрсийн талбайг ол.",
+     "latex": "S=\\int_0^1 (x-x^2)\\,dx=\\frac{1}{6}",
+     "choices": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{3}$",
+      "$\\frac{5}{6}$",
+      "$\\frac{1}{6}$"
+     ],
+     "answer": 3,
+     "solution_mn": "Огтлолцлын цэгүүд $x=0,\\ x=1$ бөгөөд $[0,1]$ дээр $x\\ge x^2$ тул $S=\\int_0^1 (x-x^2)\\,dx=\\frac{1}{2}-\\frac{1}{3}=\\frac{1}{6}$."
+    },
+    {
+     "id": "lt-g11-integral-8",
+     "skill_id": "g11-integral",
+     "difficulty": 3,
+     "stem_mn": "$y=4-x^2$ парабол ба $Ox$ тэнхлэгээр хүрээлэгдсэн дүрсийн талбайг ол.",
+     "latex": "S=\\int_{-2}^{2}(4-x^2)\\,dx=\\frac{32}{3}",
+     "choices": [
+      "$16$",
+      "$\\frac{32}{3}$",
+      "$\\frac{16}{3}$",
+      "$\\frac{8}{3}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Парабол $Ox$-г $x=\\pm 2$-д огтолно. $S=\\int_{-2}^{2}(4-x^2)\\,dx=\\left[4x-\\frac{x^3}{3}\\right]_{-2}^{2}=\\frac{16}{3}-\\left(-\\frac{16}{3}\\right)=\\frac{32}{3}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g11-data",
+   "title_mn": "Өгөгдлийн шинжилгээ",
+   "grade": 11,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g11-data-1",
+     "skill_id": "g11-data",
+     "difficulty": 1,
+     "stem_mn": "$6,\\ 8,\\ 10,\\ 12,\\ 14$ гэсэн тоонуудын арифметик дундаж хэд вэ?",
+     "latex": "\\bar{x}=\\dfrac{6+8+10+12+14}{5}",
+     "choices": [
+      "8",
+      "10",
+      "50",
+      "12"
+     ],
+     "answer": 1,
+     "solution_mn": "Нийлбэр нь $6+8+10+12+14=50$, тоонуудын тоо 5 тул дундаж нь $50\\div5=10$."
+    },
+    {
+     "id": "lt-g11-data-2",
+     "skill_id": "g11-data",
+     "difficulty": 1,
+     "stem_mn": "$2,\\ 3,\\ 5,\\ 7,\\ 9$ өгөгдлийн медиан (голч) хэд вэ?",
+     "latex": "",
+     "choices": [
+      "4",
+      "5",
+      "5.2",
+      "7"
+     ],
+     "answer": 1,
+     "solution_mn": "Эрэмбэлэгдсэн 5 тооны дунд буюу 3 дахь утга медиан болно, тэр нь $5$. ($5.2$ бол дундаж бөгөөд медиантай андуурч болохгүй.)"
+    },
+    {
+     "id": "lt-g11-data-3",
+     "skill_id": "g11-data",
+     "difficulty": 1,
+     "stem_mn": "Нэгэн өгөгдлийн дисперс $D=16$ бол стандарт хазайлт нь хэд вэ?",
+     "latex": "\\sigma=\\sqrt{D}",
+     "choices": [
+      "4",
+      "8",
+      "16",
+      "256"
+     ],
+     "answer": 0,
+     "solution_mn": "Стандарт хазайлт нь дисперсийн квадрат язгуур тул $\\sigma=\\sqrt{16}=4$."
+    },
+    {
+     "id": "lt-g11-data-4",
+     "skill_id": "g11-data",
+     "difficulty": 2,
+     "stem_mn": "$2,\\ 4,\\ 6,\\ 8,\\ 10$ өгөгдлийн дисперс хэд вэ?",
+     "latex": "D=\\dfrac{\\sum (x_i-\\bar{x})^2}{n}",
+     "choices": [
+      "40",
+      "2.83",
+      "8",
+      "4"
+     ],
+     "answer": 2,
+     "solution_mn": "Дундаж $\\bar{x}=6$. Хазайлтуудын квадратын нийлбэр $16+4+0+4+16=40$ тул дисперс $D=40\\div5=8$ ($40$-г 5-т хуваахаа мартаж болохгүй)."
+    },
+    {
+     "id": "lt-g11-data-5",
+     "skill_id": "g11-data",
+     "difficulty": 2,
+     "stem_mn": "$4,\\ 8,\\ 6,\\ 5,\\ 7$ өгөгдлийн стандарт хазайлт ойролцоогоор хэд вэ?",
+     "latex": "\\sigma=\\sqrt{D}",
+     "choices": [
+      "2",
+      "1.41",
+      "10",
+      "5"
+     ],
+     "answer": 1,
+     "solution_mn": "Дундаж $6$, хазайлтын квадратын нийлбэр $4+4+0+1+1=10$, дисперс $D=10\\div5=2$, стандарт хазайлт $\\sigma=\\sqrt{2}\\approx1.41$ ($2$ бол дисперс)."
+    },
+    {
+     "id": "lt-g11-data-6",
+     "skill_id": "g11-data",
+     "difficulty": 2,
+     "stem_mn": "$1,\\ 3,\\ 5,\\ 7,\\ 9,\\ 11,\\ 13$ өгөгдлийн квартиль хоорондын зай (IQR) хэд вэ?",
+     "latex": "\\text{IQR}=Q_3-Q_1",
+     "choices": [
+      "7",
+      "8",
+      "4",
+      "14"
+     ],
+     "answer": 1,
+     "solution_mn": "Доод хагасын медиан $Q_1=3$, дээд хагасын медиан $Q_3=11$ тул $\\text{IQR}=11-3=8$ ($7$ бол голч, $14$ бол далайц)."
+    },
+    {
+     "id": "lt-g11-data-7",
+     "skill_id": "g11-data",
+     "difficulty": 3,
+     "stem_mn": "Давтамжийн хүснэгт: утга $x$: $2,3,4,5$; давтамж $f$: $3,5,8,4$. Өгөгдлийн дундаж хэд вэ?",
+     "latex": "\\bar{x}=\\dfrac{\\sum f_i x_i}{\\sum f_i}",
+     "choices": [
+      "3.65",
+      "3.5",
+      "4",
+      "14.6"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\sum f_i x_i=2\\cdot3+3\\cdot5+4\\cdot8+5\\cdot4=73$, нийт давтамж $\\sum f_i=20$ тул дундаж $=73\\div20=3.65$ (давтамжийг тооцолгүй $3.5$ гэвэл алдаа)."
+    },
+    {
+     "id": "lt-g11-data-8",
+     "skill_id": "g11-data",
+     "difficulty": 3,
+     "stem_mn": "Нэгэн өгөгдлийн стандарт хазайлт нь $3$. Бүх утгыг $y=2x+5$ хэлбэрээр хувиргавал шинэ стандарт хазайлт хэд вэ?",
+     "latex": "y=2x+5",
+     "choices": [
+      "11",
+      "6",
+      "3",
+      "12"
+     ],
+     "answer": 1,
+     "solution_mn": "Тогтмолоор үржүүлэхэд стандарт хазайлт нь $|2|$ дахин ихсэж, тогтмол нэмэхэд өөрчлөгдөхгүй тул шинэ стандарт хазайлт $\\sigma'=2\\cdot3=6$ (нэмэгдэх тогтмол $5$ нь нөлөөлөхгүй)."
+    }
+   ]
+  },
+  {
+   "skill_id": "g12-equations",
+   "title_mn": "Тэгшитгэл, тэнцэтгэл биш",
+   "grade": 12,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g12-equations-1",
+     "skill_id": "g12-equations",
+     "difficulty": 1,
+     "stem_mn": "$\\log_2 x = 5$ тэгшитгэлийг бод.",
+     "latex": "\\log_2 x = 5",
+     "choices": [
+      "$x=10$",
+      "$x=25$",
+      "$x=32$",
+      "$x=7$"
+     ],
+     "answer": 2,
+     "solution_mn": "Логарифмын тодорхойлолтоор $x=2^5=32$. ($10=2\\cdot5$, $25=5^2$ гэх мэт нь түгээмэл алдаа.)"
+    },
+    {
+     "id": "lt-g12-equations-2",
+     "skill_id": "g12-equations",
+     "difficulty": 1,
+     "stem_mn": "$\\sqrt{x-2}=3$ иррациональ тэгшитгэлийн шийдийг ол.",
+     "latex": "\\sqrt{x-2}=3",
+     "choices": [
+      "$x=5$",
+      "$x=11$",
+      "$x=9$",
+      "$x=7$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хоёр талыг квадрат зэрэгт дэвшүүлбэл $x-2=9$, иймд $x=11$. ($x-2=3$ гэж бодвол алдаатай $x=5$ гарна.)"
+    },
+    {
+     "id": "lt-g12-equations-3",
+     "skill_id": "g12-equations",
+     "difficulty": 1,
+     "stem_mn": "$|x-3|=5$ тэгшитгэлийн шийдүүдийн нийлбэрийг ол.",
+     "latex": "|x-3|=5",
+     "choices": [
+      "$-6$",
+      "$8$",
+      "$16$",
+      "$6$"
+     ],
+     "answer": 3,
+     "solution_mn": "$x-3=5$ ба $x-3=-5$ тул $x=8$ болон $x=-2$; нийлбэр нь $8+(-2)=6$."
+    },
+    {
+     "id": "lt-g12-equations-4",
+     "skill_id": "g12-equations",
+     "difficulty": 2,
+     "stem_mn": "$4^x-5\\cdot 2^x+4=0$ тэгшитгэлийн шийдүүдийн нийлбэрийг ол.",
+     "latex": "4^x-5\\cdot 2^x+4=0",
+     "choices": [
+      "$4$",
+      "$2$",
+      "$5$",
+      "$6$"
+     ],
+     "answer": 1,
+     "solution_mn": "$t=2^x>0$ орлуулбал $t^2-5t+4=0$, эндээс $t=1,\\,4$ буюу $x=0,\\,2$; нийлбэр $0+2=2$. ($t$-ийн нийлбэр $1+4=5$-ыг авбал алдаа.)"
+    },
+    {
+     "id": "lt-g12-equations-5",
+     "skill_id": "g12-equations",
+     "difficulty": 2,
+     "stem_mn": "$\\log_2 x+\\log_2(x-2)=3$ тэгшитгэлийн шийдийг ол.",
+     "latex": "\\log_2 x+\\log_2(x-2)=3",
+     "choices": [
+      "$x=-2$",
+      "$x=6$",
+      "$x=4$",
+      "$x=4$ ба $x=-2$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\log_2\\big(x(x-2)\\big)=3\\Rightarrow x^2-2x-8=0\\Rightarrow x=4$ эсвэл $x=-2$; тодорхойлогдох муж $x>2$ тул зөвхөн $x=4$. ($x=-2$-ыг оруулбал муж шалгаагүй алдаа.)"
+    },
+    {
+     "id": "lt-g12-equations-6",
+     "skill_id": "g12-equations",
+     "difficulty": 2,
+     "stem_mn": "$\\sqrt{2x+3}=x$ иррациональ тэгшитгэлийн шийдийг ол.",
+     "latex": "\\sqrt{2x+3}=x",
+     "choices": [
+      "$x=-1$",
+      "$x=9$",
+      "$x=3$ ба $x=-1$",
+      "$x=3$"
+     ],
+     "answer": 3,
+     "solution_mn": "Квадратлавал $2x+3=x^2\\Rightarrow x^2-2x-3=0\\Rightarrow x=3$ эсвэл $x=-1$; $x\\ge 0$ нөхцөлөөр $x=-1$ гадуурхагдана, иймд $x=3$."
+    },
+    {
+     "id": "lt-g12-equations-7",
+     "skill_id": "g12-equations",
+     "difficulty": 3,
+     "stem_mn": "$4^x-m\\cdot 2^x+4=0$ тэгшитгэл хоёр ялгаатай бодит шийдтэй байх $m$ параметрийн утгыг ол.",
+     "latex": "4^x-m\\cdot 2^x+4=0",
+     "choices": [
+      "$m<-4$",
+      "$m>4$",
+      "$m\\ge 4$",
+      "$-4<m<4$"
+     ],
+     "answer": 1,
+     "solution_mn": "$t=2^x>0$ гэвэл $t^2-mt+4=0$ нь хоёр ялгаатай эерэг язгууртай байх ёстой: дискриминант $m^2-16>0$ ба нийлбэр $t_1+t_2=m>0$, үржвэр $t_1t_2=4>0$; эндээс $m>4$. ($m=4$ үед давхар язгуур $t=2$ буюу ганц шийд.)"
+    },
+    {
+     "id": "lt-g12-equations-8",
+     "skill_id": "g12-equations",
+     "difficulty": 3,
+     "stem_mn": "$|x-1|+|x-3|=a$ тэгшитгэл яг хоёр ялгаатай шийдтэй байх $a$ параметрийн утгыг ол.",
+     "latex": "|x-1|+|x-3|=a",
+     "choices": [
+      "$a>2$",
+      "$a\\ge 2$",
+      "$a=2$",
+      "$a<2$"
+     ],
+     "answer": 0,
+     "solution_mn": "Зүүн тал нь $1$ ба $3$ хүртэлх зайн нийлбэр тул хамгийн бага утга нь $2$; $a=2$ үед $[1,3]$ хэрчмийн бүх цэг шийд болно, $a<2$ үед шийдгүй, $a>2$ үед л яг хоёр ялгаатай шийдтэй."
+    }
+   ]
+  },
+  {
+   "skill_id": "g12-polynomials",
+   "title_mn": "Олон гишүүнт",
+   "grade": 12,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g12-polynomials-1",
+     "skill_id": "g12-polynomials",
+     "difficulty": 1,
+     "stem_mn": "$P(x)=x^3-2x^2+3x-5$ олон гишүүнтийг $(x-2)$-т хуваахад гарах үлдэгдлийг ол.",
+     "latex": "P(x)=x^3-2x^2+3x-5",
+     "choices": [
+      "$-27$",
+      "$7$",
+      "$1$",
+      "$-5$"
+     ],
+     "answer": 2,
+     "solution_mn": "Безуийн теоремоор үлдэгдэл нь $P(2)=8-8+6-5=1$ болно."
+    },
+    {
+     "id": "lt-g12-polynomials-2",
+     "skill_id": "g12-polynomials",
+     "difficulty": 1,
+     "stem_mn": "$P(x)=x^3-6x^2+11x-6$ олон гишүүнтийн язгуур дараахаас аль нь вэ?",
+     "latex": "P(x)=x^3-6x^2+11x-6",
+     "choices": [
+      "$x=-1$",
+      "$x=1$",
+      "$x=6$",
+      "$x=-2$"
+     ],
+     "answer": 1,
+     "solution_mn": "$P(1)=1-6+11-6=0$ тул $x=1$ нь язгуур мөн."
+    },
+    {
+     "id": "lt-g12-polynomials-3",
+     "skill_id": "g12-polynomials",
+     "difficulty": 1,
+     "stem_mn": "$x^3-4x^2+5x-2=0$ тэгшитгэлийн язгууруудын нийлбэрийг ол.",
+     "latex": "x_1+x_2+x_3=-\\frac{-4}{1}",
+     "choices": [
+      "$-4$",
+      "$5$",
+      "$2$",
+      "$4$"
+     ],
+     "answer": 3,
+     "solution_mn": "Виетийн томьёогоор язгууруудын нийлбэр $x_1+x_2+x_3=-\\frac{-4}{1}=4$."
+    },
+    {
+     "id": "lt-g12-polynomials-4",
+     "skill_id": "g12-polynomials",
+     "difficulty": 2,
+     "stem_mn": "$P(x)=2x^3-3x^2+kx-6$ олон гишүүнт $(x-2)$-т үлдэгдэлгүй хуваагдана. $k$-г ол.",
+     "latex": "P(2)=16-12+2k-6=0",
+     "choices": [
+      "$-1$",
+      "$2$",
+      "$1$",
+      "$-2$"
+     ],
+     "answer": 2,
+     "solution_mn": "Безуийн теоремоор $P(2)=16-12+2k-6=2k-2=0$, эндээс $k=1$."
+    },
+    {
+     "id": "lt-g12-polynomials-5",
+     "skill_id": "g12-polynomials",
+     "difficulty": 2,
+     "stem_mn": "$x^4-3x^2+2x-1$ олон гишүүнтийг $(x^2-1)$-т хуваахад гарах үлдэгдлийг ол.",
+     "latex": "x^2\\equiv 1",
+     "choices": [
+      "$2x+3$",
+      "$2x-3$",
+      "$2x-1$",
+      "$-2x+3$"
+     ],
+     "answer": 1,
+     "solution_mn": "$x^2\\equiv 1$ тул $x^4-3x^2\\equiv 1-3=-2$ болж, үлдэгдэл нь $2x-3$."
+    },
+    {
+     "id": "lt-g12-polynomials-6",
+     "skill_id": "g12-polynomials",
+     "difficulty": 2,
+     "stem_mn": "$x^3-5x^2+6x-1=0$ тэгшитгэлийн язгуурууд $a,b,c$ бол $\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}$-ийн утгыг ол.",
+     "latex": "\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}=\\frac{ab+bc+ca}{abc}",
+     "choices": [
+      "$-6$",
+      "$5$",
+      "$1$",
+      "$6$"
+     ],
+     "answer": 3,
+     "solution_mn": "Виетээр $ab+bc+ca=6$, $abc=1$ тул $\\frac{ab+bc+ca}{abc}=\\frac{6}{1}=6$."
+    },
+    {
+     "id": "lt-g12-polynomials-7",
+     "skill_id": "g12-polynomials",
+     "difficulty": 3,
+     "stem_mn": "$P(x)=x^3+ax^2+bx-10$ олон гишүүнт $(x-1)$ болон $(x+2)$-д хуваагдана. Гурав дахь язгуурыг нь ол.",
+     "latex": "1\\cdot(-2)\\cdot r=10",
+     "choices": [
+      "$5$",
+      "$-5$",
+      "$-10$",
+      "$10$"
+     ],
+     "answer": 1,
+     "solution_mn": "$x=1,\\ x=-2$ нь язгуур. Виетээр язгууруудын үржвэр $-(-10)=10$ тул $1\\cdot(-2)\\cdot r=10$, эндээс $r=-5$."
+    },
+    {
+     "id": "lt-g12-polynomials-8",
+     "skill_id": "g12-polynomials",
+     "difficulty": 3,
+     "stem_mn": "$x^3-6x^2+11x-6=0$ тэгшитгэлийн язгуурууд $x_1,x_2,x_3$ бол $x_1^2+x_2^2+x_3^2$-ийг ол.",
+     "latex": "x_1^2+x_2^2+x_3^2=(x_1+x_2+x_3)^2-2(x_1x_2+x_2x_3+x_3x_1)",
+     "choices": [
+      "$36$",
+      "$22$",
+      "$14$",
+      "$12$"
+     ],
+     "answer": 2,
+     "solution_mn": "Виетээр нийлбэр $=6$, хосуудын нийлбэр $=11$ тул $6^2-2\\cdot 11=36-22=14$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g12-log-functions",
+   "title_mn": "Функц ба график (логарифм)",
+   "grade": 12,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g12-log-functions-1",
+     "skill_id": "g12-log-functions",
+     "difficulty": 1,
+     "stem_mn": "$\\log_3 81$ илэрхийллийн утгыг ол.",
+     "latex": "\\log_3 81 = 4",
+     "choices": [
+      "4",
+      "3",
+      "27",
+      "9"
+     ],
+     "answer": 0,
+     "solution_mn": "$81 = 3^4$ тул $\\log_3 81 = 4$."
+    },
+    {
+     "id": "lt-g12-log-functions-2",
+     "skill_id": "g12-log-functions",
+     "difficulty": 1,
+     "stem_mn": "$a>1$ үед $y=\\log_a x$ функцийн график дараах аль цэгийг ямагт дайрч өнгөрөх вэ?",
+     "latex": "\\log_a 1 = 0",
+     "choices": [
+      "$(1;\\,0)$",
+      "$(0;\\,1)$",
+      "$(0;\\,0)$",
+      "$(1;\\,1)$"
+     ],
+     "answer": 0,
+     "solution_mn": "Дурын суурьт $\\log_a 1 = 0$ байдаг тул график ямагт $(1;\\,0)$ цэгийг дайрна."
+    },
+    {
+     "id": "lt-g12-log-functions-3",
+     "skill_id": "g12-log-functions",
+     "difficulty": 1,
+     "stem_mn": "$\\lg 2 + \\lg 5$ илэрхийллийг бод.",
+     "latex": "\\lg 2+\\lg 5=\\lg 10=1",
+     "choices": [
+      "1",
+      "$\\lg 7$",
+      "10",
+      "0"
+     ],
+     "answer": 0,
+     "solution_mn": "Үржвэрийн дүрмээр $\\lg 2+\\lg 5=\\lg(2\\cdot 5)=\\lg 10=1$."
+    },
+    {
+     "id": "lt-g12-log-functions-4",
+     "skill_id": "g12-log-functions",
+     "difficulty": 2,
+     "stem_mn": "$2^{x+1}=8^{x-1}$ тэгшитгэлийг бод.",
+     "latex": "2^{x+1}=8^{x-1}",
+     "choices": [
+      "$x=2$",
+      "$x=1$",
+      "$x=4$",
+      "$x=-2$"
+     ],
+     "answer": 0,
+     "solution_mn": "$8=2^3$ тул $2^{x+1}=2^{3(x-1)}$, эндээс $x+1=3x-3$ бөгөөд $x=2$."
+    },
+    {
+     "id": "lt-g12-log-functions-5",
+     "skill_id": "g12-log-functions",
+     "difficulty": 2,
+     "stem_mn": "$\\log_2 3 \\cdot \\log_3 8$ үржвэрийн утгыг ол.",
+     "latex": "\\log_2 3\\cdot\\log_3 8=\\log_2 8=3",
+     "choices": [
+      "3",
+      "6",
+      "8",
+      "24"
+     ],
+     "answer": 0,
+     "solution_mn": "Суурь солих дүрмээр $\\log_3 8=\\dfrac{\\log_2 8}{\\log_2 3}$ тул үржвэр $=\\log_2 8=3$."
+    },
+    {
+     "id": "lt-g12-log-functions-6",
+     "skill_id": "g12-log-functions",
+     "difficulty": 2,
+     "stem_mn": "$y=\\log_2(4-x^2)$ функцийн тодорхойлогдох мужийг ол.",
+     "latex": "4-x^2>0",
+     "choices": [
+      "$(-2;\\,2)$",
+      "$[-2;\\,2]$",
+      "$(-\\infty;-2)\\cup(2;+\\infty)$",
+      "$x>2$"
+     ],
+     "answer": 0,
+     "solution_mn": "Логарифмын аргумент эерэг байх ёстой: $4-x^2>0 \\Rightarrow -2<x<2$."
+    },
+    {
+     "id": "lt-g12-log-functions-7",
+     "skill_id": "g12-log-functions",
+     "difficulty": 3,
+     "stem_mn": "$\\log_2 x + \\log_2(x-2) = 3$ тэгшитгэлийн шийдийг ол.",
+     "latex": "x^2-2x-8=0",
+     "choices": [
+      "$x=4$",
+      "$x=-2$",
+      "$x=4$ ба $x=-2$",
+      "$x=2$"
+     ],
+     "answer": 0,
+     "solution_mn": "$\\log_2[x(x-2)]=3 \\Rightarrow x^2-2x-8=0$, шийд нь $x=4,\\ x=-2$; $x>2$ нөхцөлөөр зөвхөн $x=4$ тохирно."
+    },
+    {
+     "id": "lt-g12-log-functions-8",
+     "skill_id": "g12-log-functions",
+     "difficulty": 3,
+     "stem_mn": "$\\log_{1/2} x > 2$ тэнцэтгэл бишийг бод.",
+     "latex": "\\log_{1/2}x>2",
+     "choices": [
+      "$0<x<\\dfrac14$",
+      "$x>\\dfrac14$",
+      "$x>4$",
+      "$0<x<4$"
+     ],
+     "answer": 0,
+     "solution_mn": "Суурь $\\tfrac12<1$ тул тэмдэг эргэнэ: $x<\\left(\\tfrac12\\right)^2=\\tfrac14$, мөн тодорхойлогдох мужаар $x>0$; иймд $0<x<\\tfrac14$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g12-derivatives",
+   "title_mn": "Функцийн уламжлал (гүнзгий)",
+   "grade": 12,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g12-derivatives-1",
+     "skill_id": "g12-derivatives",
+     "difficulty": 1,
+     "stem_mn": "$f(x) = x^2 \\sin x$ функцийн уламжлалыг ол.",
+     "latex": "f'(x) = 2x\\sin x + x^2\\cos x",
+     "choices": [
+      "$2x\\cos x$",
+      "$2x\\sin x + x^2\\cos x$",
+      "$2x\\sin x - x^2\\cos x$",
+      "$x^2\\cos x$"
+     ],
+     "answer": 1,
+     "solution_mn": "Үржвэрийн дүрмээр $f'(x) = (x^2)'\\sin x + x^2(\\sin x)' = 2x\\sin x + x^2\\cos x$."
+    },
+    {
+     "id": "lt-g12-derivatives-2",
+     "skill_id": "g12-derivatives",
+     "difficulty": 1,
+     "stem_mn": "$f(x) = e^{3x}$ функцийн уламжлалыг ол.",
+     "latex": "f'(x) = 3e^{3x}",
+     "choices": [
+      "$e^{3x}$",
+      "$\\dfrac{1}{3}e^{3x}$",
+      "$3e^{3x}$",
+      "$3xe^{3x-1}$"
+     ],
+     "answer": 2,
+     "solution_mn": "Нийлмэл функцийн дүрмээр $f'(x) = e^{3x}\\cdot(3x)' = 3e^{3x}$."
+    },
+    {
+     "id": "lt-g12-derivatives-3",
+     "skill_id": "g12-derivatives",
+     "difficulty": 1,
+     "stem_mn": "$f(x) = \\ln(5x)$ функцийн уламжлалыг ол.",
+     "latex": "f'(x) = \\frac{5}{5x} = \\frac{1}{x}",
+     "choices": [
+      "$\\dfrac{1}{x}$",
+      "$\\dfrac{5}{x}$",
+      "$\\dfrac{1}{5x}$",
+      "$\\dfrac{5}{\\ln(5x)}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$(\\ln u)' = \\dfrac{u'}{u}$ тул $f'(x) = \\dfrac{(5x)'}{5x} = \\dfrac{5}{5x} = \\dfrac{1}{x}$."
+    },
+    {
+     "id": "lt-g12-derivatives-4",
+     "skill_id": "g12-derivatives",
+     "difficulty": 2,
+     "stem_mn": "$f(x) = \\dfrac{x}{x^2+1}$ функцийн уламжлалыг ол.",
+     "latex": "f'(x) = \\frac{(x^2+1) - x\\cdot 2x}{(x^2+1)^2} = \\frac{1-x^2}{(x^2+1)^2}",
+     "choices": [
+      "$\\dfrac{x^2-1}{(x^2+1)^2}$",
+      "$\\dfrac{1+x^2}{(x^2+1)^2}$",
+      "$\\dfrac{1}{2x}$",
+      "$\\dfrac{1-x^2}{(x^2+1)^2}$"
+     ],
+     "answer": 3,
+     "solution_mn": "Ноогдворын дүрмээр $f'(x) = \\dfrac{1\\cdot(x^2+1) - x\\cdot 2x}{(x^2+1)^2} = \\dfrac{1-x^2}{(x^2+1)^2}$."
+    },
+    {
+     "id": "lt-g12-derivatives-5",
+     "skill_id": "g12-derivatives",
+     "difficulty": 2,
+     "stem_mn": "$f(x) = x^3 - 3x$ функцийн локаль максимумын утгыг ол.",
+     "latex": "f'(x) = 3x^2 - 3 = 0 \\Rightarrow x = \\pm 1",
+     "choices": [
+      "$-2$",
+      "$2$",
+      "$-1$",
+      "$1$"
+     ],
+     "answer": 1,
+     "solution_mn": "$f'(x)=3x^2-3=0$-аас $x=\\pm1$. $x=-1$ дээр максимум бөгөөд $f(-1) = -1+3 = 2$."
+    },
+    {
+     "id": "lt-g12-derivatives-6",
+     "skill_id": "g12-derivatives",
+     "difficulty": 2,
+     "stem_mn": "$f(x) = e^{x}\\cos x$ функцийн уламжлалыг ол.",
+     "latex": "f'(x) = e^{x}\\cos x - e^{x}\\sin x = e^{x}(\\cos x - \\sin x)",
+     "choices": [
+      "$e^{x}(\\cos x + \\sin x)$",
+      "$e^{x}(\\sin x - \\cos x)$",
+      "$e^{x}(\\cos x - \\sin x)$",
+      "$-e^{x}\\sin x$"
+     ],
+     "answer": 2,
+     "solution_mn": "Үржвэрийн дүрмээр $f'(x) = e^{x}\\cos x + e^{x}(-\\sin x) = e^{x}(\\cos x - \\sin x)$."
+    },
+    {
+     "id": "lt-g12-derivatives-7",
+     "skill_id": "g12-derivatives",
+     "difficulty": 3,
+     "stem_mn": "$f(x) = \\dfrac{\\ln x}{x}$ функц ямар $x$ дээр хамгийн их утгаа авах вэ?",
+     "latex": "f'(x) = \\frac{1-\\ln x}{x^2} = 0 \\Rightarrow x = e",
+     "choices": [
+      "$e$",
+      "$1$",
+      "$\\dfrac{1}{e}$",
+      "$e^2$"
+     ],
+     "answer": 0,
+     "solution_mn": "Ноогдворын дүрмээр $f'(x) = \\dfrac{1-\\ln x}{x^2}$. $f'(x)=0$-аас $\\ln x = 1$, тэгэхээр $x=e$ дээр максимум."
+    },
+    {
+     "id": "lt-g12-derivatives-8",
+     "skill_id": "g12-derivatives",
+     "difficulty": 3,
+     "stem_mn": "$f(x) = x e^{-x}$ функцийн $[0;\\infty)$ завсар дахь хамгийн их утгыг ол.",
+     "latex": "f'(x) = e^{-x}(1-x) = 0 \\Rightarrow x = 1",
+     "choices": [
+      "$e$",
+      "$1$",
+      "$0$",
+      "$\\dfrac{1}{e}$"
+     ],
+     "answer": 3,
+     "solution_mn": "$f'(x) = e^{-x} - xe^{-x} = e^{-x}(1-x)=0$-аас $x=1$. Тэнд максимум бөгөөд $f(1) = e^{-1} = \\dfrac{1}{e}$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g12-integral",
+   "title_mn": "Интеграл",
+   "grade": 12,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g12-integral-1",
+     "skill_id": "g12-integral",
+     "difficulty": 1,
+     "stem_mn": "$\\int (2x+3)\\,dx$ интегралыг ол.",
+     "latex": "\\int (2x+3)\\,dx",
+     "choices": [
+      "$2x^2+3x+C$",
+      "$x^2+3x+C$",
+      "$x^2+3+C$",
+      "$2+C$"
+     ],
+     "answer": 1,
+     "solution_mn": "Зэргийн дүрмээр $\\int 2x\\,dx=x^2$, $\\int 3\\,dx=3x$ тул хариу нь $x^2+3x+C$."
+    },
+    {
+     "id": "lt-g12-integral-2",
+     "skill_id": "g12-integral",
+     "difficulty": 1,
+     "stem_mn": "$\\int_0^2 3x^2\\,dx$ тодорхой интегралын утгыг ол.",
+     "latex": "\\int_0^2 3x^2\\,dx",
+     "choices": [
+      "$4$",
+      "$6$",
+      "$8$",
+      "$12$"
+     ],
+     "answer": 2,
+     "solution_mn": "$\\int_0^2 3x^2\\,dx=[x^3]_0^2=2^3-0=8$."
+    },
+    {
+     "id": "lt-g12-integral-3",
+     "skill_id": "g12-integral",
+     "difficulty": 1,
+     "stem_mn": "$\\int \\cos 2x\\,dx$ интегралыг ол.",
+     "latex": "\\int \\cos 2x\\,dx",
+     "choices": [
+      "$2\\sin 2x+C$",
+      "$\\frac{1}{2}\\sin 2x+C$",
+      "$-\\frac{1}{2}\\sin 2x+C$",
+      "$\\sin 2x+C$"
+     ],
+     "answer": 1,
+     "solution_mn": "$\\int \\cos ax\\,dx=\\frac{1}{a}\\sin ax+C$ дүрмээр $a=2$ тул хариу $\\frac{1}{2}\\sin 2x+C$."
+    },
+    {
+     "id": "lt-g12-integral-4",
+     "skill_id": "g12-integral",
+     "difficulty": 2,
+     "stem_mn": "Орлуулах аргаар $\\int_0^1 2x(x^2+1)^3\\,dx$ интегралыг бод.",
+     "latex": "\\int_0^1 2x(x^2+1)^3\\,dx",
+     "choices": [
+      "$\\frac{15}{4}$",
+      "$\\frac{15}{2}$",
+      "$4$",
+      "$\\frac{17}{4}$"
+     ],
+     "answer": 0,
+     "solution_mn": "$u=x^2+1$, $du=2x\\,dx$; хязгаар $1\\to 2$ болно. $\\int_1^2 u^3\\,du=\\left[\\frac{u^4}{4}\\right]_1^2=\\frac{16-1}{4}=\\frac{15}{4}$."
+    },
+    {
+     "id": "lt-g12-integral-5",
+     "skill_id": "g12-integral",
+     "difficulty": 2,
+     "stem_mn": "Хэсэгчлэн интегралчлах аргаар $\\int x e^{x}\\,dx$-ийг ол.",
+     "latex": "\\int x e^{x}\\,dx",
+     "choices": [
+      "$x e^{x}+C$",
+      "$\\frac{x^2}{2}e^{x}+C$",
+      "$(x-1)e^{x}+C$",
+      "$(x+1)e^{x}+C$"
+     ],
+     "answer": 2,
+     "solution_mn": "$u=x$, $dv=e^{x}dx$ гэвэл $\\int x e^{x}dx=xe^{x}-\\int e^{x}dx=(x-1)e^{x}+C$."
+    },
+    {
+     "id": "lt-g12-integral-6",
+     "skill_id": "g12-integral",
+     "difficulty": 2,
+     "stem_mn": "$y=4-x^2$ парабол ба $Ox$ тэнхлэгээр хүрээлэгдсэн дүрсийн талбайг ол.",
+     "latex": "\\int_{-2}^{2}(4-x^2)\\,dx",
+     "choices": [
+      "$\\frac{16}{3}$",
+      "$\\frac{32}{3}$",
+      "$32$",
+      "$\\frac{8}{3}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Огтлолцлын цэг $4-x^2=0\\Rightarrow x=\\pm 2$. $\\int_{-2}^{2}(4-x^2)\\,dx=\\left[4x-\\frac{x^3}{3}\\right]_{-2}^{2}=\\left(8-\\frac{8}{3}\\right)-\\left(-8+\\frac{8}{3}\\right)=\\frac{32}{3}$."
+    },
+    {
+     "id": "lt-g12-integral-7",
+     "skill_id": "g12-integral",
+     "difficulty": 3,
+     "stem_mn": "$y=\\sqrt{x}$, $x=4$ шулуун ба $Ox$ тэнхлэгээр хүрээлэгдсэн дүрсийг $Ox$ тэнхлэгийг тойруулан эргүүлэхэд үүсэх биетийн эзэлхүүнийг ол.",
+     "latex": "\\pi\\int_0^4 x\\,dx",
+     "choices": [
+      "$16\\pi$",
+      "$8\\pi$",
+      "$4\\pi$",
+      "$\\frac{16}{3}\\pi$"
+     ],
+     "answer": 1,
+     "solution_mn": "$V=\\pi\\int_0^4 (\\sqrt{x})^2\\,dx=\\pi\\int_0^4 x\\,dx=\\pi\\left[\\frac{x^2}{2}\\right]_0^4=8\\pi$."
+    },
+    {
+     "id": "lt-g12-integral-8",
+     "skill_id": "g12-integral",
+     "difficulty": 3,
+     "stem_mn": "$\\int_0^{\\pi} x\\sin x\\,dx$ интегралын утгыг ол.",
+     "latex": "\\int_0^{\\pi} x\\sin x\\,dx",
+     "choices": [
+      "$2\\pi$",
+      "$\\pi$",
+      "$-\\pi$",
+      "$\\frac{\\pi}{2}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хэсэгчлэн ($u=x$, $dv=\\sin x\\,dx$, $v=-\\cos x$): $\\int_0^{\\pi} x\\sin x\\,dx=[-x\\cos x+\\sin x]_0^{\\pi}=(-\\pi\\cdot(-1)+0)-0=\\pi$."
+    }
+   ]
+  },
+  {
+   "skill_id": "g12-probability-stats",
+   "title_mn": "Магадлал ба статистик",
+   "grade": 12,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g12-probability-stats-1",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 1,
+     "stem_mn": "Тохиолдол $A$, $B$-ийн хувьд $P(A\\cap B)=0.12$, $P(B)=0.3$ бол нөхцөлт магадлал $P(A\\mid B)$-ийг ол.",
+     "latex": "P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}",
+     "choices": [
+      "$0.036$",
+      "$0.18$",
+      "$0.4$",
+      "$0.42$"
+     ],
+     "answer": 2,
+     "solution_mn": "Нөхцөлт магадлалын томьёогоор $P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}=\\dfrac{0.12}{0.3}=0.4$."
+    },
+    {
+     "id": "lt-g12-probability-stats-2",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 1,
+     "stem_mn": "Мэргэн буудагч нэг удаа буудахад онох магадлал $0.8$. Тэрээр $3$ удаа бие даан буудахад гурвуулаа онох магадлалыг ол.",
+     "latex": "P=0.8^3",
+     "choices": [
+      "$0.64$",
+      "$0.512$",
+      "$2.4$",
+      "$0.8$"
+     ],
+     "answer": 1,
+     "solution_mn": "Бие даасан үйл явдлуудын хувьд магадлалуудыг үржүүлнэ: $0.8^3=0.512$."
+    },
+    {
+     "id": "lt-g12-probability-stats-3",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 1,
+     "stem_mn": "Санамсаргүй хэмжигдэхүүн $X$ нь $0,\\ 1,\\ 2$ утгыг харгалзан $0.2,\\ 0.5,\\ 0.3$ магадлалтайгаар авдаг. $X$-ийн хүлээгдэх утга $E(X)$-ийг ол.",
+     "latex": "E(X)=\\sum x_i p_i",
+     "choices": [
+      "$1$",
+      "$0.6$",
+      "$1.5$",
+      "$1.1$"
+     ],
+     "answer": 3,
+     "solution_mn": "$E(X)=0\\cdot0.2+1\\cdot0.5+2\\cdot0.3=0.5+0.6=1.1$."
+    },
+    {
+     "id": "lt-g12-probability-stats-4",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 2,
+     "stem_mn": "Зоосыг $5$ удаа шидэв. Яг $2$ удаа сүлд буух магадлалыг ол.",
+     "latex": "P=C_5^2\\left(\\tfrac12\\right)^2\\left(\\tfrac12\\right)^3",
+     "choices": [
+      "$\\frac{5}{16}$",
+      "$\\frac{1}{32}$",
+      "$\\frac{5}{32}$",
+      "$\\frac{1}{4}$"
+     ],
+     "answer": 0,
+     "solution_mn": "Бернуллийн схемээр $C_5^2\\left(\\tfrac12\\right)^2\\left(\\tfrac12\\right)^3=\\dfrac{10}{32}=\\dfrac{5}{16}$. Хослолын тоо $C_5^2=10$-ыг мартвал $\\tfrac{1}{32}$ гэсэн буруу хариу гарна."
+    },
+    {
+     "id": "lt-g12-probability-stats-5",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 2,
+     "stem_mn": "Үйлдвэрийн бүтээгдэхүүний $60\\%$-ийг $A$ машин ($2\\%$ гэмтэлтэй), $40\\%$-ийг $B$ машин ($5\\%$ гэмтэлтэй) хийдэг. Санамсаргүй сонгосон бүтээгдэхүүн гэмтэлтэй байв. Түүнийг $B$ машин хийсэн байх магадлалыг ол.",
+     "latex": "P(B\\mid D)=\\frac{P(B)P(D\\mid B)}{P(D)}",
+     "choices": [
+      "$0.375$",
+      "$0.4$",
+      "$0.625$",
+      "$0.05$"
+     ],
+     "answer": 2,
+     "solution_mn": "$P(D)=0.6\\cdot0.02+0.4\\cdot0.05=0.032$. Байесын томьёогоор $P(B\\mid D)=\\dfrac{0.4\\cdot0.05}{0.032}=\\dfrac{0.02}{0.032}=0.625$."
+    },
+    {
+     "id": "lt-g12-probability-stats-6",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 2,
+     "stem_mn": "Санамсаргүй хэмжигдэхүүн $X$ нь $n=20$, $p=0.1$ параметртэй биномиал (Бернуллийн) хуваарилалттай. $X$-ийн дисперс $D(X)$-ийг ол.",
+     "latex": "D(X)=np(1-p)",
+     "choices": [
+      "$0.18$",
+      "$1.8$",
+      "$2$",
+      "$20$"
+     ],
+     "answer": 1,
+     "solution_mn": "Биномиал хуваарилалтын дисперс $D(X)=np(1-p)=20\\cdot0.1\\cdot0.9=1.8$. ($np=2$ нь хүлээгдэх утга тул андуурч болохгүй.)"
+    },
+    {
+     "id": "lt-g12-probability-stats-7",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 3,
+     "stem_mn": "Мэргэн буудагч нэг удаад онох магадлал $0.6$. $3$ удаа бие даан буудахад дор хаяж $2$ удаа онох магадлалыг ол.",
+     "latex": "P(X\\ge2)=C_3^2 p^2 q+p^3",
+     "choices": [
+      "$0.216$",
+      "$0.432$",
+      "$0.936$",
+      "$0.648$"
+     ],
+     "answer": 3,
+     "solution_mn": "$P(X\\ge2)=C_3^2(0.6)^2(0.4)+(0.6)^3=0.432+0.216=0.648$. Зөвхөн яг $2$-ыг авбал $0.432$ гэсэн дутуу хариу гарна."
+    },
+    {
+     "id": "lt-g12-probability-stats-8",
+     "skill_id": "g12-probability-stats",
+     "difficulty": 3,
+     "stem_mn": "Тоглоомд шоо шиднэ. $6$ буувал $12$₮ хожно, бусад тохиолдолд $3$₮ алдана. Нэг тоглолтын хүлээгдэх хожил $E(X)$-ийг ол.",
+     "latex": "E(X)=12\\cdot\\tfrac16+(-3)\\cdot\\tfrac56",
+     "choices": [
+      "$-0.5$",
+      "$0.5$",
+      "$4.5$",
+      "$2$"
+     ],
+     "answer": 0,
+     "solution_mn": "Алдагдлыг сөрөг тэмдэгтэйгээр авна: $E(X)=12\\cdot\\tfrac16+(-3)\\cdot\\tfrac56=2-2.5=-0.5$₮. Дундажаар $0.5$₮ алдана гэсэн үг."
+    }
+   ]
+  },
+  {
+   "skill_id": "g12-complex",
+   "title_mn": "Комплекс тоо",
+   "grade": 12,
+   "lesson_id": null,
+   "pages_mn": "",
+   "questions": [
+    {
+     "id": "lt-g12-complex-1",
+     "skill_id": "g12-complex",
+     "difficulty": 1,
+     "stem_mn": "$i^{13}$-ийн утгыг ол.",
+     "latex": "i^{13}=i",
+     "choices": [
+      "$-i$",
+      "$i$",
+      "$-1$",
+      "$1$"
+     ],
+     "answer": 1,
+     "solution_mn": "$i$-ийн зэрэг 4 үетэй тул $i^{13}=(i^4)^3\\cdot i=1\\cdot i=i$."
+    },
+    {
+     "id": "lt-g12-complex-2",
+     "skill_id": "g12-complex",
+     "difficulty": 1,
+     "stem_mn": "$(3+2i)+(1-5i)$ нийлбэрийг бод.",
+     "latex": "(3+2i)+(1-5i)=4-3i",
+     "choices": [
+      "$4+7i$",
+      "$2-3i$",
+      "$4-3i$",
+      "$4-7i$"
+     ],
+     "answer": 2,
+     "solution_mn": "Бодит ба хуурмаг хэсгийг тусад нь нэмнэ: $(3+1)+(2-5)i=4-3i$."
+    },
+    {
+     "id": "lt-g12-complex-3",
+     "skill_id": "g12-complex",
+     "difficulty": 1,
+     "stem_mn": "$z=3-4i$ комплекс тооны модулийг ($|z|$) ол.",
+     "latex": "|3-4i|=5",
+     "choices": [
+      "$7$",
+      "$5$",
+      "$\\sqrt{7}$",
+      "$25$"
+     ],
+     "answer": 1,
+     "solution_mn": "$|z|=\\sqrt{3^2+(-4)^2}=\\sqrt{9+16}=\\sqrt{25}=5$."
+    },
+    {
+     "id": "lt-g12-complex-4",
+     "skill_id": "g12-complex",
+     "difficulty": 2,
+     "stem_mn": "$(2+3i)(1-2i)$ үржвэрийг бод.",
+     "latex": "(2+3i)(1-2i)=8-i",
+     "choices": [
+      "$-4-i$",
+      "$8-i$",
+      "$8+i$",
+      "$2-i$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хаалт задалж $i^2=-1$-ийг ашиглана: $2-4i+3i-6i^2=2-i+6=8-i$."
+    },
+    {
+     "id": "lt-g12-complex-5",
+     "skill_id": "g12-complex",
+     "difficulty": 2,
+     "stem_mn": "$\\dfrac{1+i}{1-i}$ илэрхийллийг энгийн (алгебр) хэлбэрт оруул.",
+     "latex": "\\frac{1+i}{1-i}=i",
+     "choices": [
+      "$1$",
+      "$i$",
+      "$-i$",
+      "$\\dfrac{1+i}{2}$"
+     ],
+     "answer": 1,
+     "solution_mn": "Хуваарийн хосмог тоо $1+i$-ээр үржүүлбэл $\\dfrac{(1+i)^2}{(1-i)(1+i)}=\\dfrac{2i}{2}=i$."
+    },
+    {
+     "id": "lt-g12-complex-6",
+     "skill_id": "g12-complex",
+     "difficulty": 2,
+     "stem_mn": "$z=1+i\\sqrt{3}$ тоог тригонометр хэлбэрт бич.",
+     "latex": "1+i\\sqrt{3}=2(\\cos 60^\\circ+i\\sin 60^\\circ)",
+     "choices": [
+      "$2(\\cos 30^\\circ+i\\sin 30^\\circ)$",
+      "$2(\\cos 60^\\circ+i\\sin 60^\\circ)$",
+      "$4(\\cos 60^\\circ+i\\sin 60^\\circ)$",
+      "$2(\\cos 120^\\circ+i\\sin 120^\\circ)$"
+     ],
+     "answer": 1,
+     "solution_mn": "$|z|=\\sqrt{1+3}=2$, аргумент нь $\\tan\\varphi=\\dfrac{\\sqrt3}{1}$ тул $\\varphi=60^\\circ$; иймд $z=2(\\cos 60^\\circ+i\\sin 60^\\circ)$."
+    },
+    {
+     "id": "lt-g12-complex-7",
+     "skill_id": "g12-complex",
+     "difficulty": 3,
+     "stem_mn": "$(1+i)^{8}$-ийг бод.",
+     "latex": "(1+i)^{8}=16",
+     "choices": [
+      "$-16$",
+      "$16i$",
+      "$16$",
+      "$-16i$"
+     ],
+     "answer": 2,
+     "solution_mn": "$(1+i)^2=2i$ тул $(1+i)^8=\\big((1+i)^2\\big)^4=(2i)^4=16\\,i^4=16$."
+    },
+    {
+     "id": "lt-g12-complex-8",
+     "skill_id": "g12-complex",
+     "difficulty": 3,
+     "stem_mn": "$\\left(\\dfrac{-1+i\\sqrt{3}}{2}\\right)^{3}$-ийн утгыг ол.",
+     "latex": "\\left(\\frac{-1+i\\sqrt{3}}{2}\\right)^{3}=1",
+     "choices": [
+      "$\\dfrac{-1+i\\sqrt{3}}{2}$",
+      "$-1$",
+      "$1$",
+      "$-i$"
+     ],
+     "answer": 2,
+     "solution_mn": "Модуль нь $1$, аргумент нь $120^\\circ$; Муаврын томьёогоор куб зэрэгт өргөвөл аргумент $360^\\circ$ болж $z^3=1$ (нэгжийн куб язгуур)."
     }
    ]
   }

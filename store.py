@@ -221,6 +221,7 @@ def level_topics() -> list[dict]:
         {
             "skill_id": t["skill_id"],
             "title_mn": t["title_mn"],
+            "grade": t.get("grade", 11),
             "lesson_id": t.get("lesson_id"),
             "pages_mn": t.get("pages_mn", ""),
             "count": len(t["questions"]),
