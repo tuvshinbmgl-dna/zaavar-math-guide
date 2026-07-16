@@ -1436,7 +1436,7 @@
    "skill_id": "g10-sets",
    "title_mn": "Олонлог",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-1-1",
    "pages_mn": "",
    "questions": [
     {
@@ -1565,7 +1565,7 @@
    "skill_id": "g10-numeric-literal",
    "title_mn": "Тоон ба үсэгт илэрхийлэл",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-2-1",
    "pages_mn": "",
    "questions": [
     {
@@ -1694,7 +1694,7 @@
    "skill_id": "g10-algebraic-expr",
    "title_mn": "Алгебрын илэрхийлэл",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-3-1",
    "pages_mn": "",
    "questions": [
     {
@@ -1952,7 +1952,7 @@
    "skill_id": "g10-functions",
    "title_mn": "Функц ба график",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-5-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2081,7 +2081,7 @@
    "skill_id": "g10-equations",
    "title_mn": "Тэгшитгэл, тэнцэтгэл биш",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-6-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2210,7 +2210,7 @@
    "skill_id": "g10-circle-polygon",
    "title_mn": "Тойрог ба олон өнцөгт",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-7-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2339,7 +2339,7 @@
    "skill_id": "g10-trig-ratio",
    "title_mn": "Тригонометр харьцаа",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-8-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2468,7 +2468,7 @@
    "skill_id": "g10-vectors",
    "title_mn": "Хавтгай дээрх вектор",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-9-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2597,7 +2597,7 @@
    "skill_id": "g10-matrix",
    "title_mn": "Матриц",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-10-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2726,7 +2726,7 @@
    "skill_id": "g10-geo-transform",
    "title_mn": "Геометрийн хувиргалт",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-11-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2855,7 +2855,7 @@
    "skill_id": "g10-data",
    "title_mn": "Өгөгдлийн шинжилгээ",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-12-1",
    "pages_mn": "",
    "questions": [
     {
@@ -2984,7 +2984,7 @@
    "skill_id": "g10-combinatorics",
    "title_mn": "Комбинаторик",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-13-1",
    "pages_mn": "",
    "questions": [
     {
@@ -3113,7 +3113,7 @@
    "skill_id": "g10-probability",
    "title_mn": "Магадлал",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-14-1",
    "pages_mn": "",
    "questions": [
     {
@@ -3242,7 +3242,7 @@
    "skill_id": "g10-measurement",
    "title_mn": "Хэмжигдэхүүн",
    "grade": 10,
-   "lesson_id": null,
+   "lesson_id": "g10-15-1",
    "pages_mn": "",
    "questions": [
     {
@@ -3758,7 +3758,7 @@
    "skill_id": "g11-progression",
    "title_mn": "Прогресс ба бином задаргаа",
    "grade": 11,
-   "lesson_id": null,
+   "lesson_id": "g11-4-1",
    "pages_mn": "",
    "questions": [
     {
@@ -3887,7 +3887,7 @@
    "skill_id": "g11-coord-geometry",
    "title_mn": "Координатын геометр",
    "grade": 11,
-   "lesson_id": null,
+   "lesson_id": "g11-5-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4016,7 +4016,7 @@
    "skill_id": "g11-trigonometry",
    "title_mn": "Тригонометр",
    "grade": 11,
-   "lesson_id": null,
+   "lesson_id": "g11-6-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4145,7 +4145,7 @@
    "skill_id": "g11-vectors-space",
    "title_mn": "Огторгуй дахь вектор",
    "grade": 11,
-   "lesson_id": null,
+   "lesson_id": "g11-7-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4274,7 +4274,7 @@
    "skill_id": "g11-integral",
    "title_mn": "Интеграл",
    "grade": 11,
-   "lesson_id": null,
+   "lesson_id": "g11-9-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4403,7 +4403,7 @@
    "skill_id": "g11-data",
    "title_mn": "Өгөгдлийн шинжилгээ",
    "grade": 11,
-   "lesson_id": null,
+   "lesson_id": "g11-10-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4532,7 +4532,7 @@
    "skill_id": "g12-equations",
    "title_mn": "Тэгшитгэл, тэнцэтгэл биш",
    "grade": 12,
-   "lesson_id": null,
+   "lesson_id": "g12-1-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4661,7 +4661,7 @@
    "skill_id": "g12-polynomials",
    "title_mn": "Олон гишүүнт",
    "grade": 12,
-   "lesson_id": null,
+   "lesson_id": "g12-2-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4790,7 +4790,7 @@
    "skill_id": "g12-log-functions",
    "title_mn": "Функц ба график (логарифм)",
    "grade": 12,
-   "lesson_id": null,
+   "lesson_id": "g12-3-1",
    "pages_mn": "",
    "questions": [
     {
@@ -4919,7 +4919,7 @@
    "skill_id": "g12-derivatives",
    "title_mn": "Функцийн уламжлал (гүнзгий)",
    "grade": 12,
-   "lesson_id": null,
+   "lesson_id": "g12-4-1",
    "pages_mn": "",
    "questions": [
     {
@@ -5048,7 +5048,7 @@
    "skill_id": "g12-integral",
    "title_mn": "Интеграл",
    "grade": 12,
-   "lesson_id": null,
+   "lesson_id": "g12-5-1",
    "pages_mn": "",
    "questions": [
     {
@@ -5177,7 +5177,7 @@
    "skill_id": "g12-probability-stats",
    "title_mn": "Магадлал ба статистик",
    "grade": 12,
-   "lesson_id": null,
+   "lesson_id": "g12-6-1",
    "pages_mn": "",
    "questions": [
     {
@@ -5306,7 +5306,7 @@
    "skill_id": "g12-complex",
    "title_mn": "Комплекс тоо",
    "grade": 12,
-   "lesson_id": null,
+   "lesson_id": "g12-7-1",
    "pages_mn": "",
    "questions": [
     {

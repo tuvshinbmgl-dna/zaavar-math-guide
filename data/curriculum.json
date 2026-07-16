@@ -12,13 +12,27 @@
           "num": "I",
           "title_mn": "Олонлог",
           "title_en": "Sets",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Олонлог ба үйлдлүүд",
+              "lesson_id": "g10-1-1",
+              "skill_id": "g10-sets"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "II",
           "title_mn": "Тоон ба үсэгт илэрхийлэл",
           "title_en": "Numeric & literal expressions",
           "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Зэрэг ба үсэгт илэрхийлэл",
+              "lesson_id": "g10-2-1",
+              "skill_id": "g10-numeric-literal"
+            },
             {
               "num": "2.1",
               "title_mn": "Бүхэл илтгэгчтэй зэрэг ба түүний чанар"
@@ -39,13 +53,20 @@
               "num": "2.5",
               "title_mn": "Бодит тооны үйлдлийн чанар"
             }
-          ]
+          ],
+          "deep": true
         },
         {
           "num": "III",
           "title_mn": "Алгебрын илэрхийлэл",
           "title_en": "Algebraic expressions",
           "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Олон гишүүнт ба үржвэрт задлал",
+              "lesson_id": "g10-3-1",
+              "skill_id": "g10-algebraic-expr"
+            },
             {
               "num": "3.1",
               "title_mn": "Рациональ илтгэгчтэй алгебрын илэрхийлэл"
@@ -62,7 +83,8 @@
               "num": "3.4",
               "title_mn": "Алгебрын бутархайг нэмэх, хасах"
             }
-          ]
+          ],
+          "deep": true
         },
         {
           "num": "IV",
@@ -96,6 +118,12 @@
           "lessons": [
             {
               "num": "5.1",
+              "title_mn": "Функц ба түүний график",
+              "lesson_id": "g10-5-1",
+              "skill_id": "g10-functions"
+            },
+            {
+              "num": "5.1",
               "title_mn": "Функц, тодорхойлогдох ба утгын муж",
               "skill_id": "function-basics"
             },
@@ -121,13 +149,20 @@
               "title_mn": "Муруйд татсан шүргэгч ба түүний налуу",
               "skill_id": "tangent-curve-intro"
             }
-          ]
+          ],
+          "deep": true
         },
         {
           "num": "VI",
           "title_mn": "Тэгшитгэл, тэнцэтгэл биш",
           "title_en": "Equations & inequalities",
           "lessons": [
+            {
+              "num": "6.1",
+              "title_mn": "Тэгшитгэл ба тэнцэтгэл биш",
+              "lesson_id": "g10-6-1",
+              "skill_id": "g10-equations"
+            },
             {
               "num": "6.1",
               "title_mn": "Нэг хувьсагчтай шугаман тэнцэтгэл биш"
@@ -148,61 +183,134 @@
               "num": "6.5",
               "title_mn": "Илтгэгч тэгшитгэл"
             }
-          ]
+          ],
+          "deep": true
         },
         {
           "num": "VII",
           "title_mn": "Тойрог ба олон өнцөгт",
           "title_en": "Circle & polygons",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "7.1",
+              "title_mn": "Тойрог ба олон өнцөгт",
+              "lesson_id": "g10-7-1",
+              "skill_id": "g10-circle-polygon"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "VIII",
           "title_mn": "Тригонометр харьцаа",
           "title_en": "Trig ratios",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "8.1",
+              "title_mn": "Тригонометрийн харьцаа",
+              "lesson_id": "g10-8-1",
+              "skill_id": "g10-trig-ratio"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "IX",
           "title_mn": "Хавтгай дээрх вектор",
           "title_en": "Vectors in the plane",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "9.1",
+              "title_mn": "Хавтгай дээрх вектор",
+              "lesson_id": "g10-9-1",
+              "skill_id": "g10-vectors"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "X",
           "title_mn": "Матриц",
           "title_en": "Matrices",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "10.1",
+              "title_mn": "Матриц ба үйлдлүүд",
+              "lesson_id": "g10-10-1",
+              "skill_id": "g10-matrix"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "XI",
           "title_mn": "Геометрийн хувиргалт",
           "title_en": "Geometric transformations",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "11.1",
+              "title_mn": "Геометрийн хувиргалт",
+              "lesson_id": "g10-11-1",
+              "skill_id": "g10-geo-transform"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "XII",
           "title_mn": "Өгөгдлийн шинжилгээ",
           "title_en": "Data analysis",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "12.1",
+              "title_mn": "Өгөгдлийн шинжилгээ",
+              "lesson_id": "g10-12-1",
+              "skill_id": "g10-data"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "XIII",
           "title_mn": "Комбинаторик",
           "title_en": "Combinatorics",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "13.1",
+              "title_mn": "Комбинаторик",
+              "lesson_id": "g10-13-1",
+              "skill_id": "g10-combinatorics"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "XIV",
           "title_mn": "Магадлал",
           "title_en": "Probability",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "14.1",
+              "title_mn": "Магадлалын үндэс",
+              "lesson_id": "g10-14-1",
+              "skill_id": "g10-probability"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "XV",
           "title_mn": "Хэмжигдэхүүн",
           "title_en": "Measurement / solids",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "15.1",
+              "title_mn": "Биетийн гадаргуу ба эзэлхүүн",
+              "lesson_id": "g10-15-1",
+              "skill_id": "g10-measurement"
+            }
+          ],
+          "deep": true
         }
       ]
     },
@@ -303,25 +411,57 @@
           "num": "IV",
           "title_mn": "Прогресс ба бином задаргаа",
           "title_en": "Progressions & binomial expansion",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Прогресс ба бином задаргаа",
+              "lesson_id": "g11-4-1",
+              "skill_id": "g11-progression"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "V",
           "title_mn": "Координатын геометр",
           "title_en": "Coordinate geometry",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "5.1",
+              "title_mn": "Координатын геометр",
+              "lesson_id": "g11-5-1",
+              "skill_id": "g11-coord-geometry"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "VI",
           "title_mn": "Тригонометр",
           "title_en": "Trigonometry",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "6.1",
+              "title_mn": "Тригонометр функц ба адилтгал",
+              "lesson_id": "g11-6-1",
+              "skill_id": "g11-trigonometry"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "VII",
           "title_mn": "Огторгуй дахь вектор",
           "title_en": "Vectors in space",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "7.1",
+              "title_mn": "Огторгуй дахь вектор",
+              "lesson_id": "g11-7-1",
+              "skill_id": "g11-vectors-space"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "VIII",
@@ -389,13 +529,29 @@
           "num": "IX",
           "title_mn": "Интеграл",
           "title_en": "Integrals",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "9.1",
+              "title_mn": "Интеграл ба талбай",
+              "lesson_id": "g11-9-1",
+              "skill_id": "g11-integral"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "X",
           "title_mn": "Өгөгдлийн шинжилгээ",
           "title_en": "Data analysis",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "10.1",
+              "title_mn": "Тархалт ба стандарт хазайлт",
+              "lesson_id": "g11-10-1",
+              "skill_id": "g11-data"
+            }
+          ],
+          "deep": true
         }
       ]
     },
@@ -409,25 +565,55 @@
           "num": "I",
           "title_mn": "Тэгшитгэл, тэнцэтгэл биш",
           "title_en": "Equations & inequalities (abs value)",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Логарифм ба экспонент тэгшитгэл",
+              "lesson_id": "g12-1-1",
+              "skill_id": "g12-equations"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "II",
           "title_mn": "Олон гишүүнт",
           "title_en": "Polynomials",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Олон гишүүнт ба язгуур",
+              "lesson_id": "g12-2-1",
+              "skill_id": "g12-polynomials"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "III",
           "title_mn": "Функц ба график (логарифм)",
           "title_en": "Functions & graphs (logarithms)",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Экспонент ба логарифм функц",
+              "lesson_id": "g12-3-1",
+              "skill_id": "g12-log-functions"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "IV",
           "title_mn": "Функцийн уламжлал",
           "title_en": "Derivatives (exp/log/trig)",
           "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Уламжлалын дэвшилтэт дүрмүүд",
+              "lesson_id": "g12-4-1",
+              "skill_id": "g12-derivatives"
+            },
             {
               "num": "4.1",
               "title_mn": "e^x-ийн уламжлал"
@@ -456,25 +642,50 @@
               "num": "4.7",
               "title_mn": "Гинжин дүрэм"
             }
-          ]
+          ],
+          "deep": true
         },
         {
           "num": "V",
           "title_mn": "Интеграл",
           "title_en": "Integrals",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "5.1",
+              "title_mn": "Интегралын аргууд",
+              "lesson_id": "g12-5-1",
+              "skill_id": "g12-integral"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "VI",
           "title_mn": "Магадлал ба статистик",
           "title_en": "Probability & statistics",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "6.1",
+              "title_mn": "Магадлал ба санамсаргүй хэмжигдэхүүн",
+              "lesson_id": "g12-6-1",
+              "skill_id": "g12-probability-stats"
+            }
+          ],
+          "deep": true
         },
         {
           "num": "VII",
           "title_mn": "Комплекс тоо",
           "title_en": "Complex numbers",
-          "lessons": []
+          "lessons": [
+            {
+              "num": "7.1",
+              "title_mn": "Комплекс тоо",
+              "lesson_id": "g12-7-1",
+              "skill_id": "g12-complex"
+            }
+          ],
+          "deep": true
         }
       ]
     }

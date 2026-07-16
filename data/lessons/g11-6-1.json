@@ -1,0 +1,207 @@
+{
+  "id": "g11-6-1",
+  "grade": 11,
+  "chapter_num": "VI",
+  "chapter_title_mn": "Тригонометр",
+  "lesson_num": "6.1",
+  "title_mn": "Тригонометр функц ба адилтгал",
+  "title_en": "Тригонометр функц ба адилтгал",
+  "skill_id": "g11-trigonometry",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 273,
+    "pages_mn": "80–105-р тал",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=273"
+  },
+  "objectives_mn": [
+    "Радиан ба градусын хамаарлыг ойлгож, өнцгийг хооронд нь хөрвүүлэх.",
+    "Үндсэн тригонометр адилтгал ($\\sin^2 x + \\cos^2 x = 1$) болон нэмэх томьёог бодлого бодоход хэрэглэх.",
+    "Тригонометр функцийн утга, үечлэл, графикийн үндсэн шинжийг тайлбарлах."
+  ],
+  "pretest": {
+    "stem_mn": "$30^\\circ$ өнцгийг радианаар илэрхийлбэл юутай тэнцүү вэ?",
+    "latex": "30^\\circ = ?",
+    "choices": [
+      "$\\dfrac{\\pi}{6}$",
+      "$\\dfrac{\\pi}{3}$",
+      "$\\dfrac{\\pi}{4}$",
+      "$\\dfrac{\\pi}{2}$"
+    ],
+    "answer": 0,
+    "explanation_mn": "$180^\\circ = \\pi$ радиан тул $30^\\circ = \\dfrac{30}{180}\\pi = \\dfrac{\\pi}{6}$ радиан болно."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Радиан хэмжигдэхүүн ба тригонометр функц",
+      "body_mn": "**Радиан** нь өнцгийг хэмжих нэгж юм. Тойргийн радиустай тэнцүү урттай нумд харгалзах төв өнцгийг $1$ радиан гэнэ. Бүтэн тойрог $360^\\circ$ буюу $2\\pi$ радиантай тэнцүү тул $180^\\circ = \\pi$ радиан болно.\n\nГрадусаас радиан руу шилжихдээ $\\dfrac{\\pi}{180}$-аар, радианаас градус руу шилжихдээ $\\dfrac{180}{\\pi}$-аар үржүүлнэ.\n\n**Нэгж тойрог** (радиус нь $1$) дээр $x$ өнцөгт харгалзах цэгийн координатыг $(\\cos x,\\ \\sin x)$ гэж тодорхойлно. Өөрөөр хэлбэл $\\cos x$ нь хэвтээ, $\\sin x$ нь босоо координат бөгөөд аль аль нь $[-1,\\ 1]$ завсарт утга авна.\n\n**Тригонометр функцүүд үечлэлтэй.** $\\sin x$ ба $\\cos x$ функцийн үе нь $2\\pi$, харин $\\tan x$ функцийн үе нь $\\pi$ байдаг. $\\sin x$-ийн график нь долгион хэлбэртэй, $\\cos x$-ийн график нь $\\sin x$-ийг зүүн тийш $\\dfrac{\\pi}{2}$-аар шилжүүлсэнтэй тэнцүү."
+    },
+    {
+      "type": "definition",
+      "term_mn": "Үндсэн адилтгал ба нэмэх томьёо",
+      "body_mn": "Аливаа $x$-д **Пифагорын адилтгал** биелнэ: $\\sin^2 x + \\cos^2 x = 1$. Үүнээс $\\tan x = \\dfrac{\\sin x}{\\cos x}$ ($\\cos x \\neq 0$) ба $1 + \\tan^2 x = \\dfrac{1}{\\cos^2 x}$ гарна.\n\n**Нэмэх томьёо** нь хоёр өнцгийн нийлбэр буюу ялгаварын функцийг задалдаг:\n$\\sin(a \\pm b) = \\sin a\\cos b \\pm \\cos a\\sin b$,\n$\\cos(a \\pm b) = \\cos a\\cos b \\mp \\sin a\\sin b$.\n\nЭдгээрээс **давхар өнцгийн томьёо** $\\sin 2a = 2\\sin a\\cos a$ ба $\\cos 2a = \\cos^2 a - \\sin^2 a = 1 - 2\\sin^2 a$ гарган авна.",
+      "latex": "\\sin^2 x + \\cos^2 x = 1"
+    },
+    {
+      "type": "example",
+      "prompt_mn": "$\\dfrac{2\\pi}{3}$ радианг градус болгож, дараа нь $\\sin\\dfrac{2\\pi}{3}$-ийн утгыг ол.",
+      "steps": [
+        {
+          "text_mn": "Радианаас градус руу шилжүүлэхийн тулд $\\dfrac{180^\\circ}{\\pi}$-аар үржүүлнэ.",
+          "latex": "\\frac{2\\pi}{3}\\cdot\\frac{180^\\circ}{\\pi} = 120^\\circ"
+        },
+        {
+          "text_mn": "$120^\\circ$ нь хоёрдугаар мужид оршино. $\\sin(180^\\circ - 60^\\circ) = \\sin 60^\\circ$ гэж бодно.",
+          "latex": "\\sin 120^\\circ = \\sin 60^\\circ = \\frac{\\sqrt{3}}{2}"
+        }
+      ],
+      "answer_mn": "$\\dfrac{2\\pi}{3} = 120^\\circ$ бөгөөд $\\sin\\dfrac{2\\pi}{3} = \\dfrac{\\sqrt{3}}{2}$."
+    },
+    {
+      "type": "example",
+      "prompt_mn": "$\\sin x = \\dfrac{3}{5}$ бөгөөд $x$ нь эхний мужид ($0 < x < \\dfrac{\\pi}{2}$) байвал $\\cos x$ ба $\\tan x$-ийг ол.",
+      "steps": [
+        {
+          "text_mn": "Пифагорын адилтгалаас косинусын квадратыг олно.",
+          "latex": "\\cos^2 x = 1 - \\left(\\frac{3}{5}\\right)^2 = 1 - \\frac{9}{25} = \\frac{16}{25}"
+        },
+        {
+          "text_mn": "Эхний мужид $\\cos x > 0$ тул эерэг язгуурыг авна.",
+          "latex": "\\cos x = \\frac{4}{5}"
+        },
+        {
+          "text_mn": "Тангенсын тодорхойлолтоор бодно.",
+          "latex": "\\tan x = \\frac{\\sin x}{\\cos x} = \\frac{3/5}{4/5} = \\frac{3}{4}"
+        }
+      ],
+      "answer_mn": "$\\cos x = \\dfrac{4}{5}$, $\\tan x = \\dfrac{3}{4}$."
+    },
+    {
+      "type": "example",
+      "prompt_mn": "Нэмэх томьёо ашиглан $\\cos 75^\\circ$-ийн яг утгыг ол.",
+      "steps": [
+        {
+          "text_mn": "$75^\\circ$-ийг мэдэгдэх өнцгүүдийн нийлбэрээр задална.",
+          "latex": "\\cos 75^\\circ = \\cos(45^\\circ + 30^\\circ)"
+        },
+        {
+          "text_mn": "Косинусын нэмэх томьёог хэрэглэнэ.",
+          "latex": "\\cos 45^\\circ\\cos 30^\\circ - \\sin 45^\\circ\\sin 30^\\circ"
+        },
+        {
+          "text_mn": "Тодорхой утгуудыг орлуулж бодно.",
+          "latex": "\\frac{\\sqrt{2}}{2}\\cdot\\frac{\\sqrt{3}}{2} - \\frac{\\sqrt{2}}{2}\\cdot\\frac{1}{2} = \\frac{\\sqrt{6} - \\sqrt{2}}{4}"
+        }
+      ],
+      "answer_mn": "$\\cos 75^\\circ = \\dfrac{\\sqrt{6} - \\sqrt{2}}{4}$."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "$45^\\circ$ өнцгийг радианаар илэрхийл.",
+      "latex": "45^\\circ = ?",
+      "choices": [
+        "$\\dfrac{\\pi}{4}$",
+        "$\\dfrac{\\pi}{3}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{\\pi}{2}$"
+      ],
+      "answer": 0,
+      "hint_mn": "$180^\\circ = \\pi$ радиан гэдгийг ашигла.",
+      "solution_mn": "$45^\\circ = \\dfrac{45}{180}\\pi = \\dfrac{\\pi}{4}$ радиан."
+    },
+    {
+      "stem_mn": "$\\sin^2 40^\\circ + \\cos^2 40^\\circ$-ийн утга хэд вэ?",
+      "latex": "\\sin^2 40^\\circ + \\cos^2 40^\\circ",
+      "choices": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$\\dfrac{1}{2}$"
+      ],
+      "answer": 1,
+      "hint_mn": "Пифагорын үндсэн адилтгалыг санаарай.",
+      "solution_mn": "Аливаа өнцөгт $\\sin^2\\theta + \\cos^2\\theta = 1$ тул хариу нь $1$."
+    },
+    {
+      "stem_mn": "Нэмэх томьёогоор $\\sin(a+b)$-г зөв задалсан нь аль нь вэ?",
+      "latex": "\\sin(a+b) = ?",
+      "choices": [
+        "$\\sin a\\cos b + \\cos a\\sin b$",
+        "$\\sin a\\cos b - \\cos a\\sin b$",
+        "$\\cos a\\cos b - \\sin a\\sin b$",
+        "$\\cos a\\cos b + \\sin a\\sin b$"
+      ],
+      "answer": 0,
+      "hint_mn": "Синусын нэмэх томьёо: $\\sin a\\cos b \\pm \\cos a\\sin b$.",
+      "solution_mn": "$\\sin(a+b) = \\sin a\\cos b + \\cos a\\sin b$."
+    },
+    {
+      "stem_mn": "$\\tan x$ функцийн үе (период) хэд вэ?",
+      "latex": "\\tan x",
+      "choices": [
+        "$\\pi$",
+        "$2\\pi$",
+        "$\\dfrac{\\pi}{2}$",
+        "$4\\pi$"
+      ],
+      "answer": 0,
+      "hint_mn": "$\\tan x$ нь $\\sin x$, $\\cos x$-аас богино үетэй.",
+      "solution_mn": "$\\tan(x+\\pi) = \\tan x$ тул $\\tan x$-ийн үе нь $\\pi$."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "$\\sin a = \\dfrac{1}{2}$ бол давхар өнцгийн томьёогоор $\\cos 2a$-ийн утгыг ол.",
+      "latex": "\\cos 2a = 1 - 2\\sin^2 a",
+      "choices": [
+        "$\\dfrac{1}{2}$",
+        "$\\dfrac{1}{4}$",
+        "$\\dfrac{\\sqrt{3}}{2}$",
+        "$1$"
+      ],
+      "answer": 0,
+      "hint_mn": "$\\cos 2a = 1 - 2\\sin^2 a$ томьёог ашигла.",
+      "solution_mn": "$\\cos 2a = 1 - 2\\left(\\dfrac{1}{2}\\right)^2 = 1 - \\dfrac{1}{2} = \\dfrac{1}{2}$."
+    },
+    {
+      "stem_mn": "$\\dfrac{5\\pi}{6}$ радиан хэдэн градустай тэнцүү вэ?",
+      "latex": "\\frac{5\\pi}{6} = ?",
+      "choices": [
+        "$150^\\circ$",
+        "$120^\\circ$",
+        "$135^\\circ$",
+        "$210^\\circ$"
+      ],
+      "answer": 0,
+      "hint_mn": "$\\pi$ радиан $= 180^\\circ$ тул $\\dfrac{180^\\circ}{\\pi}$-аар үржүүл.",
+      "solution_mn": "$\\dfrac{5\\pi}{6}\\cdot\\dfrac{180^\\circ}{\\pi} = 5\\cdot 30^\\circ = 150^\\circ$."
+    },
+    {
+      "stem_mn": "Нэмэх томьёо ашиглан $\\sin 15^\\circ$-ийн яг утгыг ол.",
+      "latex": "\\sin 15^\\circ = \\sin(45^\\circ - 30^\\circ)",
+      "choices": [
+        "$\\dfrac{\\sqrt{6} - \\sqrt{2}}{4}$",
+        "$\\dfrac{\\sqrt{6} + \\sqrt{2}}{4}$",
+        "$\\dfrac{\\sqrt{3} - 1}{2}$",
+        "$\\dfrac{\\sqrt{2}}{2}$"
+      ],
+      "answer": 0,
+      "hint_mn": "$15^\\circ = 45^\\circ - 30^\\circ$ гэж задлаад синусын ялгаварын томьёог хэрэглэ.",
+      "solution_mn": "$\\sin 15^\\circ = \\sin 45^\\circ\\cos 30^\\circ - \\cos 45^\\circ\\sin 30^\\circ = \\dfrac{\\sqrt{2}}{2}\\cdot\\dfrac{\\sqrt{3}}{2} - \\dfrac{\\sqrt{2}}{2}\\cdot\\dfrac{1}{2} = \\dfrac{\\sqrt{6} - \\sqrt{2}}{4}$."
+    },
+    {
+      "stem_mn": "$\\cos x = \\dfrac{12}{13}$ бөгөөд $0 < x < \\dfrac{\\pi}{2}$ бол $\\sin x$ хэдтэй тэнцүү вэ?",
+      "latex": "\\sin x = \\sqrt{1 - \\cos^2 x}",
+      "choices": [
+        "$\\dfrac{5}{13}$",
+        "$\\dfrac{5}{12}$",
+        "$\\dfrac{13}{5}$",
+        "$\\dfrac{1}{13}$"
+      ],
+      "answer": 0,
+      "hint_mn": "$\\sin^2 x + \\cos^2 x = 1$, эхний мужид $\\sin x > 0$.",
+      "solution_mn": "$\\sin x = \\sqrt{1 - \\dfrac{144}{169}} = \\sqrt{\\dfrac{25}{169}} = \\dfrac{5}{13}$."
+    }
+  ]
+}
