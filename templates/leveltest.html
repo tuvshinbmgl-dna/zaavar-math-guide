@@ -148,7 +148,7 @@ function levelTest(topics) {
     loading: false, slowWake: false, busy: false, error: null, _wake: null,
 
     init() {
-      try { this.done = (JSON.parse(localStorage.getItem('zaavar.leveltest')) || {}).topics || {}; }
+      try { this.done = (JSON.parse(localStorage.getItem('zaavar.{{ subject }}.leveltest')) || {}).topics || {}; }
       catch (e) { this.done = {}; }
       // default to grade 11 for math if present, otherwise the lowest grade with topics
       this.grade = this.grades.includes(11) ? 11 : (this.grades[0] ?? null);
@@ -193,11 +193,11 @@ function levelTest(topics) {
       this.graded = g;
       // persist
       try {
-        const store = JSON.parse(localStorage.getItem('zaavar.leveltest')) || {};
+        const store = JSON.parse(localStorage.getItem('zaavar.{{ subject }}.leveltest')) || {};
         store.topics = store.topics || {};
         store.topics[g.skill_id] = { score: g.score, level_mn: g.level_mn, band: g.band, title_mn: g.title_mn, lesson_id: g.lesson_id, ts: new Date().toISOString() };
         store.ts = new Date().toISOString();
-        localStorage.setItem('zaavar.leveltest', JSON.stringify(store));
+        localStorage.setItem('zaavar.{{ subject }}.leveltest', JSON.stringify(store));
         this.done = store.topics;
       } catch (e) {}
       this.stage = 'result';
@@ -208,7 +208,7 @@ function levelTest(topics) {
     fb(qi) { return this.graded && this.graded.feedback ? this.graded.feedback[qi] : null; },
     backToPick() { this.stage = 'pick'; this.graded = null; window.scrollTo({ top: 0 }); },
     resetAll() {
-      try { localStorage.removeItem('zaavar.leveltest'); } catch (e) {}
+      try { localStorage.removeItem('zaavar.{{ subject }}.leveltest'); } catch (e) {}
       this.done = {};
     },
 

@@ -92,11 +92,15 @@
 function tutor(aiEnabled) {
   return {
     aiEnabled, input:'', busy:false, msgs:[], lessonId:null,
-    examples:[
+    examples: {{ ([
+      'Яагаад бие хөвж, живдэг вэ?',
+      'Масс ба жингийн ялгаа юу вэ?',
+      'Дуу яагаад агааргүй орон зайд тардаггүй вэ?'
+    ] if subject == 'physics' else [
       'Яагаад уламжлал нь шүргэгчийн налуу болдог вэ?',
       'x^3-ийн уламжлалыг яаж олох вэ?',
       'Экстремум олоход юу мэдэх хэрэгтэй вэ?'
-    ],
+    ]) | tojson }},
     init(){
       try { this.lessonId = new URLSearchParams(location.search).get('lesson') || null; } catch(e){ this.lessonId = null; }
     },

@@ -31,8 +31,12 @@ function renderRich(el, text) {
 }
 
 /* ---- Progress (localStorage) ------------------------------------------- */
+/* All learner state is scoped per subject (math|physics) so switching
+   subjects never mixes or overwrites the other subject's records. */
+const ZSUBJECT = (typeof window !== "undefined" && window.ZAAVAR_SUBJECT) || "math";
+function zKey(name) { return "zaavar." + ZSUBJECT + "." + name; }
 const Progress = {
-  KEY: "zaavar.progress.v1",
+  KEY: zKey("progress.v1"),
   read() {
     try { return JSON.parse(localStorage.getItem(this.KEY)) || {}; }
     catch { return {}; }

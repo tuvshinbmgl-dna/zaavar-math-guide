@@ -295,7 +295,7 @@
   </div>
   <form @submit.prevent="send()" class="flex gap-2">
     <input x-model="input" :disabled="!aiEnabled||busy" type="text"
-           :placeholder="aiEnabled ? 'Жишээ: яагаад уламжлал нь налуу болдог вэ?' : 'AI идэвхгүй — ANTHROPIC_API_KEY тохируул'"
+           :placeholder="aiEnabled ? '{{ 'Жишээ: яагаад бие хөвж, живдэг вэ?' if subject == 'physics' else 'Жишээ: яагаад уламжлал нь налуу болдог вэ?' }}' : 'AI идэвхгүй — ANTHROPIC_API_KEY тохируул'"
            class="flex-1 min-h-[44px] rounded-xl border border-slate-200 px-3 py-2 text-sm focus:border-brand-400 focus:outline-none">
     <button :disabled="!aiEnabled||busy||!input.trim()" class="px-4 min-h-[44px] rounded-xl bg-brand-600 text-white text-sm font-semibold disabled:opacity-40">Илгээх</button>
   </form>
@@ -334,7 +334,7 @@ function lessonPage(lessonId, stageIds) {
     finalScore: null,
     init() {
       try {
-        localStorage.setItem('zaavar.lastLesson', this.lessonId);
+        localStorage.setItem('zaavar.{{ subject }}.lastLesson', this.lessonId);
         if (typeof Progress !== 'undefined') Progress.setLastLesson(this.lessonId, {{ lesson.title_mn | tojson }});
       } catch (e) {}
       const saved = this.readSaved();
@@ -351,7 +351,7 @@ function lessonPage(lessonId, stageIds) {
       }
     },
     readSaved() {
-      try { return JSON.parse(localStorage.getItem('zaavar.progress.' + this.lessonId)); }
+      try { return JSON.parse(localStorage.getItem('zaavar.{{ subject }}.progress.' + this.lessonId)); }
       catch (e) { return null; }
     },
     go(id) {
@@ -375,7 +375,7 @@ function lessonPage(lessonId, stageIds) {
       this.passed = true;
       this.finalScore = score;
       try {
-        localStorage.setItem('zaavar.progress.' + this.lessonId,
+        localStorage.setItem('zaavar.{{ subject }}.progress.' + this.lessonId,
           JSON.stringify({ done: true, score: score, ts: new Date().toISOString() }));
       } catch (e) {}
       this.$nextTick(() => {

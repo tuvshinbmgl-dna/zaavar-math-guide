@@ -5,7 +5,6 @@
 (function () {
   "use strict";
   const KEY = "zaavar.profile";
-  const DATA_KEYS = ["zaavar.progress.v1", "zaavar.leveltest", "zaavar.mastery", "zaavar.lastLesson"];
 
   function read() { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } }
   function write(p) { localStorage.setItem(KEY, JSON.stringify(p)); }
@@ -20,7 +19,15 @@
       this.renderChip();
       return true;
     },
-    clearRecords() { DATA_KEYS.forEach(function (k) { localStorage.removeItem(k); }); },
+    clearRecords() {
+      // Purge ALL learner records across both subjects (progress/leveltest/
+      // mastery/lastLesson/diagnostic + per-lesson keys), keeping only the
+      // profile itself. Iterate from the end since removal shifts indices.
+      for (var i = localStorage.length - 1; i >= 0; i--) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf("zaavar.") === 0 && k !== KEY) localStorage.removeItem(k);
+      }
+    },
     reset() { localStorage.removeItem(KEY); this.clearRecords(); this.renderChip(); },
 
     renderChip() {

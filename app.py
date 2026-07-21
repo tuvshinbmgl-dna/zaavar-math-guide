@@ -23,7 +23,6 @@ import claude_client as claude
 import store
 
 app = Flask(__name__)
-MAX_DIAGNOSTIC_ITEMS = 8
 
 
 def _subject() -> str:
@@ -153,57 +152,6 @@ def report():
 @app.route("/api/config")
 def api_config():
     return jsonify({"ai_enabled": claude.is_configured()})
-
-
-# --------------------------------------------------------------------------- #
-# API — diagnostic
-# --------------------------------------------------------------------------- #
-
-def _mastery_from(responses: list[dict]) -> dict[str, float]:
-    by_skill: dict[str, list[bool]] = {}
-    item_skill = {it["id"]: it["skill_id"] for it in store.diagnostic_items()}
-    for r in responses:
-        sid = item_skill.get(r.get("item_id"))
-        if sid:
-            by_skill.setdefault(sid, []).append(bool(r.get("correct")))
-    return {s: sum(v) / len(v) for s, v in by_skill.items()}
-
-
-@app.route("/api/diagnostic/next", methods=["POST"])
-def api_diagnostic_next():
-    payload = request.get_json(force=True) or {}
-    responses = payload.get("responses", [])
-    answered_ids = [r["item_id"] for r in responses if "item_id" in r]
-    if len(answered_ids) >= MAX_DIAGNOSTIC_ITEMS:
-        return jsonify({"done": True})
-    mastery = _mastery_from(responses)
-    item = store.pick_next_item(answered_ids, mastery)
-    if not item:
-        return jsonify({"done": True})
-    # Never leak the answer index/solution to the client mid-test.
-    safe = {k: item[k] for k in ("id", "skill_id", "difficulty", "stem_mn", "latex", "choices")}
-    return jsonify({"done": False, "item": safe,
-                    "progress": {"answered": len(answered_ids), "total": MAX_DIAGNOSTIC_ITEMS}})
-
-
-@app.route("/api/diagnostic/check", methods=["POST"])
-def api_diagnostic_check():
-    """Grade a single answered item (returns correctness + worked solution)."""
-    payload = request.get_json(force=True) or {}
-    item_id = payload.get("item_id")
-    choice = payload.get("choice")
-    item = next((it for it in store.diagnostic_items() if it["id"] == item_id), None)
-    if not item:
-        return jsonify({"error": "unknown item"}), 404
-    correct = (choice == item["answer"])
-    return jsonify({"correct": correct, "answer": item["answer"]})
-
-
-@app.route("/api/diagnostic/grade", methods=["POST"])
-def api_diagnostic_grade():
-    payload = request.get_json(force=True) or {}
-    responses = payload.get("responses", [])
-    return jsonify(store.grade_diagnostic(responses))
 
 
 # --------------------------------------------------------------------------- #
@@ -359,9 +307,18 @@ def api_route():
     def describe(ident: str) -> dict | None:
         node = store.node(ident)
         if not node:
-            node = next((c for c in catalog if c["id"] == ident), None)
-            if node:
-                node = store.node(node["skill_id"])
+            c = next((c for c in catalog if c["id"] == ident), None)
+            if c:
+                node = store.node(c["skill_id"])
+                if not node:  # subject with no knowledge graph (e.g. physics) — use the catalog entry directly
+                    return {
+                        "lesson_id": c["id"] if c.get("status") == "available" else None,
+                        "skill_id": c["skill_id"],
+                        "title_mn": c["title_mn"],
+                        "grade": c["grade"],
+                        "chapter": c["chapter"],
+                        "status": c["status"],
+                    }
         if not node:
             return None
         return {

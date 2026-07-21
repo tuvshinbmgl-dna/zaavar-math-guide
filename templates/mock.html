@@ -7,7 +7,7 @@
   <section x-show="stage==='pick'">
     <div class="mb-4">
       <h1 class="text-2xl font-extrabold text-ink-900">📝 Mock тест</h1>
-      <p class="text-sm text-slate-500 mt-1">Бүх уламжлалын сэдвийг хамарсан цогц шалгалт. <b>10 хувилбар</b> — тоо нь өөр өөр тул хариу цээжлэхгүй. Ерөнхий ойлголтоо шалга.</p>
+      <p class="text-sm text-slate-500 mt-1">Бүх сэдвийг хамарсан цогц шалгалт. <b>10 хувилбар</b> — тоо нь өөр өөр тул хариу цээжлэхгүй. Ерөнхий ойлголтоо шалга.</p>
     </div>
     <p class="text-xs font-semibold text-slate-600 mb-2" x-text="mocksDone()>0 ? `${mocksDone()} удаа өгсөн` : 'Хувилбар сонго:'"></p>
     <div class="grid grid-cols-5 gap-2 mb-3">
@@ -110,7 +110,7 @@ function mockTest(versions) {
 
     init() {},
     randomV() { return Math.floor(Math.random() * this.versions); },
-    mocksDone() { try { return ((JSON.parse(localStorage.getItem('zaavar.mastery')) || {}).mocks || []).length; } catch (e) { return 0; } },
+    mocksDone() { try { return ((JSON.parse(localStorage.getItem('zaavar.{{ subject }}.mastery')) || {}).mocks || []).length; } catch (e) { return 0; } },
 
     async api(url, body) {
       this.loading = true; this.slowWake = false;
@@ -146,12 +146,12 @@ function mockTest(versions) {
       try { g = await this.api('/api/mock/grade', { v: this.version, responses: responses }); } catch (e) { this.busy = false; return; }
       this.busy = false; this.graded = g;
       try {
-        const store = JSON.parse(localStorage.getItem('zaavar.mastery')) || {};
+        const store = JSON.parse(localStorage.getItem('zaavar.{{ subject }}.mastery')) || {};
         store.mocks = store.mocks || [];
         const prev = store.mocks.length ? store.mocks[store.mocks.length - 1].score : null;
         this.delta = prev !== null ? (g.score - prev) : null;
         store.mocks.push({ ts: new Date().toISOString(), version: g.version, score: g.score, byTopic: g.byTopic, rapidPct: g.rapidPct });
-        localStorage.setItem('zaavar.mastery', JSON.stringify(store));
+        localStorage.setItem('zaavar.{{ subject }}.mastery', JSON.stringify(store));
       } catch (e) {}
       this.stage = 'result';
       window.scrollTo({ top: 0 });

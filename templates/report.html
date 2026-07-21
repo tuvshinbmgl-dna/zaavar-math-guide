@@ -90,7 +90,7 @@ function reportView() {
     init() {
       this.name = (window.Profile && Profile.name()) || null;
       let m = {};
-      try { m = JSON.parse(localStorage.getItem('zaavar.mastery')) || {}; } catch (e) { m = {}; }
+      try { m = JSON.parse(localStorage.getItem('zaavar.{{ subject }}.mastery')) || {}; } catch (e) { m = {}; }
       const tmap = m.topics || {}, latest = m.latest || {};
       // per-topic
       this.topics = Object.keys(tmap).map(sk => {

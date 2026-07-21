@@ -28,7 +28,7 @@
           "skill_id": "p7-length-time",
           "difficulty": 1,
           "stem_mn": "1 метр нь хэдэн миллиметр вэ?",
-          "latex": "$1\\text{ м} = ?\\text{ мм}$",
+          "latex": "1\\text{ м} = ?\\text{ мм}",
           "choices": [
             "100 мм",
             "1000 мм",
@@ -73,7 +73,7 @@
           "skill_id": "p7-length-time",
           "difficulty": 2,
           "stem_mn": "Дэвтэрийн нэг ирмэг шугамын 4 см дээр, нөгөө ирмэг 25 см дээр байв. Дэвтэрийн урт хэд вэ?",
-          "latex": "$L = 25 - 4$",
+          "latex": "L = 25 - 4",
           "choices": [
             "25 см",
             "29 см",
@@ -103,7 +103,7 @@
           "skill_id": "p7-length-time",
           "difficulty": 2,
           "stem_mn": "2 минут 30 секунд нь хэдэн секунд вэ?",
-          "latex": "$2 \\times 60 + 30$",
+          "latex": "2 \\times 60 + 30",
           "choices": [
             "230 с",
             "150 с",
@@ -1708,7 +1708,7 @@
           "skill_id": "p7-constellations",
           "difficulty": 3,
           "stem_mn": "Ижил цагт харахад одны орд Алтан гадас одыг тойрон сар бүр 30 градус эргэдэг бол 3 сарын дараа хэдэн градус эргэсэн байх вэ?",
-          "latex": "$30^{\\circ} \\times 3 = ?$",
+          "latex": "30^{\\circ} \\times 3 = ?",
           "choices": [
             "$30^{\\circ}$",
             "$60^{\\circ}$",

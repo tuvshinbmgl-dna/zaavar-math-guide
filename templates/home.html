@@ -102,7 +102,7 @@ function homeView() {
       this.last = Progress.last;
       // level-test results
       try {
-        const lt = (JSON.parse(localStorage.getItem('zaavar.leveltest')) || {}).topics || {};
+        const lt = (JSON.parse(localStorage.getItem('zaavar.{{ subject }}.leveltest')) || {}).topics || {};
         this.levels = Object.keys(lt).map(k => Object.assign({ skill_id: k }, lt[k]))
           .sort((a, b) => (a.score - b.score));
       } catch (e) { this.levels = []; }

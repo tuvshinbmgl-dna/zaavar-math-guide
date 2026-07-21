@@ -148,7 +148,7 @@ function masteryCheck(topics) {
     loading: false, slowWake: false, busy: false, error: null, _wake: null, lastTs: 0,
 
     init() {
-      try { this.done = (JSON.parse(localStorage.getItem('zaavar.mastery')) || {}).latest || {}; } catch (e) { this.done = {}; }
+      try { this.done = (JSON.parse(localStorage.getItem('zaavar.{{ subject }}.mastery')) || {}).latest || {}; } catch (e) { this.done = {}; }
       const t = new URLSearchParams(location.search).get('topic');
       if (t) { const tp = this.topics.find(x => x.skill_id === t); if (tp) this.start(tp); }
     },
@@ -198,13 +198,13 @@ function masteryCheck(topics) {
       catch (e) { this.busy = false; this.error = 'Тооцоолж чадсангүй'; return; }
       this.busy = false; this.graded = g;
       try {
-        const store = JSON.parse(localStorage.getItem('zaavar.mastery')) || {};
+        const store = JSON.parse(localStorage.getItem('zaavar.{{ subject }}.mastery')) || {};
         store.topics = store.topics || {};
         store.topics[g.skill_id] = store.topics[g.skill_id] || [];
         store.topics[g.skill_id].push({ ts: new Date().toISOString(), answerPct: g.answerPct, reasonPct: g.reasonPct, orderPct: g.orderPct, rapidPct: g.rapidPct, verdict: g.verdict, band: g.band, gap: g.gap });
         store.latest = store.latest || {};
         store.latest[g.skill_id] = { verdict: g.verdict, band: g.band, title_mn: g.title_mn, lesson_id: g.lesson_id, ts: new Date().toISOString() };
-        localStorage.setItem('zaavar.mastery', JSON.stringify(store));
+        localStorage.setItem('zaavar.{{ subject }}.mastery', JSON.stringify(store));
         this.done = store.latest;
       } catch (e) {}
       this.stage = 'result';

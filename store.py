@@ -334,7 +334,7 @@ def grade_level_topic(subject: str, topic_id: str, answers: list) -> dict | None
             "chosen": chosen,
             "answer": q["answer"],
             "correct": ok,
-            "solution_mn": q.get("solution_mn", ""),
+            "solution_mn": q.get("solution_mn") or q.get("explanation_mn") or "",
         })
     total = len(qs) or 1
     score = round(100 * correct_n / total)
@@ -427,6 +427,8 @@ def grade_mastery(subject: str, topic_id: str, responses: dict) -> dict | None:
 
     order_fracs = []
     for r in (responses.get("ordering") or []):
+        if not isinstance(r, dict):
+            continue
         item = ord_by.get(r.get("id"))
         if not item:
             continue
@@ -446,6 +448,8 @@ def grade_mastery(subject: str, topic_id: str, responses: dict) -> dict | None:
     t2_correct = 0
     tt_n = 0
     for r in (responses.get("two_tier") or []):
+        if not isinstance(r, dict):
+            continue
         item = tt_by.get(r.get("id"))
         if not item:
             continue
@@ -512,6 +516,8 @@ def grade_mock(subject: str, v: int, responses: list) -> dict:
     rapid_n = 0
     review = []
     for r in responses:
+        if not isinstance(r, dict):
+            continue
         q = level_idx.get(r.get("id"))
         if not q:
             continue
@@ -523,7 +529,7 @@ def grade_mock(subject: str, v: int, responses: list) -> dict:
         if rapid:
             rapid_n += 1
         review.append({"id": q["id"], "answer": q["answer"], "chosen": r.get("choice"),
-                       "correct": ok, "solution_mn": q.get("solution_mn", ""), "rapid": rapid})
+                       "correct": ok, "solution_mn": q.get("solution_mn") or q.get("explanation_mn") or "", "rapid": rapid})
     total = len(responses) or 1
     by_topic = {t: round(100 * sum(h) / len(h)) for t, h in by_topic_hits.items()}
     topic_names = {tp["skill_id"]: tp["title_mn"] for tp in b["leveltest"]["topics"]}
