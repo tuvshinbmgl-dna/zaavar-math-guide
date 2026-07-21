@@ -42,10 +42,22 @@
   <!-- Top bar -->
   <header class="sticky top-0 z-30 bg-white/85 backdrop-blur border-b border-slate-200">
     <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2 font-extrabold text-brand-700 text-lg">
-        <span class="grid place-items-center w-8 h-8 rounded-xl bg-brand-600 text-white text-sm">∫</span>
-        Заавар
-      </a>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="/" class="flex items-center gap-2 font-extrabold text-brand-700 text-lg">
+          <span class="grid place-items-center w-8 h-8 rounded-xl bg-brand-600 text-white text-sm">∫</span>
+          <span class="hidden xs:inline sm:inline">Заавар</span>
+        </a>
+        {% if subjects %}
+        <div class="flex items-center rounded-full bg-slate-100 p-0.5 text-xs font-semibold">
+          {% for skey, sname in subjects.items() %}
+          <a href="/set-subject/{{ skey }}?next={{ request.path }}"
+             class="px-2.5 py-1 rounded-full transition {{ 'bg-white text-brand-700 shadow-sm' if subject == skey else 'text-slate-500 hover:text-slate-700' }}">
+            {{ sname }}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
       <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
         {% set nav = [('/', 'Нүүр'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Түвшин тогтоох'), ('/report','Тайлан'), ('/chat','AI багш')] %}
         {% for href, label in nav %}

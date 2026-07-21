@@ -4,7 +4,7 @@
 
   <!-- Hero -->
   <section class="card p-6 sm:p-8 mb-6 bg-gradient-to-br from-brand-600 to-brand-800 text-white border-0">
-    <p class="text-brand-100 text-sm font-medium mb-1">Математик 10 · 11 · 12 — өөрөө сурах платформ</p>
+    <p class="text-brand-100 text-sm font-medium mb-1">{{ subject_name }} — өөрөө сурах платформ</p>
     <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-2">Сурах бичгээ <span class="text-accent-400">ганцаараа</span> сурахад туслах заавар</h1>
     <p class="text-brand-100/90 max-w-xl">Үндэсний сурах бичигт суурилсан алхам алхмаар хөтлөх заавар, түвшнээ мэдэх шалгалт, мөн "аль хичээлийг үзэх вэ" гэдгийг хэлдэг AI багш.</p>
     <div class="flex flex-wrap gap-2 mt-4">
@@ -55,11 +55,17 @@
   <section class="mb-6">
     <div class="flex items-center justify-between mb-3">
       <div>
-        <h2 class="font-bold text-ink-900">11-р анги · Бүлэг VIII — Уламжлал</h2>
+        {% if lessons %}
+        <h2 class="font-bold text-ink-900">{{ featured.grade }}-р анги · Бүлэг {{ featured.chapter_num }} — {{ featured.chapter_title_mn }}</h2>
         <p class="text-sm text-slate-500">Бүрэн боловсруулсан хичээлүүд</p>
+        {% else %}
+        <h2 class="font-bold text-ink-900">{{ subject_name }} хичээлүүд</h2>
+        <p class="text-sm text-slate-500">Удахгүй нэмэгдэнэ</p>
+        {% endif %}
       </div>
       <a href="/curriculum" class="text-sm text-brand-700 hover:underline">Бүх хөтөлбөр →</a>
     </div>
+    {% if lessons %}
     <div class="grid sm:grid-cols-2 gap-3">
       {% for l in lessons %}
       <a href="/lesson/{{ l.id }}" class="card p-4 hover:border-brand-300 hover:shadow-md transition group">
@@ -73,6 +79,13 @@
       </a>
       {% endfor %}
     </div>
+    {% else %}
+    <div class="card p-6 text-center text-slate-500">
+      <p class="text-3xl mb-2">📚</p>
+      <p class="font-semibold text-ink-800 mb-1">{{ subject_name }} хичээлүүд бэлтгэгдэж байна</p>
+      <p class="text-sm">Тун удахгүй энд {{ subject_name }} хичээлүүд нэмэгдэнэ.</p>
+    </div>
+    {% endif %}
   </section>
 
   <p class="text-xs text-slate-400 text-center">Эх сурвалж: econtent.edu.mn — БШУЯ-ны албан ёсны сурах бичиг. Зөвхөн сурахад туслах зорилготой загвар.</p>

@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import json
 
-from flask import Flask, Response, jsonify, render_template, request
+from flask import Flask, Response, jsonify, redirect, render_template, request
 
 from markupsafe import Markup, escape
 
@@ -24,6 +24,30 @@ import store
 
 app = Flask(__name__)
 MAX_DIAGNOSTIC_ITEMS = 8
+
+
+def _subject() -> str:
+    """Active subject from the `subject` cookie (math default), validated."""
+    s = request.cookies.get("subject", store.DEFAULT_SUBJECT)
+    return s if s in store.SUBJECTS else store.DEFAULT_SUBJECT
+
+
+@app.context_processor
+def _inject_subject():
+    s = _subject()
+    return {"subject": s, "subject_name": store.SUBJECTS.get(s, ""), "subjects": store.SUBJECTS}
+
+
+@app.route("/set-subject/<subject>")
+def set_subject(subject):
+    """Switch the active subject (Math/Physics) via cookie, then return home."""
+    target = subject if subject in store.SUBJECTS else store.DEFAULT_SUBJECT
+    nxt = request.args.get("next", "/")
+    if not nxt.startswith("/"):
+        nxt = "/"
+    resp = redirect(nxt)
+    resp.set_cookie("subject", target, max_age=60 * 60 * 24 * 365, samesite="Lax")
+    return resp
 
 
 @app.template_filter("richtext")
@@ -46,9 +70,12 @@ def richtext(text: str) -> Markup:
 
 @app.route("/")
 def home():
+    s = _subject()
+    featured = store.featured_lessons(s)
     return render_template(
         "home.html",
-        lessons=store.derivative_lessons(),
+        lessons=featured["lessons"],
+        featured=featured,
         ai_enabled=claude.is_configured(),
     )
 
@@ -57,7 +84,7 @@ def home():
 def curriculum():
     return render_template(
         "curriculum.html",
-        curriculum=store.curriculum(),
+        curriculum=store.curriculum(_subject()),
         ai_enabled=claude.is_configured(),
     )
 
@@ -70,7 +97,7 @@ def lesson(lesson_id: str):
     return render_template(
         "lesson.html",
         lesson=data,
-        prereqs=store.prerequisites(data["skill_id"]),
+        prereqs=store.prerequisites(data.get("skill_id", "")),
         all_lessons=store.siblings(data),
         ai_enabled=claude.is_configured(),
     )
@@ -80,7 +107,7 @@ def lesson(lesson_id: str):
 def diagnostic():
     return render_template(
         "leveltest.html",
-        topics=store.level_topics(),
+        topics=store.level_topics(_subject()),
         ai_enabled=claude.is_configured(),
     )
 
@@ -97,7 +124,7 @@ def chat():
 def mastery():
     return render_template(
         "mastery.html",
-        topics=store.mastery_topics(),
+        topics=store.mastery_topics(_subject()),
         ai_enabled=claude.is_configured(),
     )
 
@@ -187,7 +214,7 @@ def api_diagnostic_grade():
 def api_leveltest_questions():
     payload = request.get_json(force=True) or {}
     topic_id = payload.get("topic")
-    qs = store.level_questions(topic_id)
+    qs = store.level_questions(_subject(), topic_id)
     if qs is None:
         return jsonify({"error": "unknown topic"}), 404
     return jsonify({"topic": topic_id, "questions": qs})
@@ -200,7 +227,7 @@ def api_leveltest_grade():
     answers = payload.get("answers", [])
     if not isinstance(answers, list):
         return jsonify({"error": "answers must be a list"}), 400
-    result = store.grade_level_topic(topic_id, answers)
+    result = store.grade_level_topic(_subject(), topic_id, answers)
     if result is None:
         return jsonify({"error": "unknown topic"}), 404
     return jsonify(result)
@@ -213,7 +240,7 @@ def api_leveltest_grade():
 @app.route("/api/mastery/check", methods=["POST"])
 def api_mastery_check():
     payload = request.get_json(force=True) or {}
-    items = store.mastery_items(payload.get("topic"))
+    items = store.mastery_items(_subject(), payload.get("topic"))
     if items is None:
         return jsonify({"error": "unknown topic"}), 404
     return jsonify(items)
@@ -225,7 +252,7 @@ def api_mastery_grade():
     responses = payload.get("responses") or {}
     if not isinstance(responses, dict):
         return jsonify({"error": "responses must be an object"}), 400
-    result = store.grade_mastery(payload.get("topic"), responses)
+    result = store.grade_mastery(_subject(), payload.get("topic"), responses)
     if result is None:
         return jsonify({"error": "unknown topic"}), 404
     return jsonify(result)
@@ -238,7 +265,7 @@ def api_mock_version():
         v = int(payload.get("v", 0))
     except (TypeError, ValueError):
         v = 0
-    return jsonify(store.mock_version(v))
+    return jsonify(store.mock_version(_subject(), v))
 
 
 @app.route("/api/mock/grade", methods=["POST"])
@@ -251,29 +278,30 @@ def api_mock_grade():
         v = int(payload.get("v", 0))
     except (TypeError, ValueError):
         v = 0
-    return jsonify(store.grade_mock(v, responses))
+    return jsonify(store.grade_mock(_subject(), v, responses))
 
 
 # --------------------------------------------------------------------------- #
 # API — AI tutor (Socratic, streamed) + router (question -> lesson)
 # --------------------------------------------------------------------------- #
 
-def _tutor_system(lesson_id: str | None) -> str:
-    catalog = store.router_catalog()
+def _tutor_system(subject: str, lesson_id: str | None) -> str:
+    subj_mn = store.SUBJECTS.get(subject, "математик").lower()
+    catalog = store.router_catalog(subject)
     catalog_lines = [
         f'- {c["grade"]}-р анги, бүлэг {c["chapter"]}: {c["title_mn"]}'
         + (f'  (хичээл нээлттэй, id="{c["id"]}")' if c["status"] == "available" else "  (өмнөх ангийн суурь)")
         for c in catalog
     ]
     base = (
-        "Чи бол Монгол сурагчдад зориулсан ЭЕШ-д бэлддэг математикийн дотно багш — "
+        f"Чи бол Монгол сурагчдад зориулсан {subj_mn}ийн дотно багш — "
         "нэр нь \"Заавар\". Дүрэм:\n"
         "1) ХАРИУЛТЫГ ШУУД БҮҮ ХЭЛ. Сократын аргаар асуулт, сэжүүр, жижиг алхмаар "
         "сурагчийг өөрөө бодоход нь хөтлөн чиглүүл.\n"
         "2) Сурагч гацсан үед яг АЛЬ ХИЧЭЭЛийг (анги, бүлэг) үзэхийг зөвлө. "
-        "Хэрэв урьдчилсан мэдлэг дутаж байвал өмнөх ангийн суурь хичээл рүү буцаа.\n"
-        "3) Богино, тодорхой, урам зориг өгөхүйц бич. Математикийг $...$ дотор LaTeX-ээр бич.\n"
-        "4) Зөвхөн математикийн сэдвээр ярь.\n\n"
+        "Хэрэв урьдчилсан мэдлэг дутаж байвал өмнөх суурь хичээл рүү буцаа.\n"
+        f"3) Богино, тодорхой, урам зориг өгөхүйц бич. Томьёог $...$ дотор LaTeX-ээр бич.\n"
+        f"4) Зөвхөн {subj_mn}ийн сэдвээр ярь.\n\n"
         "СУРАХ БИЧГИЙН АГУУЛГА (чиглүүлэхэд ашигла):\n" + "\n".join(catalog_lines)
     )
     if lesson_id:
@@ -291,7 +319,7 @@ def api_tutor():
     payload = request.get_json(force=True) or {}
     messages = payload.get("messages", [])
     lesson_id = payload.get("lesson_id")
-    system = _tutor_system(lesson_id)
+    system = _tutor_system(_subject(), lesson_id)
 
     def sse(obj: dict) -> str:
         return f"data: {json.dumps(obj, ensure_ascii=False)}\n\n"
@@ -322,7 +350,7 @@ def api_route():
     if not claude.is_configured():
         return jsonify({"ai_enabled": False})
 
-    catalog = store.router_catalog()
+    catalog = store.router_catalog(_subject())
     try:
         result = claude.route_question(question, catalog)
     except claude.ClaudeError as exc:

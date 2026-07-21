@@ -19,47 +19,119 @@ def _load(name: str) -> dict:
     return json.loads((DATA / name).read_text(encoding="utf-8"))
 
 
-CURRICULUM = _load("curriculum.json")
+# --------------------------------------------------------------------------- #
+# Subject-aware loading (math + physics)
+# --------------------------------------------------------------------------- #
+
+SUBJECTS = {"math": "Математик", "physics": "Физик"}
+DEFAULT_SUBJECT = "math"
+
+
+def _load_opt(path: pathlib.Path, default: dict) -> dict:
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
+
+
+def _load_subject(cur_f: pathlib.Path, lt_f: pathlib.Path, mast_f: pathlib.Path, lessons_dir: pathlib.Path) -> dict:
+    lessons: dict[str, dict] = {}
+    if lessons_dir.exists():
+        for p in sorted(lessons_dir.glob("*.json")):
+            l = json.loads(p.read_text(encoding="utf-8"))
+            lessons[l["id"]] = l
+    leveltest = _load_opt(lt_f, {"topics": []})
+    mastery = _load_opt(mast_f, {"topics": []})
+    return {
+        "curriculum": _load_opt(cur_f, {"grades": []}),
+        "leveltest": leveltest,
+        "mastery": mastery,
+        "lessons": lessons,
+        "level_topics": {t["skill_id"]: t for t in leveltest["topics"]},
+        "mastery_topics": {t["skill_id"]: t for t in mastery["topics"]},
+        "level_idx": {q["id"]: {**q, "topic": tp["skill_id"], "topic_mn": tp["title_mn"]}
+                      for tp in leveltest["topics"] for q in tp["questions"]},
+    }
+
+
+_SUBJ = {
+    "math": _load_subject(DATA / "curriculum.json", DATA / "level_test.json",
+                          DATA / "mastery_bank.json", DATA / "lessons"),
+    "physics": _load_subject(DATA / "physics" / "curriculum.json", DATA / "physics" / "level_test.json",
+                             DATA / "physics" / "mastery_bank.json", DATA / "physics" / "lessons"),
+}
+
+
+def _sub(subject: str | None) -> dict:
+    return _SUBJ.get(subject or DEFAULT_SUBJECT, _SUBJ[DEFAULT_SUBJECT])
+
+
+# Merged lesson lookup (ids are unique across subjects: g*/p*) + subject map.
+LESSONS: dict[str, dict] = {}
+LESSON_SUBJECT: dict[str, str] = {}
+for _s, _b in _SUBJ.items():
+    for _lid, _l in _b["lessons"].items():
+        LESSONS[_lid] = _l
+        LESSON_SUBJECT[_lid] = _s
+
+# Knowledge graph + old adaptive diagnostic stay math-only (AI router, prereqs).
 GRAPH = _load("knowledge_graph.json")
 DIAGNOSTIC = _load("diagnostic.json")
-LEVELTEST = _load("level_test.json")
-MASTERY = _load("mastery_bank.json")
-
-LESSONS: dict[str, dict] = {}
-for path in sorted((DATA / "lessons").glob("*.json")):
-    lesson = json.loads(path.read_text(encoding="utf-8"))
-    LESSONS[lesson["id"]] = lesson
-
-# skill_id -> node
 NODES = {n["skill_id"]: n for n in GRAPH["nodes"]}
+# Back-compat aliases (math is the default subject).
+CURRICULUM = _SUBJ["math"]["curriculum"]
+LEVELTEST = _SUBJ["math"]["leveltest"]
+MASTERY = _SUBJ["math"]["mastery"]
 
 
 # --------------------------------------------------------------------------- #
 # Curriculum / lessons
 # --------------------------------------------------------------------------- #
 
-def curriculum() -> dict:
-    return CURRICULUM
+def curriculum(subject: str = "math") -> dict:
+    return _sub(subject)["curriculum"]
 
 
 def lesson(lesson_id: str) -> dict | None:
     return LESSONS.get(lesson_id)
 
 
-def available_lessons() -> list[dict]:
-    """Every fully built lesson, in id order."""
-    return [LESSONS[k] for k in sorted(LESSONS.keys())]
+def lesson_subject(lesson_id: str) -> str:
+    return LESSON_SUBJECT.get(lesson_id, DEFAULT_SUBJECT)
 
 
+def available_lessons(subject: str = "math") -> list[dict]:
+    """Every fully built lesson of a subject, in id order."""
+    b = _sub(subject)
+    return [b["lessons"][k] for k in sorted(b["lessons"].keys())]
+
+
+def featured_lessons(subject: str = "math") -> dict:
+    """Home-page featured slice: the built lessons of the subject's richest chapter."""
+    ls = available_lessons(subject)
+    if not ls:
+        return {"grade": None, "chapter_num": None, "chapter_title_mn": "", "lessons": []}
+    # pick the (grade, chapter) with the most built lessons; math keeps derivatives if present.
+    for l in ls:
+        if l.get("chapter_num") == "VIII" and l.get("grade") == 11:
+            key = (11, "VIII")
+            break
+    else:
+        from collections import Counter
+        counts = Counter((l.get("grade"), l.get("chapter_num")) for l in ls)
+        key = counts.most_common(1)[0][0]
+    chap = [l for l in ls if (l.get("grade"), l.get("chapter_num")) == key]
+    chap.sort(key=lambda l: l["lesson_num"])
+    return {"grade": key[0], "chapter_num": key[1],
+            "chapter_title_mn": chap[0].get("chapter_title_mn", ""), "lessons": chap}
+
+
+# Back-compat: math home used this name.
 def derivative_lessons() -> list[dict]:
-    """The deep-slice chapter (Gr11 VIII — Уламжлал), in lesson-number order."""
-    ls = [l for l in available_lessons() if l.get("chapter_num") == "VIII" and l.get("grade") == 11]
-    return sorted(ls, key=lambda l: l["lesson_num"])
+    return featured_lessons("math")["lessons"]
 
 
 def siblings(lesson_data: dict) -> list[dict]:
-    """Lessons in the same grade+chapter, for prev/next navigation."""
-    ls = [l for l in available_lessons()
+    """Lessons in the same subject+grade+chapter, for prev/next navigation."""
+    subject = LESSON_SUBJECT.get(lesson_data.get("id"), DEFAULT_SUBJECT)
+    ls = [l for l in available_lessons(subject)
           if l.get("grade") == lesson_data.get("grade")
           and l.get("chapter_num") == lesson_data.get("chapter_num")]
     return sorted(ls, key=lambda l: l["lesson_num"])
@@ -103,19 +175,21 @@ def graph() -> dict:
     return GRAPH
 
 
-def router_catalog() -> list[dict]:
-    """Compact lesson catalog handed to the Haiku router."""
+def router_catalog(subject: str = "math") -> list[dict]:
+    """Compact lesson catalog handed to the Haiku router (for the subject)."""
+    if subject == "math":
+        return [{
+            "id": n.get("lesson_id") or n["skill_id"], "skill_id": n["skill_id"],
+            "grade": n["grade"], "chapter": n["chapter"],
+            "title_mn": n["title_mn"], "status": n["status"], "keywords": [n["title_mn"]],
+        } for n in GRAPH["nodes"]]
+    # physics (no graph) — build the catalog from its lessons.
     cat = []
-    for n in GRAPH["nodes"]:
-        keywords = [n["title_mn"]]
+    for l in available_lessons(subject):
         cat.append({
-            "id": n.get("lesson_id") or n["skill_id"],
-            "skill_id": n["skill_id"],
-            "grade": n["grade"],
-            "chapter": n["chapter"],
-            "title_mn": n["title_mn"],
-            "status": n["status"],
-            "keywords": keywords,
+            "id": l["id"], "skill_id": l.get("skill_id", l["id"]),
+            "grade": l.get("grade"), "chapter": l.get("chapter_num"),
+            "title_mn": l["title_mn"], "status": "available", "keywords": [l["title_mn"]],
         })
     return cat
 
@@ -201,9 +275,6 @@ def grade_diagnostic(responses: list[dict]) -> dict:
 # Level test (Түвшин тогтоох шалгалт) — topic blocks, 10 questions each
 # --------------------------------------------------------------------------- #
 
-_LEVEL_TOPICS = {t["skill_id"]: t for t in LEVELTEST["topics"]}
-
-
 def _level_label(score: int) -> tuple[str, str]:
     """(label_mn, band) for a 0-100 topic score."""
     if score >= 85:
@@ -215,7 +286,7 @@ def _level_label(score: int) -> tuple[str, str]:
     return "Эхлэн суралцах", "low"
 
 
-def level_topics() -> list[dict]:
+def level_topics(subject: str = "math") -> list[dict]:
     """Topic cards (no questions/answers) in authored order."""
     return [
         {
@@ -226,13 +297,13 @@ def level_topics() -> list[dict]:
             "pages_mn": t.get("pages_mn", ""),
             "count": len(t["questions"]),
         }
-        for t in LEVELTEST["topics"]
+        for t in _sub(subject)["leveltest"]["topics"]
     ]
 
 
-def level_questions(topic_id: str) -> list[dict] | None:
+def level_questions(subject: str, topic_id: str) -> list[dict] | None:
     """Questions for one topic, WITHOUT the answer index or solution (safe to send)."""
-    topic = _LEVEL_TOPICS.get(topic_id)
+    topic = _sub(subject)["level_topics"].get(topic_id)
     if not topic:
         return None
     return [
@@ -241,13 +312,13 @@ def level_questions(topic_id: str) -> list[dict] | None:
     ]
 
 
-def grade_level_topic(topic_id: str, answers: list) -> dict | None:
+def grade_level_topic(subject: str, topic_id: str, answers: list) -> dict | None:
     """
     answers: list of chosen indices (or None) aligned to the topic's questions.
     Returns per-question feedback (correct + answer + solution) plus the topic
     score, level label and the lesson to study.
     """
-    topic = _LEVEL_TOPICS.get(topic_id)
+    topic = _sub(subject)["level_topics"].get(topic_id)
     if not topic:
         return None
     qs = topic["questions"]
@@ -286,13 +357,11 @@ def grade_level_topic(topic_id: str, answers: list) -> dict | None:
 # Mastery confirmation (Баталгаа) — ordering + two-tier "why" items
 # --------------------------------------------------------------------------- #
 
-_MASTERY = {t["skill_id"]: t for t in MASTERY["topics"]}
-
 # A response answered faster than this (ms) is a likely non-effortful "rapid guess".
 RAPID_MS = {"two_tier": 2500, "order": 5000}
 
 
-def mastery_topics() -> list[dict]:
+def mastery_topics(subject: str = "math") -> list[dict]:
     return [
         {
             "skill_id": t["skill_id"],
@@ -301,14 +370,14 @@ def mastery_topics() -> list[dict]:
             "n_order": len(t["ordering"]),
             "n_tier": len(t["two_tier"]),
         }
-        for t in MASTERY["topics"]
+        for t in _sub(subject)["mastery"]["topics"]
     ]
 
 
-def mastery_items(topic_id: str) -> dict | None:
+def mastery_items(subject: str, topic_id: str) -> dict | None:
     """Safe items for a topic: ordering steps SHUFFLED (no correct order leaked),
     two-tier without answer indices / misconception."""
-    topic = _MASTERY.get(topic_id)
+    topic = _sub(subject)["mastery_topics"].get(topic_id)
     if not topic:
         return None
     ordering = []
@@ -345,9 +414,9 @@ def _verdict(answer_pct, reason_pct, order_pct, rapid_pct) -> tuple[str, str, st
     return label, band, "; ".join(gaps) if gaps else "Бэхжүүлэх шаардлагатай."
 
 
-def grade_mastery(topic_id: str, responses: dict) -> dict | None:
+def grade_mastery(subject: str, topic_id: str, responses: dict) -> dict | None:
     """responses = {ordering:[{id, order:[step_text,...], ms}], two_tier:[{id, t1, t2, ms}]}"""
-    topic = _MASTERY.get(topic_id)
+    topic = _sub(subject)["mastery_topics"].get(topic_id)
     if not topic:
         return None
     ord_by = {o["id"]: o for o in topic["ordering"]}
@@ -418,24 +487,13 @@ MOCK_VERSIONS = 10
 MOCK_RAPID_MS = 3000
 
 
-def _level_index() -> dict:
-    idx = {}
-    for tp in LEVELTEST["topics"]:
-        for q in tp["questions"]:
-            idx[q["id"]] = {**q, "topic": tp["skill_id"], "topic_mn": tp["title_mn"]}
-    return idx
-
-
-_LEVEL_IDX = _level_index()
-
-
-def mock_version(v: int) -> dict:
+def mock_version(subject: str, v: int) -> dict:
     """Deterministic per-version sample: 1–2 items from each topic (structure fixed,
     numbers/items vary by seed). Returns SAFE items (no answer/solution)."""
     v = int(v) % MOCK_VERSIONS
     rng = random.Random(1000 + v)
     items = []
-    for tp in LEVELTEST["topics"]:
+    for tp in _sub(subject)["leveltest"]["topics"]:
         pool = list(tp["questions"])
         rng.shuffle(pool)
         for q in pool[:2]:  # 2 per topic → ~18 items
@@ -445,14 +503,16 @@ def mock_version(v: int) -> dict:
     return {"version": v, "n": len(items), "items": items}
 
 
-def grade_mock(v: int, responses: list) -> dict:
+def grade_mock(subject: str, v: int, responses: list) -> dict:
     """responses = [{id, choice, ms}]. Returns overall + per-topic pct + rapid + review."""
+    b = _sub(subject)
+    level_idx = b["level_idx"]
     by_topic_hits: dict[str, list[bool]] = {}
     correct_n = 0
     rapid_n = 0
     review = []
     for r in responses:
-        q = _LEVEL_IDX.get(r.get("id"))
+        q = level_idx.get(r.get("id"))
         if not q:
             continue
         ok = (r.get("choice") == q["answer"])
@@ -466,7 +526,7 @@ def grade_mock(v: int, responses: list) -> dict:
                        "correct": ok, "solution_mn": q.get("solution_mn", ""), "rapid": rapid})
     total = len(responses) or 1
     by_topic = {t: round(100 * sum(h) / len(h)) for t, h in by_topic_hits.items()}
-    topic_names = {tp["skill_id"]: tp["title_mn"] for tp in LEVELTEST["topics"]}
+    topic_names = {tp["skill_id"]: tp["title_mn"] for tp in b["leveltest"]["topics"]}
     return {
         "version": int(v) % MOCK_VERSIONS,
         "score": round(100 * correct_n / total),
