@@ -141,16 +141,17 @@
 <script>
 function levelTest(topics) {
   return {
-    topics: topics, done: {}, stage: 'pick', grades: [10, 11, 12], grade: 11,
+    topics: topics, done: {}, stage: 'pick',
+    grades: [...new Set(topics.map(t => t.grade))].sort((a, b) => a - b),
+    grade: null,
     current: null, questions: [], answers: [], graded: null,
     loading: false, slowWake: false, busy: false, error: null, _wake: null,
 
     init() {
       try { this.done = (JSON.parse(localStorage.getItem('zaavar.leveltest')) || {}).topics || {}; }
       catch (e) { this.done = {}; }
-      // default to the first grade that actually has topics
-      const present = this.grades.filter(g => this.topics.some(t => t.grade === g));
-      if (present.length && !present.includes(this.grade)) this.grade = present[0];
+      // default to grade 11 for math if present, otherwise the lowest grade with topics
+      this.grade = this.grades.includes(11) ? 11 : (this.grades[0] ?? null);
     },
     gradeTopics() { return this.topics.filter(t => t.grade === this.grade); },
     gradeDoneCount() { return this.gradeTopics().filter(t => this.done[t.skill_id]).length; },

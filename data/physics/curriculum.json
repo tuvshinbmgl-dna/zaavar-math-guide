@@ -1,1 +1,56 @@
-{"note":"Физик VII — 7-р ангийн физик. Хөтөлбөрт нийцсэн, зураг сурах бичигт тулгуурласан.","grades":[{"grade":7,"title_mn":"Физик VII","title_en":"Physics 7","book_id":291,"reader_url":"https://econtent.edu.mn/pages/more.php?id=291","chapters":[]}]}
+{
+  "note": "Физик VII — 7-р ангийн физик. Боловсролын сайжруулсан цөм хөтөлбөр (2019) Ф7.1–Ф7.4 суралцахуйн зорилтод нийцсэн.",
+  "grades": [
+    {
+      "grade": 7,
+      "title_mn": "Физик 7",
+      "book_id": 291,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=291",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Биеийн ерөнхий шинж чанар",
+          "title_en": "General properties of bodies",
+          "deep": true,
+          "lessons": [
+            { "num": "1.1", "title_mn": "Урт ба хугацаа хэмжих", "lesson_id": "p7-1-1", "skill_id": "p7-length-time" },
+            { "num": "1.2", "title_mn": "Масс ба жин", "lesson_id": "p7-1-2", "skill_id": "p7-mass-weight" },
+            { "num": "1.3", "title_mn": "Эзлэхүүн ба нягт", "lesson_id": "p7-1-3", "skill_id": "p7-density" },
+            { "num": "1.4", "title_mn": "Хөвөх ба живэх нөхцөл", "lesson_id": "p7-1-4", "skill_id": "p7-floating" },
+            { "num": "1.5", "title_mn": "Температур", "lesson_id": "p7-1-5", "skill_id": "p7-temperature" },
+            { "num": "1.6", "title_mn": "Биеийн хөдөлгөөний хурд", "lesson_id": "p7-1-6", "skill_id": "p7-speed" }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Соронзон",
+          "title_en": "Magnetism",
+          "deep": true,
+          "lessons": [
+            { "num": "2.1", "title_mn": "Соронз ба соронзон орон", "lesson_id": "p7-2-1", "skill_id": "p7-magnetism" }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Дуу",
+          "title_en": "Sound",
+          "deep": true,
+          "lessons": [
+            { "num": "3.1", "title_mn": "Дуу үүсэх ба тархалт", "lesson_id": "p7-3-1", "skill_id": "p7-sound-propagation" },
+            { "num": "3.2", "title_mn": "Дууны чанга-сул, өндөр-нам, цуурай", "lesson_id": "p7-3-2", "skill_id": "p7-sound-properties" }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Бидний эргэн тойрон дахь физик",
+          "title_en": "Physics around us (astronomy)",
+          "deep": true,
+          "lessons": [
+            { "num": "4.1", "title_mn": "Дэлхий, Нар, Сарны хөдөлгөөн", "lesson_id": "p7-4-1", "skill_id": "p7-earth-sun-moon" },
+            { "num": "4.2", "title_mn": "Одод ба одны орд", "lesson_id": "p7-4-2", "skill_id": "p7-constellations" }
+          ]
+        }
+      ]
+    }
+  ]
+}
