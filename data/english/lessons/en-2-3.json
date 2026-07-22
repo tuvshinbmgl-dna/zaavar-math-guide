@@ -1,0 +1,164 @@
+{
+  "id": "en-2-3",
+  "grade": 12,
+  "chapter_num": "II",
+  "chapter_title_mn": "Cultures and Traditions",
+  "lesson_num": "2.3",
+  "title_mn": "Past simple vs present perfect; infinitives (Unit 6: Language in Mind)",
+  "title_en": "Past Simple vs Present Perfect; Infinitives and Gerunds (Culture & Heritage)",
+  "skill_id": "en-past-infinitives",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Cultures and Traditions — Unit: Language in Mind (stories, heritage)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Цагийн тэмдэг үг (yesterday, already, yet, ever)-ээр `past simple` ба `present perfect`-ийг ялган зөв хэрэглэх.",
+    "Тогтмол бус үйл үгийн зөв хэлбэрийг (go–went–gone, tell–told–told) хэрэглэж, «goed/telled» мэтийн алдаанаас зайлсхийх.",
+    "Үйл үгийн дараа `infinitive` (to + V) ба `gerund` (V-ing)-ийг соёл, уламжлалын сэдвээр зөв сонгож хэрэглэх."
+  ],
+  "pretest": {
+    "stem_mn": "Зөв хувилбарыг сонго: My grandmother ___ me many folk stories when I was a child.",
+    "latex": "",
+    "choices": [
+      "has told",
+      "told",
+      "tells",
+      "telling"
+    ],
+    "answer": 1,
+    "hint_mn": "«when I was a child» — энэ нь дууссан, тодорхой өнгөрсөн цагийг заана.",
+    "solution_mn": "Дууссан тодорхой өнгөрсөн үйл явдал тул `past simple` хэрэглэнэ: told.",
+    "explanation_mn": "«when I was a child» тодорхой өнгөрсөн цагийг заасан тул `past simple` (told) зөв. `present perfect` (has told) нь одоотой холбоотой эсвэл тодорхойгүй цагт хэрэглэгддэг."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Past simple — тодорхой өнгөрсөн цаг",
+      "body_mn": "**Past simple** нь өнгөрсөнд **дуусч өнгөрсөн, тодорхой цаг заасан** үйлдлийг илэрхийлнэ.\n\nИхэнх үйл үгэнд **-ed** залгана: *visit → visited*. Гэхдээ олон түгээмэл үйл үг **тогтмол бус** (irregular) хэлбэртэй: *go → went*, *see → saw*, *tell → told*.\n\nТэмдэг үгс: **yesterday, last year, ... ago, in 2010, when I was young**.\n\nЖишээ:\n- *We celebrated Tsagaan Sar last month.*\n- *My family visited the National Museum in 2019.*\n- *Long ago, nomads told stories around the fire.*"
+    },
+    {
+      "type": "definition",
+      "title_mn": "Present perfect — одоотой холбоотой өнгөрсөн",
+      "body_mn": "**Present perfect** = **have / has + V3** (үйл үгийн 3-р хэлбэр). Тодорхой цаг заахгүйгээр, **одоотой холбоотой**, эсвэл **саяхан / амьдралын туршлага** болсон үйлдлийг илэрхийлнэ.\n\nТэмдэг үгс: **already, yet, just, ever, never, since, for**.\n\nЖишээ:\n- *I have already learned about our heritage.*\n- *She has just finished reading the legend.*\n- *Have you ever tried on a traditional deel?*\n- *We haven't visited that temple yet.*"
+    },
+    {
+      "type": "concept",
+      "title_mn": "Past simple vs Present perfect — хэзээ алийг нь?",
+      "body_mn": "**Тодорхой цаг** (yesterday, last week, in 2015) → **past simple**.\n**Тодорхойгүй / одоог хүртэлх** (already, yet, ever, since) → **present perfect**.\n\n- *I saw that dance **yesterday**.* (past simple)\n- *I have **already** seen that dance.* (present perfect)\n\nАнхаар: *goed* гэж **байдаггүй** — зөв нь *went*. Тогтмол бус үйл үгийг цээжлээрэй: *go–went–gone, see–saw–seen, write–wrote–written, tell–told–told*."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Infinitive (to + V) ба Gerund (V-ing)",
+      "body_mn": "Зарим үйл үгийн дараа **infinitive** (*to + V*), заримын дараа **gerund** (*V-ing*) орно.\n\n**Infinitive** авдаг: *want, decide, hope, would like, need, plan*.\n- *We **want to learn** about our traditions.*\n- *She **decided to write** a story.*\n\n**Gerund** авдаг: *enjoy, finish, avoid, keep, practise, mind*.\n- *I **enjoy listening** to folk songs.*\n- *They **finished reading** the legend.*\n\nТүгээмэл алдаа: ~~*enjoy to listen*~~ (буруу) → **enjoy listening** (зөв)."
+    },
+    {
+      "type": "example",
+      "title_mn": "Сэдэвтэй холбож хэрэглэх нь",
+      "body_mn": "Соёл, уламжлалын тухай ярихдаа хоёр цагийг хослуулна:\n\n*Last year we **studied** (past simple) our national heritage, and now I **have become** (present perfect) very interested in it. I **enjoy reading** (gerund) old legends, and I **want to visit** (infinitive) the museum again.*\n\nСанамж: **дууссан тодорхой цаг** → past simple; **одоог хүртэлх үр дүн / туршлага** → present perfect; **enjoy** → V-ing; **want** → to + V."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Choose the correct verb: We ___ Naadam with our whole family last summer.",
+      "latex": "",
+      "choices": [
+        "watched",
+        "have watched",
+        "watch",
+        "watching"
+      ],
+      "answer": 0,
+      "hint_mn": "«last summer» — тодорхой өнгөрсөн цаг.",
+      "solution_mn": "Тодорхой өнгөрсөн цаг тул `past simple`: watched.",
+      "explanation_mn": "«last summer» гэсэн тодорхой цагийн тэмдэг `past simple` шаарддаг тул watched зөв."
+    },
+    {
+      "stem_mn": "Choose the correct form: She has ___ to many cultural festivals this year.",
+      "latex": "",
+      "choices": [
+        "went",
+        "goed",
+        "gone",
+        "going"
+      ],
+      "answer": 2,
+      "hint_mn": "have/has-ийн дараа V3 (3-р хэлбэр) орно; go–went–gone.",
+      "solution_mn": "`present perfect`: has + gone. «went» бол past simple, «goed» гэж байдаггүй.",
+      "explanation_mn": "Present perfect-д V3 хэрэгтэй тул gone зөв. go тогтмол бус тул «goed» алдаатай."
+    },
+    {
+      "stem_mn": "Choose the correct form: My grandparents enjoy ___ traditional stories to us.",
+      "latex": "",
+      "choices": [
+        "to tell",
+        "telling",
+        "tell",
+        "told"
+      ],
+      "answer": 1,
+      "hint_mn": "«enjoy» дараа нь `gerund` (V-ing) авна.",
+      "solution_mn": "enjoy + gerund = enjoy telling.",
+      "explanation_mn": "«enjoy» нь gerund авдаг тул telling зөв. «enjoy to tell» бол буруу."
+    },
+    {
+      "stem_mn": "Choose the correct sentence.",
+      "latex": "",
+      "choices": [
+        "I visited the temple yesterday.",
+        "I have visited the temple yesterday.",
+        "I have visit the temple yesterday.",
+        "I visiting the temple yesterday."
+      ],
+      "answer": 0,
+      "hint_mn": "«yesterday» ямар цагтай хамт явдаг вэ?",
+      "solution_mn": "«yesterday» тодорхой өнгөрсөн цаг тул `past simple`: «I visited ... yesterday.»",
+      "explanation_mn": "«yesterday»-ийг `present perfect`-тэй хэрэглэдэггүй тул зөв нь past simple: I visited the temple yesterday."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Which sentence uses present perfect correctly?",
+      "latex": "",
+      "choices": [
+        "She has already saw the dance.",
+        "She has already seen the dance.",
+        "She have already seen the dance.",
+        "She already seen the dance."
+      ],
+      "answer": 1,
+      "hint_mn": "have/has + V3; see–saw–seen.",
+      "solution_mn": "She (ганц тоо) → has; see-ийн V3 нь seen. «has already seen» зөв.",
+      "explanation_mn": "Present perfect = has/have + V3. «saw» бол past simple тул буруу; «have» нь ганц тоонд тохирохгүй."
+    },
+    {
+      "stem_mn": "Complete the sentence: We decided ___ our national costume for the festival.",
+      "latex": "",
+      "choices": [
+        "to wear",
+        "wearing",
+        "wear",
+        "worn"
+      ],
+      "answer": 0,
+      "hint_mn": "«decide» дараа нь `infinitive` авна.",
+      "solution_mn": "decide + to + V = decided to wear.",
+      "explanation_mn": "«decide» нь infinitive авдаг тул to wear зөв. «deciding wearing» гэх мэт нь буруу."
+    },
+    {
+      "stem_mn": "Complete the sentence: My father ___ in that town for ten years, and he still lives there.",
+      "latex": "",
+      "choices": [
+        "lived",
+        "has lived",
+        "live",
+        "living"
+      ],
+      "answer": 1,
+      "hint_mn": "«still lives there» — одоог хүртэл үргэлжилж байна.",
+      "solution_mn": "Одоог хүртэл үргэлжилсэн тул `present perfect`: has lived (for ten years).",
+      "explanation_mn": "«still lives there» нь үйлдэл одоог хүртэл үргэлжилж буйг харуулна тул present perfect (has lived) зөв."
+    }
+  ]
+}

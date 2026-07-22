@@ -1,0 +1,164 @@
+{
+  "id": "en-4-1",
+  "grade": 12,
+  "chapter_num": "IV",
+  "chapter_title_mn": "Gateway to Success",
+  "lesson_num": "4.1",
+  "title_mn": "Reported (indirect) speech (Unit 9: Technology Today)",
+  "title_en": "Reported (Indirect) Speech — Telling What Others Said",
+  "skill_id": "en-reported-speech",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Gateway to Success — Unit: Technology Today (drones, online learning, cyber safety)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Direct speech-ийг reported (indirect) speech болгохдоо цагийн ухралт (backshift: present → past) хийж сурах.",
+    "Reported speech-д төлөөний үг болон цаг хугацааны үг (now → then, today → that day) зөв өөрчлөх.",
+    "Асуултыг reported question болгохдоо энгийн өгүүлбэрийн үгийн эрэмбэ (subject + verb) ашиглаж, if/whether зөв хэрэглэх."
+  ],
+  "pretest": {
+    "stem_mn": "Direct: \"I am learning to code online,\" she said. Дараах reported speech-ийг зөв гүйцээ: She said that she ___ learning to code online.",
+    "latex": "",
+    "choices": [
+      "is",
+      "was",
+      "were",
+      "has been"
+    ],
+    "answer": 1,
+    "hint_mn": "Reporting verb 'said' нь өнгөрсөн цагт байгаа тул дотор үйл үг нэг шат ухарна.",
+    "solution_mn": "'am learning' (present continuous) → 'was learning' (past continuous) болно. Тиймээс зөв хариулт 'was'.",
+    "explanation_mn": "Backshift дүрмээр present continuous нь past continuous болж ухардаг: am/is → was."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Reported speech гэж юу вэ?",
+      "body_mn": "Бид өөр хүний хэлсэн үгийг дамжуулахдаа хоёр аргатай.\n\n**Direct speech** (шууд яриа) нь тухайн хүний хэлсэн яг үгийг хашилтан дотор бичдэг: *\"I love new technology,\" she said.*\n\n**Reported speech** (дам/шилжүүлсэн яриа) нь хашилтгүйгээр, өгүүлэгчийн үгээр дамжуулна: *She said that she loved new technology.*\n\n**say vs tell:** `say` дараа нь хүн шууд ордоггүй (*She **said** that...*). `tell` дараа нь хүн (object) заавал орно (*She **told me** that...*). 'that' үгийг орхиж болно."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Backshift — цагийн ухралт",
+      "body_mn": "Reporting verb (said, told) нь **өнгөрсөн цагт** байвал дам яриан дахь үйл үгийн цаг **нэг шат ухарна**:\n\n**present simple → past simple**: *\"I use drones.\"* → He said he **used** drones.\n\n**present continuous → past continuous**: *\"I am learning online.\"* → She said she **was learning** online.\n\n**present perfect → past perfect**: *\"I have saved the file.\"* → He said he **had saved** the file.\n\n**will → would, can → could, must → had to**: *\"You must update the app.\"* → She said we **had to** update the app.\n\nАнхаар: backshift-ийг мартаж *said he is* гэвэл БУРУУ — зөв нь *said he was*."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Төлөөний ба цаг хугацааны үгийн өөрчлөлт",
+      "body_mn": "**Төлөөний үг** нь өгүүлэгчийн байр суурьт тохирно: *I → he/she, we → they, my → his/her, you → I/we.*\n\n**Цаг хугацаа ба байрын үгс** ч бас өөрчлөгдөнө:\n\n**now → then**\n**today → that day**\n**tomorrow → the next day**\n**yesterday → the day before**\n**this → that**, **here → there**\n\nЖишээ: *\"I will install it tomorrow,\"* he said. → He said he would install it **the next day**. Эдгээр өөрчлөлтийг мартах нь түгээмэл алдаа."
+    },
+    {
+      "type": "concept",
+      "title_mn": "Reported questions — асуултыг дам яриагаар",
+      "body_mn": "Асуултыг дам яриагаар дамжуулахад **3 дүрэм** мөрдөнө:\n\n1. Үгийн эрэмбэ нь **энгийн өгүүлбэрийн дараалал (subject + verb)** болно — асуултын эрэмбэ (verb + subject) БИШ.\n2. Туслах **do/does/did** алга болж, гол үйл үг цаг заана.\n3. Асуултын тэмдэг (?) хэрэглэхгүй.\n\n**Wh- асуулт**: *\"Where is the file?\"* → She asked **where the file was**. (*where was the file* гэвэл БУРУУ)\n\n**Yes/No асуулт**: **if / whether** ашиглана: *\"Do you use antivirus?\"* → He asked **if I used** antivirus."
+    },
+    {
+      "type": "example",
+      "title_mn": "Технологийн сэдвээр жишээнүүд",
+      "body_mn": "**Statement:** *\"I am worried about cyber safety,\"* the student said. → The student said that he **was** worried about cyber safety.\n\n**Wh- question:** *\"How can I protect my data?\"* she asked. → She asked **how she could** protect her data. (can → could, эрэмбэ subject+verb)\n\n**Time word:** *\"We downloaded the update yesterday,\"* they said. → They said they **had downloaded** the update **the day before**.\n\n**Yes/No question:** *\"Are you online now?\"* he asked. → He asked **if I was** online **then**."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Direct: \"I use online learning every day,\" she said. Reported: She said that she ___ online learning every day.",
+      "latex": "",
+      "choices": [
+        "use",
+        "uses",
+        "used",
+        "using"
+      ],
+      "answer": 2,
+      "hint_mn": "'said' өнгөрсөн цагт тул present simple ухарна.",
+      "solution_mn": "present simple 'use' → past simple 'used'. Зөв хариулт 'used'.",
+      "explanation_mn": "Backshift: present simple → past simple."
+    },
+    {
+      "stem_mn": "Direct: \"I will fix the software today,\" he said. Reported: He said that he would fix the software ___.",
+      "latex": "",
+      "choices": [
+        "today",
+        "that day",
+        "this day",
+        "then"
+      ],
+      "answer": 1,
+      "hint_mn": "Цаг хугацааны үг ч бас өөрчлөгдөнө.",
+      "solution_mn": "'today' нь reported speech-д 'that day' болно. Зөв хариулт 'that day'.",
+      "explanation_mn": "today → that day гэж цаг хугацааны үг өөрчлөгдөнө."
+    },
+    {
+      "stem_mn": "Direct: \"Where is the router?\" she asked. Reported: She asked where ___.",
+      "latex": "",
+      "choices": [
+        "was the router",
+        "the router was",
+        "is the router",
+        "the router is"
+      ],
+      "answer": 1,
+      "hint_mn": "Reported question-д subject эхэлж, дараа нь үйл үг орно.",
+      "solution_mn": "Энгийн өгүүлбэрийн эрэмбэ + backshift: 'the router was'. Зөв хариулт 'the router was'.",
+      "explanation_mn": "Асуултын эрэмбэ (was the router) БИШ, энгийн эрэмбэ (the router was) болно. is → was."
+    },
+    {
+      "stem_mn": "Direct: \"Do you understand cyber safety?\" the teacher asked. Reported: The teacher asked ___ cyber safety.",
+      "latex": "",
+      "choices": [
+        "if I understood",
+        "if I understand",
+        "do I understand",
+        "that I understood"
+      ],
+      "answer": 0,
+      "hint_mn": "Yes/No асуултад if/whether хэрэглэж, do-г хасна.",
+      "solution_mn": "Yes/No асуулт тул 'if', do хасагдаж 'understand' → 'understood'. Зөв хариулт 'if I understood'.",
+      "explanation_mn": "if + subject + verb (backshift). 'do' туслах үйл үг алга болно."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Direct: \"I have downloaded the app,\" he said. Reported: He said that he ___ the app.",
+      "latex": "",
+      "choices": [
+        "has downloaded",
+        "downloaded",
+        "had downloaded",
+        "have downloaded"
+      ],
+      "answer": 2,
+      "hint_mn": "present perfect ямар цаг болж ухардаг вэ?",
+      "solution_mn": "present perfect → past perfect: 'had downloaded'.",
+      "explanation_mn": "have/has + V3 → had + V3 гэж ухарна."
+    },
+    {
+      "stem_mn": "Direct: \"What does the drone do?\" she asked. Reported: She asked what the drone ___.",
+      "latex": "",
+      "choices": [
+        "does",
+        "did",
+        "do",
+        "was doing"
+      ],
+      "answer": 1,
+      "hint_mn": "'does' туслах үйл үг хасагдаж, гол үйл үг past болно.",
+      "solution_mn": "'does...do' → зүгээр 'did'. Зөв: She asked what the drone did.",
+      "explanation_mn": "Reported question-д do/does хасагдаж, гол үйл үг past simple болно."
+    },
+    {
+      "stem_mn": "Direct: \"I am studying online now,\" he said. Reported: He said that he was studying online ___.",
+      "latex": "",
+      "choices": [
+        "now",
+        "then",
+        "that day",
+        "today"
+      ],
+      "answer": 1,
+      "hint_mn": "'now' цаг хугацааны үг өөрчлөгдөнө.",
+      "solution_mn": "now → then. Зөв хариулт 'then'.",
+      "explanation_mn": "'now' нь reported speech-д 'then' болно."
+    }
+  ]
+}

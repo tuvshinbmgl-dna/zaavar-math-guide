@@ -1,0 +1,165 @@
+{
+  "id": "en-3-2",
+  "grade": 12,
+  "chapter_num": "III",
+  "chapter_title_mn": "Mother Nature and Wellness",
+  "lesson_num": "3.2",
+  "title_mn": "Comparatives & transition words (Unit 8: Healthy Lifestyle)",
+  "title_en": "Comparatives, Superlatives & Transition Words",
+  "skill_id": "en-comparatives-transitions",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Mother Nature and Wellness — Unit: Healthy Lifestyle (sport, brain, habits)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Comparative (-er / more ... than) хэлбэрийг зөв үүсгэж, хоёр юмыг эрүүл амьдралын сэдвээр харьцуулж чадах.",
+    "Superlative (the -est / the most) хэлбэрээр 'хамгийн ...' гэсэн санааг 'the'-тэй зөв илэрхийлэх.",
+    "however, therefore, in addition, for example зэрэг transition word-ийг санааны дагуу зөв сонгож хэрэглэх."
+  ],
+  "pretest": {
+    "stem_mn": "Аль өгүүлбэр нь зөв бэ? (Comparative — эрүүл амьдралын харьцуулалт)",
+    "latex": "",
+    "choices": [
+      "Swimming is more healthier than sitting all day.",
+      "Swimming is healthier than sitting all day.",
+      "Swimming is healthier then sitting all day.",
+      "Swimming is healthiest than sitting all day."
+    ],
+    "answer": 1,
+    "hint_mn": "healthy → healthier. 'more'-г бүү давхарла, 'then' биш 'than'.",
+    "explanation_mn": "healthy нь -y-ээр төгссөн тул healthier болно. 'more healthier' нь давхар алдаа, 'then' нь буруу үг, 'healthiest' нь дээд зэрэг тул than-тай тохирохгүй. Зөв нь 'healthier than'.",
+    "solution_mn": "Богино/-y тэмдэг нэрт -er нэмж, than хэрэглэнэ: healthier than."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Comparative гэж юу вэ?",
+      "body_mn": "Хоёр юмыг харьцуулахдаа **comparative** (харьцуулсан зэрэг) хэлбэрийг ашиглана. Утга нь 'илүү ...' гэсэн санаа.\n\nЖишээ:\n- *Running is **faster than** walking.* (Гүйх нь алхахаас хурдан.)\n- *Vegetables are **healthier than** sweets.* (Ногоо нь чихрээс эрүүл.)\n\nГол дүрэм: харьцуулсан зэрэгт бараг үргэлж **than** гэдэг үг ордог. **than** нь монголоор '-аас/-ээс' гэсэн утгатай."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Хэрхэн үүсгэх вэ? -er эсвэл more",
+      "body_mn": "Тэмдэг нэрийн уртаас хамаарч хоёр аргаар үүсгэнэ.\n\n**Богино тэмдэг нэр** (1 үе, эсвэл -y-ээр төгссөн 2 үе) → **-er + than**\n- big → **bigger than**\n- fast → **faster than**\n- healthy → **healthier than** (-y нь -ier болно)\n\n**Урт тэмдэг нэр** (2 ба түүнээс дээш үе) → **more + adjective + than**\n- important → **more important than**\n- active → **more active than**\n\n*Yoga is **more relaxing than** running.*\n\n**Анхаар:** 'more' ба '-er'-ийг ХАМТ хэрэглэж болохгүй. 'more bigger' гэж БУРУУ."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Superlative — хамгийн ... (the -est / the most)",
+      "body_mn": "Гурав ба түүнээс олон юмнаас 'хамгийн ...' гэж ялгахдаа **superlative** (дээд зэрэг) хэрэглэнэ.\n\n**Богино тэмдэг нэр** → **the + -est**\n- fast → **the fastest**\n- healthy → **the healthiest**\n\n**Урт тэмдэг нэр** → **the most + adjective**\n- important → **the most important**\n\n**Гол дүрэм:** superlative-ийн өмнө үргэлж **the** ордог.\n- *Sleep is **the most important** habit for your brain.*\n- *Walking is **the healthiest** free exercise.*"
+    },
+    {
+      "type": "definition",
+      "title_mn": "Түгээмэл 3 алдаа + irregular хэлбэрүүд",
+      "body_mn": "**Алдаа 1 — Давхар зэрэг.** 'more' ба '-er'-ийг ХАМТ бүү хэрэглэ.\n- ✗ *more bigger* → ✓ **bigger**\n- ✗ *more healthier* → ✓ **healthier**\n\n**Алдаа 2 — than ↔ then.** *than* (харьцуулах) ба *then* (дараа нь) нь өөр үг.\n- ✗ *better then* → ✓ **better than**\n\n**Алдаа 3 — the-г мартах.** Superlative-д **the** заавал хэрэгтэй.\n- ✗ *healthiest* → ✓ **the healthiest**\n\n**Дүрмийн бус (irregular) хэлбэрүүд:**\n- good → **better** → **the best**\n- bad → **worse** → **the worst**\n- far → **farther/further** → **the farthest/furthest**"
+    },
+    {
+      "type": "concept",
+      "title_mn": "Transition words — холбоос үгс",
+      "body_mn": "**Transition words** нь санаануудыг хооронд нь холбож, бичвэрийг эмх цэгцтэй болгодог. Дараа нь ихэвчлэн **таслал (,)** тавина.\n\n- **however** = гэхдээ, гэвч (эсрэг санаа)\n  *Exercise is tiring. **However**, it makes you healthier.*\n- **therefore** = тиймээс, иймд (үр дүн/шалтгаан)\n  *He sleeps well. **Therefore**, his brain works better.*\n- **in addition** = нэмж хэлэхэд, түүнчлэн (санаа нэмэх)\n  *Drink water. **In addition**, eat more vegetables.*\n- **for example** = жишээ нь (жишээ өгөх)\n  *Do simple sports. **For example**, jogging or swimming.*"
+    },
+    {
+      "type": "example",
+      "title_mn": "Бүгдийг нэгтгэсэн жишээ (Healthy Lifestyle)",
+      "body_mn": "Доорх богино бичвэрт өнөөдрийн бүх дүрэм оржээ:\n\n*\"Jogging is **healthier than** watching TV. **In addition**, it is **cheaper than** a gym. **However**, sleep is **the most important** habit of all. **Therefore**, you should sleep 8 hours. **For example**, students who sleep well get **better** marks.\"*\n\nЗадлан үзвэл:\n- **comparative:** healthier than, cheaper than\n- **superlative:** the most important\n- **irregular:** better\n- **transition words:** In addition, However, Therefore, For example"
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Зөв хэлбэрийг сонго: 'Running is ___ walking.'",
+      "latex": "",
+      "choices": [
+        "faster than",
+        "more faster than",
+        "faster then",
+        "fastest than"
+      ],
+      "answer": 0,
+      "hint_mn": "Богино тэмдэг нэрт зөвхөн -er нэмнэ; 'more'-г давхарлахгүй, 'then' биш 'than'.",
+      "solution_mn": "fast богино тэмдэг нэр тул -er нэмж, than хэрэглэнэ → 'faster than'."
+    },
+    {
+      "stem_mn": "Зайг нөх: 'Sleep is ___ habit for a healthy brain.' (important)",
+      "latex": "",
+      "choices": [
+        "the most important",
+        "most important",
+        "the most importantest",
+        "more important"
+      ],
+      "answer": 0,
+      "hint_mn": "Дээд зэрэгт 'the' заавал; урт тэмдэг нэрт 'the most'.",
+      "solution_mn": "important урт тэмдэг нэр тул superlative нь 'the most important'. 'importantest' гэж давхарлахгүй."
+    },
+    {
+      "stem_mn": "Тохирох transition word-ийг сонго: 'Exercise is hard at first. ___, it becomes easier every day.'",
+      "latex": "",
+      "choices": [
+        "However",
+        "For example",
+        "Therefore",
+        "In addition"
+      ],
+      "answer": 0,
+      "hint_mn": "Эхэндээ хэцүү ↔ дараа нь хялбар: эсрэг санаа.",
+      "solution_mn": "'hard' ба 'easier' нь эсрэг санаа тул 'However' (гэвч) хамгийн тохиромжтой."
+    },
+    {
+      "stem_mn": "Аль өгүүлбэр нь БҮРЭН зөв бэ?",
+      "latex": "",
+      "choices": [
+        "Swimming is more better than running, therefore I swim.",
+        "Swimming is better than running. Therefore, I swim more often.",
+        "Swimming is better then running, therefore I swim.",
+        "Swimming is the better than running therefore I swim."
+      ],
+      "answer": 1,
+      "hint_mn": "'more better' давхар зэрэг, 'then' буруу, 'the better than' буруу.",
+      "solution_mn": "better нь irregular comparative тул 'more' хэрэггүй; 'than' зөв; Therefore-ийн дараа таслалтай → сонголт 2 бүрэн зөв."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Зайг нөх: 'Vegetables are ___ chips.' (healthy)",
+      "latex": "",
+      "choices": [
+        "healthier than",
+        "more healthy than",
+        "healthier then",
+        "more healthier than"
+      ],
+      "answer": 0,
+      "hint_mn": "healthy → healthier; 'more'-г давхарлахгүй, 'then' биш 'than'.",
+      "explanation_mn": "healthy нь -y-ээр төгсдөг тул healthier болно, than хэрэглэнэ. 'more healthy', 'more healthier', 'then' бүгд буруу.",
+      "solution_mn": "Зөв хариулт: 'healthier than'."
+    },
+    {
+      "stem_mn": "Тохирох үгийг сонго: 'You should drink water. ___, eat fruit every day.'",
+      "latex": "",
+      "choices": [
+        "In addition",
+        "However",
+        "For example",
+        "Therefore"
+      ],
+      "answer": 0,
+      "hint_mn": "Хоёр дахь зөвлөгөө нь эхнийх дээр нэмэгдэж байна.",
+      "explanation_mn": "'eat fruit' нь 'drink water'-т нэмж өгсөн санаа тул 'In addition' (нэмж хэлэхэд) тохирно.",
+      "solution_mn": "Зөв хариулт: 'In addition'."
+    },
+    {
+      "stem_mn": "Зайг нөх: 'Football is ___ sport in Mongolia.' (popular)",
+      "latex": "",
+      "choices": [
+        "the most popular",
+        "the most popularest",
+        "most popular",
+        "more popular"
+      ],
+      "answer": 0,
+      "hint_mn": "Дээд зэрэгт 'the' заавал; урт тэмдэг нэрт 'the most'.",
+      "explanation_mn": "popular урт тэмдэг нэр тул 'the most popular'. 'the'-г мартаж болохгүй, 'popularest' гэж давхарлахгүй.",
+      "solution_mn": "Зөв хариулт: 'the most popular'."
+    }
+  ]
+}

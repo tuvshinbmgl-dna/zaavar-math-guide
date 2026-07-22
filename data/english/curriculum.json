@@ -1,0 +1,105 @@
+{
+  "note": "Англи хэл 12 — БШУЯ-ны албан ёсны сурах бичгийн (ESIS) 4 module, CEFR Low B1, Use of English грамматикт нийцсэн.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Англи хэл 12",
+      "book_id": 357,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=357",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Study and Work",
+          "title_en": "Study and Work",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Present simple & continuous (Unit 1: Teens Today)",
+              "lesson_id": "en-1-1",
+              "skill_id": "en-present-tenses"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Present perfect & modals for advice (Unit 2: Learning for the Future)",
+              "lesson_id": "en-1-2",
+              "skill_id": "en-perfect-modals"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Future forms & questions (Unit 3: Jobs and Society)",
+              "lesson_id": "en-1-3",
+              "skill_id": "en-future-questions"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Cultures and Traditions",
+          "title_en": "Cultures and Traditions",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Relative clauses (Unit 4: Roots of Mongolian Identity)",
+              "lesson_id": "en-2-1",
+              "skill_id": "en-relative-clauses"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Clauses of reason & time (Unit 5: Cultures Around the World)",
+              "lesson_id": "en-2-2",
+              "skill_id": "en-reason-time-clauses"
+            },
+            {
+              "num": "2.3",
+              "title_mn": "Past simple vs present perfect; infinitives (Unit 6: Language in Mind)",
+              "lesson_id": "en-2-3",
+              "skill_id": "en-past-infinitives"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Mother Nature and Wellness",
+          "title_en": "Mother Nature and Wellness",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Passive modals & quantifiers (Unit 7: Nature Conservation)",
+              "lesson_id": "en-3-1",
+              "skill_id": "en-passive-quantifiers"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Comparatives & transition words (Unit 8: Healthy Lifestyle)",
+              "lesson_id": "en-3-2",
+              "skill_id": "en-comparatives-transitions"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Gateway to Success",
+          "title_en": "Gateway to Success",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Reported (indirect) speech (Unit 9: Technology Today)",
+              "lesson_id": "en-4-1",
+              "skill_id": "en-reported-speech"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Participles & noun/adverb phrases (Unit 10: Sport & Entertainment)",
+              "lesson_id": "en-4-2",
+              "skill_id": "en-participles-phrases"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "id": "en-1-2",
+  "grade": 12,
+  "chapter_num": "I",
+  "chapter_title_mn": "Study and Work",
+  "lesson_num": "1.2",
+  "title_mn": "Present perfect & modals for advice (Unit 2: Learning for the Future)",
+  "title_en": "Present Perfect & Modals for Advice",
+  "skill_id": "en-perfect-modals",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Study and Work — Unit: Learning for the Future (study skills, lifelong learning)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Present perfect (have/has + V3)-ийг туршлага, for/since-тэй зөв ашиглаж, past simple-ээс ялгаж сурна.",
+    "should, ought to, had better модаль үйл үгсийг зөвлөгөө өгөхөд зөв хэлбэрээр (модаль + үндсэн үйл үг, to-гүй) хэрэглэнэ.",
+    "Learning for the Future сэдвийн үгсийн сангаар present perfect-ийн active болон passive хэлбэрийг таньж, өгүүлбэр зохионо."
+  ],
+  "pretest": {
+    "stem_mn": "Which sentence is correct?",
+    "latex": "",
+    "choices": [
+      "I have studied English since three years.",
+      "I have studied English for three years.",
+      "I studied English for three years now.",
+      "I have studied English for three years ago."
+    ],
+    "answer": 1,
+    "hint_mn": "'three years' бол хугацааны урт уу, эхлэл цэг үү?",
+    "explanation_mn": "for нь хугацааны уртыг (three years) заана, since нь эхлэл цэгийг (2020) заана. Иймд 'since three years' буруу. Мөн 'now', 'ago' present perfect-тэй тохирохгүй.",
+    "solution_mn": "Зөв хариулт: 'I have studied English for three years.' — гурван жилийн урт хугацаа тул for хэрэглэнэ."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Present perfect гэж юу вэ?",
+      "body_mn": "`Present perfect` бол **have/has + V3** (үйл үгийн гуравдугаар хэлбэр) бүтэцтэй. Энэ нь өнгөрсөнд болсон боловч **одоотой холбоотой** үйлдлийг илэрхийлнэ.\n\n**Туршлага** заахад хэрэглэнэ ('ever' = хэзээ нэгэн цагт, 'never' = хэзээ ч үгүй):\n- I **have finished** my homework.\n- She **has passed** the exam.\n- **Have** you ever **studied** abroad?\n\nГол онцлог: **тодорхой цаг заадаггүй**. 'I / you / we / they' дараа **have**, 'he / she / it' дараа **has** орно."
+    },
+    {
+      "type": "definition",
+      "title_mn": "for ба since — андуурч болохгүй",
+      "body_mn": "Present perfect-ийг үргэлжилж буй хугацаатай хэрэглэхэд **for** ба **since** чухал.\n\n**for** = хугацааны **урт** (хэдэн жил, хэдэн сар):\n- I have studied here **for** three years.\n- We have known each other **for** a long time.\n\n**since** = хугацааны **эхлэл цэг** (тодорхой он, өдөр):\n- I have studied here **since** 2021.\n- She has worked here **since** Monday.\n\n**Санамж:** 'since three years' гэвэл **БУРУУ**. Гурван жилийн урт учир **for** гэнэ."
+    },
+    {
+      "type": "concept",
+      "title_mn": "Present perfect vs Past simple",
+      "body_mn": "Хамгийн түгээмэл алдаа бол эдгээрийг андуурах явдал.\n\n**Present perfect** — тодорхой цаг **заагаагүй**, одоотой холбоотой:\n- I **have seen** that film. (хэзээ гэдэг нь чухал биш)\n\n**Past simple** — **тодорхой** өнгөрсөн цаг:\n- I **saw** that film **yesterday**.\n\n'yesterday', 'last year', 'in 2019', 'ago' зэрэг **тодорхой** цаг байвал **past simple**. 'yet', 'already', 'ever', 'never', 'just' байвал **present perfect** хэрэглэнэ."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Present perfect passive (идэвхгүй хэлбэр)",
+      "body_mn": "Идэвхгүй хэлбэр (**passive**) нь **have/has been + V3** бүтэцтэй. Хэн хийснээс илүү **юу болсонд** анхаарна.\n\n- The report **has been written**. (Тайлан бичигдсэн.)\n- All the exams **have been marked**. (Бүх шалгалт засагдсан.)\n\nStudy and Work сэдэвт:\n- The course **has been completed**.\n- A certificate **has been awarded**.\n\nГанц тоонд **has been**, олон тоонд **have been** гэдгийг санаарай."
+    },
+    {
+      "type": "concept",
+      "title_mn": "Modals for advice: should, ought to, had better",
+      "body_mn": "Зөвлөгөө өгөхөд **модаль үйл үг** ашиглана. Дараа нь ҮРГЭЛЖ **үндсэн үйл үг** (to-гүй) орно.\n\n**should** — энгийн зөвлөгөө:\n- You **should** review your notes.\n\n**ought to** — should-той ойролцоо, арай албан ёсны:\n- You **ought to** apply for that job.\n\n**had better** ('d better) — хүчтэй анхааруулга, үр дагавартай:\n- You **had better** submit the essay on time.\n\n**Санамж:** 'should **to** go' гэвэл **БУРУУ**. Зөв нь 'should go'. Модаль үйл үгийн дараа to залгахгүй! (Зөвхөн 'ought **to**' онцгой тохиолдол.)"
+    },
+    {
+      "type": "example",
+      "title_mn": "Learning for the Future: бүгдийг нэгтгэх",
+      "body_mn": "Сэдэвтэй холбон жишээ өгүүлбэрүүд:\n\n- I **have developed** many skills **since** I started this course. (present perfect + since)\n- She **has worked** as a mentor **for** five years. (present perfect + for)\n- The training **has been designed** for lifelong learners. (passive)\n- If you want a good career, you **should** keep learning. (advice)\n- You **ought to** set clear goals for the future.\n- You **'d better** not waste your study time. (had better + not)"
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Complete the sentence: 'She ___ finished her project.'",
+      "latex": "",
+      "choices": [
+        "have",
+        "has",
+        "had",
+        "having"
+      ],
+      "answer": 1,
+      "hint_mn": "'She' бол гуравдугаар этгээд ганц тоо.",
+      "explanation_mn": "'She / he / it' дараа has орно.",
+      "solution_mn": "Зөв: 'She **has** finished her project.' Present perfect = has + V3."
+    },
+    {
+      "stem_mn": "Choose the correct word: 'I have known him ___ 2019.'",
+      "latex": "",
+      "choices": [
+        "for",
+        "since",
+        "from",
+        "during"
+      ],
+      "answer": 1,
+      "hint_mn": "2019 бол хугацааны эхлэл цэг үү, урт уу?",
+      "explanation_mn": "2019 бол тодорхой эхлэл цэг тул since.",
+      "solution_mn": "Зөв: 'I have known him **since** 2019.' Эхлэл цэгт since хэрэглэнэ."
+    },
+    {
+      "stem_mn": "Choose the correct sentence.",
+      "latex": "",
+      "choices": [
+        "I have visited London last summer.",
+        "I visited London last summer.",
+        "I have visit London last summer.",
+        "I has visited London last summer."
+      ],
+      "answer": 1,
+      "hint_mn": "'last summer' бол тодорхой өнгөрсөн цаг.",
+      "explanation_mn": "'last summer' тодорхой өнгөрсөн цаг тул past simple хэрэглэнэ.",
+      "solution_mn": "Зөв: 'I **visited** London last summer.' Present perfect нь тодорхой цагтай (last summer) тохирохгүй."
+    },
+    {
+      "stem_mn": "Choose the correct advice sentence.",
+      "latex": "",
+      "choices": [
+        "You should to practice every day.",
+        "You should practice every day.",
+        "You had better to start now.",
+        "You ought practice every day."
+      ],
+      "answer": 1,
+      "hint_mn": "Модаль үйл үгийн дараа to залгах уу?",
+      "explanation_mn": "Модаль (should) дараа шууд үндсэн үйл үг орно, to-гүй.",
+      "solution_mn": "Зөв: 'You **should practice** every day.' 'should to', 'had better to', 'ought practice' бүгд буруу (зөв нь ought **to** practice)."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Which is the correct passive sentence?",
+      "latex": "",
+      "choices": [
+        "The homework has done.",
+        "The homework has been done.",
+        "The homework have been done.",
+        "The homework has being done."
+      ],
+      "answer": 1,
+      "explanation_mn": "Present perfect passive = has/have been + V3. 'homework' ганц тоо тул 'has been done.'"
+    },
+    {
+      "stem_mn": "Choose the correct word: 'We have lived here ___ ten years.'",
+      "latex": "",
+      "choices": [
+        "since",
+        "for",
+        "ago",
+        "from"
+      ],
+      "answer": 1,
+      "explanation_mn": "'ten years' бол хугацааны урт тул for. since бол эхлэл цэгт л хэрэглэнэ."
+    },
+    {
+      "stem_mn": "Choose the correct sentence.",
+      "latex": "",
+      "choices": [
+        "Have you finished your homework yet?",
+        "Did you finished your homework yet?",
+        "Have you finish your homework yet?",
+        "You have finished your homework yesterday?"
+      ],
+      "answer": 0,
+      "explanation_mn": "'yet' present perfect-тэй хэрэглэнэ: 'Have you finished ... yet?' V3 (finished) хэрэгтэй. 'yesterday' present perfect-тэй тохирохгүй."
+    }
+  ]
+}

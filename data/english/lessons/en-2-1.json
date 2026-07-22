@@ -1,0 +1,164 @@
+{
+  "id": "en-2-1",
+  "grade": 12,
+  "chapter_num": "II",
+  "chapter_title_mn": "Cultures and Traditions",
+  "lesson_num": "2.1",
+  "title_mn": "Relative clauses (Unit 4: Roots of Mongolian Identity)",
+  "title_en": "Relative Clauses: who, which/that, where, when — Defining & Non-defining",
+  "skill_id": "en-relative-clauses",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Cultures and Traditions — Unit: Roots of Mongolian Identity (traditions, symbolism)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Хүн, юм, газар, цагийг заасан relative clause (холбоос гишүүн өгүүлбэр)-ийг who, which/that, where, when ашиглан зөв бүтээх.",
+    "Defining ба non-defining relative clause-ийг ялган таньж, non-defining clause дээр таслалыг зөв тавих.",
+    "Монгол ёс заншил, өв уламжлалын сэдэвт өгүүлбэрт relative clause-ийг ашиглан ярьж, бичих."
+  ],
+  "pretest": {
+    "stem_mn": "Choose the correct word: 'The morin khuur is an instrument ___ symbolizes Mongolian nomadic culture.'",
+    "latex": "",
+    "choices": [
+      "who",
+      "which",
+      "where",
+      "when"
+    ],
+    "answer": 1,
+    "hint_mn": "Morin khuur (морин хуур) бол хүн үү, юм уу гэдгийг эхлээд бод.",
+    "solution_mn": "Morin khuur бол эд зүйл (юм) тул which (эсвэл that) ашиглана. Зөв өгүүлбэр: 'an instrument which symbolizes...'.",
+    "explanation_mn": "Юмыг заахдаа which хэрэглэнэ. who нь зөвхөн хүнийг заадаг тул энд буруу."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Relative clause гэж юу вэ?",
+      "body_mn": "**Relative clause** (холбоос гишүүн өгүүлбэр) нь нэр үгийн тухай нэмэлт мэдээлэл өгдөг өгүүлбэрийн хэсэг юм. Тэр нь **relative pronoun** (холбоос төлөөний үг)-өөр эхэлдэг: **who, which, that, where, when**.\n\nЖишээ нь:\n- *A herder is a person **who** lives on the steppe.*\n- *The deel is a costume **which** Mongolians wear with pride.*\n\nТодоор тэмдэглэсэн үг нь өмнөх нэр үгийг (person, costume) тодотгож байна. Ингэснээр бид хоёр богино өгүүлбэрийг нэг болгож холбон, өв уламжлалынхаа тухай илүү нарийн ярьж чадна."
+    },
+    {
+      "type": "definition",
+      "title_mn": "who, which, that — хүн үү, юм уу?",
+      "body_mn": "Аль pronoun сонгохоо тодотгож буй нэр үг **хүн** үү, **юм** уу гэдгээр шийднэ.\n\n**who** — хүнийг заана.\n*Chinggis Khaan is the leader **who** founded the Mongol Empire.*\n\n**which** — амьтан, эд юмс, ойлголтыг заана.\n*The morin khuur is the instrument **which** has a horse-head carving.*\n\n**that** — хүн, юмс аль алинд нь defining clause дотор хэрэглэж болно.\n*The horse **that** won the race is famous.*\n\n**Анхаар:** хүнийг заахдаа which хэрэглэхгүй, юмыг заахдаа who хэрэглэхгүй. Хамгийн түгээмэл алдаа энэ юм."
+    },
+    {
+      "type": "definition",
+      "title_mn": "where, when — газар уу, цаг уу?",
+      "body_mn": "**where** — **газар, байршлыг** заана.\n*The ovoo is a sacred place **where** travelers stop to pray.*\n\n**when** — **цаг хугацаа, үе, өдрийг** заана.\n*Tsagaan Sar is the time **when** families honor their elders.*\n\n**Анхаар:** where (газар) ба when (цаг)-ийг андуурч болзошгүй. Өөрөөсөө асуу: тухайн нэр үг байршил уу (→ where), эсвэл цаг хугацаа юу (→ when)? *a place → where*, харин *a season / a day / a time → when*."
+    },
+    {
+      "type": "concept",
+      "title_mn": "Defining ба non-defining clause",
+      "body_mn": "**Defining clause** нь нэр үгийг заавал таних гол мэдээллийг өгдөг. **Таслал тавихгүй.**\n*The woman **who** teaches throat singing is my aunt.* (аль эмэгтэй болохыг тодорхойлж байна)\n\n**Non-defining clause** нь нэмэлт, чухал биш мэдээлэл өгдөг. Түүнийг **хоёр талаас нь таслалаар** зааглана.\n*My aunt, **who** teaches throat singing, lives in Khövsgöl.* (аль эмэгтэй болох нь аль хэдийн тодорхой)\n\n**Дүрэм:**\n- Non-defining clause-д **that хэрэглэхгүй** — зөвхөн who/which/where/when.\n- Non-defining clause-ийн **таслалыг мартаж болохгүй**. Таслалгүй бол утга өөрчлөгдөнө."
+    },
+    {
+      "type": "example",
+      "title_mn": "Монгол өв уламжлалын жишээ",
+      "body_mn": "Сэдэвт холбоотой жишээгээр давтъя:\n\n- *Naadam is the festival **when** Mongolians compete in three manly sports.* (цаг → when)\n- *The steppe is the land **where** nomads herd their animals.* (газар → where)\n- *Khöömei is a style of singing **which** comes from the throat.* (юм → which)\n- *An elder is a person **who** passes down old legends.* (хүн → who)\n- *The ger, **which** is a round felt tent, keeps families warm.* (non-defining → таслалтай)\n\nӨгүүлбэр бүр өв уламжлалын тухай нэмэлт мэдээлэл өгч байгааг анзаараарай."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Fill in the blank: 'Genghis Khan was a leader ___ united the Mongol tribes.'",
+      "latex": "",
+      "choices": [
+        "who",
+        "which",
+        "where",
+        "when"
+      ],
+      "answer": 0,
+      "hint_mn": "Leader (удирдагч) бол хүн үү, юм уу?",
+      "solution_mn": "Хүн → who. Зөв: 'a leader who united the Mongol tribes.'",
+      "explanation_mn": "Leader бол хүн тул who хэрэглэнэ. which нь эд юмсыг заадаг."
+    },
+    {
+      "stem_mn": "Fill in the blank: 'The deel is a traditional garment ___ Mongolians wear on special occasions.'",
+      "latex": "",
+      "choices": [
+        "who",
+        "which",
+        "when",
+        "where"
+      ],
+      "answer": 1,
+      "hint_mn": "Garment (хувцас) бол эд юмс. Хүн биш.",
+      "solution_mn": "Юм → which. Зөв: 'a garment which Mongolians wear.'",
+      "explanation_mn": "Хувцас бол юм тул which (эсвэл that). who нь зөвхөн хүнд хэрэглэгддэг тул буруу."
+    },
+    {
+      "stem_mn": "Fill in the blank: 'The ovoo is a sacred place ___ nomads stop to pray.'",
+      "latex": "",
+      "choices": [
+        "who",
+        "which",
+        "where",
+        "when"
+      ],
+      "answer": 2,
+      "hint_mn": "Place (газар) уу, эсвэл time (цаг) уу гэдгийг ялга.",
+      "solution_mn": "Газар → where. Зөв: 'a sacred place where nomads stop to pray.'",
+      "explanation_mn": "Ovoo бол газар тул where. when нь цаг хугацааг заадаг тул энд буруу."
+    },
+    {
+      "stem_mn": "Which sentence is punctuated correctly? (non-defining clause)",
+      "latex": "",
+      "choices": [
+        "Chinggis Khaan who founded the Mongol Empire is a national hero.",
+        "Chinggis Khaan, who founded the Mongol Empire, is a national hero.",
+        "Chinggis Khaan which founded the Mongol Empire, is a national hero.",
+        "Chinggis Khaan, that founded the Mongol Empire, is a national hero."
+      ],
+      "answer": 1,
+      "hint_mn": "Non-defining clause хэдэн таслалтай вэ? Хүнийг which/that-аар зааж болох уу?",
+      "solution_mn": "Зөв нь: 'Chinggis Khaan, who founded the Mongol Empire, is a national hero.' — хоёр талдаа таслалтай, хүн тул who, that биш.",
+      "explanation_mn": "Non-defining clause нь хоёр талдаа таслалтай байх ёстой. Хүнийг which эсвэл that-аар non-defining-д зааж болохгүй, зөвхөн who."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Fill in the blank: 'The morin khuur is a fiddle ___ has a horse-head carving.'",
+      "latex": "",
+      "choices": [
+        "who",
+        "which",
+        "where",
+        "when"
+      ],
+      "answer": 1,
+      "hint_mn": "Fiddle (хуур) бол юм.",
+      "solution_mn": "Юм → which. 'a fiddle which has a horse-head carving.'",
+      "explanation_mn": "Morin khuur бол эд зүйл тул which (эсвэл that). who нь хүнд хэрэглэгддэг."
+    },
+    {
+      "stem_mn": "Fill in the blank: 'Summer is the season ___ the Naadam festival takes place.'",
+      "latex": "",
+      "choices": [
+        "where",
+        "when",
+        "who",
+        "which"
+      ],
+      "answer": 1,
+      "hint_mn": "Season (улирал) бол газар уу, цаг уу?",
+      "solution_mn": "Цаг хугацаа → when. 'the season when the Naadam festival takes place.'",
+      "explanation_mn": "Улирал бол цаг хугацаа тул when. where нь газрыг заадаг тул буруу."
+    },
+    {
+      "stem_mn": "Which sentence correctly uses a non-defining relative clause?",
+      "latex": "",
+      "choices": [
+        "The ger, which is a round felt tent, keeps herders warm.",
+        "The ger which is a round felt tent keeps herders warm.",
+        "The ger, that is a round felt tent, keeps herders warm.",
+        "The ger who is a round felt tent, keeps herders warm."
+      ],
+      "answer": 0,
+      "hint_mn": "Хоёр талдаа таслалтай юу? Юмыг which-ээр зааж байна уу?",
+      "solution_mn": "Зөв: 'The ger, which is a round felt tent, keeps herders warm.' — хоёр талдаа таслалтай, which хэрэглэсэн.",
+      "explanation_mn": "Non-defining clause нэмэлт мэдээлэл өгч байгаа тул хоёр талдаа таслалтай. Non-defining дээр that хэрэглэхгүй, юм тул who биш which."
+    }
+  ]
+}

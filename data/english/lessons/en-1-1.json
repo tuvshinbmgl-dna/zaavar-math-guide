@@ -1,0 +1,169 @@
+{
+  "id": "en-1-1",
+  "grade": 12,
+  "chapter_num": "I",
+  "chapter_title_mn": "Study and Work",
+  "lesson_num": "1.1",
+  "title_mn": "Present simple & continuous (Unit 1: Teens Today)",
+  "title_en": "Present Simple & Continuous (Active and Passive)",
+  "skill_id": "en-present-tenses",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Study and Work — Unit: Teens Today (leisure, school clubs, feelings)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Present simple болон present continuous цагийг зөв ялгаж, байнгын үйлдэл/үнэн ба яг одоо болж буй үйлдлийг илэрхийлж сурах.",
+    "Идэвхтэй (active) ба идэвхгүй (passive) хэлбэрийг am/is/are + V3 бүтцээр зөв байгуулах.",
+    "'Teens Today' сэдвийн үгсийн сан ашиглан өгүүлбэр бүтээж, түгээмэл алдаа (‑s мартах, цаг андуурах, passive буруу)‑г ялган засах."
+  ],
+  "pretest": {
+    "stem_mn": "Choose the correct form: 'My sister ___ to music every evening.'",
+    "latex": "",
+    "choices": [
+      "listen",
+      "listens",
+      "is listen",
+      "listening"
+    ],
+    "answer": 1,
+    "explanation_mn": "**Every evening** нь байнга давтагддаг зуршил тул present simple. She (3‑р бие ганц тоо) дээр үйл үгэнд ‑s залгана → **listens**. 'listen' нь ‑s дутуу тул буруу.",
+    "hint_mn": "'every evening' → зуршил (simple). She = 3‑р бие ганц тоо.",
+    "solution_mn": "Байнгын үйлдэл → present simple; 3‑р бие ганц тоонд ‑s → listens."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Present simple — байнгын үйлдэл ба үнэн",
+      "body_mn": "**Present simple** нь байнга давтагддаг үйлдэл, зуршил, ерөнхий үнэнийг илэрхийлнэ.\n\nЦагийн туслах үг: **always, usually, often, every day, on Fridays**.\n\nЖишээ: *Teenagers usually spend a lot of time on social media.*\n\n*She goes to a drama club every Friday.*\n\n**Маш чухал:** he / she / it (3‑р бие ганц тоо) дээр үйл үгэнд **‑s / ‑es** залгана: *He plays football. Anna studies hard.*"
+    },
+    {
+      "type": "concept",
+      "title_mn": "Present continuous — яг одоо болж буй үйлдэл",
+      "body_mn": "**Present continuous** нь ярьж байгаа энэ мөчид, яг одоо болж буй үйлдэл, эсвэл түр зуурын үйлдлийг илэрхийлнэ.\n\nБүтэц: **am / is / are + V‑ing**. Цагийн туслах үг: **now, at the moment, right now, today, this week**.\n\nЖишээ: *Look! The students are performing on the stage now.*\n\n*I am reading a book about teen psychology this week.*"
+    },
+    {
+      "type": "definition",
+      "title_mn": "Simple эсрэг continuous — хэзээ алийг нь хэрэглэх вэ?",
+      "body_mn": "**Present simple** = байнгын, давтагддаг үйлдэл. **Present continuous** = яг одоо болж буй үйлдэл.\n\nХаргалзуулан хар:\n\n*He watches films every weekend.* (зуршил → **simple**)\n\n*He is watching a film now.* (яг одоо → **continuous**)\n\n**Санамж:** *usually, every day* → simple; *now, at the moment* → continuous."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Passive voice — идэвхгүй хэв (am/is/are + V3)",
+      "body_mn": "**Passive** буюу идэвхгүй хэв нь үйлдлийг хэн хийснээс илүү **юун дээр** тохиолдож буйд анхаарлаа хандуулна.\n\n**Present simple passive:** am / is / are + **V3** (гурав дахь хэлбэр).\n\n*Millions of messages are sent by teens every day.*\n\n**Present continuous passive:** am / is / are + **being + V3**.\n\n*A new school club is being organised this week.*\n\n**Анхаар:** заавал **V3** хэрэглэнэ — *is made* (зөв), *is make* (буруу)."
+    },
+    {
+      "type": "example",
+      "title_mn": "Teens Today: жишээ өгүүлбэрүүд",
+      "body_mn": "Дараах өгүүлбэрүүдийг сэдэвтэй холбон судал:\n\n1. *Many teenagers join school clubs to make new friends.* (**simple** — зуршил)\n\n2. *Right now, our class is planning a charity event.* (**continuous** — яг одоо)\n\n3. *Homework is checked by the teacher every Monday.* (**simple passive**)\n\n4. *The gym is being repaired this month, so we train outside.* (**continuous passive**)"
+    },
+    {
+      "type": "concept",
+      "title_mn": "Түгээмэл 3 алдаа ба зөв хэрэглээ",
+      "body_mn": "**Алдаа 1 — Цаг андуурах:** *now* байвал continuous. *She is studying now* (зөв), *She studies now* (буруу).\n\n**Алдаа 2 — ‑s мартах:** 3‑р бие ганц тоонд. *He works hard* (зөв), *He work hard* (буруу).\n\n**Алдаа 3 — Passive буруу:** am/is/are + **V3**. *This song is loved by teens* (зөв), *is love* (буруу)."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Present simple. Fill in: 'My brother ___ (play) basketball every Saturday.'",
+      "latex": "",
+      "choices": [
+        "play",
+        "plays",
+        "is playing",
+        "playing"
+      ],
+      "answer": 1,
+      "hint_mn": "'every Saturday' = байнгын үйлдэл (simple). Brother = 3‑р бие ганц тоо.",
+      "solution_mn": "Байнгын зуршил тул present simple; he/she/it дээр ‑s залгана → **plays**.",
+      "explanation_mn": "Every Saturday → present simple; 3‑р бие ганц тоонд ‑s → plays."
+    },
+    {
+      "stem_mn": "Choose the correct form: 'Listen! The teens ___ a new song right now.'",
+      "latex": "",
+      "choices": [
+        "record",
+        "records",
+        "are recording",
+        "is recording"
+      ],
+      "answer": 2,
+      "hint_mn": "'Listen!' + 'right now' → яг одоо болж буй үйлдэл. The teens = олон тоо.",
+      "solution_mn": "Right now → present continuous (be + V‑ing). The teens олон тоо тул **are recording**.",
+      "explanation_mn": "Continuous шинж тэмдэг + олон тоо → are recording."
+    },
+    {
+      "stem_mn": "Passive voice: 'School uniforms ___ in this factory.' (make)",
+      "latex": "",
+      "choices": [
+        "are make",
+        "are made",
+        "are making",
+        "make"
+      ],
+      "answer": 1,
+      "hint_mn": "Passive = am/is/are + V3. make → V3 нь made.",
+      "solution_mn": "Идэвхгүй хэв present simple: are + V3 = **are made**. 'are make' буруу — V3 хэрэгтэй.",
+      "explanation_mn": "Passive present simple: are + made."
+    },
+    {
+      "stem_mn": "Which sentence is correct?",
+      "latex": "",
+      "choices": [
+        "The results are announce every year.",
+        "The results announcing every year.",
+        "The results are announced every year.",
+        "The results is announced every year."
+      ],
+      "answer": 2,
+      "hint_mn": "'every year' = simple. Passive = are + V3. Results = олон тоо → are.",
+      "solution_mn": "Every year → present simple passive: are + V3 (**announced**). Results олон тоо тул 'are'. 'are announce' V3 биш, 'is' олон тоонд тохирохгүй.",
+      "explanation_mn": "Simple passive + олон тоо → are announced."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Which sentence correctly uses present continuous for something happening now?",
+      "latex": "",
+      "choices": [
+        "The students decorate the classroom now.",
+        "The students are decorating the classroom now.",
+        "The students decorates the classroom now.",
+        "The students is decorating the classroom now."
+      ],
+      "answer": 1,
+      "explanation_mn": "Now → continuous (be + V‑ing). Students олон тоо → **are decorating**. 'decorate/decorates' нь simple; 'is' олон тоонд буруу.",
+      "hint_mn": "'now' → continuous; students = олон тоо → are.",
+      "solution_mn": "are + decorating."
+    },
+    {
+      "stem_mn": "Complete with the correct passive: 'These posters ___ by the art club.' (design)",
+      "latex": "",
+      "choices": [
+        "are designing",
+        "are design",
+        "are designed",
+        "designs"
+      ],
+      "answer": 2,
+      "explanation_mn": "Passive present simple = are + V3 (**designed**). 'are design' V3 биш; 'are designing' идэвхтэй; 'designs' passive биш.",
+      "hint_mn": "Passive = are + V3.",
+      "solution_mn": "are + designed."
+    },
+    {
+      "stem_mn": "Find the mistake-free sentence about a daily routine.",
+      "latex": "",
+      "choices": [
+        "My friend check her phone every morning.",
+        "My friend checks her phone every morning.",
+        "My friend checking her phone every morning.",
+        "My friend is check her phone every morning."
+      ],
+      "answer": 1,
+      "explanation_mn": "Every morning = зуршил → present simple; 3‑р бие ганц тоо → **checks** (‑s). 'check' нь ‑s дутуу.",
+      "hint_mn": "'every morning' → simple; 3‑р бие ганц тоо → ‑s.",
+      "solution_mn": "checks."
+    }
+  ]
+}

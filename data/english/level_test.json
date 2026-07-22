@@ -1,0 +1,1595 @@
+{
+  "note": "english 12 — түвшин тогтоох.",
+  "topics": [
+    {
+      "skill_id": "en-present-tenses",
+      "title_mn": "Present simple & continuous (Unit 1: Teens Today)",
+      "lesson_id": "en-1-1",
+      "pages_mn": "Study and Work — Unit: Teens Today (leisure, school clubs, feelings)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-present-tenses-1",
+          "skill_id": "en-present-tenses",
+          "difficulty": 1,
+          "stem_mn": "Choose the correct verb: 'Ganaa ___ English at a language club after school.'",
+          "latex": "",
+          "choices": [
+            "study",
+            "studies",
+            "studying",
+            "is studies"
+          ],
+          "answer": 1,
+          "explanation_mn": "After school → зуршил (present simple). Ganaa 3‑р бие ганц тоо тул ‑es залгана → **studies**. 'study' нь ‑s дутуу."
+        },
+        {
+          "id": "lt-en-present-tenses-2",
+          "skill_id": "en-present-tenses",
+          "difficulty": 1,
+          "stem_mn": "'Be quiet! The class ___ a test right now.'",
+          "latex": "",
+          "choices": [
+            "takes",
+            "is taking",
+            "take",
+            "are taking"
+          ],
+          "answer": 1,
+          "explanation_mn": "Right now → present continuous. 'The class' ганц тоо → **is taking**. 'takes' нь simple тул буруу."
+        },
+        {
+          "id": "lt-en-present-tenses-3",
+          "skill_id": "en-present-tenses",
+          "difficulty": 1,
+          "stem_mn": "'Teenagers ___ a lot of time online every day.'",
+          "latex": "",
+          "choices": [
+            "spends",
+            "are spend",
+            "spend",
+            "spending"
+          ],
+          "answer": 2,
+          "explanation_mn": "Every day → simple. 'Teenagers' олон тоо тул ‑s залгахгүй → **spend**. 'spends' нь ганц тоонд хэрэглэгддэг."
+        },
+        {
+          "id": "lt-en-present-tenses-4",
+          "skill_id": "en-present-tenses",
+          "difficulty": 1,
+          "stem_mn": "Which sentence is grammatically correct?",
+          "latex": "",
+          "choices": [
+            "She watch videos about study tips.",
+            "She watching videos about study tips.",
+            "She are watching videos about study tips.",
+            "She watches videos about study tips."
+          ],
+          "answer": 3,
+          "explanation_mn": "She (3‑р бие ганц тоо) → **watches** (‑es). Бусад нь ‑s дутуу эсвэл be туслах үйл буруу (she are…)."
+        },
+        {
+          "id": "lt-en-present-tenses-5",
+          "skill_id": "en-present-tenses",
+          "difficulty": 2,
+          "stem_mn": "'The school magazine ___ by students every term.' (write)",
+          "latex": "",
+          "choices": [
+            "is written",
+            "is write",
+            "writes",
+            "is writing"
+          ],
+          "answer": 0,
+          "explanation_mn": "Passive present simple = is + V3. write → **written**. 'is write' нь V3 биш тул буруу; 'writes' идэвхтэй хэв."
+        },
+        {
+          "id": "lt-en-present-tenses-6",
+          "skill_id": "en-present-tenses",
+          "difficulty": 2,
+          "stem_mn": "Which passive sentence is correct?",
+          "latex": "",
+          "choices": [
+            "Snacks are sell in the school canteen.",
+            "Snacks are sold in the school canteen.",
+            "Snacks are selling in the school canteen.",
+            "Snacks is sold in the school canteen."
+          ],
+          "answer": 1,
+          "explanation_mn": "Passive = are + V3 (**sold**). 'are sell' V3 биш; 'are selling' идэвхтэй; 'is' олон тоонд буруу."
+        },
+        {
+          "id": "lt-en-present-tenses-7",
+          "skill_id": "en-present-tenses",
+          "difficulty": 2,
+          "stem_mn": "'Anna usually reads at home, but today she ___ in the library.'",
+          "latex": "",
+          "choices": [
+            "reads",
+            "read",
+            "is reading",
+            "is read"
+          ],
+          "answer": 2,
+          "explanation_mn": "'Today' нь ердийн зуршлаас өөр, түр зуурын үйлдэл → present continuous: **is reading**. 'reads' нь зуршлыг заана."
+        },
+        {
+          "id": "lt-en-present-tenses-8",
+          "skill_id": "en-present-tenses",
+          "difficulty": 3,
+          "stem_mn": "Find the sentence with NO mistakes.",
+          "latex": "",
+          "choices": [
+            "Our club organising a concert, and tickets are sell online.",
+            "Our club is organising a concert, and tickets are sold online.",
+            "Our club is organise a concert, and tickets is sold online.",
+            "Our club organise a concert, and tickets are selling online."
+          ],
+          "answer": 1,
+          "explanation_mn": "'is organising' (continuous active) + 'are sold' (passive V3) хоёулаа зөв. Бусад нь be дутуу, V3 биш, эсвэл тоо таарахгүй (tickets is)."
+        },
+        {
+          "id": "lt-en-present-tenses-9",
+          "skill_id": "en-present-tenses",
+          "difficulty": 3,
+          "stem_mn": "'Look — the classroom walls ___ right now.' (paint)",
+          "latex": "",
+          "choices": [
+            "are painted",
+            "are painting",
+            "are being painted",
+            "paint"
+          ],
+          "answer": 2,
+          "explanation_mn": "Right now + идэвхгүй → present continuous passive: are being + V3 (**painted**). Walls олон тоо → are. 'are painting' идэвхтэй хэв."
+        },
+        {
+          "id": "lt-en-present-tenses-10",
+          "skill_id": "en-present-tenses",
+          "difficulty": 3,
+          "stem_mn": "Which sentence describes a general fact (not an action happening now)?",
+          "latex": "",
+          "choices": [
+            "Water is boiling on the stove.",
+            "The teacher is explaining the rule.",
+            "Water boils at 100 degrees.",
+            "The kids are playing outside."
+          ],
+          "answer": 2,
+          "explanation_mn": "Ерөнхий үнэн → present simple: '**Water boils at 100 degrees.**' Бусад нь яг одоо болж буй үйлдэл (continuous)."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-perfect-modals",
+      "title_mn": "Present perfect & modals for advice (Unit 2: Learning for the Future)",
+      "lesson_id": "en-1-2",
+      "pages_mn": "Study and Work — Unit: Learning for the Future (study skills, lifelong learning)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-perfect-modals-1",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 1,
+          "stem_mn": "They ___ completed the training course.",
+          "latex": "",
+          "choices": [
+            "has",
+            "have",
+            "is",
+            "had"
+          ],
+          "answer": 1,
+          "explanation_mn": "'They' дараа have. Present perfect = have + V3: 'They have completed...'"
+        },
+        {
+          "id": "lt-en-perfect-modals-2",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 1,
+          "stem_mn": "I have worked here ___ five years.",
+          "latex": "",
+          "choices": [
+            "since",
+            "for",
+            "ago",
+            "in"
+          ],
+          "answer": 1,
+          "explanation_mn": "'five years' бол хугацааны урт тул for хэрэглэнэ."
+        },
+        {
+          "id": "lt-en-perfect-modals-3",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 1,
+          "stem_mn": "She has studied English ___ 2020.",
+          "latex": "",
+          "choices": [
+            "for",
+            "since",
+            "during",
+            "from"
+          ],
+          "answer": 1,
+          "explanation_mn": "2020 бол тодорхой эхлэл цэг тул since хэрэглэнэ."
+        },
+        {
+          "id": "lt-en-perfect-modals-4",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 1,
+          "stem_mn": "You ___ ask your teacher for help.",
+          "latex": "",
+          "choices": [
+            "should to",
+            "should",
+            "should be",
+            "shoulding"
+          ],
+          "answer": 1,
+          "explanation_mn": "Модаль should дараа шууд үндсэн үйл үг (ask) орно, to-гүй. 'should to' буруу."
+        },
+        {
+          "id": "lt-en-perfect-modals-5",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 2,
+          "stem_mn": "Which sentence is correct?",
+          "latex": "",
+          "choices": [
+            "I have met her in 2018.",
+            "I met her in 2018.",
+            "I have meet her in 2018.",
+            "I meeted her in 2018."
+          ],
+          "answer": 1,
+          "explanation_mn": "'in 2018' тодорхой өнгөрсөн цаг тул past simple 'met'. Present perfect тодорхой цагтай тохирохгүй."
+        },
+        {
+          "id": "lt-en-perfect-modals-6",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 2,
+          "stem_mn": "___ you ever studied abroad?",
+          "latex": "",
+          "choices": [
+            "Did",
+            "Have",
+            "Has",
+            "Are"
+          ],
+          "answer": 1,
+          "explanation_mn": "Туршлага асуухад present perfect: 'Have you ever studied abroad?' 'you' тул have."
+        },
+        {
+          "id": "lt-en-perfect-modals-7",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 2,
+          "stem_mn": "The certificates ___ awarded to the graduates.",
+          "latex": "",
+          "choices": [
+            "has been",
+            "have been",
+            "have being",
+            "has being"
+          ],
+          "answer": 1,
+          "explanation_mn": "'certificates' олон тоо тул have been + V3 (awarded). Present perfect passive = have/has been + V3."
+        },
+        {
+          "id": "lt-en-perfect-modals-8",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 2,
+          "stem_mn": "You'd better ___ late for the interview.",
+          "latex": "",
+          "choices": [
+            "not be",
+            "not to be",
+            "to not be",
+            "not being"
+          ],
+          "answer": 0,
+          "explanation_mn": "had better дараа үндсэн үйл үг, үгүйсгэлд 'had better not + verb': 'had better not be'. to залгахгүй."
+        },
+        {
+          "id": "lt-en-perfect-modals-9",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 3,
+          "stem_mn": "Which sentence is INCORRECT?",
+          "latex": "",
+          "choices": [
+            "I have known him for a long time.",
+            "I have known him since we were children.",
+            "I have known him since three years.",
+            "I have known him for years."
+          ],
+          "answer": 2,
+          "explanation_mn": "'since three years' буруу — 'three years' бол хугацааны урт тул for хэрэглэнэ. since бол эхлэл цэгт (since we were children)."
+        },
+        {
+          "id": "lt-en-perfect-modals-10",
+          "skill_id": "en-perfect-modals",
+          "difficulty": 3,
+          "stem_mn": "Choose the correct sentence.",
+          "latex": "",
+          "choices": [
+            "You ought to update your CV, and you should to add new skills.",
+            "You ought to update your CV, and you should add new skills.",
+            "You ought update your CV, and you should adding new skills.",
+            "You ought to updating your CV, and you should add new skills."
+          ],
+          "answer": 1,
+          "explanation_mn": "ought TO + үндсэн үйл үг (update), should + үндсэн үйл үг (add, to-гүй). 'should to add', 'ought update', 'updating' бүгд буруу."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-future-questions",
+      "title_mn": "Future forms & questions (Unit 3: Jobs and Society)",
+      "lesson_id": "en-1-3",
+      "pages_mn": "Study and Work — Unit: Jobs and Society (careers, community service)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-future-questions-1",
+          "skill_id": "en-future-questions",
+          "difficulty": 1,
+          "stem_mn": "Зөв хэлбэрийг сонго: 'She ___ the presentation next week.' (present / give)",
+          "latex": "",
+          "choices": [
+            "will gives",
+            "will give",
+            "will gave",
+            "wills give"
+          ],
+          "answer": 1,
+          "explanation_mn": "Future simple: will + үйл үгийн үндсэн хэлбэр (give). will-ийн дараа -s залгадаггүй, past хэлбэр (gave) хэрэглэдэггүй."
+        },
+        {
+          "id": "lt-en-future-questions-2",
+          "skill_id": "en-future-questions",
+          "difficulty": 1,
+          "stem_mn": "'The printer isn't working.' 'Don't worry, I ___ fix it.' — Ярианы агшинд гаргасан санал тул аль нь тохирох вэ?",
+          "latex": "",
+          "choices": [
+            "am going to",
+            "will",
+            "going to",
+            "will to"
+          ],
+          "answer": 1,
+          "explanation_mn": "Ярианы агшинд гэнэт гаргасан шийдвэр/санал = will. Урьдчилан төлөвлөсөн зүйл биш тул be going to тохирохгүй."
+        },
+        {
+          "id": "lt-en-future-questions-3",
+          "skill_id": "en-future-questions",
+          "difficulty": 1,
+          "stem_mn": "'___ to become a doctor?' Subject-ийг асуух зөв хэлбэрийг сонго. (Хэн эмч болохыг хүсдэг вэ?)",
+          "latex": "",
+          "choices": [
+            "Who does want",
+            "Who want",
+            "Who wants",
+            "Who do want"
+          ],
+          "answer": 2,
+          "explanation_mn": "Subject question-д do/does хэрэглэдэггүй. 'Who' нь ганц тоо тул үйл үг 'wants' болно. 'Who does want' болон 'Who do want' буруу."
+        },
+        {
+          "id": "lt-en-future-questions-4",
+          "skill_id": "en-future-questions",
+          "difficulty": 2,
+          "stem_mn": "'By the time you arrive, the meeting ___.' (finish)",
+          "latex": "",
+          "choices": [
+            "will finish",
+            "will have finished",
+            "will has finished",
+            "will have finish"
+          ],
+          "answer": 1,
+          "explanation_mn": "'By the time...' нь ирээдүйн нэг цэгээс өмнө дуусахыг заана тул future perfect: will have + V3 (finished). 'will has' болон 'will have finish' буруу."
+        },
+        {
+          "id": "lt-en-future-questions-5",
+          "skill_id": "en-future-questions",
+          "difficulty": 2,
+          "stem_mn": "Object question үүсгэ: '___ for the position last week?' (who / you / recommend) — чи хэнийг санал болгосон бэ?",
+          "latex": "",
+          "choices": [
+            "Who you recommended",
+            "Who did you recommend",
+            "Who did you recommended",
+            "Who recommended you"
+          ],
+          "answer": 1,
+          "explanation_mn": "Object-ийг асуухад did + үндсэн хэлбэр: 'Who did you recommend?'. 'Who did you recommended' давхар past тул буруу; 'Who recommended you' нь subject question болж утга өөрчлөгдөнө."
+        },
+        {
+          "id": "lt-en-future-questions-6",
+          "skill_id": "en-future-questions",
+          "difficulty": 2,
+          "stem_mn": "'The new policy ___ next month.' (announce — passive)",
+          "latex": "",
+          "choices": [
+            "will announce",
+            "will be announced",
+            "will announced",
+            "will be announce"
+          ],
+          "answer": 1,
+          "explanation_mn": "Бодлого өөрөө зарлагдах тул passive: will be + V3 (announced). 'will announce' нь active, 'will be announce' нь V3 биш тул буруу."
+        },
+        {
+          "id": "lt-en-future-questions-7",
+          "skill_id": "en-future-questions",
+          "difficulty": 2,
+          "stem_mn": "Үгсийн сан: 'A person who works without pay to help the community is a ___.'",
+          "latex": "",
+          "choices": [
+            "volunteer",
+            "employer",
+            "applicant",
+            "supervisor"
+          ],
+          "answer": 0,
+          "explanation_mn": "'volunteer' = сайн дурын ажилтан (цалингүйгээр нийгэмд туслах хүн). 'employer' = ажил олгогч, 'applicant' = өргөдөл гаргагч, 'supervisor' = удирдагч."
+        },
+        {
+          "id": "lt-en-future-questions-8",
+          "skill_id": "en-future-questions",
+          "difficulty": 3,
+          "stem_mn": "Аль өгүүлбэр БУРУУ бэ?",
+          "latex": "",
+          "choices": [
+            "Who did you interview yesterday?",
+            "Who did call the manager?",
+            "By June, they will have finished the project.",
+            "The report will be sent tomorrow."
+          ],
+          "answer": 1,
+          "explanation_mn": "'Who did call?' буруу — subject-ийг асууж байгаа тул did хэрэггүй, зөв нь 'Who called the manager?'. Бусад гурав нь зөв (object question, future perfect, future simple passive)."
+        },
+        {
+          "id": "lt-en-future-questions-9",
+          "skill_id": "en-future-questions",
+          "difficulty": 3,
+          "stem_mn": "'By 2040, thousands of jobs ___ by automation.' (replace — future perfect passive)",
+          "latex": "",
+          "choices": [
+            "will replace",
+            "will have replaced",
+            "will have been replaced",
+            "will be replaced"
+          ],
+          "answer": 2,
+          "explanation_mn": "Future perfect passive: will have been + V3 (replaced). 'will have replaced' нь active, 'will be replaced' нь future simple passive тул 'By 2040...' -тэй бүрэн нийцэхгүй."
+        },
+        {
+          "id": "lt-en-future-questions-10",
+          "skill_id": "en-future-questions",
+          "difficulty": 3,
+          "stem_mn": "Уншаад гүйцээ: 'Saraa has decided to volunteer at the local shelter. She has already filled out the form.' → 'She ___ at the shelter next weekend.'",
+          "latex": "",
+          "choices": [
+            "will volunteering",
+            "is going to volunteer",
+            "will have volunteered",
+            "volunteers"
+          ],
+          "answer": 1,
+          "explanation_mn": "Аль хэдийн шийдэж, маягтаа бөглөсөн = урьдчилан төлөвлөсөн тул be going to: 'is going to volunteer'. 'will volunteering' дүрмийн алдаа, 'will have volunteered' нь future perfect тул утгад тохирохгүй."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-relative-clauses",
+      "title_mn": "Relative clauses (Unit 4: Roots of Mongolian Identity)",
+      "lesson_id": "en-2-1",
+      "pages_mn": "Cultures and Traditions — Unit: Roots of Mongolian Identity (traditions, symbolism)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-relative-clauses-1",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 1,
+          "stem_mn": "Fill in the blank: 'A herder is a person ___ takes care of animals.'",
+          "latex": "",
+          "choices": [
+            "who",
+            "which",
+            "where",
+            "when"
+          ],
+          "answer": 0,
+          "explanation_mn": "Herder бол хүн тул who ашиглана. which нь эд юмсыг заадаг."
+        },
+        {
+          "id": "lt-en-relative-clauses-2",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 1,
+          "stem_mn": "Fill in the blank: 'Airag is a drink ___ is made from mare's milk.'",
+          "latex": "",
+          "choices": [
+            "who",
+            "which",
+            "when",
+            "where"
+          ],
+          "answer": 1,
+          "explanation_mn": "Airag (айраг) бол ундаа буюу юм тул which (эсвэл that). who нь зөвхөн хүнд хэрэглэгддэг."
+        },
+        {
+          "id": "lt-en-relative-clauses-3",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 1,
+          "stem_mn": "Fill in the blank: 'The steppe is the vast grassland ___ nomads live.'",
+          "latex": "",
+          "choices": [
+            "who",
+            "which",
+            "where",
+            "when"
+          ],
+          "answer": 2,
+          "explanation_mn": "Steppe (тал нутаг) бол газар тул where. which нь юмыг заана, харин энд байршлыг заасан."
+        },
+        {
+          "id": "lt-en-relative-clauses-4",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 2,
+          "stem_mn": "Fill in the blank: 'Tsagaan Sar is the festival ___ Mongolians celebrate the lunar new year.'",
+          "latex": "",
+          "choices": [
+            "where",
+            "when",
+            "who",
+            "which"
+          ],
+          "answer": 1,
+          "explanation_mn": "Tsagaan Sar бол баяр буюу цаг хугацааны үе тул when. where нь газрыг заадаг тул буруу."
+        },
+        {
+          "id": "lt-en-relative-clauses-5",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 2,
+          "stem_mn": "Which sentence is INCORRECT?",
+          "latex": "",
+          "choices": [
+            "The man who won the wrestling is my uncle.",
+            "The man which won the wrestling is my uncle.",
+            "The man that won the wrestling is my uncle.",
+            "The horse that won the race is famous."
+          ],
+          "answer": 1,
+          "explanation_mn": "'The man which...' буруу. Man бол хүн тул which биш, who эсвэл that хэрэглэнэ."
+        },
+        {
+          "id": "lt-en-relative-clauses-6",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 2,
+          "stem_mn": "Fill in the blank: 'The ovoo is a place ___ travelers add stones and pray.'",
+          "latex": "",
+          "choices": [
+            "when",
+            "where",
+            "who",
+            "which"
+          ],
+          "answer": 1,
+          "explanation_mn": "Ovoo бол газар тул where. when нь цаг хугацааг заадаг тул энд буруу."
+        },
+        {
+          "id": "lt-en-relative-clauses-7",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 2,
+          "stem_mn": "Fill in the blank: 'The morin khuur, ___ means \"horse-head fiddle\", is Mongolia's national instrument.'",
+          "latex": "",
+          "choices": [
+            "who",
+            "which",
+            "where",
+            "when"
+          ],
+          "answer": 1,
+          "explanation_mn": "Morin khuur бол юм тул which. Энэ нь non-defining clause (хоёр талдаа таслалтай) тул that хэрэглэхгүй, зөвхөн which."
+        },
+        {
+          "id": "lt-en-relative-clauses-8",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 3,
+          "stem_mn": "Which sentence is punctuated correctly?",
+          "latex": "",
+          "choices": [
+            "Naadam, which is held every July, attracts many visitors.",
+            "Naadam which is held every July attracts many visitors.",
+            "Naadam, that is held every July, attracts many visitors.",
+            "Naadam, when is held every July, attracts many visitors."
+          ],
+          "answer": 0,
+          "explanation_mn": "Зөв: non-defining clause 'which is held every July' хоёр талдаа таслалтай. that биш which; when нь энд утгагүй."
+        },
+        {
+          "id": "lt-en-relative-clauses-9",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 3,
+          "stem_mn": "Fill in the blank: 'Autumn is the season ___ herders prepare for the harsh winter.'",
+          "latex": "",
+          "choices": [
+            "where",
+            "when",
+            "which",
+            "who"
+          ],
+          "answer": 1,
+          "explanation_mn": "Autumn (намар) бол улирал буюу цаг хугацаа тул when. where нь газрыг заадаг тул буруу."
+        },
+        {
+          "id": "lt-en-relative-clauses-10",
+          "skill_id": "en-relative-clauses",
+          "difficulty": 3,
+          "stem_mn": "Combine into one sentence: 'This is the deel. My grandfather wore it at Naadam.' Choose the best sentence.",
+          "latex": "",
+          "choices": [
+            "This is the deel which my grandfather wore at Naadam.",
+            "This is the deel who my grandfather wore at Naadam.",
+            "This is the deel where my grandfather wore at Naadam.",
+            "This is the deel when my grandfather wore at Naadam."
+          ],
+          "answer": 0,
+          "explanation_mn": "Deel бол юм тул which (эсвэл that). who (хүн), where (газар), when (цаг) нь энд буруу."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-reason-time-clauses",
+      "title_mn": "Clauses of reason & time (Unit 5: Cultures Around the World)",
+      "lesson_id": "en-2-2",
+      "pages_mn": "Cultures and Traditions — Unit: Cultures Around the World (customs, lifestyles)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-reason-time-clauses-1",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 1,
+          "stem_mn": "Choose the correct word: We celebrate this day ___ our long history.",
+          "latex": "",
+          "choices": [
+            "because",
+            "due to",
+            "because of",
+            "so"
+          ],
+          "answer": 2,
+          "explanation_mn": "'our long history' бол нэр үг хэллэг тул `because of` зөв. `because` ард бол бүтэн өгүүлбэр хэрэгтэй. (`due to` нь ихэвчлэн 'to be'-ийн ард нэр үгийг тодотгодог тул энд үйл үг 'celebrate'-тэй хэрэглэхэд `because of` илүү зохимжтой.)"
+        },
+        {
+          "id": "lt-en-reason-time-clauses-2",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 1,
+          "stem_mn": "Choose the correct word: ___ it rained, the outdoor ceremony moved inside.",
+          "latex": "",
+          "choices": [
+            "Because of",
+            "Because",
+            "Due to",
+            "So"
+          ],
+          "answer": 1,
+          "explanation_mn": "'it rained' бол эзэн (it) + үйл (rained) бүхий бүтэн өгүүлбэр тул `Because` зөв. `Because of`, `Due to` ард нэр үг ирнэ."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-3",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 1,
+          "stem_mn": "Choose the correct word: We always clean the house ___ the New Year begins.",
+          "latex": "",
+          "choices": [
+            "while",
+            "because of",
+            "due to",
+            "before"
+          ],
+          "answer": 3,
+          "explanation_mn": "Гэрээ цэвэрлэх нь шинэ жил эхлэхээс өмнө болдог тул `before` зөв. `because of`, `due to` бол шалтгаан заадаг."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-4",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 2,
+          "stem_mn": "Choose the correct verb form: After I ___ from university, I will travel to learn about other cultures.",
+          "latex": "",
+          "choices": [
+            "graduate",
+            "will graduate",
+            "graduated",
+            "am graduating"
+          ],
+          "answer": 0,
+          "explanation_mn": "Цаг хугацааны гишүүн өгүүлбэрт (`after` ард) ирээдүйг одоо цагаар илэрхийлнэ тул `graduate` зөв. 'After I will graduate' бол алдаа."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-5",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 2,
+          "stem_mn": "Choose the correct word: ___ the tourists were taking photos, the locals were preparing a feast.",
+          "latex": "",
+          "choices": [
+            "Because of",
+            "Before",
+            "While",
+            "Due to"
+          ],
+          "answer": 2,
+          "explanation_mn": "Хоёр үйл (were taking, were preparing) нэгэн зэрэг үргэлжилж байгаа тул `While` зөв."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-6",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 2,
+          "stem_mn": "Choose the correct word: The concert was cancelled ___ a power cut.",
+          "latex": "",
+          "choices": [
+            "because",
+            "due to",
+            "while",
+            "when"
+          ],
+          "answer": 1,
+          "explanation_mn": "'a power cut' бол нэр үг тул `due to` зөв. `because` ард бол бүтэн өгүүлбэр хэрэгтэй."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-7",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 2,
+          "stem_mn": "Choose the correct word: ___ the guest arrived, the host offered a bowl of tea.",
+          "latex": "",
+          "choices": [
+            "When",
+            "While",
+            "Because of",
+            "Due to"
+          ],
+          "answer": 0,
+          "explanation_mn": "'arrived' бол агшин зуурын (цэг) үйл тул `When` зөв. `While` бол үргэлжилсэн үйлд ордог."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-8",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 3,
+          "stem_mn": "Which sentence is INCORRECT?",
+          "latex": "",
+          "choices": [
+            "Because of the storm, the parade was cancelled.",
+            "While she was cooking, he set the table.",
+            "We left early because we were tired.",
+            "When I will get to Japan, I will try sushi."
+          ],
+          "answer": 3,
+          "explanation_mn": "Цаг хугацааны гишүүн өгүүлбэрт `will` орохгүй. Зөв нь 'When I get to Japan, I will try sushi.' Бусад гурав нь зөв."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-9",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 3,
+          "stem_mn": "Which sentence is CORRECT?",
+          "latex": "",
+          "choices": [
+            "The match was delayed because heavy rain.",
+            "The match was delayed due the heavy rain.",
+            "The match was delayed because of heavy rain.",
+            "The match was delayed because of it rained."
+          ],
+          "answer": 2,
+          "explanation_mn": "`because of` + нэр үг (heavy rain) тул гурав дахь нь зөв. 'because heavy rain' буруу (өгүүлбэр хэрэгтэй), 'due the' буруу (`due to`), 'because of it rained' буруу (because of ард өгүүлбэр орохгүй)."
+        },
+        {
+          "id": "lt-en-reason-time-clauses-10",
+          "skill_id": "en-reason-time-clauses",
+          "difficulty": 3,
+          "stem_mn": "Choose the correct word: The lights suddenly went out ___ the shaman was performing the ritual.",
+          "latex": "",
+          "choices": [
+            "due to",
+            "while",
+            "before",
+            "because of"
+          ],
+          "answer": 1,
+          "explanation_mn": "'was performing' бол үргэлжилсэн (past continuous) үйл, түүний явцад гэрэл унтарсан тул `while` зөв. `due to`, `because of` бол шалтгаан заадаг."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-past-infinitives",
+      "title_mn": "Past simple vs present perfect; infinitives (Unit 6: Language in Mind)",
+      "lesson_id": "en-2-3",
+      "pages_mn": "Cultures and Traditions — Unit: Language in Mind (stories, heritage)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-past-infinitives-1",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 1,
+          "stem_mn": "We ___ Tsagaan Sar with our relatives last week.",
+          "latex": "",
+          "choices": [
+            "celebrated",
+            "have celebrated",
+            "celebrate",
+            "celebrating"
+          ],
+          "answer": 0,
+          "explanation_mn": "«last week» тодорхой өнгөрсөн цаг тул `past simple`: celebrated."
+        },
+        {
+          "id": "lt-en-past-infinitives-2",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 1,
+          "stem_mn": "Long ago, storytellers ___ legends from memory.",
+          "latex": "",
+          "choices": [
+            "telled",
+            "telling",
+            "told",
+            "have told"
+          ],
+          "answer": 2,
+          "explanation_mn": "tell тогтмол бус үйл үг тул past simple нь «told» (telled биш)."
+        },
+        {
+          "id": "lt-en-past-infinitives-3",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 1,
+          "stem_mn": "I have ___ finished reading this folk tale.",
+          "latex": "",
+          "choices": [
+            "yesterday",
+            "just",
+            "ago",
+            "last week"
+          ],
+          "answer": 1,
+          "explanation_mn": "«just» нь `present perfect`-тэй хамт орно; yesterday/ago/last week бол past simple-ийн тэмдэг үг."
+        },
+        {
+          "id": "lt-en-past-infinitives-4",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 2,
+          "stem_mn": "She has ___ many countries to study their traditions.",
+          "latex": "",
+          "choices": [
+            "visit",
+            "visiting",
+            "visits",
+            "visited"
+          ],
+          "answer": 3,
+          "explanation_mn": "have/has-ийн дараа V3 орно: has + visited."
+        },
+        {
+          "id": "lt-en-past-infinitives-5",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 2,
+          "stem_mn": "My little sister enjoys ___ traditional songs.",
+          "latex": "",
+          "choices": [
+            "singing",
+            "to sing",
+            "sing",
+            "sang"
+          ],
+          "answer": 0,
+          "explanation_mn": "«enjoy» нь `gerund` авдаг: enjoy singing. «enjoy to sing» буруу."
+        },
+        {
+          "id": "lt-en-past-infinitives-6",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 2,
+          "stem_mn": "They want ___ more about their ancestors' customs.",
+          "latex": "",
+          "choices": [
+            "learning",
+            "learn",
+            "to learn",
+            "learned"
+          ],
+          "answer": 2,
+          "explanation_mn": "«want» нь `infinitive` авдаг: want to learn."
+        },
+        {
+          "id": "lt-en-past-infinitives-7",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 2,
+          "stem_mn": "We ___ the History Museum yesterday.",
+          "latex": "",
+          "choices": [
+            "have visited",
+            "visited",
+            "has visited",
+            "visit"
+          ],
+          "answer": 1,
+          "explanation_mn": "«yesterday» тул `past simple`: visited. Present perfect-ийг «yesterday»-тэй хэрэглэдэггүй."
+        },
+        {
+          "id": "lt-en-past-infinitives-8",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 3,
+          "stem_mn": "Which sentence is correct?",
+          "latex": "",
+          "choices": [
+            "I have seen that ritual last year.",
+            "I have saw that ritual last year.",
+            "I saw that ritual last year.",
+            "I seen that ritual last year."
+          ],
+          "answer": 2,
+          "explanation_mn": "«last year» тодорхой өнгөрсөн цаг тул `past simple`: «I saw ... last year.» «have seen ... last year» болон «have saw»/«seen» ганцаараа буруу."
+        },
+        {
+          "id": "lt-en-past-infinitives-9",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 3,
+          "stem_mn": "Choose the correct sentence.",
+          "latex": "",
+          "choices": [
+            "We finished to decorate the ger.",
+            "We want decorating the ger.",
+            "We enjoy to decorate the ger.",
+            "We finished decorating the ger."
+          ],
+          "answer": 3,
+          "explanation_mn": "finish + gerund = finished decorating. «want» дараа to + V, «enjoy» дараа V-ing болохыг санаарай — бусад нь буруу."
+        },
+        {
+          "id": "lt-en-past-infinitives-10",
+          "skill_id": "en-past-infinitives",
+          "difficulty": 3,
+          "stem_mn": "Read: «Bat has studied Mongolian calligraphy since 2018. Last month he won a prize.» Which sentence is TRUE?",
+          "latex": "",
+          "choices": [
+            "Bat still studies calligraphy now.",
+            "Bat stopped studying calligraphy in 2018.",
+            "Bat won a prize this week.",
+            "Bat has won a prize last month."
+          ],
+          "answer": 0,
+          "explanation_mn": "«has studied ... since 2018» нь 2018-аас одоог хүртэл үргэлжилж буйг заана тул одоо ч сурч байна. «Last month he won» бол past simple — тодорхой өнгөрсөн."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-passive-quantifiers",
+      "title_mn": "Passive modals & quantifiers (Unit 7: Nature Conservation)",
+      "lesson_id": "en-3-1",
+      "pages_mn": "Mother Nature and Wellness — Unit: Nature Conservation (pollution, environment)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-passive-quantifiers-1",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 1,
+          "stem_mn": "Зөв идэвхгүй хэлбэрийг сонго: 'Trees ___ planted to clean the air.'",
+          "latex": "",
+          "choices": [
+            "must",
+            "must be",
+            "must been",
+            "must to be"
+          ],
+          "answer": 1,
+          "explanation_mn": "must + be + V3 (planted). Бусад нь be дутуу эсвэл буруу хэлбэр."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-2",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 1,
+          "stem_mn": "Зөв үгийг сонго: 'There are ___ animals in the forest.'",
+          "latex": "",
+          "choices": [
+            "much",
+            "a little",
+            "many",
+            "little"
+          ],
+          "answer": 2,
+          "explanation_mn": "animals тоологдох олон тоо → many. much, little, a little нь тоологдохгүй нэртэй."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-3",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 1,
+          "stem_mn": "Зөв үгийг сонго: 'We should not waste ___ water.'",
+          "latex": "",
+          "choices": [
+            "many",
+            "much",
+            "a few",
+            "few"
+          ],
+          "answer": 1,
+          "explanation_mn": "water тоологдохгүй → much. many, a few, few нь тоологдох нэртэй."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-4",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 2,
+          "stem_mn": "Зөв үгийг сонго: 'Only ___ species of birds are left here.'",
+          "latex": "",
+          "choices": [
+            "a little",
+            "much",
+            "a few",
+            "little"
+          ],
+          "answer": 2,
+          "explanation_mn": "species тоологдох → a few. a little, much, little нь тоологдохгүй нэртэй."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-5",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 2,
+          "stem_mn": "Зөв үгийг сонго: 'There is very ___ rain in the Gobi Desert.'",
+          "latex": "",
+          "choices": [
+            "few",
+            "little",
+            "many",
+            "a few"
+          ],
+          "answer": 1,
+          "explanation_mn": "rain тоологдохгүй, мөн 'бараг байхгүй' утгатай тул → little. few, many, a few нь тоологдох нэртэй."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-6",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 2,
+          "stem_mn": "Зөв өгүүлбэрийг сонго: 'Rivers ___ by factory waste.'",
+          "latex": "",
+          "choices": [
+            "should not polluted",
+            "should not be pollute",
+            "should not to be polluted",
+            "should not be polluted"
+          ],
+          "answer": 3,
+          "explanation_mn": "should not + be + polluted (V3). Бусад нь be дутуу, V1 (pollute), эсвэл 'to' илүү."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-7",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 2,
+          "stem_mn": "Аль өгүүлбэрт алдаа байна вэ?",
+          "latex": "",
+          "choices": [
+            "Water should be saved.",
+            "Much trees must be planted.",
+            "A few animals were rescued.",
+            "Rubbish can be recycled."
+          ],
+          "answer": 1,
+          "explanation_mn": "'Much trees' алдаатай — trees тоологдох тул 'Many trees' байх ёстой. Бусад өгүүлбэрүүд зөв."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-8",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 3,
+          "stem_mn": "Уншаад зөв идэвхгүй модалыг сонго: 'Air pollution is a big problem. It ___ by planting more trees and using fewer cars.'",
+          "latex": "",
+          "choices": [
+            "can reduced",
+            "can be reduce",
+            "can be reduced",
+            "can to be reduced"
+          ],
+          "answer": 2,
+          "explanation_mn": "can + be + reduced (V3). Утгаараа 'бууруулж болно' тул can. Бусад нь be дутуу, V1, эсвэл 'to' илүү."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-9",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 3,
+          "stem_mn": "Уншаад зөв хосыг сонго: 'The lake is almost dry. There is ___ water and only ___ fish are still alive.'",
+          "latex": "",
+          "choices": [
+            "few ... a little",
+            "little ... a few",
+            "much ... many",
+            "a little ... little"
+          ],
+          "answer": 1,
+          "explanation_mn": "water тоологдохгүй, бараг алга → little. fish (энд олон тоо, тоологдох) → a few. Тиймээс 'little ... a few'."
+        },
+        {
+          "id": "lt-en-passive-quantifiers-10",
+          "skill_id": "en-passive-quantifiers",
+          "difficulty": 3,
+          "stem_mn": "Байгаль хамгааллын талаарх бүрэн зөв өгүүлбэрийг сонго.",
+          "latex": "",
+          "choices": [
+            "Much bottles can be recycled, but few effort is made.",
+            "Many bottles can be recycled, but little effort is made.",
+            "Many bottles can recycled, but little effort is made.",
+            "Many bottles can be recycled, but few effort is made."
+          ],
+          "answer": 1,
+          "explanation_mn": "bottles тоологдох → many; effort тоологдохгүй → little; идэвхгүй = can be recycled. 0: 'Much bottles' + 'few effort' алдаа. 2: 'can recycled' be дутуу. 3: 'few effort' алдаа (effort тоологдохгүй)."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-comparatives-transitions",
+      "title_mn": "Comparatives & transition words (Unit 8: Healthy Lifestyle)",
+      "lesson_id": "en-3-2",
+      "pages_mn": "Mother Nature and Wellness — Unit: Healthy Lifestyle (sport, brain, habits)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-comparatives-transitions-1",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 1,
+          "stem_mn": "Зайг нөх: 'Yoga is ___ boxing.' (calm)",
+          "latex": "",
+          "choices": [
+            "calmer than",
+            "more calm than",
+            "calmer then",
+            "more calmer than"
+          ],
+          "answer": 0,
+          "explanation_mn": "calm богино тэмдэг нэр тул -er нэмж, than хэрэглэнэ → 'calmer than'. 'more'-г давхарлахгүй, 'then' биш 'than'."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-2",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 1,
+          "stem_mn": "Зайг нөх: 'Water is ___ drink for your body.' (good)",
+          "latex": "",
+          "choices": [
+            "the best",
+            "the goodest",
+            "best",
+            "better"
+          ],
+          "answer": 0,
+          "explanation_mn": "good-ийн superlative нь irregular 'the best'. Superlative-д 'the' заавал хэрэгтэй; 'goodest' гэж хэлбэржүүлэхгүй."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-3",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 1,
+          "stem_mn": "Тохирох үгийг сонго: 'I was very tired. ___, I finished the race.'",
+          "latex": "",
+          "choices": [
+            "However",
+            "Therefore",
+            "For example",
+            "In addition"
+          ],
+          "answer": 0,
+          "explanation_mn": "'tired' ба 'finished the race' нь эсрэг санаа тул 'However' (гэвч) тохирно."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-4",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 2,
+          "stem_mn": "Аль өгүүлбэр нь БУРУУ бэ?",
+          "latex": "",
+          "choices": [
+            "Jogging is more relaxing than running.",
+            "This gym is more bigger than that one.",
+            "Apples are sweeter than lemons.",
+            "She is the fittest player on the team."
+          ],
+          "answer": 1,
+          "explanation_mn": "'more bigger' нь 'more' ба '-er'-ийг давхар хэрэглэсэн алдаа. Зөв нь 'bigger than'. Бусад гурав нь зөв."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-5",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 2,
+          "stem_mn": "Аль өгүүлбэр нь зөв бэ?",
+          "latex": "",
+          "choices": [
+            "Sleeping early is better then staying up.",
+            "Sleeping early is better than staying up.",
+            "Sleeping early is more better than staying up.",
+            "Sleeping early is gooder than staying up."
+          ],
+          "answer": 1,
+          "explanation_mn": "Харьцуулахад 'than' хэрэглэнэ ('then' биш). better нь irregular тул 'more better', 'gooder' гэж хэлбэржүүлэхгүй. Зөв нь 'better than'."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-6",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 2,
+          "stem_mn": "Тохирох үгийг сонго: 'Exercise helps your heart. ___, it improves your mood.'",
+          "latex": "",
+          "choices": [
+            "In addition",
+            "However",
+            "For example",
+            "than"
+          ],
+          "answer": 0,
+          "explanation_mn": "Хоёр дахь санаа нь эхнийх дээр нэмэгдэж байгаа тул 'In addition' (нэмж хэлэхэд). 'than' нь transition word биш, харьцуулах үг."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-7",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 2,
+          "stem_mn": "'He trains daily. Therefore, he is very fit.' гэсэн өгүүлбэрт 'therefore' юуг заана вэ?",
+          "latex": "",
+          "choices": [
+            "үр дүн / дүгнэлт",
+            "эсрэг санаа",
+            "жишээ",
+            "цаг хугацааны дараалал"
+          ],
+          "answer": 0,
+          "explanation_mn": "therefore (тиймээс, иймд) нь өмнөх санааны үр дүн, дүгнэлтийг заана: өдөр бүр дасгал хийдэг тул фит болжээ."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-8",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 3,
+          "stem_mn": "Уншаад хариул: 'Swimming burns more calories than walking. However, running burns the most calories of all three.' Аль үйл ажиллагаа ХАМГИЙН их калори шатаах вэ?",
+          "latex": "",
+          "choices": [
+            "Running",
+            "Swimming",
+            "Walking",
+            "Бүгд адил"
+          ],
+          "answer": 0,
+          "explanation_mn": "'running burns the most calories of all three' гэсэн superlative ('the most') нь running-ийг гурвуулангаас хамгийн их гэж заасан."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-9",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 3,
+          "stem_mn": "Аль өгүүлбэр нь БҮРЭН зөв бэ?",
+          "latex": "",
+          "choices": [
+            "Tea is more healthier than soda, however I drink water.",
+            "Tea is healthier than soda. However, I drink water.",
+            "Tea is healthier then soda however I drink water.",
+            "Tea is the healthier than soda, however, I drink water."
+          ],
+          "answer": 1,
+          "explanation_mn": "healthier дээр 'more' давхарлахгүй, 'than' ('then' биш) хэрэглэнэ, comparative-д 'the' хэрэггүй, However-ийн дараа таслалтай → сонголт 2 бүрэн зөв."
+        },
+        {
+          "id": "lt-en-comparatives-transitions-10",
+          "skill_id": "en-comparatives-transitions",
+          "difficulty": 3,
+          "stem_mn": "Аль superlative өгүүлбэр нь зөв бэ?",
+          "latex": "",
+          "choices": [
+            "Sleep is most important habit for health.",
+            "Sleep is the most important habit for health.",
+            "Sleep is the most importantest habit for health.",
+            "Sleep is more important habit for health."
+          ],
+          "answer": 1,
+          "explanation_mn": "Superlative-д 'the' заавал хэрэгтэй, урт тэмдэг нэрт 'the most important'. 'most importantest' давхар алдаа, 'more important' нь дээд зэрэг биш."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-reported-speech",
+      "title_mn": "Reported (indirect) speech (Unit 9: Technology Today)",
+      "lesson_id": "en-4-1",
+      "pages_mn": "Gateway to Success — Unit: Technology Today (drones, online learning, cyber safety)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-reported-speech-1",
+          "skill_id": "en-reported-speech",
+          "difficulty": 1,
+          "stem_mn": "Зөв үйл үгийг сонго: She ___ me that she liked the new app.",
+          "latex": "",
+          "choices": [
+            "said",
+            "told",
+            "say",
+            "tells"
+          ],
+          "answer": 1,
+          "explanation_mn": "'tell' дараа нь хүн (me) шууд ордог тул 'told'. 'said' бол me-гүйгээр хэрэглэгддэг."
+        },
+        {
+          "id": "lt-en-reported-speech-2",
+          "skill_id": "en-reported-speech",
+          "difficulty": 1,
+          "stem_mn": "Direct: \"The internet is slow,\" he said. Reported: He said that the internet ___ slow.",
+          "latex": "",
+          "choices": [
+            "is",
+            "was",
+            "were",
+            "be"
+          ],
+          "answer": 1,
+          "explanation_mn": "Backshift: is (present) → was (past). Ганц тоо тул 'was'."
+        },
+        {
+          "id": "lt-en-reported-speech-3",
+          "skill_id": "en-reported-speech",
+          "difficulty": 1,
+          "stem_mn": "Технологийн үгсийн сан: A ___ is a small flying machine controlled from the ground.",
+          "latex": "",
+          "choices": [
+            "drone",
+            "router",
+            "browser",
+            "keyboard"
+          ],
+          "answer": 0,
+          "explanation_mn": "'drone' нь газраас удирддаг жижиг нисдэг төхөөрөмж. Router (сүлжээ), browser (хөтөч), keyboard (гар) нь өөр утгатай."
+        },
+        {
+          "id": "lt-en-reported-speech-4",
+          "skill_id": "en-reported-speech",
+          "difficulty": 2,
+          "stem_mn": "Зөв reported question-ийг сонго: She asked me ___.",
+          "latex": "",
+          "choices": [
+            "where was the charger",
+            "where the charger was",
+            "where is the charger",
+            "the charger where was"
+          ],
+          "answer": 1,
+          "explanation_mn": "Reported question-д энгийн эрэмбэ (subject + verb) + backshift: 'where the charger was'."
+        },
+        {
+          "id": "lt-en-reported-speech-5",
+          "skill_id": "en-reported-speech",
+          "difficulty": 2,
+          "stem_mn": "Аль өгүүлбэр нь ЗӨВ бэ?",
+          "latex": "",
+          "choices": [
+            "He said he is tired.",
+            "He said he was tired.",
+            "He said me he was tired.",
+            "He said that where he was."
+          ],
+          "answer": 1,
+          "explanation_mn": "Backshift хийж 'was' болно, 'said' дараа me ордоггүй. Тиймээс 'He said he was tired.' зөв."
+        },
+        {
+          "id": "lt-en-reported-speech-6",
+          "skill_id": "en-reported-speech",
+          "difficulty": 2,
+          "stem_mn": "Direct: \"I bought a new laptop yesterday,\" she said. Reported: She said she had bought a new laptop ___.",
+          "latex": "",
+          "choices": [
+            "yesterday",
+            "the day before",
+            "the next day",
+            "that day"
+          ],
+          "answer": 1,
+          "explanation_mn": "yesterday → the day before гэж цаг хугацааны үг өөрчлөгдөнө."
+        },
+        {
+          "id": "lt-en-reported-speech-7",
+          "skill_id": "en-reported-speech",
+          "difficulty": 2,
+          "stem_mn": "Direct: \"Are you online?\" he asked. Reported: He asked ___.",
+          "latex": "",
+          "choices": [
+            "if I was online",
+            "if was I online",
+            "was I online",
+            "that I was online"
+          ],
+          "answer": 0,
+          "explanation_mn": "Yes/No асуултад 'if' + энгийн эрэмбэ + backshift: 'if I was online'."
+        },
+        {
+          "id": "lt-en-reported-speech-8",
+          "skill_id": "en-reported-speech",
+          "difficulty": 3,
+          "stem_mn": "Direct: \"You must protect your password,\" the expert said. Reported: The expert said that we ___ protect our password.",
+          "latex": "",
+          "choices": [
+            "must",
+            "had to",
+            "have to",
+            "must to"
+          ],
+          "answer": 1,
+          "explanation_mn": "Reported speech-д 'must' (үүрэг) нь ихэвчлэн 'had to' болж ухардаг."
+        },
+        {
+          "id": "lt-en-reported-speech-9",
+          "skill_id": "en-reported-speech",
+          "difficulty": 3,
+          "stem_mn": "Уншиж бод: During the cyber safety lesson a student asked, \"How can hackers steal information?\" Оюутны асуултыг аль нь ЗӨВ дамжуулж байна вэ?",
+          "latex": "",
+          "choices": [
+            "The student asked how could hackers steal information.",
+            "The student asked how hackers could steal information.",
+            "The student asked how can hackers steal information.",
+            "The student asked how hackers can steal information."
+          ],
+          "answer": 1,
+          "explanation_mn": "can → could (backshift) БА энгийн эрэмбэ (hackers could) байх ёстой. Тиймээс 'how hackers could steal information'."
+        },
+        {
+          "id": "lt-en-reported-speech-10",
+          "skill_id": "en-reported-speech",
+          "difficulty": 3,
+          "stem_mn": "Аль өгүүлбэр нь БУРУУ бэ (алдаатай reported speech)?",
+          "latex": "",
+          "choices": [
+            "She told me that she had finished the online course.",
+            "He asked where I had saved the file.",
+            "They said that they were using a new app then.",
+            "She asked me what was my username."
+          ],
+          "answer": 3,
+          "explanation_mn": "'what was my username' нь асуултын эрэмбэтэй тул БУРУУ. Зөв нь 'what my username was' (subject + verb)."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-participles-phrases",
+      "title_mn": "Participles & noun/adverb phrases (Unit 10: Sport & Entertainment)",
+      "lesson_id": "en-4-2",
+      "pages_mn": "Gateway to Success — Unit: Sport & Entertainment (movies, celebrities, sports)",
+      "grade": 12,
+      "questions": [
+        {
+          "id": "lt-en-participles-phrases-1",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 1,
+          "stem_mn": "The tennis match was very ___.",
+          "latex": "",
+          "choices": [
+            "excited",
+            "exciting",
+            "excite",
+            "excites"
+          ],
+          "answer": 1,
+          "explanation_mn": "Тэмцээн нь мэдрэмж төрүүлэгч шинж чанартай тул -ing 'exciting' зөв."
+        },
+        {
+          "id": "lt-en-participles-phrases-2",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 1,
+          "stem_mn": "The children were ___ by the magician's tricks.",
+          "latex": "",
+          "choices": [
+            "amazing",
+            "amazed",
+            "amaze",
+            "amazes"
+          ],
+          "answer": 1,
+          "explanation_mn": "Хүүхдүүд гайхсан мэдрэмжийг мэдэрсэн тул past participle 'amazed' зөв."
+        },
+        {
+          "id": "lt-en-participles-phrases-3",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 1,
+          "stem_mn": "Choose the correct sentence.",
+          "latex": "",
+          "choices": [
+            "He never is late for training.",
+            "He is never late for training.",
+            "Never he is late for training.",
+            "He is late never for training."
+          ],
+          "answer": 1,
+          "explanation_mn": "'be' үйл үгийн ДАРАА давтамжийн adverb ордог тул 'He is never late...' зөв."
+        },
+        {
+          "id": "lt-en-participles-phrases-4",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 2,
+          "stem_mn": "The long marathon was ___, and the runners were completely ___ at the finish line.",
+          "latex": "",
+          "choices": [
+            "tired ... tiring",
+            "tiring ... tired",
+            "tiring ... tiring",
+            "tired ... tired"
+          ],
+          "answer": 1,
+          "explanation_mn": "Marathon нь шинж чанар → -ing 'tiring'; runners нь мэдрэмж мэдэрсэн → -ed 'tired'."
+        },
+        {
+          "id": "lt-en-participles-phrases-5",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 2,
+          "stem_mn": "Which sentence is INCORRECT?",
+          "latex": "",
+          "choices": [
+            "I am bored with this TV show.",
+            "This TV show is boring.",
+            "I am boring with this TV show.",
+            "This show bores me."
+          ],
+          "answer": 2,
+          "explanation_mn": "'I am boring' гэвэл 'би уйтгартай хүн' гэсэн буруу утга гарна. Мэдрэмжээ хэлэхэд 'I am bored' гэх ёстой."
+        },
+        {
+          "id": "lt-en-participles-phrases-6",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 2,
+          "stem_mn": "Which of these is a noun phrase?",
+          "latex": "",
+          "choices": [
+            "ran quickly",
+            "the world-famous tennis champion",
+            "was very tired",
+            "she plays well"
+          ],
+          "answer": 1,
+          "explanation_mn": "Noun phrase нь нэр үгийг төв болгож тодотгосон бүлэг үг — 'the world-famous tennis champion'. Бусад нь үйл үгийн бүлэг."
+        },
+        {
+          "id": "lt-en-participles-phrases-7",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 2,
+          "stem_mn": "A person who watches a sports event is a ___.",
+          "latex": "",
+          "choices": [
+            "spectator",
+            "spectacle",
+            "spectacular",
+            "inspector"
+          ],
+          "answer": 0,
+          "explanation_mn": "Тамирчны тэмцээн үзэгчийг 'spectator' гэнэ. 'spectacle' = үзвэр, 'spectacular' = гайхамшигтай (тэмдэг нэр)."
+        },
+        {
+          "id": "lt-en-participles-phrases-8",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 3,
+          "stem_mn": "Read: 'The audience was thrilled by the spectacular half-time show. The performers, dressed in glittering costumes, were amazing.' How did the audience feel?",
+          "latex": "",
+          "choices": [
+            "thrilling",
+            "thrilled",
+            "boring",
+            "tiring"
+          ],
+          "answer": 1,
+          "explanation_mn": "'was thrilled' — audience нь мэдрэмжийг мэдэрсэн тул -ed 'thrilled'. Тэд өөрсдөө мэдэрсэн болохоос бусдад мэдрэмж төрүүлээгүй."
+        },
+        {
+          "id": "lt-en-participles-phrases-9",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 3,
+          "stem_mn": "Choose the correct sentence.",
+          "latex": "",
+          "choices": [
+            "Our team plays usually very well at home.",
+            "Our team usually plays very well at home.",
+            "Usually our team play very well at home.",
+            "Our team plays very well usually at home."
+          ],
+          "answer": 1,
+          "explanation_mn": "Давтамжийн adverb 'usually' нь үндсэн үйл үг 'plays'-ийн өмнө; хэв маягийн 'very well' нь үйл үгийн дараа. Тиймээс 'Our team usually plays very well...' зөв."
+        },
+        {
+          "id": "lt-en-participles-phrases-10",
+          "skill_id": "en-participles-phrases",
+          "difficulty": 3,
+          "stem_mn": "'The fans ___ outside the stadium were singing loudly.' (meaning: who were waiting)",
+          "latex": "",
+          "choices": [
+            "waited",
+            "waiting",
+            "waits",
+            "to wait"
+          ],
+          "answer": 1,
+          "explanation_mn": "Идэвхтэй утга (fans өөрсдөө хүлээж байсан) тул present participle 'waiting' (= who were waiting) зөв. Энэ нь relative clause-ийг богиносгосон хэлбэр."
+        }
+      ]
+    }
+  ]
+}

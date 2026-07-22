@@ -1,0 +1,163 @@
+{
+  "id": "en-3-1",
+  "grade": 12,
+  "chapter_num": "III",
+  "chapter_title_mn": "Mother Nature and Wellness",
+  "lesson_num": "3.1",
+  "title_mn": "Passive modals & quantifiers (Unit 7: Nature Conservation)",
+  "title_en": "Passive Modals and Quantifiers: Nature Conservation",
+  "skill_id": "en-passive-quantifiers",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Mother Nature and Wellness — Unit: Nature Conservation (pollution, environment)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Modal + be + V3 бүтцээр идэвхгүй (passive) хэвийн өгүүлбэрийг зөв зохиож, байгаль хамгааллын сэдвээр илэрхийлэх (Trees must be planted).",
+    "Тоологдох ба тоологдохгүй нэр үгэнд тохирох quantifier (much/many, (a) few/(a) little, some/any)-ийг зөв сонгож хэрэглэх.",
+    "Идэвхгүй модал болон quantifier-ийн түгээмэл алдааг таньж, өөрөө засах."
+  ],
+  "pretest": {
+    "stem_mn": "Зөв бүтэцтэй идэвхгүй модал (passive modal) өгүүлбэрийг сонго.",
+    "latex": "",
+    "choices": [
+      "Trees must planted every spring.",
+      "Trees must to be planted every spring.",
+      "Trees must be planted every spring.",
+      "Trees must being planted every spring."
+    ],
+    "answer": 2,
+    "hint_mn": "Идэвхгүй модалын томьёо: modal + be + V3 (үйл үгийн гурав дахь хэлбэр).",
+    "solution_mn": "must + be + planted. Модалын дараа заавал 'be', түүний дараа үйл үгийн V3 (planted) орно.",
+    "explanation_mn": "Идэвхгүй хэв нь modal + be + V3 бүтэцтэй. 'must planted' (be дутуу), 'must to be' (to илүү), 'must being' (буруу хэлбэр) нь бүгд алдаатай."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Яагаад идэвхгүй хэв (passive) хэрэглэдэг вэ?",
+      "body_mn": "Байгаль хамгааллын тухай ярихад ихэвчлэн **юу хийгдэх ёстой** нь чухал байдаг болохоос **хэн хийсэн** нь чухал биш байдаг.\n\nЖишээ нь: Trees must be planted. (Мод тарих ёстой.) Энд хэн тарих нь биш, мод тарих үйл нь чухал.\n\nИйм үед үйлдэл тухайн зүйл дээр **тусаж байгаа** тул идэвхгүй хэв (passive voice)-ийг модал үйл үгтэй хамт хэрэглэнэ.\n\nИдэвхтэй: We must save water. → Идэвхгүй: Water must be saved."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Passive modal-ын томьёо: modal + be + V3",
+      "body_mn": "**Бүтэц:** subject + modal (must / should / can) + **be** + **V3** (үйл үгийн 3-р хэлбэр).\n\n- Forests **must be protected** from fire. — Ойг галаас хамгаалах ёстой.\n- Water **should be saved**. — Усыг хэмнэх хэрэгтэй.\n- Plastic **can be recycled**. — Хуванцарыг дахин боловсруулж болно.\n\n**Сөрөг хэлбэр:** modal + not + be + V3 → Rivers **should not be polluted**.\n\n**Түгээмэл алдаа:** модалын дараа заавал **be** байна. must planted (буруу) → must be planted (зөв). Мөн 'must to be', 'must being' гэж бичихгүй."
+    },
+    {
+      "type": "definition",
+      "title_mn": "much / many — тоологдох ба тоологдохгүй нэр",
+      "body_mn": "**many** нь **тоологдох** олон тооны нэртэй (trees, animals, bottles), **much** нь **тоологдохгүй** нэртэй (water, pollution, energy) хэрэглэнэ.\n\n- How **many** trees are planted? — trees тоологдоно.\n- How **much** pollution is in the air? — pollution тоологдохгүй.\n\n**Тоологдохгүй** нэрс: water, air, pollution, rubbish, plastic, energy, waste, information. Эдгээрийг олон тоо болгож болохгүй.\n\n**Түгээмэл алдаа:** much trees (буруу) → many trees (зөв). many water (буруу) → much water (зөв)."
+    },
+    {
+      "type": "definition",
+      "title_mn": "(a) few / (a) little — цөөхөн ба багахан",
+      "body_mn": "**few / a few** нь **тоологдох** нэртэй, **little / a little** нь **тоологдохгүй** нэртэй хэрэглэнэ.\n\n- a **few** animals (хэдэн амьтан) — тоологдоно.\n- a **little** water (багахан ус) — тоологдохгүй.\n\n**Утгын ялгаа:**\n- a few / a little = **багахан хэдий ч бий** (эерэг): There is **a little** hope.\n- few / little = **бараг алга** (сөрөг): There is **little** clean water left.\n\n**Түгээмэл алдаа:** few water (буруу) → little water (зөв). little trees (буруу) → few trees (зөв)."
+    },
+    {
+      "type": "concept",
+      "title_mn": "some / any",
+      "body_mn": "**some** нь ихэвчлэн батлах (эерэг) өгүүлбэрт, **any** нь сөрөг болон асуултад хэрэглэнэ. Хоёулаа тоологдох ба тоологдохгүй нэртэй хамт орж чадна.\n\n- We need **some** trees. (эерэг)\n- There aren't **any** clean rivers here. (сөрөг)\n- Is there **any** water left? (асуулт)\n\nЭелдэг санал, хүсэлтэд **some** хэрэглэнэ: Would you like **some** help to clean the park?"
+    },
+    {
+      "type": "example",
+      "title_mn": "Байгаль хамгааллын жишээ өгүүлбэрүүд",
+      "body_mn": "Сэдэвт холбогдох жишээгээр давтъя:\n\n- Rubbish **must be recycled**, not burned.\n- **Many** species are becoming endangered. (species тоологдоно)\n- Only **a little** fresh water is left in the lake.\n- Rivers **should not be polluted** by factories.\n- We should plant **a few** trees in every school yard.\n- Is there **any** plan to protect the forest?\n\nЭдгээр өгүүлбэрт идэвхгүй модал ба quantifier хоёулаа хэрэглэгдсэнийг анзаараарай."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Зөв үгийг сонго: 'How ___ water is wasted every day?'",
+      "latex": "",
+      "choices": [
+        "many",
+        "much",
+        "few",
+        "a few"
+      ],
+      "answer": 1,
+      "hint_mn": "water тоологддог уу, үгүй юу?",
+      "solution_mn": "water нь тоологдохгүй нэр тул 'much' хэрэглэнэ.",
+      "explanation_mn": "Тоологдохгүй нэр (water) → much. many, few, a few нь зөвхөн тоологдох нэртэй."
+    },
+    {
+      "stem_mn": "Идэвхгүй өгүүлбэрийг гүйцээ: 'Forests ___ protected from fire.'",
+      "latex": "",
+      "choices": [
+        "must",
+        "must to be",
+        "must be",
+        "must being"
+      ],
+      "answer": 2,
+      "hint_mn": "modal + be + V3.",
+      "solution_mn": "must be protected — модалын дараа be, дараа нь V3 (protected).",
+      "explanation_mn": "Идэвхгүй модал = modal + be + V3. 'must protected' нь be дутуу, 'must to be' / 'must being' нь буруу хэлбэр."
+    },
+    {
+      "stem_mn": "Зөв үгийг сонго: 'Sadly, ___ clean rivers are left in the city.'",
+      "latex": "",
+      "choices": [
+        "little",
+        "few",
+        "much",
+        "a little"
+      ],
+      "answer": 1,
+      "hint_mn": "rivers тоологдох уу? Утга нь 'бараг алга' сөрөг.",
+      "solution_mn": "rivers тоологдох тул little биш, few. 'бараг алга' утгатай тул 'a few' биш 'few'.",
+      "explanation_mn": "rivers = тоологдох олон тоо → few / a few. 'бараг үлдээгүй' сөрөг утга тул 'few'. little, much, a little нь тоологдохгүй нэртэй."
+    },
+    {
+      "stem_mn": "Бүрэн зөв өгүүлбэрийг сонго.",
+      "latex": "",
+      "choices": [
+        "Many plastic must be recycled every day.",
+        "Much plastic must recycled every day.",
+        "Many plastic must be recycle every day.",
+        "Much plastic must be recycled every day."
+      ],
+      "answer": 3,
+      "hint_mn": "plastic тоологдохгүй + идэвхгүй модал (be + V3)-г хоёуланг нь шалга.",
+      "solution_mn": "plastic тоологдохгүй → much (many биш). Идэвхгүй = must be recycled (recycle биш, be дутуугүй).",
+      "explanation_mn": "0: 'Many plastic' алдаа (plastic тоологдохгүй). 1: 'must recycled' — be дутуу. 2: 'Many' + 'be recycle' (V1) хоёр алдаа. Зөвхөн сүүлийнх бүрэн зөв: much plastic + must be recycled."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Эрчим хүч хэмнэх тухай зөв идэвхгүй модал өгүүлбэрийг сонго.",
+      "latex": "",
+      "choices": [
+        "Energy should saved at home.",
+        "Energy should be saved at home.",
+        "Energy should be save at home.",
+        "Energy should to be saved at home."
+      ],
+      "answer": 1,
+      "explanation_mn": "should + be + saved (V3). 0-д be дутуу, 2-т V1 (save), 3-т 'to' илүү."
+    },
+    {
+      "stem_mn": "Нөхөж бич: 'There isn't ___ fresh air in polluted cities.'",
+      "latex": "",
+      "choices": [
+        "many",
+        "a few",
+        "much",
+        "few"
+      ],
+      "answer": 2,
+      "explanation_mn": "air тоологдохгүй нэр тул 'much'. many, a few, few нь тоологдох нэртэй."
+    },
+    {
+      "stem_mn": "Зөв үгийг сонго: 'We planted ___ trees near the river last week.'",
+      "latex": "",
+      "choices": [
+        "a little",
+        "a few",
+        "much",
+        "little"
+      ],
+      "answer": 1,
+      "explanation_mn": "trees тоологдох → a few. a little, much, little нь тоологдохгүй нэртэй."
+    }
+  ]
+}

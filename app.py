@@ -51,15 +51,25 @@ def set_subject(subject):
 
 @app.template_filter("richtext")
 def richtext(text: str) -> Markup:
-    """Markdown-lite -> HTML: paragraphs, line breaks, **bold**. Leaves $..$ math
-    intact for client-side KaTeX. HTML-escaped first for safety."""
+    """Markdown-lite -> HTML: paragraphs, line breaks, **bold**, `inline code`,
+    and ```fenced code blocks``` (for IT/programming). Leaves $..$ math intact
+    for client-side KaTeX. HTML-escaped first for safety."""
+    import re
     out = []
-    for para in (text or "").split("\n\n"):
-        body = str(escape(para)).replace("\n", "<br>")
-        # **bold** (operate on the escaped string; ** are not escaped)
-        import re
-        body = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", body)
-        out.append(f"<p>{body}</p>")
+    # First split out ```fenced code blocks``` (may sit inline next to text). Even
+    # segments are prose, odd segments are code.
+    for i, seg in enumerate(re.split(r"```(.*?)```", text or "", flags=re.S)):
+        if i % 2 == 1:  # code block
+            code = str(escape(seg.strip("\n")))
+            out.append(f'<pre class="my-2 p-3 rounded-lg bg-slate-900 text-slate-100 text-sm overflow-x-auto"><code>{code}</code></pre>')
+            continue
+        for para in seg.split("\n\n"):
+            if not para.strip():
+                continue
+            body = str(escape(para)).replace("\n", "<br>")
+            body = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", body)
+            body = re.sub(r"`([^`]+)`", r'<code class="px-1 py-0.5 rounded bg-slate-100 text-[0.9em] font-mono">\1</code>', body)
+            out.append(f"<p>{body}</p>")
     return Markup("".join(out))
 
 

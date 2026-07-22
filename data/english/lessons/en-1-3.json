@@ -1,0 +1,158 @@
+{
+  "id": "en-1-3",
+  "grade": 12,
+  "chapter_num": "I",
+  "chapter_title_mn": "Study and Work",
+  "lesson_num": "1.3",
+  "title_mn": "Future forms & questions (Unit 3: Jobs and Society)",
+  "title_en": "Future Forms & Questions: Jobs and Society",
+  "skill_id": "en-future-questions",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Study and Work — Unit: Jobs and Society (careers, community service)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Future simple (will) болон future perfect (will have + V3)-ийг active ба passive хэлбэрээр зөв хэрэглэх.",
+    "will ба be going to-ийн ялгааг ойлгож, тохирох нөхцөлд зөв сонгож ашиглах.",
+    "Subject question (Who called?) ба object question (Who did you call?)-ийн бүтцийг ялган зөв асуулт үүсгэх."
+  ],
+  "pretest": {
+    "stem_mn": "Subject-ийн (үйлдэл хийж буй этгээдийн) талаар асуухад аль өгүүлбэр зөв бэ? (Хэн менежерийн албан тушаалд өргөдөл гаргасан бэ?)",
+    "latex": "",
+    "choices": [
+      "Who did apply for the manager position?",
+      "Who applied for the manager position?",
+      "Who did applied for the manager position?",
+      "Whom did apply for the manager position?"
+    ],
+    "answer": 1,
+    "hint_mn": "Subject-ийг (хэн үйлдэл хийснийг) асуухад do/does/did туслах үйл үг хэрэглэдэггүй.",
+    "solution_mn": "'Who' нь subject-ийг асууж байгаа тул туслах үйл үггүй, үйл үг энгийн past хэлбэрээрээ үлдэнэ: 'Who applied...'. 'Who did apply' гэдэг нь түгээмэл алдаа.",
+    "explanation_mn": "Subject question-д (Who...? What...?) do/does/did оруулдаггүй. Зөв нь 'Who applied for the manager position?'"
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Future simple: will (active ба passive)",
+      "body_mn": "**Future simple (will)** нь ирээдүйд болох үйлдлийг илэрхийлнэ. Байгуулалт: **will + үйл үгийн үндсэн хэлбэр**.\n\n**Active:**\n- \"She **will start** her new job next Monday.\"\n- \"The company **will hire** two more engineers.\"\n\n**Passive** хэлбэр: **will be + V3** (үйл үгийн гуравдугаар хэлбэр).\n- \"Two more engineers **will be hired**.\"\n- \"The results **will be announced** tomorrow.\"\n\n**will**-ийг ихэвчлэн `prediction` (таамаг), ярианы агшинд гаргасан шийдвэр, амлалт, санал болгоход хэрэглэнэ.\n- \"I think robots **will replace** many jobs.\" (таамаг)\n- \"I **will help** you with your CV.\" (санал)"
+    },
+    {
+      "type": "concept",
+      "title_mn": "will ба be going to (ялгаа)",
+      "body_mn": "Хоёулаа ирээдүйг илэрхийлдэг ч **хэрэглээ нь ялгаатай**.\n\n**will** — тухайн агшинд гаргасан шийдвэр, нотолгоогүй таамаг, амлалт, санал.\n- \"The phone is ringing. I **'ll answer** it.\" (гэнэтийн шийдвэр)\n- \"Don't worry, I **'ll help** you.\" (санал)\n\n**be going to** — өмнө нь **төлөвлөсөн** зорилго, эсвэл одоогийн **нотолгоо**-нд тулгуурласан таамаг.\n- \"I **'m going to study** medicine at university.\" (аль хэдийн шийдсэн төлөвлөгөө)\n- \"Look at the sales report — the company **is going to lose** money.\" (нотолгоотой таамаг)\n\n**Түгээмэл алдаа:** аль хэдийн шийдсэн төлөвлөгөөг *will*-ээр илэрхийлэх. Ярианы явцаас өмнө шийдсэн төлөвлөгөөг **be going to**-гоор илэрхийлнэ."
+    },
+    {
+      "type": "concept",
+      "title_mn": "Future perfect: will have + V3",
+      "body_mn": "**Future perfect** нь ирээдүйн тодорхой цаг хугацаанаас **өмнө дуусах** үйлдлийг илэрхийлнэ. Байгуулалт: **will have + V3**.\n\nИхэвчлэн **by** (by 2030, by next year, by the time…) гэсэн үгтэй хамт хэрэглэнэ.\n- \"By 2030, she **will have graduated** from university.\"\n- \"By next month, they **will have completed** the training.\"\n\n**Passive:** **will have been + V3**.\n- \"By Friday, all applications **will have been reviewed**.\"\n\n**Түгээмэл алдаа:** *will have graduate*, *will graduated*, *will has graduated* гэх мэт. Зөв нь **will have + гуравдугаар хэлбэр (V3)** — тусалж буй **have хэзээ ч өөрчлөгддөггүй**."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Subject questions ба object questions",
+      "body_mn": "Асуулт нь **юуны** тухай асууж байгаагаас хамаарч бүтэц өөр байна.\n\n**Subject question** — асуултын үг (who/what) нь **subject** буюу үйлдэл хийж буй этгээдийг асууна. Энд **do/does/did хэрэглэдэггүй**, үйл үг энгийн хэлбэрээрээ үлдэнэ.\n- \"**Who** called the office?\" (Хэн залгасан бэ?)\n- \"**What** happened at the interview?\"\n\n**Object question** — асуултын үг нь **object** буюу үйлдэл хүлээж авагчийг асууна. Энд **do/does/did туслах үйл үг зайлшгүй** орно.\n- \"**Who** did you call?\" (Чи хэнд залгасан бэ?)\n- \"**What** did she say?\"\n\n**Түгээмэл алдаа:** \"Who did call?\" гэж бичих. Subject-ийг асуухад *did* хэрэггүй — зөв нь **\"Who called?\"**."
+    },
+    {
+      "type": "example",
+      "title_mn": "Jobs and Society: бүгдийг нэгтгэх нь",
+      "body_mn": "Career, community service сэдэвтэй жишээ өгүүлбэрүүд:\n\n**Future simple:** \"Volunteers **will clean** the park this weekend.\"\n**Passive:** \"The park **will be cleaned** by volunteers.\"\n\n**Future perfect:** \"By the end of the year, the charity **will have raised** $10,000.\"\n**Passive:** \"By the end of the year, $10,000 **will have been raised**.\"\n\n**Subject question:** \"**Who** organizes the community service program?\"\n**Object question:** \"**Who** did the manager interview yesterday?\"\n\nЭдгээр хэлбэрийг эзэмшсэнээр карьер, ажил, нийгмийн үйлчилгээний талаар илүү найдвартай, зөв ярьж, бичиж чадна."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Зөв хувилбарыг сонго: 'The new hospital ___ next year.' (шинэ эмнэлэг ирэх жил баригдана — passive)",
+      "latex": "",
+      "choices": [
+        "will build",
+        "will be built",
+        "will built",
+        "will be build"
+      ],
+      "answer": 1,
+      "hint_mn": "Passive = will be + V3.",
+      "solution_mn": "Эмнэлэг өөрөө 'барих' биш 'баригдах' тул passive хэрэгтэй: will be + built (V3) → 'will be built'.",
+      "explanation_mn": "Future simple passive: will be + V3. 'will build' нь active, 'will be build' нь V3 биш үндсэн хэлбэр тул буруу."
+    },
+    {
+      "stem_mn": "'I've already decided. I ___ apply for the internship at the bank.' Аль нь тохирох вэ?",
+      "latex": "",
+      "choices": [
+        "will",
+        "am going to",
+        "will be",
+        "going to"
+      ],
+      "answer": 1,
+      "hint_mn": "'already decided' — аль хэдийн шийдсэн төлөвлөгөө = be going to.",
+      "solution_mn": "'already decided' нь энэ шийдвэрийг өмнө нь гаргасан гэдгийг заана тул be going to: 'I am going to apply'. 'going to' (am-гүй) нь дутуу тул буруу.",
+      "explanation_mn": "Урьдчилан төлөвлөсөн зорилгыг be going to-гоор илэрхийлнэ. will-ийг ярианы агшинд гаргасан шийдвэрт хэрэглэдэг."
+    },
+    {
+      "stem_mn": "'By 2035, most factories ___ their systems.' (future perfect active — automate)",
+      "latex": "",
+      "choices": [
+        "will automated",
+        "will have automated",
+        "will has automated",
+        "will have automate"
+      ],
+      "answer": 1,
+      "hint_mn": "Future perfect = will have + V3. 'have' өөрчлөгддөггүй.",
+      "solution_mn": "will have + V3 (automated). 'will has automated' болон 'will have automate' (V3 биш) хоёул буруу.",
+      "explanation_mn": "Future perfect-ийн зөв бүтэц: will have + гуравдугаар хэлбэр. Тусалж буй have нь subject-ээс үл хамааран өөрчлөгдөхгүй."
+    },
+    {
+      "stem_mn": "'___ the report? — The intern did.' Хоосон зайд аль асуулт тохирох вэ? (Хэн тайланг бичсэн бэ?)",
+      "latex": "",
+      "choices": [
+        "Who did write",
+        "Who wrote",
+        "Who did wrote",
+        "Whom did write"
+      ],
+      "answer": 1,
+      "hint_mn": "Хариулт нь 'The intern did' — subject-ийг асууж байна тул did хэрэггүй.",
+      "solution_mn": "Subject question: 'Who wrote the report?' — do/does/did хэрэглэхгүй, үйл үг past хэлбэрээрээ (wrote) үлдэнэ. 'Who did write' нь түгээмэл алдаа.",
+      "explanation_mn": "Хэн үйлдэл хийснийг (subject) асуухад туслах үйл үг оруулдаггүй. Зөв нь 'Who wrote the report?'"
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "Аль өгүүлбэр зөв бэ? (Ажлын ярилцлагыг маргааш зохион байгуулна — passive)",
+      "latex": "",
+      "choices": [
+        "The interviews will hold tomorrow.",
+        "The interviews will be held tomorrow.",
+        "The interviews will held tomorrow.",
+        "The interviews will be hold tomorrow."
+      ],
+      "answer": 1,
+      "explanation_mn": "Future simple passive: will be + V3 (held). 'will hold' нь active, 'will be hold' нь V3 биш тул буруу."
+    },
+    {
+      "stem_mn": "Object question-ийн зөв хэлбэрийг сонго: 'What ___ to new graduates?' (the company / offer)",
+      "latex": "",
+      "choices": [
+        "does the company offers",
+        "does the company offer",
+        "the company offers",
+        "the company offer does"
+      ],
+      "answer": 1,
+      "explanation_mn": "Object question-д does + үйл үгийн үндсэн хэлбэр орно: 'does the company offer'. 'does...offers' нь давхар цаг, 'the company offers' нь туслах үйл үггүй тул буруу."
+    },
+    {
+      "stem_mn": "'By December, all the volunteers ___.' (future perfect passive — train)",
+      "latex": "",
+      "choices": [
+        "will have trained",
+        "will have been trained",
+        "will be trained",
+        "will have been train"
+      ],
+      "answer": 1,
+      "explanation_mn": "Future perfect passive: will have been + V3 (trained). 'will have trained' нь active, 'will be trained' нь future simple passive, 'will have been train' нь V3 биш тул буруу."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "note": "Мэдээллийн технологи 12 — БШУЯ-ны албан ёсны сурах бичгийн (ESIS) 4 бүлэгт нийцсэн.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Мэдээллийн технологи 12",
+      "book_id": 340,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=340",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Мэдээлэл, харилцаа холбооны технологи",
+          "title_en": "ICT",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "МХХТ-ийн хөгжил, чиг хандлага",
+              "lesson_id": "it-1-1",
+              "skill_id": "it-ict-trends"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Дэвшилтэт технологийн хөгжил, хэрэглээ",
+              "lesson_id": "it-1-2",
+              "skill_id": "it-advanced-tech"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Компьютерын системийн үндэс",
+          "title_en": "Computer systems",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Компьютерын архитектур ба хөгжил",
+              "lesson_id": "it-2-1",
+              "skill_id": "it-architecture"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Компьютерын сүлжээ, интернэт",
+              "lesson_id": "it-2-2",
+              "skill_id": "it-networks"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Мэдээллийн систем",
+          "title_en": "Information systems",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Мэдээллийн систем ба өгөгдлийн сан",
+              "lesson_id": "it-3-1",
+              "skill_id": "it-information-systems"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Программчлалын үндэс",
+          "title_en": "Programming (Small Basic)",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Алгоритм ба Small Basic хэл",
+              "lesson_id": "it-4-1",
+              "skill_id": "it-algorithm"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Хувьсагч ба нөхцөл",
+              "lesson_id": "it-4-2",
+              "skill_id": "it-variables-conditions"
+            },
+            {
+              "num": "4.3",
+              "title_mn": "Давталт",
+              "lesson_id": "it-4-3",
+              "skill_id": "it-loops"
+            },
+            {
+              "num": "4.4",
+              "title_mn": "Дэд программ",
+              "lesson_id": "it-4-4",
+              "skill_id": "it-subroutines"
+            },
+            {
+              "num": "4.5",
+              "title_mn": "Массив ба эрэмбэлэлт",
+              "lesson_id": "it-4-5",
+              "skill_id": "it-arrays-sorting"
+            },
+            {
+              "num": "4.6",
+              "title_mn": "Хайлт ба тэмдэгт мөр",
+              "lesson_id": "it-4-6",
+              "skill_id": "it-search-strings"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

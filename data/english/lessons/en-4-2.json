@@ -1,0 +1,169 @@
+{
+  "id": "en-4-2",
+  "grade": 12,
+  "chapter_num": "IV",
+  "chapter_title_mn": "Gateway to Success",
+  "lesson_num": "4.2",
+  "title_mn": "Participles & noun/adverb phrases (Unit 10: Sport & Entertainment)",
+  "title_en": "Participles & Noun/Adverb Phrases",
+  "skill_id": "en-participles-phrases",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Gateway to Success — Unit: Sport & Entertainment (movies, celebrities, sports)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Present participle (-ing) ба past participle (-ed) тэмдэг нэрийн ялгааг таньж, өгүүлбэрт зөв хэрэглэх (exciting vs excited).",
+    "Noun phrase-ийн бүтцийг ойлгож, нэр үгийг тодотгол болон participle-аар өргөтгөх.",
+    "Давтамжийн болон бусад adverb-ийн зөв байрлалыг мэдэж, түгээмэл алдаанаас зайлсхийх."
+  ],
+  "pretest": {
+    "stem_mn": "After the exciting football match, all the fans felt ___.",
+    "latex": "",
+    "choices": [
+      "exciting",
+      "excited",
+      "excite",
+      "excites"
+    ],
+    "answer": 1,
+    "hint_mn": "Fans нь мэдрэмжийг мэдэрч байна уу, эсвэл бусдад мэдрэмж төрүүлж байна уу?",
+    "explanation_mn": "Fans нь мэдрэмжийг МЭДЭРЧ байгаа тул -ed хэлбэр 'excited' зөв. 'exciting' бол юмны шинж чанар (тэмцээн өөрөө сэтгэл хөдөлгөм).",
+    "solution_mn": "Хүн мэдрэмж мэдэрсэн → -ed → felt excited."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Participle гэж юу вэ? -ing ба -ed-ийн гол ялгаа",
+      "body_mn": "**Participle** гэдэг нь үйл үгээс үүссэн, тэмдэг нэрийн үүрэг гүйцэтгэдэг хэлбэр юм. Хоёр төрөл байна.\n\n**Present participle (-ing)** — юмны *шинж чанар*, өөрөөр хэлбэл бусдад мэдрэмж *төрүүлж буй* эх үүсвэрийг заана.\n- The match was **exciting**. (Тэмцээн өөрөө сэтгэл хөдөлгөм.)\n\n**Past participle (-ed)** — хүн юмыг хэрхэн *мэдэрч буй* мэдрэмжийг заана.\n- The fans were **excited**. (Шүтэн бишрэгчид сэтгэл догдолсон.)\n\nТовч дүрэм: **-ing = шалтгаан (юм), -ed = мэдрэмж (хүн).**"
+    },
+    {
+      "type": "definition",
+      "title_mn": "-ing тэмдэг нэр: шинж чанар ба шалтгаан",
+      "body_mn": "**-ing** төгсгөлтэй тэмдэг нэр нь ямар нэг юм, үйл явдал эсвэл хүн *бусдад ямар мэдрэмж төрүүлдгийг* тодорхойлно.\n\nSport & Entertainment сэдвийн жишээ:\n- a **thrilling** final (сэтгэл хөдөлгөм финал)\n- a **boring** documentary (уйтгартай баримтат кино)\n- an **amazing** performance (гайхалтай тоглолт)\n\nАсуулт тавьж шалгаарай: 'Энэ юм ямар вэ?' — хариулт нь ихэвчлэн **-ing** хэлбэртэй."
+    },
+    {
+      "type": "definition",
+      "title_mn": "-ed тэмдэг нэр: хүний мэдрэмж",
+      "body_mn": "**-ed** төгсгөлтэй тэмдэг нэр нь *хүн* (эсвэл амьтан) тухайн зүйлийг хэрхэн мэдэрч байгааг илэрхийлнэ.\n\nЖишээ:\n- The players were **exhausted**. (Тоглогчид ядарсан.)\n- I felt **amazed**. (Би гайхсан.)\n- She looked **bored**. (Тэр уйдсан харагдав.)\n\nАнхаар: **I am bored** = би уйдаж байна (мэдрэмж). **I am boring** = би уйтгартай хүн, бусдыг уйдаадаг. Хоёр нь тэс өөр утгатай!"
+    },
+    {
+      "type": "concept",
+      "title_mn": "Noun phrases (Нэр үгийн бүлэг)",
+      "body_mn": "**Noun phrase** гэдэг нь нэр үгийг төв болгож, түүнийг тодотгосон үгсийн бүлэг юм. Ердийн бүтэц нь:\n\n**(determiner) + (adjective) + noun (+ дараах тодотгол)**\n\nЖишээ:\n- **the young footballer** (тодорхойлогч + тэмдэг нэр + нэр)\n- **a world-famous action movie**\n- **the fans waiting outside the stadium** (present participle-аар өргөтгөсөн)\n\nNoun phrase нь өгүүлбэрт нэг нэр үгийн адил subject эсвэл object-ийн үүрэг гүйцэтгэнэ."
+    },
+    {
+      "type": "concept",
+      "title_mn": "Adverbs ба тэдгээрийн байрлал",
+      "body_mn": "**Adverb** нь үйл үг, тэмдэг нэр, эсвэл бүхэл өгүүлбэрийг тодотгоно. Байрлалыг зөв сонгох нь маш чухал.\n\n**Давтамжийн adverb** (always, usually, often, sometimes, never):\n- Үндсэн үйл үгийн **ӨМНӨ**: She **usually watches** the game.\n- 'be' үйл үгийн **ДАРАА**: He **is always** on time.\n\n**Хэв маягийн adverb** (well, quickly, badly) нь ихэвчлэн үйл үгийн дараа: They played **well**.\n\nТүгээмэл алдаа: *She watches usually...* (буруу) → **She usually watches...** (зөв)."
+    },
+    {
+      "type": "example",
+      "title_mn": "Бүгдийг нэгтгэвэл (Sport & Entertainment)",
+      "body_mn": "Богино текст дэх бүх бүтцийг ажигла:\n\n*'The **exciting** basketball final was on TV. **My younger brother**, a **die-hard fan**, **always watches** these games. The **exhausted** players fought hard, and the **amazed** crowd cheered loudly.'*\n\n- **exciting**, **exhausted**, **amazed** → participle тэмдэг нэрүүд\n- **my younger brother**, **a die-hard fan** → noun phrases\n- **always watches** → давтамжийн adverb зөв байрлалд\n\nИйнхүү гурван бүтэц нэг өгүүлбэрт хамт ажиллаж чадна."
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "The movie was so ___ that I fell asleep.",
+      "latex": "",
+      "choices": [
+        "bored",
+        "boring",
+        "bore",
+        "bores"
+      ],
+      "answer": 1,
+      "hint_mn": "Кино нь мэдрэмжийн эх үүсвэр буюу шинж чанар. -ing уу, -ed үү?",
+      "explanation_mn": "Кино өөрөө уйтгартай шинж чанартай тул -ing хэлбэр 'boring' зөв.",
+      "solution_mn": "Юмны шинж чанар → -ing → 'The movie was so boring...'."
+    },
+    {
+      "stem_mn": "I was really ___ when my favourite team won the championship.",
+      "latex": "",
+      "choices": [
+        "exciting",
+        "excited",
+        "excites",
+        "excite"
+      ],
+      "answer": 1,
+      "hint_mn": "'I' хүн мэдрэмжийг мэдэрч байна.",
+      "explanation_mn": "'I' нь мэдрэмжийг мэдэрсэн тул -ed хэлбэр 'excited' зөв.",
+      "solution_mn": "Хүний мэдрэмж → -ed → 'I was really excited...'."
+    },
+    {
+      "stem_mn": "Choose the correct sentence.",
+      "latex": "",
+      "choices": [
+        "She goes usually to the gym after work.",
+        "She usually goes to the gym after work.",
+        "Usually she going to the gym after work.",
+        "She go usually to the gym after work."
+      ],
+      "answer": 1,
+      "hint_mn": "Давтамжийн adverb (usually) нь үндсэн үйл үгийн ямар талд ордог вэ?",
+      "explanation_mn": "'usually' нь үндсэн үйл үг 'goes'-ийн ӨМНӨ ордог тул 'She usually goes...' зөв.",
+      "solution_mn": "Давтамжийн adverb → үндсэн үйл үгийн өмнө → 'She usually goes to the gym...'."
+    },
+    {
+      "stem_mn": "The player, ___ by the crowd's cheers, scored a brilliant goal.",
+      "latex": "",
+      "choices": [
+        "encouraging",
+        "encouraged",
+        "encourage",
+        "encourages"
+      ],
+      "answer": 1,
+      "hint_mn": "Тоглогч урмыг өгсөн үү, эсвэл ХҮЛЭЭН авсан уу?",
+      "explanation_mn": "Тоглогч нь урмыг хүлээн авсан (passive) тул past participle 'encouraged' зөв.",
+      "solution_mn": "Passive/хүлээн авсан утга → -ed → 'The player, encouraged by...'."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "The documentary about the Olympic Games was really ___.",
+      "latex": "",
+      "choices": [
+        "fascinated",
+        "fascinating",
+        "fascinate",
+        "fascinates"
+      ],
+      "answer": 1,
+      "hint_mn": "Баримтат кино өөрөө ямар шинж чанартай вэ?",
+      "explanation_mn": "Баримтат кино нь мэдрэмж төрүүлэгч шинж чанартай тул -ing 'fascinating' зөв.",
+      "solution_mn": "Юмны шинж чанар → -ing → 'was really fascinating'."
+    },
+    {
+      "stem_mn": "Which sentence places the adverb correctly?",
+      "latex": "",
+      "choices": [
+        "My brother watches always the games.",
+        "My brother always watches the games.",
+        "Always my brother watch the games.",
+        "My brother watch always the games."
+      ],
+      "answer": 1,
+      "hint_mn": "'always' нь үндсэн үйл үгийн өмнө ордог.",
+      "explanation_mn": "Давтамжийн adverb 'always' нь үндсэн үйл үг 'watches'-ийн өмнө орох тул 'My brother always watches...' зөв.",
+      "solution_mn": "always + үндсэн үйл үгийн өмнө → 'My brother always watches the games.'."
+    },
+    {
+      "stem_mn": "The fans were ___ when the star player missed the penalty.",
+      "latex": "",
+      "choices": [
+        "disappointing",
+        "disappointed",
+        "disappoint",
+        "disappoints"
+      ],
+      "answer": 1,
+      "hint_mn": "Fans нь мэдрэмжээ илэрхийлж байна.",
+      "explanation_mn": "Fans нь урам хугарах мэдрэмжийг мэдэрсэн тул -ed 'disappointed' зөв. 'disappointing' бол урам хугалах шинж чанар.",
+      "solution_mn": "Хүний мэдрэмж → -ed → 'The fans were disappointed...'."
+    }
+  ]
+}

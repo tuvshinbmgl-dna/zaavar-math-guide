@@ -1,0 +1,164 @@
+{
+  "id": "en-2-2",
+  "grade": 12,
+  "chapter_num": "II",
+  "chapter_title_mn": "Cultures and Traditions",
+  "lesson_num": "2.2",
+  "title_mn": "Clauses of reason & time (Unit 5: Cultures Around the World)",
+  "title_en": "Clauses of Reason & Time",
+  "skill_id": "en-reason-time-clauses",
+  "prerequisite_skill_ids": [],
+  "textbook": {
+    "book_id": 357,
+    "pages_mn": "Cultures and Traditions — Unit: Cultures Around the World (customs, lifestyles)",
+    "reader_url": "https://econtent.edu.mn/pages/more.php?id=357"
+  },
+  "objectives_mn": [
+    "Учир шалтгааны гишүүн өгүүлбэрийг `because` (+ бүтэн өгүүлбэр) болон `because of` / `due to` (+ нэр үг)-ээр зөв ялган бүтээх",
+    "Цаг хугацааны гишүүн өгүүлбэрт `when`, `while`, `as`, `before`, `after` холбоос үгсийг утгад нь тохируулан хэрэглэх",
+    "Цаг хугацааны гишүүн өгүүлбэрт ирээдүйн утгыг `will`-гүйгээр, одоо цагаар зөв илэрхийлэх"
+  ],
+  "pretest": {
+    "stem_mn": "Choose the correct sentence:",
+    "latex": "",
+    "choices": [
+      "The parade was cancelled because of the storm.",
+      "The parade was cancelled because the storm.",
+      "The parade was cancelled due the storm.",
+      "The parade was cancelled because of it was stormy."
+    ],
+    "answer": 0,
+    "hint_mn": "`because of`-ийн ард нэр үг ирдэг үү, эсвэл бүтэн өгүүлбэр үү гэдгийг шалга.",
+    "solution_mn": "Зөв хариулт: 'because of the storm'. `because of` + нэр үг. 'because the storm' буруу (because ард эзэн+үйлтэй бүтэн өгүүлбэр хэрэгтэй), 'due the storm' буруу (`due to` байх ёстой), 'because of it was stormy' буруу (because of ард өгүүлбэр орж болохгүй).",
+    "explanation_mn": "`because of` + нэр үг (the storm) тул эхний өгүүлбэр зөв. `because` ард бүтэн өгүүлбэр, `due to` (due биш) ард нэр үг ирнэ."
+  },
+  "sections": [
+    {
+      "type": "concept",
+      "title_mn": "Гишүүн өгүүлбэр гэж юу вэ?",
+      "body_mn": "**Гишүүн өгүүлбэр (clause)** гэдэг нь эзэн болон үйл үгтэй, гол өгүүлбэрийг тодотгож өгдөг хэсэг юм. Энэ хичээлд бид **учир шалтгаан** (reason) болон **цаг хугацаа** (time)-г заадаг гишүүн өгүүлбэрүүдийг үзнэ.\n\nСоёл, зан заншлын тухай ярихдаа бид ямар нэг ёслол **яагаад** болдгийг, эсвэл **хэзээ** болдгийг байнга тайлбарладаг:\n\n- *We celebrate Naadam **because** it is our national festival.* (шалтгаан)\n- ***When** the festival begins, everyone wears traditional clothes.* (цаг хугацаа)"
+    },
+    {
+      "type": "definition",
+      "title_mn": "Учир шалтгаан: because vs because of / due to",
+      "body_mn": "**because** + бүтэн өгүүлбэр (эзэн + үйл):\n\n- *The market was crowded **because** many people came for the holiday.*\n\n**because of** / **due to** + нэр үг (эсвэл нэр үг хэллэг). Ард нь эзэн-үйл ирэхгүй!\n\n- *The parade was cancelled **because of** the rain.*\n- *The delay was **due to** bad weather.*\n\n**Санамж:** `because` ард өгүүлбэр, `because of` / `due to` ард нэр үг. Хамгийн түгээмэл алдаа бол эдгээрийг андуурах явдал: *because of it rained* буруу → *because it rained* эсвэл *because of the rain* зөв."
+    },
+    {
+      "type": "definition",
+      "title_mn": "Цаг хугацаа: when, while, as, before, after",
+      "body_mn": "Эдгээр холбоос үгс үйл **хэдийд** болсныг заана:\n\n- **when** — тодорхой цаг мөч, агшин: ***When** the guest arrived, we offered tea.*\n- **while** — үргэлжилсэн, зэрэгцээ үйл: ***While** the dancers were performing, the crowd cheered.*\n- **as** — нэгэн зэрэг өрнөх үйл: ***As** the sun rose, the ceremony began.*\n- **before** — өмнө нь: *We clean the house **before** Tsagaan Sar starts.*\n- **after** — дараа нь: ***After** the meal ended, they sang folk songs.*"
+    },
+    {
+      "type": "concept",
+      "title_mn": "while vs when + ирээдүйд will хэрэглэхгүй",
+      "body_mn": "**1. while ба when-ийг андуурахгүй:**\n\n- **when** — богино, агшин зуурын үйл буюу цэг цаг: ***When** the clock struck twelve, they cheered.*\n- **while** — удаан үргэлжилсэн үйл (ихэвчлэн `past continuous`): ***While** they were dancing, the band played.*\n\n**2. Цаг хугацааны гишүүн өгүүлбэрт `will` хэрэглэхгүй!**\n\nИрээдүйн утгатай ч, `when`, `before`, `after`, `while`-ийн ард **одоо цаг** хэрэглэнэ. `will` зөвхөн гол өгүүлбэрт орно.\n\n- Зөв: ***When** I **visit** Japan, I **will** see the temples.*\n- Буруу: *When I **will** visit Japan…*"
+    },
+    {
+      "type": "example",
+      "title_mn": "Жишээгээр нэгтгэх нь",
+      "body_mn": "Соёлын сэдвээр жишээ өгүүлбэрүүдийг харьцуулъя:\n\n**Шалтгаан:**\n- *The festival is popular **because** tourists love the colourful costumes.*\n- *The event was postponed **because of** the storm.*\n\n**Цаг хугацаа:**\n- ***Before** the ceremony starts, the elders give a blessing.*\n- *The children played games **while** the adults prepared the feast.*\n- ***After** the sun sets, the lanterns are lit.*\n\n**Ирээдүй + цаг хугацаа:**\n- ***When** we **travel** abroad next year, we **will learn** new customs.*"
+    }
+  ],
+  "practice": [
+    {
+      "stem_mn": "Complete the sentence: People wear bright colours during the festival ___ they want to celebrate joy.",
+      "latex": "",
+      "choices": [
+        "because of",
+        "because",
+        "due to",
+        "so of"
+      ],
+      "answer": 1,
+      "hint_mn": "Ард нь бүтэн өгүүлбэр (эзэн + үйл) ирж байна уу, эсвэл нэр үг үү гэдгийг хар.",
+      "solution_mn": "'they want to celebrate joy' бол эзэн (they) + үйл (want) бүхий бүтэн өгүүлбэр тул `because` хэрэглэнэ. `because of` / `due to`-ийн ард зөвхөн нэр үг ирдэг.",
+      "explanation_mn": "Ард нь бүтэн өгүүлбэр байгаа тул `because` зөв. `because of`, `due to` ард нэр үг ирнэ."
+    },
+    {
+      "stem_mn": "Choose the best word: ___ the ceremony finished, the families shared a big meal.",
+      "latex": "",
+      "choices": [
+        "Due to",
+        "After",
+        "Because of",
+        "While"
+      ],
+      "answer": 1,
+      "hint_mn": "Аль үйл эхэлж, аль нь дараа нь болсныг бод — цаг хугацааны дараалал.",
+      "solution_mn": "Ёслол эхлээд дуусаад, дараа нь хоол хүртсэн тул `After` (дараа нь) зөв. `Due to`, `Because of` бол шалтгаан заадаг тул энд тохирохгүй.",
+      "explanation_mn": "`After` цаг хугацааны дарааллыг (эхлээд дуусаад, дараа нь) заана."
+    },
+    {
+      "stem_mn": "Choose the correct verb form: When I ___ my grandparents next Tsagaan Sar, I will wear the deel.",
+      "latex": "",
+      "choices": [
+        "will visit",
+        "visit",
+        "visited",
+        "am visit"
+      ],
+      "answer": 1,
+      "hint_mn": "Цаг хугацааны гишүүн өгүүлбэрт (`when`-ий ард) ирээдүйг ямар цагаар илэрхийлдэг вэ?",
+      "solution_mn": "Time clause-д ирээдүйг **одоо цагаар** (`visit`) илэрхийлж, гол өгүүлбэрт (I will wear) `will` хэрэглэнэ. 'When I will visit' бол түгээмэл алдаа.",
+      "explanation_mn": "Цаг хугацааны гишүүн өгүүлбэрт `will` орохгүй тул `visit` зөв."
+    },
+    {
+      "stem_mn": "Choose the correct word: The power went out ___ the dancers were performing on stage.",
+      "latex": "",
+      "choices": [
+        "because of",
+        "while",
+        "due to",
+        "before"
+      ],
+      "answer": 1,
+      "hint_mn": "'were performing' бол үргэлжилсэн үйл — үргэлжилсэн үйлийн үед аль холбоос үг ордог вэ?",
+      "solution_mn": "'were performing' (`past continuous`) бол үргэлжилсэн үйл тул `while` зөв. `because of`, `due to` бол шалтгаан заадаг тул энд тохирохгүй.",
+      "explanation_mn": "Үргэлжилсэн (past continuous) үйлийн үед `while` хэрэглэнэ."
+    }
+  ],
+  "mastery_check": [
+    {
+      "stem_mn": "The trip abroad was cancelled ___ the pandemic.",
+      "latex": "",
+      "choices": [
+        "because",
+        "because of",
+        "so",
+        "while"
+      ],
+      "answer": 1,
+      "hint_mn": "'the pandemic' бол нэр үг үү, өгүүлбэр үү?",
+      "solution_mn": "'the pandemic' бол нэр үг тул `because of` зөв. `because` ард бол эзэн+үйлтэй бүтэн өгүүлбэр хэрэгтэй.",
+      "explanation_mn": "Нэр үгийн (the pandemic) өмнө `because of` хэрэглэнэ."
+    },
+    {
+      "stem_mn": "___ the national anthem started, everyone stood up.",
+      "latex": "",
+      "choices": [
+        "While",
+        "When",
+        "Because of",
+        "Due to"
+      ],
+      "answer": 1,
+      "hint_mn": "'started' бол агшин зуурын үйл үү, үргэлжилсэн үйл үү?",
+      "solution_mn": "'started' бол агшин зуурын (цэг) үйл тул `When` зөв. `While` бол үргэлжилсэн үйлд ордог; `Because of`, `Due to` бол шалтгаан заана.",
+      "explanation_mn": "Агшин зуурын үйлийн үед (цэг цаг) `When` хэрэглэнэ."
+    },
+    {
+      "stem_mn": "Before the guests ___, we will prepare traditional food.",
+      "latex": "",
+      "choices": [
+        "will arrive",
+        "arrive",
+        "arrived",
+        "arrives"
+      ],
+      "answer": 1,
+      "hint_mn": "`before` ард ирээдүйг ямар цагаар илэрхийлэх вэ? Эзэн 'guests' олон тоотой.",
+      "solution_mn": "Цаг хугацааны гишүүн өгүүлбэрт `will` орохгүй, одоо цаг хэрэглэнэ. Эзэн 'guests' олон тоотой тул `arrive` зөв. `will` гол өгүүлбэрт (we will prepare) орно.",
+      "explanation_mn": "`before` ард одоо цаг хэрэглэнэ; олон тоо тул `arrive`."
+    }
+  ]
+}

@@ -22,10 +22,18 @@ function renderMath(el) {
 function renderRich(el, text) {
   if (!el) return;
   const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const html = esc(text || "")
-    .split(/\n{2,}/)
-    .map((p) => "<p>" + p.replace(/\n/g, "<br>").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") + "</p>")
-    .join("");
+  // Split out ```fenced code blocks``` first (even segments = prose, odd = code).
+  const html = (text || "").split(/```([\s\S]*?)```/).map((seg, i) => {
+    if (i % 2 === 1) {
+      return '<pre class="my-2 p-3 rounded-lg bg-slate-900 text-slate-100 text-sm overflow-x-auto"><code>' +
+        esc(seg.replace(/^\n+|\n+$/g, "")) + "</code></pre>";
+    }
+    return seg.split(/\n{2,}/).filter((p) => p.trim()).map((para) =>
+      "<p>" + esc(para).replace(/\n/g, "<br>")
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/`([^`]+)`/g, '<code class="px-1 py-0.5 rounded bg-slate-100 text-[0.9em] font-mono">$1</code>') + "</p>"
+    ).join("");
+  }).join("");
   el.innerHTML = html;
   renderMath(el);
 }

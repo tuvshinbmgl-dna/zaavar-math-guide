@@ -1,0 +1,988 @@
+{
+  "note": "english 12 — ойлголт батлах.",
+  "topics": [
+    {
+      "skill_id": "en-present-tenses",
+      "title_mn": "Present simple & continuous (Unit 1: Teens Today)",
+      "lesson_id": "en-1-1",
+      "ordering": [
+        {
+          "id": "ord-en-present-tenses-1",
+          "stem_mn": "Present continuous (active) өгүүлбэрийг зөв дараалалд өр (be + V‑ing, яг одоо болж буй үйлдэл):",
+          "latex": "",
+          "steps": [
+            "My",
+            "friends",
+            "are",
+            "planning",
+            "a",
+            "school",
+            "trip"
+          ]
+        },
+        {
+          "id": "ord-en-present-tenses-2",
+          "stem_mn": "Present simple passive өгүүлбэрийг зөв дараалалд өр (is + V3):",
+          "latex": "",
+          "steps": [
+            "The",
+            "school",
+            "newspaper",
+            "is",
+            "printed",
+            "every",
+            "month"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-present-tenses-1",
+          "stem_mn": "Complete: 'Listen! Someone ___ the school song.'",
+          "latex": "",
+          "t1_choices": [
+            "is singing",
+            "sings",
+            "sing",
+            "sang"
+          ],
+          "t1_answer": 0,
+          "t2_prompt_mn": "Яагаад 'is singing' зөв вэ?",
+          "t2_choices": [
+            "'Listen!' нь яг одоо болж буй үйлдлийг заадаг тул present continuous хэрэглэнэ",
+            "'Someone' үг үргэлж present simple шаарддаг",
+            "Дуулах нь зөвхөн байнгын зуршил тул simple хэрэглэнэ",
+            "Өнгөрсөн үйл тул 'sang' байх ёстой"
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид 'now / Listen!' зэрэг яг одоог заасан дохиог үл тоомсорлож present simple (sings) сонгодог. Гэвч эдгээр нь present continuous‑ийн шинж тэмдэг тул 'is singing' зөв."
+        },
+        {
+          "id": "tt-en-present-tenses-2",
+          "stem_mn": "Complete: 'My sister ___ to a coding club every Sunday.'",
+          "latex": "",
+          "t1_choices": [
+            "goes",
+            "go",
+            "going",
+            "is go"
+          ],
+          "t1_answer": 0,
+          "t2_prompt_mn": "Яагаад 'goes' зөв вэ?",
+          "t2_choices": [
+            "'My sister' 3‑р бие ганц тоо тул present simple‑д ‑es залгана",
+            "'Every Sunday' нь present continuous шаарддаг",
+            "'go' нь бүх биед адилхан хэвээр үлддэг",
+            "Ганц тоонд be нэмж 'is go' болгоно"
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид 3‑р бие ганц тоонд (he/she/it) үйл үгэнд ‑s/‑es залгахаа мартаж 'go' гэж бичдэг. Зөв нь 'goes'."
+        },
+        {
+          "id": "tt-en-present-tenses-3",
+          "stem_mn": "Complete: 'These handmade cards ___ by our art club.'",
+          "latex": "",
+          "t1_choices": [
+            "are made",
+            "are make",
+            "are making",
+            "make"
+          ],
+          "t1_answer": 0,
+          "t2_prompt_mn": "Яагаад 'are made' зөв вэ?",
+          "t2_choices": [
+            "Passive = am/is/are + V3, make → made тул 'are made'",
+            "Passive‑д үндсэн үйл үг үргэлж хэвээрээ 'make' үлддэг",
+            "'are making' нь идэвхгүй хэв учир зөв",
+            "Cards ганц тоо тул 'is made' болно"
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид passive байгуулахдаа V3 биш үндсэн хэлбэрийг ашиглаж 'are make' гэж бичдэг. Зөв бүтэц: am/is/are + V3 = 'are made'."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-perfect-modals",
+      "title_mn": "Present perfect & modals for advice (Unit 2: Learning for the Future)",
+      "lesson_id": "en-1-2",
+      "ordering": [
+        {
+          "id": "ord-en-perfect-modals-1",
+          "stem_mn": "Present perfect өгүүлбэрийг зөв дараалалд оруул.",
+          "latex": "",
+          "steps": [
+            "I",
+            "have",
+            "studied",
+            "English",
+            "since",
+            "2020"
+          ]
+        },
+        {
+          "id": "ord-en-perfect-modals-2",
+          "stem_mn": "Зөвлөгөөний өгүүлбэрийг зөв дараалалд оруул.",
+          "latex": "",
+          "steps": [
+            "You",
+            "had better",
+            "start",
+            "your project",
+            "now"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-perfect-modals-1",
+          "stem_mn": "Choose the correct sentence: 'We ___ this topic last week.'",
+          "latex": "",
+          "t1_choices": [
+            "have discussed",
+            "discussed",
+            "has discussed",
+            "have discuss"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "'last week' тодорхой өнгөрсөн цаг тул past simple хэрэглэнэ.",
+            "Present perfect үргэлж past simple-ээс зөв.",
+            "'discussed' бол present perfect хэлбэр.",
+            "'last week' present perfect шаарддаг."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид present perfect ба past simple-ийг андуурч, 'last week' шиг тодорхой цаг байхад ч present perfect хэрэглэдэг. Тодорхой өнгөрсөн цагтай бол past simple (discussed) зөв."
+        },
+        {
+          "id": "tt-en-perfect-modals-2",
+          "stem_mn": "Choose the correct word: 'He has taught here ___ five years.'",
+          "latex": "",
+          "t1_choices": [
+            "since",
+            "for",
+            "ago",
+            "from"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "'five years' бол эхлэл цэг тул since.",
+            "'five years' бол хугацааны урт тул for.",
+            "for болон since ялгаагүй.",
+            "цаг хугацаатай бол үргэлж since."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Сурагчид for (хугацааны урт) ба since (эхлэл цэг)-ийг андуурдаг. 'five years' бол урт хугацаа тул for; харин 'since 2019' шиг эхлэл цэгт since хэрэглэнэ."
+        },
+        {
+          "id": "tt-en-perfect-modals-3",
+          "stem_mn": "Choose the correct advice: 'You ___ practice speaking every day.'",
+          "latex": "",
+          "t1_choices": [
+            "should to",
+            "should",
+            "should to be",
+            "shoulds"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "Модаль үйл үгийн дараа to залгана.",
+            "Модаль (should) дараа шууд үндсэн үйл үг орно, to-гүй.",
+            "should бол нэр үг.",
+            "should дараа -ing залгана."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Сурагчид 'should to go' гэж модаль үйл үгийн дараа to залгадаг. Модаль үйл үг (should, must, can, will) дараа to залгахгүй — шууд үндсэн үйл үг орно. ('ought to' бол цорын ганц онцгой тохиолдол.)"
+        }
+      ]
+    },
+    {
+      "skill_id": "en-future-questions",
+      "title_mn": "Future forms & questions (Unit 3: Jobs and Society)",
+      "lesson_id": "en-1-3",
+      "ordering": [
+        {
+          "id": "ord-en-future-questions-1",
+          "stem_mn": "Үгсийг зөв дараалалд өрж, future perfect passive өгүүлбэр үүсгэ:",
+          "latex": "",
+          "steps": [
+            "By",
+            "next",
+            "year",
+            "the",
+            "bridge",
+            "will",
+            "have",
+            "been",
+            "built"
+          ]
+        },
+        {
+          "id": "ord-en-future-questions-2",
+          "stem_mn": "Үгсийг зөв дараалалд өрж, subject question үүсгэ (do/does/did хэрэглэхгүй):",
+          "latex": "",
+          "steps": [
+            "Who",
+            "organized",
+            "the",
+            "community",
+            "service",
+            "event",
+            "?"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-future-questions-1",
+          "stem_mn": "Аль нь зөв бэ? (Хэн уг төслийг удирдаж байна вэ?)",
+          "latex": "",
+          "t1_choices": [
+            "Who does manage the project?",
+            "Who manages the project?",
+            "Who do manage the project?",
+            "Who is manage the project?"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "Subject question-д do/does хэрэглэдэггүй, үйл үг энгийн хэлбэрээрээ (manages) үлдэнэ.",
+            "Бүх асуултад do/does заавал ордог.",
+            "'who' үргэлж олон тоо тул does хэрэгтэй.",
+            "'who'-гийн дараа үргэлж is ордог."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид subject question-д ч do/does оруулах гэж алддаг (Who does manage...?). Гэвч who/what subject-ийг асуухад туслах үйл үг хэрэггүй, үйл үг ганц тооны -s хэлбэрээрээ үлдэнэ: 'Who manages the project?'"
+        },
+        {
+          "id": "tt-en-future-questions-2",
+          "stem_mn": "'I've made up my mind. I ___ take the job in Tokyo.' Аль нь тохирох вэ?",
+          "latex": "",
+          "t1_choices": [
+            "will",
+            "am going to",
+            "will be",
+            "going to"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "'made up my mind' — аль хэдийн шийдсэн төлөвлөгөө тул be going to.",
+            "will нь бүх ирээдүйд тохирдог тул will зөв.",
+            "Ирээдүйд үргэлж 'going to' (am-гүй) хэрэглэнэ.",
+            "Төлөвлөгөөнд үргэлж will хэрэглэнэ."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Аль хэдийн шийдсэн төлөвлөгөөг will-ээр илэрхийлэх нь түгээмэл алдаа. 'made up my mind' нь урьдчилан шийдсэнийг заана тул be going to хэрэглэнэ; will нь ярианы агшинд гаргасан шийдвэрт тохирно."
+        },
+        {
+          "id": "tt-en-future-questions-3",
+          "stem_mn": "'By the time she retires, she ___ for 30 years.' (work)",
+          "latex": "",
+          "t1_choices": [
+            "will work",
+            "will have worked",
+            "will has worked",
+            "will have work"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "Future perfect = will have + V3; 'have' өөрчлөгдөхгүй, үйл үг V3 (worked).",
+            "will-ийн дараа has ордог учир 'will has'.",
+            "Future perfect-д V3 хэрэггүй, үндсэн хэлбэр (work) хэрэглэнэ.",
+            "Future perfect гэж байдаггүй, зөвхөн will work хэрэглэнэ."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "'will has worked' эсвэл 'will have work' гэх алдаа гардаг. Зөв бүтэц: will have + гуравдугаар хэлбэр (V3 = worked). Тусалж буй have нь subject-ээс үл хамааран хэзээ ч өөрчлөгддөггүй."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-relative-clauses",
+      "title_mn": "Relative clauses (Unit 4: Roots of Mongolian Identity)",
+      "lesson_id": "en-2-1",
+      "ordering": [
+        {
+          "id": "ord-en-relative-clauses-1",
+          "stem_mn": "Үгсийн хэсгүүдийг зөв дараалалд байрлуулан relative clause бүхий бүрэн өгүүлбэр үүсгэ.",
+          "latex": "",
+          "steps": [
+            "The morin khuur",
+            "is an instrument",
+            "which",
+            "represents",
+            "Mongolian culture"
+          ]
+        },
+        {
+          "id": "ord-en-relative-clauses-2",
+          "stem_mn": "Үгсийн хэсгүүдийг зөв дараалалд байрлуулан relative clause бүхий бүрэн өгүүлбэр үүсгэ.",
+          "latex": "",
+          "steps": [
+            "Naadam",
+            "is the festival",
+            "when",
+            "Mongolians",
+            "celebrate their traditions"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-relative-clauses-1",
+          "stem_mn": "Choose the correct word: 'A blacksmith is a craftsman ___ makes tools and weapons.'",
+          "latex": "",
+          "t1_choices": [
+            "who",
+            "which",
+            "where",
+            "when"
+          ],
+          "t1_answer": 0,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "Craftsman бол хүн тул who ашиглана.",
+            "Craftsman бол эд зүйл тул which ашиглана.",
+            "Craftsman бол газар тул where ашиглана.",
+            "Craftsman бол цаг хугацаа тул when ашиглана."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Зарим сурагч хүнийг зааж байхад which/that сонгодог. Хүнийг заавал who-гоор заана — craftsman бол хүн."
+        },
+        {
+          "id": "tt-en-relative-clauses-2",
+          "stem_mn": "Choose the correct word: 'Winter is the season ___ herders move to sheltered pastures.'",
+          "latex": "",
+          "t1_choices": [
+            "where",
+            "when",
+            "who",
+            "which"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "Season бол газрыг заасан тул where.",
+            "Season бол цаг хугацааг заасан тул when.",
+            "Season бол хүн тул who.",
+            "Season бол эд зүйл тул which."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "where (газар) ба when (цаг)-ийг андуурч болзошгүй. Улирал, өдөр, цаг хугацааг when-ээр заана; байршил, газрыг where-ээр заана. Season бол цаг хугацаа."
+        },
+        {
+          "id": "tt-en-relative-clauses-3",
+          "stem_mn": "Choose the correctly punctuated sentence.",
+          "latex": "",
+          "t1_choices": [
+            "Chinggis Khaan, who united the tribes, is a national hero.",
+            "Chinggis Khaan who united the tribes is a national hero.",
+            "Chinggis Khaan who united the tribes, is a national hero.",
+            "Chinggis Khaan, that united the tribes, is a national hero."
+          ],
+          "t1_answer": 0,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "Non-defining clause нэмэлт мэдээлэл өгдөг тул хоёр талд нь таслал тавина.",
+            "Non-defining clause-д таслал огт хэрэггүй.",
+            "Non-defining clause-д that ашиглаж болно.",
+            "Зөвхөн clause-ийн эхэнд нь таслал тавьдаг."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Non-defining clause (нэмэлт, чухал биш мэдээлэл)-ийг хоёр талаас нь таслалаар зааглана. Таслалаа мартвал утга буруу болно. Мөн non-defining clause дээр that хэрэглэхгүй, зөвхөн who/which/where/when."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-reason-time-clauses",
+      "title_mn": "Clauses of reason & time (Unit 5: Cultures Around the World)",
+      "lesson_id": "en-2-2",
+      "ordering": [
+        {
+          "id": "ord-en-reason-time-clauses-1",
+          "stem_mn": "Доорх хэсгүүдийг зөв өгүүлбэр болгон эрэмбэл. (учир шалтгаан)",
+          "latex": "",
+          "steps": [
+            "We wear the traditional deel",
+            "because",
+            "we are proud of",
+            "our culture"
+          ]
+        },
+        {
+          "id": "ord-en-reason-time-clauses-2",
+          "stem_mn": "Доорх хэсгүүдийг зөв өгүүлбэр болгон эрэмбэл. (цаг хугацаа)",
+          "latex": "",
+          "steps": [
+            "After the ceremony ended,",
+            "the whole family",
+            "shared a big meal",
+            "together"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-reason-time-clauses-1",
+          "stem_mn": "The festival was delayed ___ the heavy rain.",
+          "latex": "",
+          "t1_choices": [
+            "because",
+            "because of",
+            "so",
+            "although"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "'the heavy rain' бол нэр үг тул `because of` хэрэглэнэ.",
+            "`because` нэр үгийн өмнө шууд орж болно.",
+            "`so` шалтгааныг заадаг тул зөв.",
+            "`although` шалтгааныг заадаг тул зөв."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид `because` (+ бүтэн өгүүлбэр) ба `because of` (+ нэр үг)-ийг андуурдаг. Энд ард нь зөвхөн нэр үг (the heavy rain) ирж байгаа тул `because` биш `because of` хэрэгтэй."
+        },
+        {
+          "id": "tt-en-reason-time-clauses-2",
+          "stem_mn": "___ the clock struck midnight, everyone cheered.",
+          "latex": "",
+          "t1_choices": [
+            "While",
+            "When",
+            "Due to",
+            "Because of"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "'struck midnight' бол агшин зуурын үйл тул цэг цагийг заах `when` хэрэглэнэ.",
+            "`while` богино агшны үйлд ордог.",
+            "'struck' бол үргэлжилсэн үйл тул `while` зөв.",
+            "`when` зөвхөн өнгөрсөн цагт ордог."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид `while` (үргэлжилсэн үйл) ба `when` (агшин/цэг цаг)-ийг андуурдаг. 'struck midnight' бол агшин зуурын үйл тул `when` зөв; `while` бол 'was performing' мэтийн үргэлжилсэн үйлд ордог."
+        },
+        {
+          "id": "tt-en-reason-time-clauses-3",
+          "stem_mn": "When the festival ___ next year, we will invite foreign guests.",
+          "latex": "",
+          "t1_choices": [
+            "will begin",
+            "begins",
+            "began",
+            "is beginning"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад?",
+          "t2_choices": [
+            "`when`-ий ард үргэлж `will` ирдэг.",
+            "Цаг хугацааны гишүүн өгүүлбэрт ирээдүйг одоо цагаар илэрхийлдэг тул `will` хэрэглэхгүй.",
+            "Ирээдүйн үйл тул `will begin` зөв.",
+            "`began` бол өнгөрсөн цаг тул зөв."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Сурагчид цаг хугацааны гишүүн өгүүлбэрт (`when`, `before`, `after`…) ирээдүйн утгыг `will`-ээр илэрхийлэх алдаа гаргадаг. Зөв нь одоо цаг (`begins`); `will` зөвхөн гол өгүүлбэрт (we will invite) орно."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-past-infinitives",
+      "title_mn": "Past simple vs present perfect; infinitives (Unit 6: Language in Mind)",
+      "lesson_id": "en-2-3",
+      "ordering": [
+        {
+          "id": "ord-en-past-infinitives-1",
+          "stem_mn": "Present perfect өгүүлбэр болгон үгсийг зөв дараалалд өрөөрэй:",
+          "latex": "",
+          "steps": [
+            "We",
+            "have",
+            "already",
+            "learned",
+            "our",
+            "history"
+          ]
+        },
+        {
+          "id": "ord-en-past-infinitives-2",
+          "stem_mn": "Infinitive (to + V) хэрэглэсэн зөв өгүүлбэр угсараарай:",
+          "latex": "",
+          "steps": [
+            "She",
+            "wants",
+            "to",
+            "visit",
+            "the",
+            "museum"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-past-infinitives-1",
+          "stem_mn": "Зөв хувилбарыг сонго: I ___ this famous legend yesterday.",
+          "latex": "",
+          "t1_choices": [
+            "have read",
+            "read",
+            "have readed",
+            "reading"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад энэ хариулт зөв бэ?",
+          "t2_choices": [
+            "«yesterday» одоотой холбоотой тул present perfect хэрэгтэй.",
+            "«yesterday» тодорхой өнгөрсөн цаг тул past simple хэрэгтэй.",
+            "«read» нь ирээдүй цагийг заана.",
+            "«have read» нь «yesterday»-тэй хамт зөв орно."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Сурагчид «yesterday»-тэй present perfect (have read) хэрэглэж андуурдаг. Гэвч тодорхой өнгөрсөн цагийн тэмдэг үг past simple-ийг шаарддаг (read)."
+        },
+        {
+          "id": "tt-en-past-infinitives-2",
+          "stem_mn": "Зөв хувилбарыг сонго: My grandmother has ___ me this story many times.",
+          "latex": "",
+          "t1_choices": [
+            "told",
+            "telled",
+            "tell",
+            "telling"
+          ],
+          "t1_answer": 0,
+          "t2_prompt_mn": "Яагаад «told» зөв бэ?",
+          "t2_choices": [
+            "«tell»-ийн хэлбэр нь «telled» болно.",
+            "Present perfect-д has + V3 орох ба tell–told–told.",
+            "«tell» тогтмол үйл үг тул «tellied» болно.",
+            "has-ийн дараа үйл үгийн үндсэн хэлбэр орно."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Сурагчид тогтмол бус үйл үг дээр «-ed» залгаж «telled» гэж алддаг. tell нь irregular: tell–told–told, present perfect-д told (V3) орно."
+        },
+        {
+          "id": "tt-en-past-infinitives-3",
+          "stem_mn": "Зөв хувилбарыг сонго: My friends enjoy ___ about different cultures.",
+          "latex": "",
+          "t1_choices": [
+            "to read",
+            "reading",
+            "read",
+            "to reading"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад «reading» зөв бэ?",
+          "t2_choices": [
+            "«enjoy» дараа нь infinitive (to + V) орно.",
+            "«enjoy» дараа нь gerund (V-ing) орно.",
+            "«enjoy» дараа нь үйл үгийн үндсэн хэлбэр орно.",
+            "«enjoy» дараа нь past simple орно."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Сурагчид «enjoy to read» гэж infinitive хэрэглэж андуурдаг. «enjoy» нь gerund (V-ing) авдаг тул enjoy reading зөв."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-passive-quantifiers",
+      "title_mn": "Passive modals & quantifiers (Unit 7: Nature Conservation)",
+      "lesson_id": "en-3-1",
+      "ordering": [
+        {
+          "id": "ord-en-passive-quantifiers-1",
+          "stem_mn": "Доорх үгсийг зөв дараалалд оруулж, мод тарих тухай идэвхгүй модал өгүүлбэр үүсгэ.",
+          "latex": "",
+          "steps": [
+            "Trees",
+            "must",
+            "be",
+            "planted",
+            "every",
+            "spring"
+          ]
+        },
+        {
+          "id": "ord-en-passive-quantifiers-2",
+          "stem_mn": "Доорх үгсийг зөв дараалалд оруулж, дахин боловсруулах тухай идэвхгүй модал өгүүлбэр үүсгэ.",
+          "latex": "",
+          "steps": [
+            "Plastic",
+            "waste",
+            "should",
+            "be",
+            "recycled",
+            "at",
+            "home"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-passive-quantifiers-1",
+          "stem_mn": "Зөв өгүүлбэрийг сонго: 'Water ___ to protect nature.'",
+          "latex": "",
+          "t1_choices": [
+            "must saved",
+            "must be saved",
+            "must be save",
+            "must saving"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад? (Зөв шалтгааныг сонго)",
+          "t2_choices": [
+            "Модалын дараа шууд V3 орох тул 'must saved'.",
+            "Идэвхгүй модал = modal + be + V3, тиймээс 'must be saved'.",
+            "Идэвхгүй хэлбэрт үргэлж V1 орох тул 'must be save'.",
+            "Модалын дараа '-ing' орох тул 'must saving'."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Зарим сурагч модалын дараа 'be'-г орхиж 'must saved' гэдэг, эсвэл V1/-ing хэлбэр хэрэглэдэг. Зөв нь заавал modal + be + V3 (must be saved)."
+        },
+        {
+          "id": "tt-en-passive-quantifiers-2",
+          "stem_mn": "Зөв үгийг сонго: '___ pollution is caused by old cars.'",
+          "latex": "",
+          "t1_choices": [
+            "Many",
+            "A few",
+            "Much",
+            "Few"
+          ],
+          "t1_answer": 2,
+          "t2_prompt_mn": "Яагаад? (Зөв шалтгааныг сонго)",
+          "t2_choices": [
+            "pollution тоологдох нэр тул 'many'.",
+            "pollution цөөн тул 'few'.",
+            "pollution тоологдохгүй нэр тул 'much'.",
+            "pollution олон тоотой тул 'a few'."
+          ],
+          "t2_answer": 2,
+          "misconception_mn": "pollution-ийг тоологдох нэр гэж андуурч 'many pollution' гэдэг. Гэвч pollution тоологдохгүй тул 'much' хэрэглэнэ."
+        },
+        {
+          "id": "tt-en-passive-quantifiers-3",
+          "stem_mn": "Зөв үгийг сонго: 'After the drought, there is ___ clean water left.'",
+          "latex": "",
+          "t1_choices": [
+            "few",
+            "many",
+            "a few",
+            "little"
+          ],
+          "t1_answer": 3,
+          "t2_prompt_mn": "Яагаад? (Зөв шалтгааныг сонго)",
+          "t2_choices": [
+            "water тоологдох тул 'few'.",
+            "water олон тоотой тул 'many'.",
+            "water тоологдох тул 'a few'.",
+            "water тоологдохгүй тул 'little' (бараг алга)."
+          ],
+          "t2_answer": 3,
+          "misconception_mn": "water-ийг тоологдох нэр гэж бодож 'few water' гэдэг. Гэвч water тоологдохгүй тул 'little' зөв."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-comparatives-transitions",
+      "title_mn": "Comparatives & transition words (Unit 8: Healthy Lifestyle)",
+      "lesson_id": "en-3-2",
+      "ordering": [
+        {
+          "id": "ord-en-comparatives-transitions-1",
+          "stem_mn": "Үгсийг зөв дараалалд оруулж, харьцуулсан (comparative) өгүүлбэр үүсгэ.",
+          "latex": "",
+          "steps": [
+            "Jogging",
+            "is",
+            "faster",
+            "than",
+            "walking"
+          ]
+        },
+        {
+          "id": "ord-en-comparatives-transitions-2",
+          "stem_mn": "Үгсийг зөв дараалалд оруулж, дээд зэргийн (superlative) өгүүлбэр үүсгэ.",
+          "latex": "",
+          "steps": [
+            "Sleep",
+            "is",
+            "the most",
+            "important",
+            "habit"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-comparatives-transitions-1",
+          "stem_mn": "Аль өгүүлбэр нь зөв бэ?",
+          "latex": "",
+          "t1_choices": [
+            "A bike is more faster than a bus in the city.",
+            "A bike is faster than a bus in the city.",
+            "A bike is faster then a bus in the city.",
+            "A bike is fastest than a bus in the city."
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад энэ хариулт зөв бэ?",
+          "t2_choices": [
+            "fast богино тэмдэг нэр тул зөвхөн -er нэмж, than хэрэглэдэг.",
+            "Богино тэмдэг нэрт 'more' болон '-er'-ийг хамт нэмдэг.",
+            "Харьцуулахдаа 'then' гэж бичдэг.",
+            "Comparative-д 'the' заавал хэрэгтэй."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "'more faster' гэж 'more' ба '-er'-ийг давхар хэрэглэх нь түгээмэл алдаа. Богино тэмдэг нэрт зөвхөн -er хангалттай: 'faster than'."
+        },
+        {
+          "id": "tt-en-comparatives-transitions-2",
+          "stem_mn": "Аль өгүүлбэр нь зөв бэ?",
+          "latex": "",
+          "t1_choices": [
+            "Fruit is better then candy.",
+            "Fruit is more better than candy.",
+            "Fruit is better than candy.",
+            "Fruit is the better than candy."
+          ],
+          "t1_answer": 2,
+          "t2_prompt_mn": "Яагаад энэ хариулт зөв бэ?",
+          "t2_choices": [
+            "'then' нь харьцуулах үг тул зөв.",
+            "Харьцуулахад 'than' хэрэглэнэ; 'better' нь irregular тул 'more' хэрэггүй.",
+            "'more better' нь илүү эелдэг хэлбэр.",
+            "Comparative бүрд 'the' хэрэгтэй."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "'than' (харьцуулах) ба 'then' (дараа нь) хоёрыг андуурах, эсвэл 'more better' гэж давхарлах нь алдаа. Зөв нь 'better than'."
+        },
+        {
+          "id": "tt-en-comparatives-transitions-3",
+          "stem_mn": "Аль өгүүлбэр нь зөв бэ?",
+          "latex": "",
+          "t1_choices": [
+            "Football is most popular sport here.",
+            "Football is the most popular sport here.",
+            "Football is the most popularest sport here.",
+            "Football is more popular sport here."
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад энэ хариулт зөв бэ?",
+          "t2_choices": [
+            "Superlative-ийн өмнө 'the' заавал ордог; урт тэмдэг нэрт 'the most'.",
+            "Superlative-д 'the' шаардлагагүй.",
+            "'most popularest' нь илүү хүчтэй хэлбэр.",
+            "'more popular' нь дээд зэрэг илэрхийлнэ."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Superlative-д 'the'-г мартах нь түгээмэл алдаа. Зөв нь 'the most popular'; 'most popularest' нь давхар алдаа, 'more popular' нь comparative."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-reported-speech",
+      "title_mn": "Reported (indirect) speech (Unit 9: Technology Today)",
+      "lesson_id": "en-4-1",
+      "ordering": [
+        {
+          "id": "ord-en-reported-speech-1",
+          "stem_mn": "Direct: \"I am using a new browser,\" she said. Доорх үгсийг зөв дараалалд эрэмбэлж reported speech өгүүлбэр үүсгэ (backshift: am using → was using).",
+          "latex": "",
+          "steps": [
+            "She",
+            "said",
+            "that",
+            "she",
+            "was",
+            "using",
+            "a",
+            "new",
+            "browser"
+          ]
+        },
+        {
+          "id": "ord-en-reported-speech-2",
+          "stem_mn": "Direct: \"Where do you store your files?\" he asked. Үгсийг зөв эрэмбэлж reported question болго (энгийн эрэмбэ, do хасах, store → stored).",
+          "latex": "",
+          "steps": [
+            "He",
+            "asked",
+            "where",
+            "I",
+            "stored",
+            "my",
+            "files"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-reported-speech-1",
+          "stem_mn": "Direct: \"The app works offline,\" he said. Reported: He said that the app ___ offline.",
+          "latex": "",
+          "t1_choices": [
+            "works",
+            "worked",
+            "is working",
+            "work"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад энэ хариулт зөв бэ?",
+          "t2_choices": [
+            "Reported speech-д present simple нь past simple болж ухардаг (backshift).",
+            "Reported speech-д цаг хэзээ ч өөрчлөгддөггүй.",
+            "'said' нь одоо цагийг шаарддаг тул 'works'.",
+            "Present continuous ('is working') болгох ёстой."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид backshift буюу цагийн ухралтыг мартаж 'said the app works' гэж бичдэг. Гэвч present simple нь past simple (worked) болно."
+        },
+        {
+          "id": "tt-en-reported-speech-2",
+          "stem_mn": "Direct: \"Where is the server?\" she asked. Reported: She asked ___.",
+          "latex": "",
+          "t1_choices": [
+            "where was the server",
+            "where the server was",
+            "where is the server",
+            "where the server is"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад энэ хариулт зөв бэ?",
+          "t2_choices": [
+            "Reported question-д асуултын эрэмбэ (verb + subject) хэвээр үлддэг.",
+            "Энгийн өгүүлбэрийн эрэмбэ (subject + verb) болж, verb нь past болно.",
+            "'asked' одоо цаг шаарддаг тул 'is' хэвээр.",
+            "Wh- үгийн дараа туслах үйл үг заавал байх ёстой."
+          ],
+          "t2_answer": 1,
+          "misconception_mn": "Сурагчид reported question-д асуултын эрэмбийг (was the server) хадгалдаг. Гэвч энгийн өгүүлбэрийн дараалал болж 'the server was' болно."
+        },
+        {
+          "id": "tt-en-reported-speech-3",
+          "stem_mn": "Direct: \"We are testing the drone now,\" they said. Reported: They said that they were testing the drone ___.",
+          "latex": "",
+          "t1_choices": [
+            "now",
+            "then",
+            "today",
+            "here"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад энэ хариулт зөв бэ?",
+          "t2_choices": [
+            "'now' нь reported speech-д 'then' болж өөрчлөгддөг.",
+            "'now' хэзээ ч өөрчлөгддөггүй.",
+            "'now' нь 'that day' болдог.",
+            "Цаг хугацааны үг өөрчлөгддөггүй."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Сурагчид цаг хугацааны үг (now, today) өөрчлөгдөхийг мартдаг. Reported speech-д now → then, today → that day болно."
+        }
+      ]
+    },
+    {
+      "skill_id": "en-participles-phrases",
+      "title_mn": "Participles & noun/adverb phrases (Unit 10: Sport & Entertainment)",
+      "lesson_id": "en-4-2",
+      "ordering": [
+        {
+          "id": "ord-en-participles-phrases-1",
+          "stem_mn": "Доорх үгсийг зөв дараалалд өрж, зөв өгүүлбэр үүсгэ. Давтамжийн adverb-ийн байрлалыг санаарай (үндсэн үйл үгийн өмнө).",
+          "latex": "",
+          "steps": [
+            "My",
+            "brother",
+            "always",
+            "arrives",
+            "early",
+            "for",
+            "training"
+          ]
+        },
+        {
+          "id": "ord-en-participles-phrases-2",
+          "stem_mn": "Доорх үгсийг зөв дараалалд өрж, зөв өгүүлбэр үүсгэ. Мэдрэмжийг илэрхийлэх past participle (-ed) тэмдэг нэрийг нэр үгийн өмнө байрлуул.",
+          "latex": "",
+          "steps": [
+            "The",
+            "exhausted",
+            "players",
+            "left",
+            "the",
+            "field"
+          ]
+        }
+      ],
+      "two_tier": [
+        {
+          "id": "tt-en-participles-phrases-1",
+          "stem_mn": "Complete: 'The football fans were so ___ after their team lost the final.'",
+          "latex": "",
+          "t1_choices": [
+            "disappointing",
+            "disappointed",
+            "disappoint",
+            "disappoints"
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад '-ed' хэлбэр (disappointed) зөв бэ?",
+          "t2_choices": [
+            "Учир нь fans нь урам хугарах мэдрэмжийг МЭДЭРЧ байгаа тул -ed хэрэглэнэ.",
+            "Учир нь fans нь бусдад мэдрэмж төрүүлж буй тул -ing хэрэглэнэ.",
+            "Учир нь өгүүлбэр өнгөрсөн цагт байгаа тул үргэлж -ed болно.",
+            "Учир нь fans нь олон тооны нэр үг тул -ed нэмнэ."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "'The fans were disappointing' гэвэл fans нь бусдыг урам хугалж буй шинж чанартай гэсэн буруу утга гарна. Хүний мэдрэмжийг илэрхийлэхэд -ed (disappointed) хэрэглэнэ."
+        },
+        {
+          "id": "tt-en-participles-phrases-2",
+          "stem_mn": "Choose the correct sentence to say that you feel no interest in the show.",
+          "latex": "",
+          "t1_choices": [
+            "I am boring with this show.",
+            "I am bored with this show.",
+            "This show am bored.",
+            "I boring this show."
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад 'I am bored' зөв бэ?",
+          "t2_choices": [
+            "Учир нь 'I' нь уйдах мэдрэмжийг мэдэрч буй тул -ed (bored).",
+            "Учир нь 'I' нь бусдыг уйдаадаг тул -ing (boring).",
+            "Учир нь show нь уйтгартай тул хүнд -ed нэмнэ.",
+            "Учир нь 'am' үйл үгийн дараа үргэлж -ing ордог."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "'I am boring' гэвэл 'би уйтгартай хүн, бусдыг уйдаадаг' гэсэн утга. Өөрийн мэдрэмжийг хэлэхэд 'I am bored' (би уйдаж байна) гэнэ."
+        },
+        {
+          "id": "tt-en-participles-phrases-3",
+          "stem_mn": "Choose the sentence with the frequency adverb in the correct position.",
+          "latex": "",
+          "t1_choices": [
+            "She goes always to the cinema on Fridays.",
+            "She always goes to the cinema on Fridays.",
+            "Always she goes to the cinema on Fridays.",
+            "She goes to always the cinema on Fridays."
+          ],
+          "t1_answer": 1,
+          "t2_prompt_mn": "Яагаад 'always' энэ байрлалд орох ёстой вэ?",
+          "t2_choices": [
+            "Учир нь давтамжийн adverb нь үндсэн үйл үгийн ӨМНӨ ордог.",
+            "Учир нь давтамжийн adverb нь үргэлж өгүүлбэрийн эхэнд ордог.",
+            "Учир нь давтамжийн adverb нь үндсэн үйл үгийн ДАРАА ордог.",
+            "Учир нь давтамжийн adverb нь өгүүлбэрийн төгсгөлд ордог."
+          ],
+          "t2_answer": 0,
+          "misconception_mn": "Давтамжийн adverb (always, usually, never)-ийг үндсэн үйл үгийн дараа ('goes always') эсвэл өгүүлбэрийн эхэнд буруу байрлуулдаг. Зөв нь үндсэн үйл үгийн өмнө: 'She always goes'. ('be' үйл үгийн хувьд л дараа нь ордог: 'She is always...')."
+        }
+      ]
+    }
+  ]
+}

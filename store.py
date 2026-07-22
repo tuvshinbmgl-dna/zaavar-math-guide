@@ -23,7 +23,7 @@ def _load(name: str) -> dict:
 # Subject-aware loading (math + physics)
 # --------------------------------------------------------------------------- #
 
-SUBJECTS = {"math": "Математик", "physics": "Физик"}
+SUBJECTS = {"math": "Математик", "physics": "Физик", "it": "Мэдээллийн технологи", "english": "Англи хэл"}
 DEFAULT_SUBJECT = "math"
 
 
@@ -56,6 +56,10 @@ _SUBJ = {
                           DATA / "mastery_bank.json", DATA / "lessons"),
     "physics": _load_subject(DATA / "physics" / "curriculum.json", DATA / "physics" / "level_test.json",
                              DATA / "physics" / "mastery_bank.json", DATA / "physics" / "lessons"),
+    "it": _load_subject(DATA / "it" / "curriculum.json", DATA / "it" / "level_test.json",
+                        DATA / "it" / "mastery_bank.json", DATA / "it" / "lessons"),
+    "english": _load_subject(DATA / "english" / "curriculum.json", DATA / "english" / "level_test.json",
+                             DATA / "english" / "mastery_bank.json", DATA / "english" / "lessons"),
 }
 
 
