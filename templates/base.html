@@ -65,6 +65,7 @@
         {% endfor %}
       </nav>
       <div class="flex items-center gap-2">
+        <div id="streak-slot"></div>
         <div id="profile-slot"></div>
         {% if ai_enabled is defined %}
         <span class="hidden sm:inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-full {{ 'bg-emerald-50 text-emerald-700' if ai_enabled else 'bg-slate-100 text-slate-500' }}">

@@ -153,6 +153,7 @@ function mockTest(versions) {
         store.mocks.push({ ts: new Date().toISOString(), version: g.version, score: g.score, byTopic: g.byTopic, rapidPct: g.rapidPct });
         localStorage.setItem('zaavar.{{ subject }}.mastery', JSON.stringify(store));
       } catch (e) {}
+      zaavarActivity();
       this.stage = 'result';
       window.scrollTo({ top: 0 });
       this.$nextTick(() => renderMath(this.$root));

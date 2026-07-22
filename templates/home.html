@@ -18,6 +18,18 @@
     </div>
   </section>
 
+  <!-- Streak motivator -->
+  <template x-if="streak.count > 0">
+    <div class="card p-4 mb-6 flex items-center gap-3" :class="streak.alive ? 'border-amber-200 bg-amber-50/50' : ''">
+      <div class="text-3xl" x-text="streak.alive ? '🔥' : '🕯️'"></div>
+      <div class="min-w-0 flex-1">
+        <div class="font-bold text-ink-900"><span x-text="streak.count"></span> хоногийн цуврал<span x-show="streak.best > streak.count" class="text-xs font-normal text-slate-500" x-text="` · дээд амжилт ${streak.best}`"></span></div>
+        <div class="text-xs text-slate-500" x-text="streak.doneToday ? 'Өнөөдрийн зорилтоо биелүүллээ 🎉' : (streak.alive ? 'Өнөөдөр нэг хичээл үзээд цувралаа сунга!' : 'Өнөөдөр суралцаад цувралаа сэргээ!')"></div>
+      </div>
+      <a href="/diagnostic" x-show="!streak.doneToday" class="shrink-0 text-sm font-semibold text-amber-700 hover:underline">Эхлэх →</a>
+    </div>
+  </template>
+
   <!-- Continue where you left off -->
   <template x-if="last">
     <a :href="`/lesson/${last.id}`" class="card p-4 mb-6 flex items-center justify-between gap-3 hover:border-brand-300 hover:shadow-md transition group">
@@ -94,12 +106,20 @@
 <script>
 function homeView() {
   return {
-    done: {}, last: null, doneCount: 0, levels: [],
+    done: {}, last: null, doneCount: 0, levels: [], streak: { count: 0, best: 0, alive: false, doneToday: false },
     init() {
       const ls = Progress.lessons;
       for (const k in ls) this.done[k] = ls[k].done;
       this.doneCount = Progress.doneCount;
       this.last = Progress.last;
+      // streak (global across subjects)
+      try {
+        const s = Streak.get();
+        const today = Streak._today();
+        this.streak = { count: s.count, best: s.best,
+          alive: !!(s.last && Streak._dayDiff(s.last, today) <= 1 && s.count > 0),
+          doneToday: s.last === today };
+      } catch (e) {}
       // level-test results
       try {
         const lt = (JSON.parse(localStorage.getItem('zaavar.{{ subject }}.leveltest')) || {}).topics || {};

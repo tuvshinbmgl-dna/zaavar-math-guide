@@ -207,6 +207,7 @@ function masteryCheck(topics) {
         localStorage.setItem('zaavar.{{ subject }}.mastery', JSON.stringify(store));
         this.done = store.latest;
       } catch (e) {}
+      zaavarActivity();
       this.stage = 'result';
       window.scrollTo({ top: 0 });
       this.$nextTick(() => renderMath(this.$root));

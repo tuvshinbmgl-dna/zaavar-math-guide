@@ -200,6 +200,7 @@ function levelTest(topics) {
         localStorage.setItem('zaavar.{{ subject }}.leveltest', JSON.stringify(store));
         this.done = store.topics;
       } catch (e) {}
+      zaavarActivity();
       this.stage = 'result';
       window.scrollTo({ top: 0 });
       this.$nextTick(() => renderMath(this.$root));
