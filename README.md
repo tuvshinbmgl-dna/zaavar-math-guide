@@ -1,6 +1,9 @@
-# Заавар (Math Guide)
+# Заавар (Zaavar)
 
-Монгол ахлах ангийн **Математик 10·11·12** өөрөө сурах платформын ажиллах загвар (prototype).
+> **Maintainers / handover:** read **[HANDOVER.md](HANDOVER.md)** first — full architecture, data model, deploy pipeline, gotchas, and how to add subjects/content.
+> Now a **4-subject** platform: Математик (10/11/12), Физик (7), Мэдээллийн технологи (12), Англи хэл (12) + daily streak + AI tutor.
+
+Монгол сурагчдад зориулсан үндэсний хөтөлбөрийн **өөрөө сурах платформ** (prototype).
 Үндэсний сурах бичигт (econtent.edu.mn / БШУЯ) суурилсан, "сурах бичгээ ганцаараа сурахад"
 зориулсан 4 чадвартай:
 
