@@ -8,3 +8,6 @@ venv/
 
 # Local session logs (do not publish)
 _Claude/
+
+# Claude session scratch (safe to delete)
+_to_delete/

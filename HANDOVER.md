@@ -17,7 +17,7 @@ A prototype (now fairly mature) that lets a Mongolian student **learn a subject 
 
 Design target: a real student on any device (mobile-first), no login/DB. First real student tester (2026-07) praised it (clear lessons, works on any device, "it's OK to get it wrong" is encouraging) and asked for more worked examples, a streak, and more subjects — all since delivered.
 
-**4 subjects live:** Математик (10/11/12), Физик (7), Мэдээллийн технологи (12), Англи хэл (12).
+**4 subjects live:** Математик (10/11/12), Физик (7/8/9/10/11), Мэдээллийн технологи (12), Англи хэл (12).
 
 ---
 
@@ -64,14 +64,14 @@ data/
   knowledge_graph.json     Math-only prereq graph (drives AI router + prerequisites)
   diagnostic.json          Legacy adaptive diagnostic pool (MATH-ONLY, mostly unused)
   lessons/*.json           42 math lessons (g10-*, g11-*, g12-*)
-  physics/  {curriculum,level_test,mastery_bank}.json + lessons/p7-*.json   (11 lessons)
+  physics/  {curriculum,level_test,mastery_bank}.json + lessons/p{7,8,9,10,11}-*.json  (66 lessons)
   it/       {curriculum,level_test,mastery_bank}.json + lessons/it-*.json   (11 lessons)
   english/  {curriculum,level_test,mastery_bank}.json + lessons/en-*.json   (10 lessons)
 docs/authoring/            Reusable content-generation workflow scripts (see §11)
 docs/superpowers/          Older specs/plans
 ```
 
-Lesson-id prefixes are unique per subject: `g*` math, `p7-*` physics, `it-*` IT, `en-*` English.
+Lesson-id prefixes are unique per subject: `g*` math, `p7-*`/`p8-*`/`p9-*`/`p10-*`/`p11-*` physics, `it-*` IT, `en-*` English.
 
 ---
 
@@ -80,7 +80,7 @@ Lesson-id prefixes are unique per subject: `g*` math, `p7-*` physics, `it-*` IT,
 | subject key | Name | Grades | Lessons | Level topics | Mastery topics | Source |
 |---|---|---|---|---|---|---|
 | `math` | Математик | 10,11,12 | 42 | 40 | 9 | econtent books 279/273/343 |
-| `physics` | Физик | 7 | 11 | 11 | 9 | 2019 core-curriculum PDF (Ф7.1–Ф7.4) |
+| `physics` | Физик | 7,8,9,10,11 | 66 | 66 | 63 | g7: 2019 core-curriculum PDF (Ф7.1–Ф7.4); g8–11: econtent textbook ГАРЧИГ (books 306/320/258/269) |
 | `it` | Мэдээллийн технологи | 12 | 11 | 11 | 11 | **ESIS** textbook PDF (Small Basic) |
 | `english` | Англи хэл | 12 | 10 | 10 | 10 | **ESIS** textbook PDF (CEFR ~B1, bilingual) |
 
@@ -90,7 +90,11 @@ Lesson-id prefixes are unique per subject: `g*` math, `p7-*` physics, `it-*` IT,
 - The **2019 core-curriculum standard** gives authentic learning-objective codes (physics used `Ф7.1`…). Basic-ed (grades 6-9) PDF: `https://cdn.greensoft.mn/uploads/users/2649/files/Curriculum/EBS/Suuri.pdf`. Upper-secondary standard is listed at `moe.gov.mn/curriculum-buren-dund` (the mier.mn PDF links there are currently DEAD/empty — use ESIS or econtent readers instead).
 - The delivered approach (accepted by the user): **anchor every lesson to authentic official structure/objectives + textbook page refs, write scaffolding/examples in standard terminology.** Do NOT copy copyrighted prose verbatim onto the public site.
 
-Textbook `reader_url` per subject points at the econtent reader (`more.php?id=NNN`): math g10=279/g11=273/g12=343, physics=291, IT=340, English=357.
+- **Reading an econtent flipbook's table of contents (ГАРЧИГ) without a PDF** — the page images are directly addressable, so you can screenshot the contents page in a real browser instead of clicking through the reader:
+  `https://econtent.edu.mn/content/<N>rangi/<subject>/pages/<subject>-<book_id>-<page>.jpg`
+  e.g. `.../content/8rangi/fizik/pages/fizik-306-3.jpg`. The image index equals the printed page number (index 0 = cover). ГАРЧИГ sits at index 3 (physics 8) or 4–5 (physics 9/10/11). This is how the grade 8–11 physics structure was obtained; `mier.mn` curriculum PDFs are **dead** (connection refused) and ESIS has no physics file under the `cover/<grade>/<grade>_<subject>.pdf` naming.
+
+Textbook `reader_url` per subject points at the econtent reader (`more.php?id=NNN`): math g10=279/g11=273/g12=343, physics g7=291/g8=306/g9=320/g10=258/g11=269, IT=340, English=357.
 
 ---
 
@@ -205,6 +209,9 @@ All learner state is **subject-scoped** except the profile and the streak:
 
 Content was generated with **Claude Code `Workflow` (multi-agent)** — an author→adversarial-verify pipeline per topic, with `StructuredOutput` JSON schemas matching §6. Reference scripts live in **`docs/authoring/`**:
 - `physics_wf.js` — physics grade-7 (11 topics: lesson + 10 level Q + mastery), author→verify.
+- `physics_g8_wf.js` — physics grade-8 (14 topics), same shape, anchored to the Физик VIII ГАРЧИГ + page ranges.
+- `physics_upper_wf.js` — physics grades **9, 10, 11** in one script; pick the grade with `Workflow({scriptPath, args:{grade:10}})`. 41 topics total.
+- `write_physics_grade.py` — **merging** writer: appends/replaces level-test + mastery topics by `skill_id` and **rebuilds `curriculum.json` from whatever lessons are on disk**, so earlier grades are never clobbered. Run with `PHYSICS_DIR=<repo>/data/physics python3 write_physics_grade.py topics_g9.json topics_g10.json …`.
 - `it_en_wf.js` — IT + English grade-12 (21 topics), subject-branched prompts (IT = Small Basic code; English = bilingual grammar).
 - `enhance_wf.js` — appends +2 worked examples + +2 detailed-solution practice to EXISTING lessons (purely additive).
 - `write_physics.py` / `write_subjects.py` — write a workflow's `{topics:[...]}` output into per-subject `data/` files.
@@ -255,6 +262,14 @@ Then (optional, high-value) load a couple of lessons in a real browser and confi
 ## 14. Status & possible next steps
 
 **Done & live (2026-07):** 4 subjects with lessons+level-test+mastery; per-grade level test; mastery-confirmation (ordering + two-tier + rapid-guess filter + verdict); 10-version mock; local profile; daily streak; subject dropdown; +106 worked examples & +106 detailed-solution practice across all math+physics lessons; AI tutor/router (needs key). Full functional audit (17 defects) fixed.
+
+**Added 2026-07-28 — physics grades 8, 9, 10, 11 (+55 lessons, 550 level-test Q, 54 mastery topics):**
+- Structure taken from the **authentic econtent ГАРЧИГ** of books 306 / 320 / 258 / 269, read page-image by page-image in a real browser (see §5). `pages_mn` therefore carries a real chapter + page range, e.g. `Бүлэг II. Механик хөдөлгөөн ба механик энерги, 60–67 тал`.
+- Authored by `physics_g8_wf.js` + `physics_upper_wf.js` (author→adversarial-verify, 110 agents, 0 errors), merged with `write_physics_grade.py`.
+- Verified: 143/143 JSON valid; every one of the 66 physics lesson pages returns 200; level-test/mastery/mock APIs leak no answer keys; grading round-trips 100% per grade. **200 numeric questions were re-solved from scratch by independent auditor agents — 0 wrong answer keys.**
+- **`/mock` is now grade-aware** (`store.mock_grades()`, `mock_version(subject, v, grade)`, `grade` in the `/api/mock/version` payload, grade tabs in `mock.html`). Without this the physics mock would have been 132 items; it is now 22–28 per grade, and math dropped from 80 to ~30. Omitting `grade` keeps the old all-topics behaviour.
+
+**Known pre-existing defect (NOT introduced by the above):** ~172 occurrences of **Cyrillic inside KaTeX math mode** (e.g. `$\rho_{бие}$`, `$V_{дундаж}$`) in shipped content — `data/physics/lessons/p7-1-3, p7-1-4, p7-1-6, p7-3-1`, physics `level_test.json` / `mastery_bank.json` (grade-7 topics only), and `data/lessons/g10-15-1.json` (116 of them). `throwOnError:false` stops it from crashing, but KaTeX has no Cyrillic glyphs in math fonts so the subscripts render cramped and mis-set. Fix is mechanical: wrap in `\text{…}` (`$\rho_{\text{бие}}$`). The grade 8–11 content is already clean — the verify agents caught and fixed these at authoring time.
 
 **Not done / ideas (nothing is blocking):**
 - Turn on AI: user adds `ANTHROPIC_API_KEY` in Render → Environment.

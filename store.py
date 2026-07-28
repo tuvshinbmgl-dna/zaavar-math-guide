@@ -495,20 +495,32 @@ MOCK_VERSIONS = 10
 MOCK_RAPID_MS = 3000
 
 
-def mock_version(subject: str, v: int) -> dict:
+def mock_grades(subject: str = "math") -> list[int]:
+    """Grades that have level-test topics, ascending — drives the mock grade picker."""
+    return sorted({t.get("grade") for t in _sub(subject)["leveltest"]["topics"]
+                   if t.get("grade") is not None})
+
+
+def mock_version(subject: str, v: int, grade: int | None = None) -> dict:
     """Deterministic per-version sample: 1–2 items from each topic (structure fixed,
-    numbers/items vary by seed). Returns SAFE items (no answer/solution)."""
+    numbers/items vary by seed). Returns SAFE items (no answer/solution).
+
+    When `grade` is given, only that grade's topics are sampled, so a subject that
+    spans many grades still yields a sittable paper instead of one huge test."""
     v = int(v) % MOCK_VERSIONS
     rng = random.Random(1000 + v)
+    topics = _sub(subject)["leveltest"]["topics"]
+    if grade is not None:
+        topics = [t for t in topics if t.get("grade") == grade]
     items = []
-    for tp in _sub(subject)["leveltest"]["topics"]:
+    for tp in topics:
         pool = list(tp["questions"])
         rng.shuffle(pool)
-        for q in pool[:2]:  # 2 per topic → ~18 items
+        for q in pool[:2]:  # 2 per topic
             items.append({"id": q["id"], "topic": tp["skill_id"], "topic_mn": tp["title_mn"],
                           "stem_mn": q["stem_mn"], "latex": q.get("latex", ""), "choices": q["choices"]})
     rng.shuffle(items)
-    return {"version": v, "n": len(items), "items": items}
+    return {"version": v, "grade": grade, "n": len(items), "items": items}
 
 
 def grade_mock(subject: str, v: int, responses: list) -> dict:

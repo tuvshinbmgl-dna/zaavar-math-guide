@@ -1,5 +1,5 @@
 {
-  "note": "Физик VII — 7-р ангийн физик. Боловсролын сайжруулсан цөм хөтөлбөр (2019) Ф7.1–Ф7.4 суралцахуйн зорилтод нийцсэн.",
+  "note": "Физик — 7, 8, 9, 10, 11-р анги. econtent.edu.mn дээрх албан ёсны сурах бичгийн бүтцэд нийцүүлэв.",
   "grades": [
     {
       "grade": 7,
@@ -13,12 +13,42 @@
           "title_en": "General properties of bodies",
           "deep": true,
           "lessons": [
-            { "num": "1.1", "title_mn": "Урт ба хугацаа хэмжих", "lesson_id": "p7-1-1", "skill_id": "p7-length-time" },
-            { "num": "1.2", "title_mn": "Масс ба жин", "lesson_id": "p7-1-2", "skill_id": "p7-mass-weight" },
-            { "num": "1.3", "title_mn": "Эзлэхүүн ба нягт", "lesson_id": "p7-1-3", "skill_id": "p7-density" },
-            { "num": "1.4", "title_mn": "Хөвөх ба живэх нөхцөл", "lesson_id": "p7-1-4", "skill_id": "p7-floating" },
-            { "num": "1.5", "title_mn": "Температур", "lesson_id": "p7-1-5", "skill_id": "p7-temperature" },
-            { "num": "1.6", "title_mn": "Биеийн хөдөлгөөний хурд", "lesson_id": "p7-1-6", "skill_id": "p7-speed" }
+            {
+              "num": "1.1",
+              "title_mn": "Урт ба хугацаа хэмжих",
+              "lesson_id": "p7-1-1",
+              "skill_id": "p7-length-time"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Масс ба жин",
+              "lesson_id": "p7-1-2",
+              "skill_id": "p7-mass-weight"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Эзлэхүүн ба нягт",
+              "lesson_id": "p7-1-3",
+              "skill_id": "p7-density"
+            },
+            {
+              "num": "1.4",
+              "title_mn": "Хөвөх ба живэх нөхцөл",
+              "lesson_id": "p7-1-4",
+              "skill_id": "p7-floating"
+            },
+            {
+              "num": "1.5",
+              "title_mn": "Температур",
+              "lesson_id": "p7-1-5",
+              "skill_id": "p7-temperature"
+            },
+            {
+              "num": "1.6",
+              "title_mn": "Биеийн хөдөлгөөний хурд",
+              "lesson_id": "p7-1-6",
+              "skill_id": "p7-speed"
+            }
           ]
         },
         {
@@ -27,7 +57,12 @@
           "title_en": "Magnetism",
           "deep": true,
           "lessons": [
-            { "num": "2.1", "title_mn": "Соронз ба соронзон орон", "lesson_id": "p7-2-1", "skill_id": "p7-magnetism" }
+            {
+              "num": "2.1",
+              "title_mn": "Соронз ба соронзон орон",
+              "lesson_id": "p7-2-1",
+              "skill_id": "p7-magnetism"
+            }
           ]
         },
         {
@@ -36,8 +71,18 @@
           "title_en": "Sound",
           "deep": true,
           "lessons": [
-            { "num": "3.1", "title_mn": "Дуу үүсэх ба тархалт", "lesson_id": "p7-3-1", "skill_id": "p7-sound-propagation" },
-            { "num": "3.2", "title_mn": "Дууны чанга-сул, өндөр-нам, цуурай", "lesson_id": "p7-3-2", "skill_id": "p7-sound-properties" }
+            {
+              "num": "3.1",
+              "title_mn": "Дуу үүсэх ба тархалт",
+              "lesson_id": "p7-3-1",
+              "skill_id": "p7-sound-propagation"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Дууны чанга-сул, өндөр-нам, цуурай",
+              "lesson_id": "p7-3-2",
+              "skill_id": "p7-sound-properties"
+            }
           ]
         },
         {
@@ -46,8 +91,516 @@
           "title_en": "Physics around us (astronomy)",
           "deep": true,
           "lessons": [
-            { "num": "4.1", "title_mn": "Дэлхий, Нар, Сарны хөдөлгөөн", "lesson_id": "p7-4-1", "skill_id": "p7-earth-sun-moon" },
-            { "num": "4.2", "title_mn": "Одод ба одны орд", "lesson_id": "p7-4-2", "skill_id": "p7-constellations" }
+            {
+              "num": "4.1",
+              "title_mn": "Дэлхий, Нар, Сарны хөдөлгөөн",
+              "lesson_id": "p7-4-1",
+              "skill_id": "p7-earth-sun-moon"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Одод ба одны орд",
+              "lesson_id": "p7-4-2",
+              "skill_id": "p7-constellations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 8,
+      "title_mn": "Физик 8",
+      "book_id": 306,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=306",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Хүч ба харилцан үйлчлэл",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Хатуу биеийн даралт",
+              "lesson_id": "p8-1-1",
+              "skill_id": "p8-pressure-solid"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Шингэн ба хийн даралт",
+              "lesson_id": "p8-1-2",
+              "skill_id": "p8-pressure-fluid"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Хөшүүргийн эргэх шалтгаан",
+              "lesson_id": "p8-1-3",
+              "skill_id": "p8-lever"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Механик хөдөлгөөн ба механик энерги",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Жигд хөдөлгөөн",
+              "lesson_id": "p8-2-1",
+              "skill_id": "p8-uniform-motion"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Жигд хувьсах хөдөлгөөн",
+              "lesson_id": "p8-2-2",
+              "skill_id": "p8-accelerated-motion"
+            },
+            {
+              "num": "2.3",
+              "title_mn": "Механик энерги",
+              "lesson_id": "p8-2-3",
+              "skill_id": "p8-mech-energy"
+            },
+            {
+              "num": "2.4",
+              "title_mn": "Механик ажил, чадал",
+              "lesson_id": "p8-2-4",
+              "skill_id": "p8-work-power"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Цахилгаан ба соронзон",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Цахилгааны үзэгдэл",
+              "lesson_id": "p8-3-1",
+              "skill_id": "p8-static-electricity"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Цахилгаан хэлхээ",
+              "lesson_id": "p8-3-2",
+              "skill_id": "p8-circuits"
+            },
+            {
+              "num": "3.3",
+              "title_mn": "Гүйдлийн соронзон шинж",
+              "lesson_id": "p8-3-3",
+              "skill_id": "p8-current-magnetism"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Энерги хангамж",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Бидэнд энерги хэрэгтэй юу?",
+              "lesson_id": "p8-4-1",
+              "skill_id": "p8-energy-need"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Энерги зөөгдөх ба нөөцлөгдөх",
+              "lesson_id": "p8-4-2",
+              "skill_id": "p8-energy-transfer"
+            },
+            {
+              "num": "4.3",
+              "title_mn": "Энерги үр ашиггүй хэлбэрт шилжих",
+              "lesson_id": "p8-4-3",
+              "skill_id": "p8-energy-efficiency"
+            },
+            {
+              "num": "4.4",
+              "title_mn": "Дулааны энерги",
+              "lesson_id": "p8-4-4",
+              "skill_id": "p8-thermal-energy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 9,
+      "title_mn": "Физик 9",
+      "book_id": 320,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=320",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Дулааны хөдөлгөөн ба энерги",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Бодисын төлөв байдал",
+              "lesson_id": "p9-1-1",
+              "skill_id": "p9-states-of-matter"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Температур, дулааны хөдөлгөөн, дулааны энерги",
+              "lesson_id": "p9-1-2",
+              "skill_id": "p9-temperature-heat"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Дулаан шилжилт",
+              "lesson_id": "p9-1-3",
+              "skill_id": "p9-heat-transfer"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Соронзон орон ба цахилгаан орон",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Соронзон орон",
+              "lesson_id": "p9-2-1",
+              "skill_id": "p9-magnetic-field"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Цахилгаанжих ба цахилгаан орон",
+              "lesson_id": "p9-2-2",
+              "skill_id": "p9-electric-field"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Цахилгаан хэлхээ",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Цахилгаан хүчдэл",
+              "lesson_id": "p9-3-1",
+              "skill_id": "p9-voltage"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Цахилгаан эсэргүүцэл",
+              "lesson_id": "p9-3-2",
+              "skill_id": "p9-resistance"
+            },
+            {
+              "num": "3.3",
+              "title_mn": "Цуваа ба зэрэгцээ холболт",
+              "lesson_id": "p9-3-3",
+              "skill_id": "p9-series-parallel"
+            },
+            {
+              "num": "3.4",
+              "title_mn": "Цахилгаан энерги ба чадал",
+              "lesson_id": "p9-3-4",
+              "skill_id": "p9-electric-power"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Гэрэл",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Гэрэл тархах",
+              "lesson_id": "p9-4-1",
+              "skill_id": "p9-light-propagation"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Гэрлийн ойлт, толь",
+              "lesson_id": "p9-4-2",
+              "skill_id": "p9-reflection"
+            },
+            {
+              "num": "4.3",
+              "title_mn": "Гэрлийн хугарал, линз",
+              "lesson_id": "p9-4-3",
+              "skill_id": "p9-refraction-lens"
+            },
+            {
+              "num": "4.4",
+              "title_mn": "Оптик багажууд",
+              "lesson_id": "p9-4-4",
+              "skill_id": "p9-optical-devices"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 10,
+      "title_mn": "Физик 10",
+      "book_id": 258,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=258",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Механик",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Хэмжилт",
+              "lesson_id": "p10-1-1",
+              "skill_id": "p10-measurement"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Хөдөлгөөн",
+              "lesson_id": "p10-1-2",
+              "skill_id": "p10-motion"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Хүч ба хөдөлгөөн",
+              "lesson_id": "p10-1-3",
+              "skill_id": "p10-force-motion"
+            },
+            {
+              "num": "1.4",
+              "title_mn": "Массын төв",
+              "lesson_id": "p10-1-4",
+              "skill_id": "p10-center-mass"
+            },
+            {
+              "num": "1.5",
+              "title_mn": "Хүчний эргүүлэх үйлчлэл",
+              "lesson_id": "p10-1-5",
+              "skill_id": "p10-torque"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Дулаан",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Хатуу, шингэн, хийн тэлэлт",
+              "lesson_id": "p10-2-1",
+              "skill_id": "p10-expansion"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Термометр",
+              "lesson_id": "p10-2-2",
+              "skill_id": "p10-thermometer"
+            },
+            {
+              "num": "2.3",
+              "title_mn": "Дулааны тооцоолол",
+              "lesson_id": "p10-2-3",
+              "skill_id": "p10-calorimetry"
+            },
+            {
+              "num": "2.4",
+              "title_mn": "Төлөвийн өөрчлөлт",
+              "lesson_id": "p10-2-4",
+              "skill_id": "p10-phase-change"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Долгион ба дуу",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Долгион",
+              "lesson_id": "p10-3-1",
+              "skill_id": "p10-waves"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Дууны долгион",
+              "lesson_id": "p10-3-2",
+              "skill_id": "p10-sound-waves"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Цахилгаан соронзон",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Электрон систем",
+              "lesson_id": "p10-4-1",
+              "skill_id": "p10-electron-systems"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Тоон электроник",
+              "lesson_id": "p10-4-2",
+              "skill_id": "p10-digital-electronics"
+            }
+          ]
+        },
+        {
+          "num": "V",
+          "title_mn": "Хэмжилтийн үр дүн боловсруулах",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "5.1",
+              "title_mn": "Хэмжилтийн үр дүн боловсруулах",
+              "lesson_id": "p10-5-1",
+              "skill_id": "p10-data-analysis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 11,
+      "title_mn": "Физик 11",
+      "book_id": 269,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=269",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Механик",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Хүч ба хөдөлгөөн",
+              "lesson_id": "p11-1-1",
+              "skill_id": "p11-force-motion"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Хөдөлгөөний тоо хэмжээ ба импульс",
+              "lesson_id": "p11-1-2",
+              "skill_id": "p11-momentum"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Энерги ба ажил, чадал",
+              "lesson_id": "p11-1-3",
+              "skill_id": "p11-energy-work"
+            },
+            {
+              "num": "1.4",
+              "title_mn": "Шингэний механик",
+              "lesson_id": "p11-1-4",
+              "skill_id": "p11-fluid-mechanics"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Молекул физик",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Идеал хий",
+              "lesson_id": "p11-2-1",
+              "skill_id": "p11-ideal-gas"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Термодинамик",
+              "lesson_id": "p11-2-2",
+              "skill_id": "p11-thermodynamics"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Цахилгаан орон ба соронзон орон",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Цахилгаан орон",
+              "lesson_id": "p11-3-1",
+              "skill_id": "p11-electric-field"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Соронзон орон",
+              "lesson_id": "p11-3-2",
+              "skill_id": "p11-magnetic-field"
+            },
+            {
+              "num": "3.3",
+              "title_mn": "Орчин дахь цахилгаан гүйдэл",
+              "lesson_id": "p11-3-3",
+              "skill_id": "p11-current-media"
+            },
+            {
+              "num": "3.4",
+              "title_mn": "Цахилгаан хэлхээ",
+              "lesson_id": "p11-3-4",
+              "skill_id": "p11-circuits"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Механик хэлбэлзэл, долгион",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Гармоник хэлбэлзэл",
+              "lesson_id": "p11-4-1",
+              "skill_id": "p11-harmonic-oscillation"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Унтрах ба албадмал хэлбэлзэл, резонанс",
+              "lesson_id": "p11-4-2",
+              "skill_id": "p11-damped-resonance"
+            },
+            {
+              "num": "4.3",
+              "title_mn": "Механик долгион",
+              "lesson_id": "p11-4-3",
+              "skill_id": "p11-mechanical-waves"
+            },
+            {
+              "num": "4.4",
+              "title_mn": "Дууны долгион",
+              "lesson_id": "p11-4-4",
+              "skill_id": "p11-sound-waves"
+            }
           ]
         }
       ]

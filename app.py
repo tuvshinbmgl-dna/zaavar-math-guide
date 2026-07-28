@@ -143,6 +143,7 @@ def mock():
     return render_template(
         "mock.html",
         versions=store.MOCK_VERSIONS,
+        grades=store.mock_grades(_subject()),
         ai_enabled=claude.is_configured(),
     )
 
@@ -223,7 +224,12 @@ def api_mock_version():
         v = int(payload.get("v", 0))
     except (TypeError, ValueError):
         v = 0
-    return jsonify(store.mock_version(_subject(), v))
+    try:
+        g = payload.get("grade")
+        grade = int(g) if g is not None else None
+    except (TypeError, ValueError):
+        grade = None
+    return jsonify(store.mock_version(_subject(), v, grade))
 
 
 @app.route("/api/mock/grade", methods=["POST"])
