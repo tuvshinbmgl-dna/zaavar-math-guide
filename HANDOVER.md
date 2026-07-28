@@ -228,6 +228,10 @@ The workflow scripts take their work-list via `args`. **`args` arrives in the sc
 1. **HTML entities in `$...$` / code** — agent-authored content emits `&gt; &lt; &amp;` inside math/code. ALWAYS `html.unescape()` before writing JSON, or KaTeX renders the literal entity. (Write scripts do this.)
 2. **`x-data="fn({{ x|tojson }})"` breaks Alpine** — `tojson` emits double-quotes inside the double-quoted attribute. Use `<script>window.__x = {{ x|tojson }}</script>` + `x-data="fn(window.__x)"`, or for a list use a Jinja `... | tojson` expression assigned inside the component object.
 3. **`latex` must be a bare fragment** — templates wrap it in `$…$`/`$$…$$`. If a `latex` value already contains `$`, you get `$$…$$` (wrong). Matrix `&` column separators are fine (browser decodes `&amp;`→`&` before KaTeX reads textContent).
+3b. **Two KaTeX inputs that LOOK fine but throw** (found 2026-07-28 — they render as red raw source because `throwOnError:false`, so they are easy to ship unnoticed):
+   - **`\,^` — a spacing macro immediately before a script.** `$20\,^\circ C$` → `Got group of unknown type: 'internal'`. Hits every temperature written the natural LaTeX way. Fix: give the script a base — `$20\,{}^\circ C$`. Same for `\;^`, `\!^`, `\,_`. A plain `\ ^` is fine.
+   - **`·` (U+00B7) inside `\text{}`.** `$\text{кВт·ц}$` → `Undefined control sequence: \cdotp`. Fix: `$\text{кВт}\cdot\text{ц}$`.
+   **Sweep for these before every deploy** — extract every `$…$` span from `data/**/*.json` and run `katex.renderToString(span, {throwOnError:true})` in a browser console (KaTeX is already loaded on any app page). 11 449 spans validate in a few seconds. Grepping for the two patterns above is the cheap version.
 4. **Fenced code blocks** — IT lessons use ```` ``` ````-fenced Small Basic. `richtext` (app.py) + `renderRich` (app.js) split code out FIRST (regex on ` ``` `), so code adjacent to text on the next line still renders. Inline `` `code` `` too.
 5. **localStorage must be subject-scoped** (§8) — unscoped keys make subjects' progress collide/overwrite.
 6. **Deploy verification via gzip** — §10. Byte-match to local; don't grep compressed curl output.
