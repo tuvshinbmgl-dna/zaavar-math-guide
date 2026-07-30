@@ -69,7 +69,7 @@
         {% endif %}
       </div>
       <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
-        {% set nav = [('/', 'Нүүр'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Түвшин тогтоох'), ('/report','Тайлан'), ('/chat','AI багш')] %}
+        {% set nav = [('/', 'Нүүр'), ('/path','Миний зам'), ('/curriculum','Хөтөлбөр'), ('/diagnostic','Түвшин тогтоох'), ('/report','Тайлан'), ('/chat','AI багш')] %}
         {% for href, label in nav %}
         <a href="{{ href }}" class="px-3 py-1.5 rounded-lg hover:bg-brand-50 hover:text-brand-700 transition {{ 'bg-brand-50 text-brand-700' if request.path == href else 'text-ink-700' }}">{{ label }}</a>
         {% endfor %}
@@ -94,7 +94,7 @@
 
   <!-- Bottom tab bar (mobile) -->
   <nav class="sm:hidden fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 grid grid-cols-5 text-[10px]">
-    {% set tabs = [('/', 'Нүүр','⌂'), ('/curriculum','Хөтөлбөр','▦'), ('/diagnostic','Түвшин','✓'), ('/report','Тайлан','📈'), ('/chat','AI багш','✦')] %}
+    {% set tabs = [('/path', 'Зам','🧭'), ('/curriculum','Хөтөлбөр','▦'), ('/diagnostic','Түвшин','✓'), ('/report','Тайлан','📈'), ('/chat','AI багш','✦')] %}
     {% for href, label, icon in tabs %}
     <a href="{{ href }}" class="flex flex-col items-center gap-0.5 py-2 {{ 'text-brand-700' if request.path == href else 'text-slate-500' }}">
       <span class="text-base leading-none">{{ icon }}</span>{{ label }}

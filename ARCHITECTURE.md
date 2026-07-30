@@ -82,6 +82,7 @@
 | `T-LESSON` | `/lesson/<id>` | `lesson.html` | 5 үе шат: Сэргээх → Ойлголт → Жишээ → Дасгал → Шалгалт |
 | `T-LEVELTEST` | `/diagnostic` | `leveltest.html` | Түвшин тогтоох, **анги сонгогчтой** |
 | `T-MASTERY` | `/mastery` | `mastery.html` | Баталгаа (ordering + two-tier) |
+| `T-PATH` | `/path` | `path.html` | **Миний зам** — Duolingo маягийн ороомог зам. Хөтөлбөрийн модыг шугаман болгож, дуусгасан → одоогийн → түгжээтэй гэж харуулна. Хичээлийн файлгүй хөтөлбөрийн бичлэгийг `soon` зангилаа болгоно (математикт 38 бий). |
 | `T-MOCK` | `/mock` | `mock.html` | Mock тест, **анги сонгогчтой** (2026-07-28-нд нэмэгдсэн) |
 | `T-REPORT` | `/report` | `report.html` | Суралцагчийн тайлан |
 | `T-CHAT` | `/chat` | `chat.html` | AI багш |

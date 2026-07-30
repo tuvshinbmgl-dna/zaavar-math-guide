@@ -98,6 +98,35 @@ def curriculum():
     )
 
 
+@app.route("/path")
+def learning_path():
+    """F-PATH — Duolingo маягийн ороомог зам. Хөтөлбөрийн модыг нэг шугаман
+    дараалал болгож хувиргана; түгжээ/явцыг клиент тал (localStorage) шийднэ."""
+    cur = store.curriculum(_subject())
+    grades = []
+    for g in cur.get("grades", []):
+        nodes = []
+        for ch in g.get("chapters", []):
+            nodes.append({"kind": "unit", "num": ch.get("num", ""),
+                          "title_mn": ch.get("title_mn", "")})
+            for l in ch.get("lessons", []):
+                # Хөтөлбөрт байгаа ч хичээлийн файл нь хараахан бичигдээгүй бол
+                # "soon" зангилаа болгоно — эс тэгвэл зам эвдэрсэн холбоос үзүүлнэ.
+                lid = l.get("lesson_id")
+                nodes.append({"kind": "lesson" if lid else "soon",
+                              "num": l.get("num", ""),
+                              "title_mn": l.get("title_mn", ""),
+                              "lesson_id": lid,
+                              "skill_id": l.get("skill_id"),
+                              "chapter": ch.get("num", "")})
+            nodes.append({"kind": "chest", "chapter": ch.get("num", ""),
+                          "title_mn": ch.get("title_mn", "")})
+        grades.append({"grade": g.get("grade"), "title_mn": g.get("title_mn", ""),
+                       "reader_url": g.get("reader_url", ""), "nodes": nodes})
+    return render_template("path.html", grades=grades,
+                           ai_enabled=claude.is_configured())
+
+
 @app.route("/lesson/<lesson_id>")
 def lesson(lesson_id: str):
     data = store.lesson(lesson_id)
