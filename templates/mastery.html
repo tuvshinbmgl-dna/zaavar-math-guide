@@ -208,6 +208,7 @@ function masteryCheck(topics) {
         this.done = store.latest;
       } catch (e) {}
       zaavarActivity();
+      try { if (typeof Gamify !== 'undefined') Gamify.masteryComplete(g.verdict === 'confirmed' || g.band === 'confirmed', '{{ subject }}'); } catch (e) {}
       this.stage = 'result';
       window.scrollTo({ top: 0 });
       this.$nextTick(() => renderMath(this.$root));

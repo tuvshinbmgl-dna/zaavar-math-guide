@@ -75,6 +75,7 @@
         {% endfor %}
       </nav>
       <div class="flex items-center gap-2">
+        <div id="gamify-slot" class="hidden sm:flex items-center gap-1.5"></div>
         <div id="streak-slot"></div>
         <div id="profile-slot"></div>
         {% if ai_enabled is defined %}
@@ -103,6 +104,7 @@
 
   <script>window.ZAAVAR_SUBJECT = {{ subject|tojson }};</script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/gamify.js') }}"></script>
   <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
   {% block scripts %}{% endblock %}
 </body>

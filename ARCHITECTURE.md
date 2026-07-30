@@ -1,0 +1,221 @@
+# Заавар — системийн индекс (ARCHITECTURE)
+
+> **Энэ файлын зорилго.** Ямар үйлдэл аль файлтай холбоотой явж байгааг нэг дороос харах.
+> Систем шинэчлэх бүрд ЭНЭ ФАЙЛЫГ ХАМТ шинэчилнэ, мөн `CHANGELOG.md`-д бичилт үүсгэнэ.
+> Алдаа гарвал эндээс "аль хэсэг нөлөөлсөн"-ийг олж, changelog-оос буцаах цэгээ сонгоно.
+>
+> Сүүлд шинэчилсэн: 2026-07-29 · Тохирох changelog: `CHANGELOG.md` → `[2026-07-29] ARCH-INDEX-1`
+
+---
+
+## 0. Индексийн дүрэм
+
+Хэсэг бүр **ID**-тэй (жишээ `F-LESSON`, `D-PHYSICS`, `A-LEVELTEST`). Changelog-ийн бичилт бүр
+өөрчилсөн ID-уудаа жагсаана. Ингэснээр "энэ өөрчлөлт юуг хөндсөн бэ?" гэдэг нэг мөрөөр гарна.
+
+| Угтвар | Утга |
+|---|---|
+| `F-` | Feature — хэрэглэгчид харагдах чадвар |
+| `A-` | API endpoint |
+| `D-` | Data — `data/` доторх контент |
+| `S-` | Server module (`app.py`, `store.py`, `claude_client.py`) |
+| `T-` | Template (`templates/`) |
+| `J-` | Client script (`static/js/`) |
+| `X-` | Гадаад хамаарал (econtent, Render, Anthropic API) |
+
+---
+
+## 1. Системийн ерөнхий урсгал
+
+```
+Хэрэглэгч (браузер)
+   │
+   ├─ HTML хуудас  ← Jinja2 template  ← app.py route  ← store.py  ← data/*.json
+   │                     │
+   │                     └─ Tailwind CDN + Alpine.js + KaTeX (build step БАЙХГҮЙ)
+   │
+   ├─ JSON API (/api/*)  ← app.py  ← store.py   [хариултын түлхүүр СЕРВЕРТ үлдэнэ]
+   │
+   ├─ localStorage        ← static/js/app.js, profile.js   [бүх суралцагчийн төлөв]
+   │
+   └─ SSE stream (/api/chat) ← claude_client.py ← Anthropic API   [ANTHROPIC_API_KEY хэрэгтэй]
+```
+
+**Гол зарчим:** өгөгдлийн сан байхгүй, бүртгэл байхгүй. Контент = статик JSON,
+суралцагчийн төлөв = браузерын localStorage. Энэ нь §6-д тайлбарласан шинэ
+боломжуудад (leaderboard, төлбөр, admin) хамгийн том хязгаарлалт болно.
+
+---
+
+## 2. Server модулиуд
+
+| ID | Файл | Хариуцах зүйл |
+|---|---|---|
+| `S-APP` | `app.py` | Бүх route: хуудас render + JSON API. `_subject()` нь `subject` cookie уншиж идэвхтэй хичээлийг тодорхойлно. |
+| `S-STORE` | `store.py` | Зөвхөн уншдаг өгөгдлийн давхарга. Импортын үед бүх JSON-г санах ойд ачаална. Нийтийн функц бүр `subject` аргумент авна. |
+| `S-CLAUDE` | `claude_client.py` | Stdlib `urllib`-ээр Anthropic API руу хандах. Tutor = Sonnet (SSE stream), router = Haiku (structured). |
+
+### `store.py`-ийн гол функцууд
+
+| Функц | Юу буцаана | Хэрэглэгддэг газар |
+|---|---|---|
+| `curriculum(subject)` | Анги → бүлэг → хичээлийн мод | `T-CURRICULUM` |
+| `lesson(subject, id)` | Нэг хичээлийн бүтэн бүтэц | `T-LESSON` |
+| `level_topics(subject)` | Сэдвийн карт (асуулт БАЙХГҮЙ) | `T-LEVELTEST` |
+| `level_questions(subject, topic)` | Асуултууд, **answer талбаргүй** | `A-LEVELTEST-Q` |
+| `grade_level_topic(...)` | Оноо + band + тайлбар | `A-LEVELTEST-GRADE` |
+| `mastery_items(subject, topic)` | ordering (холисон) + two_tier, **хариултгүй** | `A-MASTERY-CHECK` |
+| `grade_mastery(...)` | Баталгааны дүгнэлт | `A-MASTERY-GRADE` |
+| `mock_grades(subject)` | Аль ангиудад сэдэв байгаа | `T-MOCK` (анги сонгогч) |
+| `mock_version(subject, v, grade)` | Тухайн ангийн хувилбар | `A-MOCK-VERSION` |
+| `grade_mock(...)` | Оноо + сэдэв тус бүрийн хувь + rapid-guess | `A-MOCK-GRADE` |
+| `route_question(...)` | AI router — асуултаас хичээл олох | `A-CHAT-ROUTE` |
+
+---
+
+## 3. Хуудас ба template
+
+| ID | Route | Template | Тайлбар |
+|---|---|---|---|
+| `T-HOME` | `/` | `home.html` | Нүүр, streak, үргэлжлүүлэх |
+| `T-CURRICULUM` | `/curriculum` | `curriculum.html` | Анги/бүлэг/хичээлийн жагсаалт |
+| `T-LESSON` | `/lesson/<id>` | `lesson.html` | 5 үе шат: Сэргээх → Ойлголт → Жишээ → Дасгал → Шалгалт |
+| `T-LEVELTEST` | `/diagnostic` | `leveltest.html` | Түвшин тогтоох, **анги сонгогчтой** |
+| `T-MASTERY` | `/mastery` | `mastery.html` | Баталгаа (ordering + two-tier) |
+| `T-MOCK` | `/mock` | `mock.html` | Mock тест, **анги сонгогчтой** (2026-07-28-нд нэмэгдсэн) |
+| `T-REPORT` | `/report` | `report.html` | Суралцагчийн тайлан |
+| `T-CHAT` | `/chat` | `chat.html` | AI багш |
+| `T-404` | — | `not_found.html` | Хичээл олдоогүй |
+| `T-BASE` | — | `base.html` | Толгой, KaTeX/Alpine/Tailwind CDN, хичээл сонгогч |
+
+---
+
+## 4. Клиент талын скрипт ба localStorage
+
+| ID | Файл | Хариуцах зүйл |
+|---|---|---|
+| `J-APP` | `static/js/app.js` | `Progress` (хичээлийн явц), `Streak`, `renderMath`, `renderRich`, SSE унших |
+| `J-PROFILE` | `static/js/profile.js` | Локал профайл (нэр + PIN), толгой дахь чип, "шинээр эхлэх" |
+| `J-EXPLAINERS` | `static/js/explainers.js` | Гараар бүтээсэн SVG анимацууд (деривативын 3 хичээл) |
+| `J-GAMIFY` | `static/js/gamify.js` | **XP, түвшин, өдрийн зорилт, зүрх, тэмдэг, toast.** `Gamify.award()` цөм; `Progress.markLesson` / `saveDiagnostic` / mastery / mock-оос дуудагдана. Тэмцээн энд БАЙХГҮЙ (сервер шаардана). |
+
+**localStorage түлхүүр (БҮГД `{{ subject }}`-ээр хамрагдана):**
+
+```
+zaavar.<subject>.progress    хичээлийн явц
+zaavar.<subject>.leveltest   түвшин тогтоох дүн
+zaavar.<subject>.mastery     баталгаа + mock түүх
+zaavar.streak                өдрийн streak (хичээл ХАМААРАЛГҮЙ, нийтлэг)
+zaavar.profile               нэр + PIN
+zaavar.gamify                XP, түвшин, өдрийн зорилт, зүрх, тэмдэг (НИЙТЛЭГ, `J-GAMIFY`)
+```
+
+⚠️ Шинэ түлхүүр нэмэх бүрд `{{ subject }}` эсвэл `zKey` заавал оруулна — эс тэгвэл
+хичээлүүдийн төлөв бие бие рүүгээ дарж бичнэ (өмнө нь бодит HIGH-severity алдаа байсан).
+
+---
+
+## 5. Контентын өгөгдөл
+
+| ID | Зам | Агуулга |
+|---|---|---|
+| `D-MATH` | `data/curriculum.json`, `data/level_test.json`, `data/mastery_bank.json`, `data/lessons/g*.json` | Математик 10/11/12 — 42 хичээл |
+| `D-PHYSICS` | `data/physics/**` | Физик 7–11 — **66 хичээл**, 66 сэдэв / 660 асуулт, 63 баталгаа |
+| `D-IT` | `data/it/**` | Мэдээллийн технологи 12 — 11 хичээл |
+| `D-ENGLISH` | `data/english/**` | Англи хэл 12 — 10 хичээл |
+| `D-KG` | `data/knowledge_graph.json` | Урьдчилсан нөхцөлийн граф (ЗӨВХӨН математик) |
+
+### Хичээлийн JSON бүтэц (бүх хичээлд нэг ижил)
+
+```
+id, grade, chapter_num, chapter_title_mn, lesson_num, title_mn, title_en,
+skill_id, prerequisite_skill_ids[],
+textbook { book_id, pages_mn, reader_url },     ← §7 эшлэлийн систем эндээс тэжээгдэнэ
+objectives_mn[], pretest{}, sections[], practice[], mastery_check[]
+```
+
+### Сурах бичгийн ID (econtent `more.php?id=`)
+
+| Хичээл | Анги → book_id |
+|---|---|
+| Математик | 10→279, 11→273, 12→343 |
+| Физик | 7→291, 8→306, 9→320, 10→258, 11→269 |
+| МТ | 12→340 |
+| Англи хэл | 12→357 |
+
+---
+
+## 6. Одоогийн архитектурын хязгаарлалт (шинэ боломжуудад чухал)
+
+| Хүсэж буй боломж | Одоо боломжтой юу | Яагаад |
+|---|---|---|
+| Зам (path), XP, өдрийн зорилт | ✅ Тийм | localStorage хангалттай |
+| Streak, тэмдэг, эрдэнэ | ✅ Тийм | localStorage хангалттай |
+| Зүрх (алдааны нөөц) | ✅ Тийм | localStorage хангалттай |
+| **Leaderboard (тэмцээн)** | ❌ Үгүй | Хэрэглэгчийн бүртгэл + сервер талын өгөгдлийн сан ЗААВАЛ. Локал өгөгдлийг харьцуулах боломжгүй, хуурч болно. |
+| **Төлбөр (subscription)** | ❌ Үгүй | Бүртгэл + төлбөрийн систем + сервер талын эрхийн шалгалт. Локал төлөвт "төлсөн" гэж бичих нь хэдхэн товшилтоор эвдэрнэ. |
+| **Admin panel** | ❌ Үгүй | Нэвтрэлт, эрхийн түвшин, өгөгдөл засах давхарга хэрэгтэй. |
+
+➡️ Гурвуулаа нэг л зүйлээс хамаарна: **бүртгэл + өгөгдлийн сан**. Төлөвлөгөө §8-д.
+
+---
+
+## 7. Сурах бичгийн эшлэлийн систем (`F-BOOKREF`)
+
+**Судалгааны дүн (2026-07-29, econtent-ийн reader-ийг задалж үзсэн):**
+
+- Reader нь `flipbook.min.js` дээр ажилладаг, тохиргоо нь HTML дотор шууд бичигдсэн:
+  `startPage:0` — **хатуу бичигдсэн**, URL-аас хуудас уншдаггүй.
+- `btnToc:false`, `btnThumbs:false` — агуулга ба хуудасны жижиг зураг унтраалттай.
+- ⇒ **Албан ёсны reader тухайн хуудас руу шууд очих боломжгүй.** Хэрэглэгчийн ажигласан
+  зүйл зөв байсан.
+- Хуудсууд нь `econtent.edu.mn/content/<анги>rangi/<хичээл>/pages/<хичээл>-<id>-<N>.jpg`
+  хаягаар шууд авагдана (N = хэвлэмэл хуудасны дугаар, 0 = хавтас). Техникийн хувьд
+  саадгүй; reader-т X-Frame-Options ч байхгүй.
+
+**Зохиогчийн эрхийн байдал.** Сурах бичгийн эрхийн хуудсанд БШУЯ-наас бичгээр авсан
+зөвшөөрөлгүйгээр номыг "бүтнээр эсхүл хэсэгчлэн хувилах, хэвлэх… хориглоно" гэж заасан.
+Тиймээс номын хуудсыг манай сайтад **зөвшөөрөлгүйгээр харуулахгүй**.
+
+**Хэрэгжүүлэх шийдэл — нэг тохиргоогоор сольж болдог давхарга:**
+
+```
+data/<subject>/…  →  lesson.textbook { book_id, pages_mn, page_from, page_to }
+                          │
+                          ├─ BOOKREF_MODE = "cite"    (АНХДАГЧ, зөвшөөрөлгүй)
+                          │     Хажуугийн самбарт: манай өөрсдийн диаграм + сэдвийн
+                          │     хураангуй + "Бүлэг II, 60–67 тал" гэсэн нарийн заалт +
+                          │     албан ёсны reader-ийг нээх товч.
+                          │
+                          └─ BOOKREF_MODE = "page"    (зөвшөөрөл ГАРСНЫ ДАРАА)
+                                Яг тэр хуудсын зургийг хажуугийн самбарт шууд үзүүлнэ.
+                                Кодын өөрчлөлт: нэг тохиргооны утга.
+```
+
+Ингэснээр өнөөдөр хууль ёсны хувилбарыг ажиллуулж, зөвшөөрөл гармагц нэг мөр
+өөрчлөөд бүрэн preview рүү шилжинэ. `page_from`/`page_to` талбарыг ОДООНООС бөглөнө
+(физик 8–11-д аль хэдийн бий), тэгвэл дараа нь дахин ажил хийхгүй.
+
+---
+
+## 8. Дараагийн үе шатуудын төлөвлөгөө
+
+| Үе | Агуулга | Backend хэрэгтэй юу |
+|---|---|---|
+| 1 | `F-PATH` зам, `F-XP`, `F-DAILY` өдрийн зорилт, `F-HEARTS` зүрх, `F-BADGES` тэмдэг | Үгүй — localStorage |
+| 2 | `F-BOOKREF` эшлэл + хажуугийн самбар (`cite` горим) + сэдвийн диаграм | Үгүй |
+| 3 | Контент: 12-р ангиас доошоо (12 → 11 → 10 → 9 …), 185 номын хүрээнд | Үгүй |
+| 4 | `F-AUTH` бүртгэл + өгөгдлийн сан (Postgres) → төлөв сервер рүү нүүнэ | **Тийм** |
+| 5 | `F-LEADERBOARD` тэмцээн | Тийм (4-ээс хамаарна) |
+| 6 | `F-BILLING` төлбөр, `F-ADMIN` admin panel | Тийм (4-ээс хамаарна) |
+
+---
+
+## 9. Гадаад хамаарал
+
+| ID | Юу | Тэмдэглэл |
+|---|---|---|
+| `X-ECONTENT` | econtent.edu.mn | Сурах бичгийн эх сурвалж. Reader deep-link БОЛОМЖГҮЙ (§7). Зохиогчийн эрх БШУЯ. |
+| `X-RENDER` | Render.com | Hosting. Service `zaavar-guide` (`srv-d9kdg6qjobas738i5fng`), үнэгүй instance, **гараар deploy**. `.onrender.com` хаягийг үүсгэсний дараа солих БОЛОМЖГҮЙ. |
+| `X-ANTHROPIC` | Anthropic API | AI багш + router. `ANTHROPIC_API_KEY` орчны хувьсагч. Live дээр хоосон = AI унтраалттай. |
+| `X-GITHUB` | `tuvshinbmgl-dna/zaavar-math-guide` | Public repo. Render үүнээс татдаг. |

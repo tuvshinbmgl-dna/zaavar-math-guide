@@ -53,11 +53,20 @@ const Progress = {
   get lessons() { return this.read().lessons || {}; },
   lessonDone(id) { return !!(this.read().lessons || {})[id]; },
   markLesson(id, score) {
+    const wasDone = this.lessonDone(id);
     const p = this.read();
     p.lessons = p.lessons || {};
     p.lessons[id] = { done: true, score, ts: Date.now() };
     this.write(p);
     zaavarActivity();
+    // F-XP: XP олгох (Gamify нь дахин үзсэн эсэхийг Progress-ээс уншдаг тул
+    // markLesson-ий ДАРАА бус, wasDone-г нь дамжуулж өгнө).
+    try {
+      if (typeof Gamify !== "undefined") {
+        const amt = (wasDone ? 5 : 20) + (score === 100 ? 10 : 0);
+        Gamify.award(amt, { lesson: !wasDone, perfect: score === 100, subject: ZSUBJECT });
+      }
+    } catch (e) { /* гэйм давхарга нурсан ч хичээл ажиллана */ }
   },
   setLastLesson(id, title) {
     const p = this.read();
@@ -70,6 +79,9 @@ const Progress = {
     const p = this.read();
     p.diagnostic = { ...result, ts: Date.now() };
     this.write(p);
+    try {
+      if (typeof Gamify !== "undefined") Gamify.levelTestComplete(result && result.score, ZSUBJECT);
+    } catch (e) { /* no-op */ }
   },
   get diagnostic() { return this.read().diagnostic || null; },
 };
@@ -135,7 +147,15 @@ const Streak = {
 };
 
 /* One call site for "the learner did something worth counting today". */
-function zaavarActivity() { try { return Streak.ping(); } catch (e) { return null; } }
+function zaavarActivity() {
+  try {
+    const r = Streak.ping();
+    // F-XP: streak үргэлжилсэн бол жижиг бонус (өдөрт нэг удаа — ping нь өдөрт нэг л
+    // удаа extended=true буцаадаг тул давхардахгүй).
+    if (r && r.extended && typeof Gamify !== "undefined") Gamify.streakExtended();
+    return r;
+  } catch (e) { return null; }
+}
 
 /* ---- SSE streaming over fetch POST ------------------------------------- */
 async function sseStream(url, body, onText, onDone) {

@@ -169,6 +169,7 @@ function mockTest(versions, grades) {
         localStorage.setItem('zaavar.{{ subject }}.mastery', JSON.stringify(store));
       } catch (e) {}
       zaavarActivity();
+      try { if (typeof Gamify !== 'undefined') Gamify.mockComplete(g.score, '{{ subject }}'); } catch (e) {}
       this.stage = 'result';
       window.scrollTo({ top: 0 });
       this.$nextTick(() => renderMath(this.$root));
