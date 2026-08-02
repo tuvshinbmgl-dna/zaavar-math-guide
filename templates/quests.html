@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %}Даалгавар ба шагнал — Заавар{% endblock %}
+{% block content %}
+{# F-QUESTS — өдрийн даалгавар, авдар, дэлгүүр, дээд амжилт. Бүх төлөв J-GAMIFY
+   (localStorage) дээр; сервер юу ч хадгалахгүй. Gamify байхгүй бол тайлбар харуулна. #}
+<div class="max-w-2xl mx-auto">
+
+  <div class="mb-4">
+    <h1 class="text-2xl font-extrabold text-ink-900">🎯 Даалгавар ба шагнал</h1>
+    <p class="text-sm text-slate-500 mt-1">
+      Өдөр бүр 3 даалгавар. Биелүүлээд <b>💎 эрдэнэ</b> цуглуулж, дэлгүүрээс тусламж авна.
+    </p>
+  </div>
+
+  <div id="q-nogamify" class="card p-5 text-center">
+    <div class="text-3xl mb-2">💤</div>
+    <p class="text-sm text-slate-500">Гэйм давхарга ачаалагдаагүй байна.</p>
+  </div>
+
+  <div id="q-root" class="hidden space-y-5">
+
+    <!-- эрдэнэ + авдар -->
+    <div class="card p-4 flex items-center justify-between gap-3">
+      <div>
+        <div class="text-xs font-semibold text-slate-500">Эрдэнэ</div>
+        <div class="text-2xl font-extrabold text-ink-900">💎 <span id="q-gems">0</span></div>
+        <div class="text-[11px] text-slate-400 mt-0.5">Зөвхөн суралцаж олдоно — мөнгөөр авах боломжгүй.</div>
+      </div>
+      <button id="q-chest" class="shrink-0 min-h-[44px] px-4 rounded-xl font-bold text-sm"></button>
+    </div>
+
+    <!-- өдрийн даалгавар -->
+    <section>
+      <h2 class="font-bold text-ink-900 mb-2">Өнөөдрийн даалгавар</h2>
+      <div id="q-list" class="space-y-2"></div>
+    </section>
+
+    <!-- дэлгүүр -->
+    <section>
+      <h2 class="font-bold text-ink-900 mb-2">Дэлгүүр</h2>
+      <div id="q-shop" class="space-y-2"></div>
+    </section>
+
+    <!-- дээд амжилт -->
+    <section>
+      <h2 class="font-bold text-ink-900 mb-2">Хувийн дээд амжилт</h2>
+      <div class="grid grid-cols-3 gap-2">
+        <div class="card p-3 text-center">
+          <div class="text-xl font-extrabold text-ink-900" id="q-rec-xp">0</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Хоногийн дээд XP</div>
+        </div>
+        <div class="card p-3 text-center">
+          <div class="text-xl font-extrabold text-ink-900" id="q-rec-lessons">0</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Хоногт хамгийн олон хичээл</div>
+        </div>
+        <div class="card p-3 text-center">
+          <div class="text-xl font-extrabold text-ink-900" id="q-rec-streak">0</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Хамгийн урт цуврал</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function paint() {
+    if (typeof Gamify === "undefined") return;
+    document.getElementById("q-nogamify").classList.add("hidden");
+    document.getElementById("q-root").classList.remove("hidden");
+
+    var st = Gamify.state();
+    document.getElementById("q-gems").textContent = st.gems;
+
+    /* --- авдар --- */
+    var c = Gamify.chest(), btn = document.getElementById("q-chest");
+    if (!c.ready) {
+      btn.textContent = "🎁 Авдар 05–11 ба 18–24 цагт";
+      btn.className = "shrink-0 min-h-[44px] px-4 rounded-xl font-bold text-sm bg-slate-100 text-slate-400";
+      btn.disabled = true;
+    } else if (c.opened) {
+      btn.textContent = "✅ " + c.label_mn + " авсан";
+      btn.className = "shrink-0 min-h-[44px] px-4 rounded-xl font-bold text-sm bg-emerald-50 text-emerald-700";
+      btn.disabled = true;
+    } else {
+      btn.textContent = "🎁 " + c.label_mn + " нээх";
+      btn.className = "shrink-0 min-h-[44px] px-4 rounded-xl font-bold text-sm bg-amber-400 text-ink-900 hover:bg-amber-300";
+      btn.disabled = false;
+      btn.onclick = function () { Gamify.openChest(); paint(); };
+    }
+
+    /* --- даалгавар --- */
+    document.getElementById("q-list").innerHTML = Gamify.quests().map(function (q) {
+      var right = q.claimed
+        ? '<span class="shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700">✅ авсан</span>'
+        : q.done
+          ? '<button data-claim="' + q.id + '" class="shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg bg-amber-400 text-ink-900 hover:bg-amber-300">💎 ' + q.gems + ' ав</button>'
+          : '<span class="shrink-0 text-xs font-semibold text-slate-400">💎 ' + q.gems + '</span>';
+      return '<div class="card p-3">' +
+        '<div class="flex items-center justify-between gap-3">' +
+          '<div class="min-w-0"><div class="font-semibold text-ink-900 text-sm">' + q.icon + " " + esc(q.title_mn) + '</div>' +
+          '<div class="text-xs text-slate-500 mt-0.5">' + q.have + "/" + q.goal + '</div></div>' + right +
+        '</div>' +
+        '<div class="h-2 rounded-full bg-slate-100 overflow-hidden mt-2">' +
+          '<div class="h-full ' + (q.done ? "bg-emerald-500" : "bg-brand-500") + ' transition-all duration-500" style="width:' + q.pct + '%"></div>' +
+        '</div></div>';
+    }).join("");
+
+    /* --- дэлгүүр --- */
+    document.getElementById("q-shop").innerHTML = Gamify.shop().map(function (it) {
+      var buy = it.have >= it.cap
+        ? '<span class="shrink-0 text-xs font-semibold text-slate-400">дүүрсэн</span>'
+        : '<button data-buy="' + it.id + '" ' + (it.canBuy ? "" : "disabled ") +
+          'class="shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg ' +
+          (it.canBuy ? "bg-brand-600 text-white hover:bg-brand-500" : "bg-slate-100 text-slate-400") +
+          '">💎 ' + it.cost + '</button>';
+      var use = it.have > 0
+        ? '<button data-use="' + it.id + '" class="shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-ink-700 hover:bg-slate-50">Ашиглах (' + it.have + ')</button>'
+        : "";
+      return '<div class="card p-3 flex items-center justify-between gap-3">' +
+        '<div class="min-w-0"><div class="font-semibold text-ink-900 text-sm">' + it.icon + " " + esc(it.name_mn) + '</div>' +
+        '<div class="text-xs text-slate-500 mt-0.5">' + esc(it.desc_mn) + '</div></div>' +
+        '<div class="flex items-center gap-2">' + use + buy + '</div></div>';
+    }).join("");
+
+    /* --- дээд амжилт --- */
+    document.getElementById("q-rec-xp").textContent = st.records.bestDayXp;
+    document.getElementById("q-rec-lessons").textContent = st.records.bestDayLessons;
+    document.getElementById("q-rec-streak").textContent = st.records.bestStreak;
+  }
+
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-claim],[data-buy],[data-use]");
+    if (!t || typeof Gamify === "undefined") return;
+    if (t.dataset.claim) Gamify.claimQuest(t.dataset.claim);
+    else if (t.dataset.buy) Gamify.buy(t.dataset.buy);
+    else if (t.dataset.use) Gamify.use(t.dataset.use);
+    paint();
+  });
+
+  window.addEventListener("load", paint);
+})();
+</script>
+{% endblock %}

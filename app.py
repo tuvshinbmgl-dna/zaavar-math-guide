@@ -127,6 +127,13 @@ def learning_path():
                            ai_enabled=claude.is_configured())
 
 
+@app.route("/quests")
+def quests():
+    """F-QUESTS — өдрийн даалгавар, авдар, эрдэнийн дэлгүүр, хувийн дээд амжилт.
+    Сервер тал юу ч мэдэхгүй: бүх төлөв `J-GAMIFY` (localStorage) дээр."""
+    return render_template("quests.html", ai_enabled=claude.is_configured())
+
+
 @app.route("/lesson/<lesson_id>")
 def lesson(lesson_id: str):
     data = store.lesson(lesson_id)
