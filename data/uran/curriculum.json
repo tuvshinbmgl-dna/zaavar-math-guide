@@ -1,0 +1,153 @@
+{
+  "note": "Уран зохиол — 12-р анги. econtent.edu.mn дээрх албан ёсны сурах бичгийн бүтцэд нийцүүлэв.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Уран зохиол 12",
+      "book_id": 336,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=336",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Монголын орчин үеийн яруу найраг",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Б.Явуухулан — \"Мөнгөн хазаарын чимээ\", \"Нүүдэлчний намар\", \"Туулын шугуй\"",
+              "lesson_id": "ur12-1-1",
+              "skill_id": "ur12-yavuuhulan"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "П.Бадарч \"Эхийн сэтгэл\"",
+              "lesson_id": "ur12-1-2",
+              "skill_id": "ur12-badarch"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Ш.Сүрэнжав \"Би тэнгэрийн хүү\"",
+              "lesson_id": "ur12-1-3",
+              "skill_id": "ur12-surenjav"
+            },
+            {
+              "num": "1.4",
+              "title_mn": "Ч.Дагвадорж \"Шувуун зэл\"",
+              "lesson_id": "ur12-1-4",
+              "skill_id": "ur12-dagvadorj"
+            },
+            {
+              "num": "1.5",
+              "title_mn": "Ц.Чимиддорж «Сэлбэ»",
+              "lesson_id": "ur12-1-5",
+              "skill_id": "ur12-chimiddorj"
+            },
+            {
+              "num": "1.6",
+              "title_mn": "Т.Галсан \"Өгсүүр замын дуу\"",
+              "lesson_id": "ur12-1-6",
+              "skill_id": "ur12-t-galsan"
+            },
+            {
+              "num": "1.7",
+              "title_mn": "Ц.Хулан \"Эрх чөлөө\"",
+              "lesson_id": "ur12-1-7",
+              "skill_id": "ur12-hulan"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Монголын орчин үеийн өгүүллэг, тууж",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Ш.Гаадамба \"Зөлбөг дээл\" өгүүллэг",
+              "lesson_id": "ur12-2-1",
+              "skill_id": "ur12-gaadamba"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "С.Эрдэнэ \"Өвгөн шувуу\" өгүүллэг",
+              "lesson_id": "ur12-2-2",
+              "skill_id": "ur12-erdene"
+            },
+            {
+              "num": "2.3",
+              "title_mn": "С.Дашдооров \"Буурч мордох хорвоо\" өгүүллэг",
+              "lesson_id": "ur12-2-3",
+              "skill_id": "ur12-dashdoorov"
+            },
+            {
+              "num": "2.4",
+              "title_mn": "Л.Өлзийтөгс \"Аквариум\" өгүүллэг",
+              "lesson_id": "ur12-2-4",
+              "skill_id": "ur12-ulziitugs"
+            },
+            {
+              "num": "2.5",
+              "title_mn": "Д.Намдаг \"Хөгшин чоно улсан нь\" тууж",
+              "lesson_id": "ur12-2-5",
+              "skill_id": "ur12-namdag"
+            },
+            {
+              "num": "2.6",
+              "title_mn": "Ч.Галсан \"Аянгат цагийн тууж\"",
+              "lesson_id": "ur12-2-6",
+              "skill_id": "ur12-ch-galsan"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Монголын орчин үеийн роман",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Ч.Лодойдамба \"Тунгалаг Тамир\"",
+              "lesson_id": "ur12-3-1",
+              "skill_id": "ur12-lodoidamba"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Л.Түдэв \"Оройгүй сүм\"",
+              "lesson_id": "ur12-3-2",
+              "skill_id": "ur12-tudev"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Монголын орчин үеийн жүжиг",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Д.Нацагдорж \"Учиртай гурван толгой\"",
+              "lesson_id": "ur12-4-1",
+              "skill_id": "ur12-natsagdorj"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Б.Лхагвасүрэн «Тамгагүй төр»",
+              "lesson_id": "ur12-4-2",
+              "skill_id": "ur12-lhagvasuren"
+            },
+            {
+              "num": "4.3",
+              "title_mn": "Д.Норов \"Эцсийн тушаал\"",
+              "lesson_id": "ur12-4-3",
+              "skill_id": "ur12-norov"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
