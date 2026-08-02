@@ -11,3 +11,9 @@ _Claude/
 
 # Claude session scratch (safe to delete)
 _to_delete/
+
+# Түр зуурын архив / дамжуулалтын файл (репод байх ёсгүй)
+*.zip
+*.tgz
+*.tar.gz
+ziPqBMmh

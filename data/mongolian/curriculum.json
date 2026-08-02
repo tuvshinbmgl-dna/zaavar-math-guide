@@ -1,0 +1,101 @@
+{
+  "note": "Монгол хэл — 12-р анги. econtent.edu.mn дээрх албан ёсны сурах бичгийн бүтцэд нийцүүлэв.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Монгол хэл 12",
+      "book_id": 339,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=339",
+      "chapters": [
+        {
+          "num": "0",
+          "title_mn": "Мэдлэг, чадвараа бататгах",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "0.1",
+              "title_mn": "Мэдлэг, чадвараа бататгах",
+              "lesson_id": "mn12-0-1",
+              "skill_id": "mn12-review"
+            }
+          ]
+        },
+        {
+          "num": "I",
+          "title_mn": "Өгүүлбэр",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Өгүүлбэрийг \"гэ-\", \"хэмээ-\" холбох үгээр холбон найруулах",
+              "lesson_id": "mn12-1-1",
+              "skill_id": "mn12-ge-clause"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Хэлц өгүүлбэрийн гол ба үүдэл санаа",
+              "lesson_id": "mn12-1-2",
+              "skill_id": "mn12-idiom-sentence"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Нийтлэл",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Нийтлэл унших",
+              "lesson_id": "mn12-2-1",
+              "skill_id": "mn12-article-read"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Нийтлэл бичих",
+              "lesson_id": "mn12-2-2",
+              "skill_id": "mn12-article-write"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Ятгасан эссэ",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Ятгасан эссэ унших",
+              "lesson_id": "mn12-3-1",
+              "skill_id": "mn12-persuasive-read"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Ятгасан эссэ бичих",
+              "lesson_id": "mn12-3-2",
+              "skill_id": "mn12-persuasive-write"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Илтгэл",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Ярих, сонсох",
+              "lesson_id": "mn12-4-1",
+              "skill_id": "mn12-speak-listen"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

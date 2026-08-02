@@ -50,9 +50,9 @@
     </div>
   </div>
   <div class="flex flex-wrap items-center gap-2 mt-2">
-    <a href="{{ lesson.textbook.reader_url }}" target="_blank" rel="noopener"
-       title="Үндэсний сурах бичиг шинэ цонхонд нээгдэнэ. {{ lesson.textbook.pages_mn }} руу гүйлгэж үзээрэй."
-       class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">📖 Сурах бичиг · <b>{{ lesson.textbook.pages_mn }}</b> ↗</a>
+    <button type="button" @click="window.BookRef && BookRef.open()"
+       title="Сурах бичгийн эшлэлийг хажуугийн самбарт нээх"
+       class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">📖 Сурах бичиг · <b>{{ lesson.textbook.pages_mn }}</b> →</button>
     {% for p in prereqs %}
       {% if p.lesson_id %}
       <a href="/lesson/{{ p.lesson_id }}" class="text-xs px-2.5 py-1.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100">↩ {{ p.title_mn }}</a>
@@ -323,6 +323,83 @@
   });
 </script>
 {% endif %}
+
+{# ---- F-BOOKREF: сурах бичгийн эшлэлийн хажуугийн самбар -------------------
+   BOOKREF_MODE = "cite"  → өөрсдийн хураангуй + нарийн заалт + reader-ийн товч.
+   BOOKREF_MODE = "page"  → номын хуудсыг шууд үзүүлнэ. БШУЯ-ны бичгээр авсан
+   зөвшөөрлийн ДАРАА л энэ горимд шилжинэ (ARCHITECTURE.md §7). #}
+<div id="bookref-panel"
+     class="fixed inset-y-0 right-0 z-40 w-full sm:w-[26rem] bg-white shadow-2xl border-l border-slate-200
+            translate-x-full transition-transform duration-300 flex flex-col">
+  <div class="flex items-start justify-between gap-2 px-4 py-3 border-b border-slate-200">
+    <div class="min-w-0">
+      <div class="text-[11px] font-bold uppercase tracking-wide text-slate-400">Сурах бичгийн эшлэл</div>
+      <div class="font-extrabold text-ink-900 leading-snug truncate">{{ lesson.title_mn }}</div>
+    </div>
+    <button onclick="BookRef.close()" class="shrink-0 w-9 h-9 grid place-items-center rounded-lg hover:bg-slate-100 text-slate-500 text-lg">✕</button>
+  </div>
+
+  <div class="flex-1 overflow-y-auto px-4 py-4 space-y-4 text-sm">
+    <div class="rounded-xl bg-slate-50 border border-slate-200 p-3">
+      <div class="text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-1">Байрлал</div>
+      <div class="font-semibold text-ink-900">{{ lesson.grade }}-р анги · Бүлэг {{ lesson.chapter_num }}</div>
+      <div class="text-slate-600">{{ lesson.chapter_title_mn }}</div>
+      <div class="mt-1.5 font-bold text-brand-700">{{ lesson.textbook.pages_mn }}</div>
+    </div>
+
+    <div>
+      <div class="text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-1">Энэ хэсэгт юу байна</div>
+      <ul class="space-y-1.5">
+        {% for o in lesson.objectives_mn %}
+        <li class="flex gap-2"><span class="text-brand-500 shrink-0">◆</span><span class="text-ink-700">{{ o }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div id="bookref-page-slot"></div>
+
+    <p class="text-xs text-slate-400 leading-relaxed">
+      Сурах бичгийн эх бичвэр нь Боловсрол, шинжлэх ухааны яамны зохиогчийн эрхэд
+      хамаарна. Тиймээс энд зөвхөн байрлалын заалт, хичээлийн зорилтыг харуулж,
+      номыг албан ёсны уншигчаар нээж үзүүлдэг.
+    </p>
+  </div>
+
+  <div class="px-4 py-3 border-t border-slate-200">
+    <a href="{{ lesson.textbook.reader_url }}" target="_blank" rel="noopener"
+       class="block w-full text-center min-h-[44px] leading-[44px] rounded-xl bg-brand-600 text-white font-bold text-sm">
+      Албан ёсны номыг нээх ↗
+    </a>
+    <p class="mt-1.5 text-[11px] text-center text-slate-400">Ном 1-р хуудаснаас нээгдэнэ — <b>{{ lesson.textbook.pages_mn }}</b> руу гүйлгэнэ үү.</p>
+  </div>
+</div>
+<div id="bookref-backdrop" onclick="BookRef.close()" class="fixed inset-0 z-30 bg-black/30 hidden"></div>
+
+<script>
+window.BookRef = {
+  MODE: "cite",               // "cite" | "page"  ← зөвшөөрөл гармагц "page"
+  BOOK_ID: {{ lesson.textbook.book_id | tojson }},
+  PAGES:   {{ lesson.textbook.pages_mn | tojson }},
+  open() {
+    document.getElementById("bookref-panel").classList.remove("translate-x-full");
+    document.getElementById("bookref-backdrop").classList.remove("hidden");
+    if (this.MODE === "page") this._renderPage();
+  },
+  close() {
+    document.getElementById("bookref-panel").classList.add("translate-x-full");
+    document.getElementById("bookref-backdrop").classList.add("hidden");
+  },
+  /* "page" горим — зөвшөөрлийн дараа л дуудагдана. Хуудасны зургийн хаяг нь
+     lesson.textbook-д page_from байхыг шаардана. */
+  _renderPage() {
+    const slot = document.getElementById("bookref-page-slot");
+    if (!slot || slot.dataset.done) return;
+    slot.dataset.done = "1";
+    slot.innerHTML = '<div class="text-xs text-slate-400">Хуудасны урьдчилсан үзлэг зөвшөөрөл гарсны дараа энд гарна.</div>';
+  },
+};
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") BookRef.close(); });
+</script>
 
 <script>
 function lessonPage(lessonId, stageIds) {

@@ -23,7 +23,9 @@ def _load(name: str) -> dict:
 # Subject-aware loading (math + physics)
 # --------------------------------------------------------------------------- #
 
-SUBJECTS = {"math": "Математик", "physics": "Физик", "it": "Мэдээллийн технологи", "english": "Англи хэл"}
+SUBJECTS = {"math": "Математик", "physics": "Физик", "it": "Мэдээллийн технологи",
+            "english": "Англи хэл", "mongolian": "Монгол хэл",
+            "health": "Эрүүл мэнд"}
 DEFAULT_SUBJECT = "math"
 
 
@@ -60,7 +62,16 @@ _SUBJ = {
                         DATA / "it" / "mastery_bank.json", DATA / "it" / "lessons"),
     "english": _load_subject(DATA / "english" / "curriculum.json", DATA / "english" / "level_test.json",
                              DATA / "english" / "mastery_bank.json", DATA / "english" / "lessons"),
+    "mongolian": _load_subject(DATA / "mongolian" / "curriculum.json", DATA / "mongolian" / "level_test.json",
+                               DATA / "mongolian" / "mastery_bank.json", DATA / "mongolian" / "lessons"),
+    "health": _load_subject(DATA / "health" / "curriculum.json", DATA / "health" / "level_test.json",
+                            DATA / "health" / "mastery_bank.json", DATA / "health" / "lessons"),
 }
+
+
+# Контентгүй хичээлийг сонголтод харуулахгүй. `data/<subject>/lessons/`-д файл
+# орж ирмэгц хичээл өөрөө гарч ирнэ — код өөрчлөх шаардлагагүй.
+SUBJECTS = {k: v for k, v in SUBJECTS.items() if _SUBJ.get(k, {}).get("lessons")}
 
 
 def _sub(subject: str | None) -> dict:

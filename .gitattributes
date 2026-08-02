@@ -1,0 +1,15 @@
+# Мөр төгсгөлийг нэгтгэх. Windows/Mac/Linux дээр зэрэг ажилладаг тул CRLF ↔ LF
+# зөрүү нь бүх файлыг "өөрчлөгдсөн" болгож diff-ийг ашиглах боломжгүй болгодог.
+# Репо дотор ҮРГЭЛЖ LF; ажлын хавтас дээр ч LF (Python/Flask/Render бүгд LF-тэй).
+* text=auto eol=lf
+
+# Хоёртын файлыг хөрвүүлэхгүй.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+*.ico binary

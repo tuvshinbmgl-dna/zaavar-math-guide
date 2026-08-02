@@ -11,6 +11,31 @@
     <button @click="if(window.Profile)Profile.openModal()" class="shrink-0 text-xs text-brand-700 hover:underline" x-text="name ? 'Профайл' : 'Нэвтрэх'"></button>
   </div>
 
+  {# F-XP / F-BADGES — гэйм давхаргын хураангуй. Gamify байхгүй бол бүхэлдээ нуугдана. #}
+  <div id="report-gamify" class="hidden mb-5 space-y-3">
+    <div class="card p-4">
+      <div class="flex items-center justify-between gap-3 mb-2">
+        <div>
+          <div class="text-xs font-semibold text-slate-500">Түвшин</div>
+          <div class="text-2xl font-extrabold text-ink-900"><span id="rg-level">1</span> <span class="text-sm font-semibold text-slate-400">· <span id="rg-xp">0</span> XP</span></div>
+        </div>
+        <div class="text-right">
+          <div class="text-xs font-semibold text-slate-500">Өнөөдөр</div>
+          <div class="text-lg font-extrabold" id="rg-goal">0/50 XP</div>
+        </div>
+      </div>
+      <div class="h-2.5 rounded-full bg-slate-100 overflow-hidden">
+        <div id="rg-levelbar" class="h-full bg-indigo-500 transition-all duration-500" style="width:0%"></div>
+      </div>
+      <div class="mt-1 text-[11px] text-slate-400"><span id="rg-into">0</span>/<span id="rg-need">100</span> XP дараагийн түвшин хүртэл</div>
+    </div>
+
+    <div class="card p-4">
+      <div class="text-xs font-semibold text-slate-500 mb-2">Тэмдэг · <span id="rg-badgecount">0</span></div>
+      <div id="rg-badges" class="flex flex-wrap gap-2"></div>
+    </div>
+  </div>
+
   <!-- empty -->
   <template x-if="!hasAny">
     <div class="card p-6 text-center">
@@ -124,5 +149,33 @@ function reportView() {
 }
 function rank(b) { return { low: 0, mid: 1, ready: 2 }[b] ?? 1; }
 function fmt(ts) { try { const d = new Date(ts); return (d.getMonth() + 1) + '/' + d.getDate(); } catch (e) { return ''; } }
+
+/* F-XP / F-BADGES — тайлан дээрх гэйм хураангуй. Gamify ачаалагдаагүй бол юу ч
+   хийхгүй (гэйм давхаргыг хассан ч тайлан хэвийн ажиллана). */
+window.addEventListener('load', function () {
+  if (typeof Gamify === 'undefined') return;
+  var host = document.getElementById('report-gamify');
+  if (!host) return;
+  var st = Gamify.state();
+  host.classList.remove('hidden');
+  document.getElementById('rg-level').textContent = st.level;
+  document.getElementById('rg-xp').textContent = st.xp;
+  document.getElementById('rg-goal').textContent = st.dayXp + '/' + st.goalXp + ' XP';
+  document.getElementById('rg-goal').className = 'text-lg font-extrabold ' + (st.goalDone ? 'text-emerald-600' : 'text-ink-900');
+  document.getElementById('rg-levelbar').style.width = st.levelPct + '%';
+  document.getElementById('rg-into').textContent = st.levelInto;
+  document.getElementById('rg-need').textContent = st.levelNeed;
+
+  var all = Gamify.badgeList();
+  var earned = st.badges || {};
+  document.getElementById('rg-badgecount').textContent = Object.keys(earned).length + '/' + all.length;
+  var box = document.getElementById('rg-badges');
+  box.innerHTML = all.map(function (b) {
+    var got = !!earned[b.id];
+    return '<div title="' + b.name_mn + ' — ' + b.desc_mn + '" class="w-12 h-12 rounded-xl grid place-items-center text-xl ' +
+      (got ? 'bg-amber-50 border border-amber-200' : 'bg-slate-50 border border-slate-200 grayscale opacity-40') + '">' +
+      b.icon + '</div>';
+  }).join('');
+});
 </script>
 {% endblock %}
