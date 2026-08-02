@@ -1,222 +1,229 @@
 # Заавар — handoff prompt for a terminal Claude Code session
 
-> Paste everything below the line into a fresh `claude` session started from
-> `C:\Users\tuvsh\Claude\Projects\EDM - Secondary education\zaavar-math-guide`.
-> Read it once, verify the "First 5 minutes" checks, then continue.
+> Start a fresh `claude` session from
+> `C:\Users\tuvsh\Claude\Projects\EDM - Secondary education\zaavar-math-guide`
+> and read this file first.
+>
+> Last updated: **2026-08-03** · HEAD: `0acd4e9` · 3 commits unpushed
 
 ---
-
-You are taking over **Заавар (Zaavar)** — a Mongolian-language self-study platform
-for secondary school. The previous session ran in a cloud sandbox and could not
-reach github.com; you are running on the owner's own machine, so you can.
 
 ## 0. Chat rules (the owner asked for these explicitly)
 
 1. **Replies under 30 words.**
 2. **English.**
 
-Long output goes in files, not in chat.
+Long output goes in files, not in chat. Same rules in `CHAT-RULES.md`.
+
+---
 
 ## 1. What this is
 
-Flask + Jinja2 + Tailwind (Play CDN) + Alpine.js + KaTeX. **Zero build step. No
-database. No login.** Content is static JSON under `data/`; every learner state
-lives in the browser's `localStorage`. Hosted on Render at
-<https://zaavar-guide.onrender.com> (manual deploy, free instance).
-
-Run it:
+Flask + Jinja2 + Tailwind (Play CDN) + Alpine.js + KaTeX. **Zero build step.
+No database. No login.** Content is static JSON under `data/`; every learner
+state lives in the browser's `localStorage`. Hosted on Render, **manual deploy**.
 
 ```
 pip install -r requirements.txt
-python app.py           # http://127.0.0.1:5000
+python app.py            # http://127.0.0.1:5001   <- 5001, not 5000
 ```
 
-`ANTHROPIC_API_KEY` is optional — without it the AI tutor is simply off.
+`ANTHROPIC_API_KEY` is optional — without it the AI tutor is off, nothing else
+changes.
 
-## 2. Read these two files before changing anything
+---
+
+## 2. Read these before changing anything
 
 | File | Why |
 |---|---|
-| `ARCHITECTURE.md` | The system index. Every part has an ID (`F-` feature, `A-` API, `D-` data, `S-` server module, `T-` template, `J-` client script, `X-` external). |
+| `ARCHITECTURE.md` | The system index. Every part has an ID: `F-` feature, `A-` API, `D-` data, `S-` server, `T-` template, `J-` client script, `X-` external, `W-` authoring tool. |
 | `CHANGELOG.md` | One entry per change, newest first, each with **Хөндсөн хэсэг / Юу өөрчлөгдсөн / Шалгасан арга / Буцаах**. |
+| `docs/CLEANUP-PLAN.md` | **NEW.** 62 verified findings, ranked. Read before touching code. |
 
 **Standing rule from the owner:** every change updates *both* — `ARCHITECTURE.md`
 so the index stays true, and a new `CHANGELOG.md` entry so any bug can be rolled
-back or traced. This is not optional; it is the reason those files exist.
+back or traced. This is not optional.
 
-Docs are written in Mongolian. Commit messages and code comments in the recent
-commits are English/Mongolian mixed — match whatever file you are editing.
+Docs are written in Mongolian. Match whatever file you are editing.
+
+---
 
 ## 3. State right now
 
 ### Unpushed commits — do this first
 
-The branch is **2 commits ahead of `origin/main`** (you already pushed the first three):
-
 ```
-876169d Update terminal handoff after Health 12 landed
-1a739bf Add Эрүүл мэнд 12 — 17 lessons, 170 questions, 17 mastery topics
-```
-
-```
+git log --oneline -4      # 0acd4e9, c6fb4d1, 57af0cf unpushed
 git push origin main
 ```
 
-Then trigger a manual deploy on Render (service `zaavar-guide`,
+Then trigger a manual deploy on Render (`zaavar-guide`,
 `srv-d9kdg6qjobas738i5fng`) — it does not auto-deploy.
+⚠️ But read `docs/CLEANUP-PLAN.md` §5 **O1** first — **two Render services are
+live** and one serves a stale build.
 
-### Content shipped
+### Content shipped — 7 subjects, 172 lessons
 
-| Subject | `data/` dir | Lessons |
+| Subject | `data/` dir | Lessons | Book |
+|---|---|---|---|
+| Математик 10–12 | `data/lessons/` | 42 | 279 / 273 / 343 |
+| Физик 7–11 | `data/physics/` | 66 | 291 / 306 / 320 / 258 / 269 |
+| Мэдээллийн технологи 12 | `data/it/` | 11 | 340 |
+| Англи хэл 12 | `data/english/` | 10 | 357 |
+| Монгол хэл 12 | `data/mongolian/` | 8 | 339 |
+| Эрүүл мэнд 12 | `data/health/` | 17 | 413 |
+| **Уран зохиол 12** | `data/uran/` | **18** | **336** |
+
+---
+
+## 4. What the previous session did (2026-08-03)
+
+1. **Уран зохиол 12** — 18 lessons, 180 questions, 18 mastery topics. (`0acd4e9`)
+2. **`docs/authoring/audit_content.py`** — static content checker. (`57af0cf`)
+3. **`docs/CLEANUP-PLAN.md`** — 13-agent repo audit, 62 verified findings. (`c6fb4d1`)
+4. **Re-ran Health 12 by mistake.** A second session was working the same repo
+   and had already committed it (`1a739bf`). Both versions were equivalent, so
+   the committed one was kept and the duplicate discarded.
+5. Removed a stale `.git/index.lock` (no git process, 0 bytes, frozen 78 min).
+
+---
+
+## 5. URGENT — 4 real bugs found
+
+Full detail in `docs/CLEANUP-PLAN.md` §3.1. The first two were hand-verified.
+
+| # | Bug | Fix |
 |---|---|---|
-| Математик 10–12 | `data/lessons/` | 42 |
-| Физик 7–11 | `data/physics/` | 66 |
-| Мэдээллийн технологи 12 | `data/it/` | 11 |
-| Англи хэл 12 | `data/english/` | 10 |
-| Монгол хэл 12 | `data/mongolian/` | 8 |
-| Эрүүл мэнд 12 | `data/health/` | 17 |
+| **B1** 🔴 | `/lesson/<id>` never checks which subject owns the lesson. With cookie `math`, opening a health lesson writes progress to `zaavar.math.*` — **cross-subject data corruption**. | `app.py:137`. `store.lesson_subject()` **already exists and is never called** — use it to override the template context's `subject`. |
+| **B2** 🔴 | `mastery.html:211` tests `verdict === 'confirmed'`, but `store._verdict()` (`store.py:414`) only ever returns `"Батлагдсан"` / band `"ready"` → **never true**. So `mastery-5` badge is unreachable and the `q-mastery` quest **shows but cannot be completed**. | Change to `g.band === 'ready'`. No server change needed. |
+| **B3** 🔴 | `/quests` has **no mobile entry point** — the bottom tab bar has 5 tabs and none is quests; the gems chip lives in a `hidden sm:flex` slot. On phones the whole F-QUESTS economy is dead. | `base.html:96` — `grid-cols-5` → `grid-cols-6`. |
+| **O1** 🔴 | **Two live Render services.** `zaavar-guide.onrender.com` (current) and `zaavar-math-guide.onrender.com` (**no gamify.js — a pre-gamify build still public**). | Owner's decision. `CLEANUP-PLAN.md` §5 O1. |
 
-**154 lessons total.**
+---
 
-### Content in flight (needs restarting on your machine)
+## 6. What to do next (owner's order: 12 → 11 → 10 → 9)
 
-`docs/authoring/health_g12_wf.js` **finished** (34 agents, 0 errors) and its
-content is committed.
+`docs/authoring/toc-grade12.md` already holds these books' **contents pages
+read from econtent** — do not re-read the flipbooks.
 
-`docs/authoring/uran_g12_wf.js` — Уран зохиол 12 (book 336), 18 works — was
-still running in the cloud sandbox when this handoff was written. Its output was
-**not** committed, so **re-run it** on your machine:
+1. Дизайн технологи **341** — 6 chapters, 22 lessons
+2. Орос хэл **344** — 3 modules, 21 topics
+3. Иргэний ёс зүй **431** — 3 chapters, ~30 sub-topics
+4. **Монгол бичиг 337 — deferred.** Its contents page is entirely traditional
+   vertical script and could not be read reliably. **Ask the owner for a typed
+   ГАРЧИГ before attempting it.**
 
-```
-# in a Claude Code session
-Workflow({scriptPath: "docs/authoring/uran_g12_wf.js"})
-```
+Then grades 11, 10, 9.
 
-The cloud sandbox had only 2 CPUs, which is why authoring crawled there (Health
-took ~7 hours). On a real machine it should be far faster.
+`docs/BACKEND-PLAN.md` (leaderboard, payments, admin) — **do not start without
+the owner's decision.** §4.1 flags that charging for MECSS-derived content is a
+copyright risk, and any account system triggers minors' data-protection duties.
 
-## 4. How the authoring pipeline works
+---
 
-Each subject gets a `Workflow` script in `docs/authoring/`. The shape is always:
-
-```
-SPECS (one entry per lesson, taken from the real textbook ГАРЧИГ)
-  → agent(authorPrompt)  → BUNDLE schema  { lesson, level_questions[10], mastery }
-  → agent(verifyPrompt)  → VBUNDLE schema { ...BUNDLE, notes }
-```
-
-`pipeline()` runs author→verify per topic with no barrier. The verifier is
-**adversarial** — its prompt tells it to hunt for wrong answer indices, copied
-text, false facts, and taste-based questions.
-
-Then a writer script turns the workflow result into `data/<subject>/`:
+## 7. How to add a subject
 
 ```
-SUBJECT_DIR=data/health SUBJECT_TITLE="Эрүүл мэнд" BOOK_MAP='{"12":413}' \
-  python docs/authoring/write_subject.py <result.json>
+1. Write SPECS from toc-grade12.md   ->  docs/authoring/<subject>_wf.js
+2. Run the workflow                  ->  result JSON
+3. SUBJECT_DIR=data/<s> SUBJECT_TITLE="…" BOOK_MAP='{"12":NNN}' \
+     python docs/authoring/write_subject.py <result.json>
+4. Add to SUBJECTS + _SUBJ in store.py
+5. python docs/authoring/audit_content.py data/<s>     <- must exit 0
+6. ARCHITECTURE.md §5 + a CHANGELOG.md entry
 ```
 
-`write_subject.py` is generic (any subject); `write_physics_grade.py` is the
-physics-specific one that merges grades without clobbering earlier ones.
+Empty subjects auto-hide (`SUBJECT-AUTOHIDE-1`), so step 4 is safe to do early.
 
-To add a subject you also add it to `SUBJECTS` and `_SUBJ` in `store.py`. You do
-**not** need to guard against empty content — `SUBJECT-AUTOHIDE-1` filters any
-subject with no lesson files out of the picker automatically.
+### ⚠️ Make the mastery schema STRICT
 
-## 5. What to do next (owner's stated order)
+`uran_g12_wf.js` declared MASTERY as `type: ['object','null']`, so **11 of 18
+authors returned `mastery: null`** without violating the schema — no error was
+raised. In new workflows always use `type: 'object'` with explicit
+`minItems`/`maxItems` on `ordering` and `two_tier`. Backfill example:
+`docs/authoring/uran_g12_mastery_patch_wf.js`.
 
-The owner wants **grade 12 first, then 11, 10, 9, downward**.
+### ⚠️ Derive `lesson_id` from disk, never by hand
 
-1. Re-run `uran_g12_wf.js`, write with `write_subject.py`, verify, commit, push:
-   `SUBJECT_DIR=data/literature SUBJECT_TITLE="Уран зохиол" BOOK_MAP='{"12":336}'`
-   and add `literature` to `SUBJECTS`/`_SUBJ` in `store.py`.
-2. Author the remaining grade-12 books. `docs/authoring/toc-grade12.md` already
-   contains their **contents pages read from econtent**, plus the special rules
-   each one needs — use it as the SPECS source, do not re-read the flipbooks:
-   - Дизайн технологи 341 — 6 chapters, 22 lessons
-   - Орос хэл 344 — 3 modules, 21 topics
-   - Иргэний ёс зүй 431 — 3 chapters, ~30 sub-topics
-   - **Монгол бичиг 337 — deferred.** Its contents page is entirely traditional
-     vertical script and the chapter titles could not be read reliably. Ask the
-     owner for a typed ГАРЧИГ before attempting it.
-3. Then grade 11, 10, 9 for the subjects that have them.
+The backfill run was given hand-written lesson ids and **7 of 11 were wrong**.
+Build the `skill_id → id` map programmatically from `data/<s>/lessons/*.json`,
+and when merging, force `skill_id`/`lesson_id`/`title_mn` from the lesson on disk.
 
-`docs/BACKEND-PLAN.md` covers the three features that genuinely need a server
-(leaderboard, payments, admin panel). **Do not start those without the owner's
-decision** — §4.1 flags that charging for MECSS-derived content is a copyright
-risk, and any account system triggers minors' data-protection obligations.
+---
 
-## 6. Gotchas that already cost time — do not rediscover these
+## 8. Gotchas — do not rediscover these
 
-**KaTeX fails silently.** Two patterns produced 59 invisible failures:
-`\,^` (spacing macro before a script) and `·` (U+00B7) inside `\text{}`. Never
-put Cyrillic inside `$...$`. To audit, run `katex.renderToString(span,
-{throwOnError:true})` over every math span in a browser — a visual check will
-not catch it.
+**KaTeX — the old note was WRONG.** `ARCHITECTURE.md` §6 used to say Cyrillic
+inside `$…$` "fails silently". Tested against the app's real config
+(katex 0.16.11, `{throwOnError:false}`) and **disproved**:
 
-**Line endings.** `.gitattributes` now forces LF. If `git status` ever shows
-every file as modified again, that is CRLF, not real changes — check with
-`git diff --ignore-cr-at-eol --stat` before panicking.
+- `\,^` → returns `katex-error`. **Really breaks.** (currently 0 in content)
+- bare Cyrillic (`8\,см^3`) → **renders**, console warning only. It comes out in
+  math italic, so `\mathrm{см}` is still correct style — but it is **not** a break.
+- `\text{Cyrillic}` → clean.
 
-**econtent has no deep links.** Its reader hardcodes `startPage:0` and disables
-the TOC and thumbnails, so you cannot link to a page. Page images are directly
-addressable at
+`audit_content.py` treats the first as an ERROR and the second as a WARNING.
+
+**Line endings.** `.gitattributes` forces LF. `write_subject.py` writes CRLF on
+Windows, so `git add` prints CRLF warnings — **that is normal**. If everything
+looks modified, check `git diff --ignore-cr-at-eol --stat` before panicking.
+
+**econtent has no deep links.** The reader hardcodes `startPage:0` and disables
+TOC and thumbnails. Page images are directly addressable at
 `econtent.edu.mn/content/<N>rangi/<slug>/pages/<slug>-<book_id>-<page>.jpg`
-(index = printed page number, 0 = cover) — get `<slug>` from
-`document.images[0].src` on `more.php?id=<book_id>`. **Do not display those
-images in the app**: `ARCHITECTURE.md` §7 explains that MECSS permission is
-required. `BookRef.MODE` in `templates/lesson.html` is `"cite"` today and
-flips to `"page"` in one line the day written permission arrives.
+(0 = cover; get `<slug>` from `document.images[0].src` on `more.php?id=<book_id>`).
+**Do not display those images in the app** — `ARCHITECTURE.md` §7: written MECSS
+permission is required. `BookRef.MODE` in `templates/lesson.html` is `"cite"`
+today and flips to `"page"` in one line the day permission arrives.
 
-**Copyright in literature lessons.** `uran_g12_wf.js` forbids reproducing any
-primary text, caps quotes at 15 words once per lesson, and makes the verifier's
-first job hunting for copied passages. Keep that guard in any literature work.
+**Literature copyright.** `uran_g12_wf.js` forbids reproducing primary text,
+caps quotes at 15 words once per lesson, and makes the verifier's first job
+hunting for copied passages. Every practice passage is an original "загвар
+бичвэр" labelled as such inline. **Keep that guard in any literature work.**
 
-**Sensitive subjects need guard rails.** `health_g12_wf.js` carries explicit
-rules — no diagnosing, no drug or dose advice, no stigmatising framing, always a
-route to real help. Its verifier caught first-aid steps that were in a dangerous
-order. Reuse those rules for Иргэний ёс зүй 431 (§2.2 covers divorce and
-parenting) and anything else touching health, family or substances.
+**localStorage keys must be subject-scoped.** Everything except `zaavar.streak`,
+`zaavar.profile` and `zaavar.gamify` is namespaced `zaavar.<subject>.*`.
+Forgetting this once caused a real cross-subject data-overwrite bug. (B1 above
+is a surviving instance of exactly this class.)
 
 **Book IDs** (`econtent.edu.mn/pages/more.php?id=`): Math 10→279, 11→273,
 12→343 · Physics 7→291, 8→306, 9→320, 10→258, 11→269 · IT 12→340 ·
 English 12→357 · Mongolian 12→339 · Health 12→413 · Literature 12→336 ·
 Mongol bichig 12→337 · Design tech 12→341 · Russian 12→344 · Civic ethics 12→431.
 
-**localStorage keys must be subject-scoped.** Everything except
-`zaavar.streak`, `zaavar.profile` and `zaavar.gamify` is namespaced
-`zaavar.<subject>.*`. Forgetting this once caused a real cross-subject
-data-overwrite bug.
+---
 
-## 7. Verify before you commit
+## 9. Verify before you commit
 
-```
+```powershell
+# 1. Content audit — must exit 0
+python docs/authoring/audit_content.py
+
+# 2. Every page of every subject
 python -c "
-import app; c=app.app.test_client()
-for s in ['math','physics','it','english','mongolian','health']:
+import app, store; c=app.app.test_client()
+for s in store.SUBJECTS:
     c.set_cookie('subject', s)
-    print(s, [c.get(p).status_code for p in
-      ['/','/path','/quests','/curriculum','/diagnostic','/mastery','/mock','/report','/chat']])
+    codes=[c.get(p).status_code for p in ['/','/path','/quests','/curriculum','/diagnostic','/mastery','/mock','/report','/chat']]
+    bad=[l for l in store._SUBJ[s]['lessons'] if c.get('/lesson/'+l).status_code!=200]
+    print(s, 'all200' if set(codes)=={200} else codes, 'lessons', len(store._SUBJ[s]['lessons']), bad or 'OK')
 "
+
+# 3. JS syntax
 node --check static/js/gamify.js
-python -c "
-import json,glob
-for f in glob.glob('data/**/*.json', recursive=True): json.load(open(f, encoding='utf-8'))
-print('all json valid')
-"
 ```
 
-Also check that every `lesson_id` referenced in a `curriculum.json` either has a
-file in `lessons/` or is `null` — `templates/path.html` renders `null` as a
-non-clickable "soon" node, but a *wrong* id renders a broken link.
+`audit_content.py` already covers `curriculum.json`→`lesson_id` links, choice
+counts, answer indices, unclosed `$`, `\,^` and HTML entities. A `lesson_id` of
+`null` is intentional — `path.html` renders it as a non-clickable "soon" node.
 
-## 8. First 5 minutes
+---
 
-1. `git log --oneline -6` and `git status` — expect 4 unpushed commits, clean tree.
-2. `git push origin main`.
-3. `python app.py`, open `/quests` and `/path`, confirm they render.
-4. Read `ARCHITECTURE.md` §6 and §8, and `docs/authoring/toc-grade12.md`.
-5. Re-run `docs/authoring/uran_g12_wf.js`.
+## 10. Ask the owner before
 
-Ask the owner before: starting any backend work, publishing textbook page
-images, or adding a subject whose ГАРЧИГ you had to guess at.
+- Starting any backend work (`docs/BACKEND-PLAN.md`).
+- Publishing textbook page images (`BookRef.MODE = "page"`).
+- Adding a subject whose ГАРЧИГ you had to guess at (especially **Монгол бичиг 337**).
+- Anything in `docs/CLEANUP-PLAN.md` §5 (especially **O1** — the Render services).
+- Deleting `_to_delete/` (`CLEANUP-PLAN.md` A19 — run `git fsck` first).
