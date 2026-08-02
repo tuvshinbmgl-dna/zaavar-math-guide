@@ -51,13 +51,11 @@ commits are English/Mongolian mixed — match whatever file you are editing.
 
 ### Unpushed commits — do this first
 
-The branch is **4 commits ahead of `origin/main`**:
+The branch is **2 commits ahead of `origin/main`** (you already pushed the first three):
 
 ```
-6c27c4a Add Health 12 and Literature 12 authoring workflows
-6448e50 Document grade-12 textbook contents read from econtent
-e38e290 Add daily quests, gems, shop and backend research plan
-a075802 Add Mongolian 12, report gamify summary, LF normalization
+876169d Update terminal handoff after Health 12 landed
+1a739bf Add Эрүүл мэнд 12 — 17 lessons, 170 questions, 17 mastery topics
 ```
 
 ```
@@ -76,22 +74,26 @@ Then trigger a manual deploy on Render (service `zaavar-guide`,
 | Мэдээллийн технологи 12 | `data/it/` | 11 |
 | Англи хэл 12 | `data/english/` | 10 |
 | Монгол хэл 12 | `data/mongolian/` | 8 |
+| Эрүүл мэнд 12 | `data/health/` | 17 |
 
-**137 lessons total.**
+**154 lessons total.**
 
 ### Content in flight (needs restarting on your machine)
 
-Two authoring workflows were running in the cloud sandbox and **did not finish**.
-Their scripts are committed; the generated content was **not** — you need to
-re-run them:
+`docs/authoring/health_g12_wf.js` **finished** (34 agents, 0 errors) and its
+content is committed.
 
-- `docs/authoring/health_g12_wf.js` — Эрүүл мэнд 12 (book 413), 17 topics.
-  Was ~11/34 agents in when the sandbox session ended.
-- `docs/authoring/uran_g12_wf.js` — Уран зохиол 12 (book 336), 18 works.
-  Was ~2/36 agents in; paused deliberately so Health could use the CPUs.
+`docs/authoring/uran_g12_wf.js` — Уран зохиол 12 (book 336), 18 works — was
+still running in the cloud sandbox when this handoff was written. Its output was
+**not** committed, so **re-run it** on your machine:
 
-The cloud sandbox had only 2 CPUs, which is why these crawled. On a real machine
-they should be much faster.
+```
+# in a Claude Code session
+Workflow({scriptPath: "docs/authoring/uran_g12_wf.js"})
+```
+
+The cloud sandbox had only 2 CPUs, which is why authoring crawled there (Health
+took ~7 hours). On a real machine it should be far faster.
 
 ## 4. How the authoring pipeline works
 
@@ -125,9 +127,10 @@ subject with no lesson files out of the picker automatically.
 
 The owner wants **grade 12 first, then 11, 10, 9, downward**.
 
-1. Re-run `health_g12_wf.js`, write with `write_subject.py`, verify, commit, push.
-2. Re-run `uran_g12_wf.js`, same.
-3. Author the remaining grade-12 books. `docs/authoring/toc-grade12.md` already
+1. Re-run `uran_g12_wf.js`, write with `write_subject.py`, verify, commit, push:
+   `SUBJECT_DIR=data/literature SUBJECT_TITLE="Уран зохиол" BOOK_MAP='{"12":336}'`
+   and add `literature` to `SUBJECTS`/`_SUBJ` in `store.py`.
+2. Author the remaining grade-12 books. `docs/authoring/toc-grade12.md` already
    contains their **contents pages read from econtent**, plus the special rules
    each one needs — use it as the SPECS source, do not re-read the flipbooks:
    - Дизайн технологи 341 — 6 chapters, 22 lessons
@@ -136,7 +139,7 @@ The owner wants **grade 12 first, then 11, 10, 9, downward**.
    - **Монгол бичиг 337 — deferred.** Its contents page is entirely traditional
      vertical script and the chapter titles could not be read reliably. Ask the
      owner for a typed ГАРЧИГ before attempting it.
-4. Then grade 11, 10, 9 for the subjects that have them.
+3. Then grade 11, 10, 9 for the subjects that have them.
 
 `docs/BACKEND-PLAN.md` covers the three features that genuinely need a server
 (leaderboard, payments, admin panel). **Do not start those without the owner's
@@ -169,6 +172,12 @@ flips to `"page"` in one line the day written permission arrives.
 primary text, caps quotes at 15 words once per lesson, and makes the verifier's
 first job hunting for copied passages. Keep that guard in any literature work.
 
+**Sensitive subjects need guard rails.** `health_g12_wf.js` carries explicit
+rules — no diagnosing, no drug or dose advice, no stigmatising framing, always a
+route to real help. Its verifier caught first-aid steps that were in a dangerous
+order. Reuse those rules for Иргэний ёс зүй 431 (§2.2 covers divorce and
+parenting) and anything else touching health, family or substances.
+
 **Book IDs** (`econtent.edu.mn/pages/more.php?id=`): Math 10→279, 11→273,
 12→343 · Physics 7→291, 8→306, 9→320, 10→258, 11→269 · IT 12→340 ·
 English 12→357 · Mongolian 12→339 · Health 12→413 · Literature 12→336 ·
@@ -184,7 +193,7 @@ data-overwrite bug.
 ```
 python -c "
 import app; c=app.app.test_client()
-for s in ['math','physics','it','english','mongolian']:
+for s in ['math','physics','it','english','mongolian','health']:
     c.set_cookie('subject', s)
     print(s, [c.get(p).status_code for p in
       ['/','/path','/quests','/curriculum','/diagnostic','/mastery','/mock','/report','/chat']])
@@ -207,7 +216,7 @@ non-clickable "soon" node, but a *wrong* id renders a broken link.
 2. `git push origin main`.
 3. `python app.py`, open `/quests` and `/path`, confirm they render.
 4. Read `ARCHITECTURE.md` §6 and §8, and `docs/authoring/toc-grade12.md`.
-5. Re-run `docs/authoring/health_g12_wf.js`.
+5. Re-run `docs/authoring/uran_g12_wf.js`.
 
 Ask the owner before: starting any backend work, publishing textbook page
 images, or adding a subject whose ГАРЧИГ you had to guess at.
