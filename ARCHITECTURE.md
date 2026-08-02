@@ -4,7 +4,7 @@
 > Систем шинэчлэх бүрд ЭНЭ ФАЙЛЫГ ХАМТ шинэчилнэ, мөн `CHANGELOG.md`-д бичилт үүсгэнэ.
 > Алдаа гарвал эндээс "аль хэсэг нөлөөлсөн"-ийг олж, changelog-оос буцаах цэгээ сонгоно.
 >
-> Сүүлд шинэчилсэн: 2026-08-02 · Тохирох changelog: `CHANGELOG.md` → `[2026-08-02] QUESTS-1`
+> Сүүлд шинэчилсэн: 2026-08-03 · Тохирох changelog: `CHANGELOG.md` → `[2026-08-03] AUDIT-1`
 
 ---
 
@@ -22,6 +22,7 @@
 | `T-` | Template (`templates/`) |
 | `J-` | Client script (`static/js/`) |
 | `X-` | Гадаад хамаарал (econtent, Render, Anthropic API) |
+| `W-` | Контент бэлтгэх хэрэгсэл (`docs/authoring/`) — апп ажиллахад хэрэггүй |
 
 ---
 
@@ -155,6 +156,36 @@ objectives_mn[], pretest{}, sections[], practice[], mastery_check[]
 уншигдсан** (Монгол бичгээс бусад) — [`docs/authoring/toc-grade12.md`](docs/authoring/toc-grade12.md).
 Тэнд ном тус бүрийн `slug`, бүлэг/сэдвийн бүтэц, тал заалт, мөн хичээл бичих
 тусгай дүрмүүд (зохиогчийн эрх, эмзэг сэдэв) бий.
+
+### Контент бэлтгэх хэрэгслүүд (`docs/authoring/`)
+
+Эдгээр нь **апп ажиллахад хэрэггүй** — зөвхөн шинэ хичээл бичихэд хэрэглэнэ.
+
+| ID | Файл | Үүрэг |
+|---|---|---|
+| `W-WF` | `<subject>_wf.js` | Workflow скрипт. `SPECS` (жинхэнэ ГАРЧИГ-аас) → `agent(зохиох)` → `agent(шүүмжлэх)`. `pipeline()` тул сэдэв бүр бие даан урсана. |
+| `W-WRITE` | `write_subject.py` | Workflow-ийн үр дүнг `data/<subject>/`-д бичнэ. `SUBJECT_DIR`, `SUBJECT_TITLE`, `BOOK_MAP` орчны хувьсагчтай. Өмнөх ангиудыг дарахгүй. |
+| `W-WRITE-PHY` | `write_physics_grade.py` | Физикийн тусгай хувилбар (анги нэгтгэх логиктой). |
+| `W-AUDIT` | `audit_content.py` | `data/**`-ийг статикаар шалгана. **АЛДАА** (exit 1): JSON задрахгүй · сонголт 4 биш · `answer` индекс мужаас гарсан · `curriculum.json`→`lesson_id` файлгүй · хаагдаагүй `$` · `\,^` · HTML entity. **САНУУЛГА** (exit 0): math mode-д нүцгэн кирилл · `\text{}` доторх `·` · хариултын индекс төвлөрсөн. |
+| `W-TOC` | `toc-grade12.md` | 12-р ангийн номуудын ГАРЧИГ (econtent-ээс уншсан) + тухайн ном бүрийн тусгай дүрэм. |
+
+**Шинэ хичээл нэмэх дараалал:**
+
+```
+1. toc-grade12.md-ээс SPECS бичих   →  docs/authoring/<subject>_wf.js
+2. Workflow ажиллуулах              →  result.json
+3. SUBJECT_DIR=… python write_subject.py result.json
+4. store.py-д SUBJECTS + _SUBJ нэмэх   (контентгүй бол SUBJECT-AUTOHIDE-1 нуучихна)
+5. python docs/authoring/audit_content.py data/<subject>   ← exit 0 байх ёстой
+6. ARCHITECTURE.md §5 + CHANGELOG.md бичилт
+```
+
+> **KaTeX-ийн ноцтой байдал — таамаглалгүй, туршиж тогтоосон.** Апп-ын тохиргоо
+> (katex 0.16.11, `{throwOnError:false}`, `strict` анхдагч) дээр `\,^` нь үнэхээр
+> `katex-error` буцаадаг. Харин `$…$` доторх **нүцгэн кирилл нь рендэрлэгддэг** —
+> зөвхөн console warning өгнө. Тиймээс `W-AUDIT` эхнийхийг АЛДАА, хоёрдахийг
+> САНУУЛГА гэж ялгасан. (Нэгжийг `\mathrm{см}` гэж бичих нь зөв хэвээр — эс бөгөөс
+> математик налуугаар гарна.)
 
 ---
 
