@@ -1,0 +1,163 @@
+{
+  "note": "Эрүүл мэнд — 12-р анги. econtent.edu.mn дээрх албан ёсны сурах бичгийн бүтцэд нийцүүлэв.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Эрүүл мэнд 12",
+      "book_id": 413,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=413",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Хувийн эрүүл ахуй ба орчны эрүүл мэнд",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Гэрийн дотоод засал, эрүүл ахуйн шаардлага",
+              "lesson_id": "hl12-1-1",
+              "skill_id": "hl12-home-hygiene"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Монгол гэр, уламжлалт ахуй",
+              "lesson_id": "hl12-1-2",
+              "skill_id": "hl12-ger-tradition"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Нийгмийн эрүүл мэндийн бодлого, хууль, дүрэм журам",
+              "lesson_id": "hl12-1-3",
+              "skill_id": "hl12-health-policy"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Хооллолт ба хөдөлгөөн",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Хоол, хүнсний сонголт ба орон нутгийн онцлог",
+              "lesson_id": "hl12-2-1",
+              "skill_id": "hl12-food-choice"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Зохицуулах үйлчилгээтэй болон баяжуулсан хүнсний хэрэглээ",
+              "lesson_id": "hl12-2-2",
+              "skill_id": "hl12-fortified-food"
+            },
+            {
+              "num": "2.3",
+              "title_mn": "Генийн өөрчлөлттэй ба биологийн идэвхт хүнсний нэмэлт бүтээгдэхүүн",
+              "lesson_id": "hl12-2-3",
+              "skill_id": "hl12-gmo-supplements"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Сэтгэцийн эрүүл мэнд",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Сэтгэцийн тулгамдсан асуудалтай хүмүүсийг ойлгох, туслах дэмжих",
+              "lesson_id": "hl12-3-1",
+              "skill_id": "hl12-mh-support"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Сэтгэцийн эмгэг ба эмгэгтэй хүмүүсийг ойлгох, туслах дэмжих",
+              "lesson_id": "hl12-3-2",
+              "skill_id": "hl12-mh-disorders"
+            },
+            {
+              "num": "3.3",
+              "title_mn": "Сэтгэцийн хувьд эрүүл байхын ач холбогдол",
+              "lesson_id": "hl12-3-3",
+              "skill_id": "hl12-mh-wellbeing"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Хорт зуршил",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Хорт зуршилтай холбоотой хууль эрх зүйн баримт бичиг",
+              "lesson_id": "hl12-4-1",
+              "skill_id": "hl12-substance-law"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Хорт зуршил, мансууруулах төрлийн бодисоос татгалзах",
+              "lesson_id": "hl12-4-2",
+              "skill_id": "hl12-refusal-skills"
+            }
+          ]
+        },
+        {
+          "num": "V",
+          "title_mn": "Бэлгийн болон нөхөн үржихүйн эрүүл мэнд",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "5.1",
+              "title_mn": "Гэрлэлт ба ирээдүйн амьдралын төлөвлөгөө",
+              "lesson_id": "hl12-5-1",
+              "skill_id": "hl12-marriage-plan"
+            },
+            {
+              "num": "5.2",
+              "title_mn": "Эцэг эх байхын үүрэг хариуцлага",
+              "lesson_id": "hl12-5-2",
+              "skill_id": "hl12-parenting"
+            },
+            {
+              "num": "5.3",
+              "title_mn": "Эрэгтэй, эмэгтэй хүмүүсийн бэлгийн хариу үйлдэл",
+              "lesson_id": "hl12-5-3",
+              "skill_id": "hl12-sexual-health"
+            },
+            {
+              "num": "5.4",
+              "title_mn": "Бэлгийн харилцаан дахь хосын үүрэг, хариуцлага",
+              "lesson_id": "hl12-5-4",
+              "skill_id": "hl12-relationship-resp"
+            }
+          ]
+        },
+        {
+          "num": "VI",
+          "title_mn": "Аюулгүй байдал, анхны тусламж",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "6.1",
+              "title_mn": "Осол гэмтлээс сэргийлэх",
+              "lesson_id": "hl12-6-1",
+              "skill_id": "hl12-injury-prevent"
+            },
+            {
+              "num": "6.2",
+              "title_mn": "Нийгмийн халамж даатгалын үйлчилгээ",
+              "lesson_id": "hl12-6-2",
+              "skill_id": "hl12-social-insurance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
