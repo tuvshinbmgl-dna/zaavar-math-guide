@@ -47,25 +47,32 @@
           <span class="grid place-items-center w-8 h-8 rounded-xl bg-brand-600 text-white text-sm">∫</span>
           <span class="hidden xs:inline sm:inline">Заавар</span>
         </a>
-        {% if subjects %}
+        {# F-GRADE — сурагч АНГИараа шилжинэ. Хичээл сонгох нь багшийн
+           удирдлагад (/teacher) шилжсэн. #}
+        {% if grade and grades %}
         <div class="relative" x-data="{ open: false }" @click.outside="open = false" @keydown.escape="open = false">
           <button @click="open = !open" type="button"
-                  class="flex items-center gap-1 rounded-full bg-slate-100 pl-3 pr-2 py-1.5 text-xs font-semibold text-brand-700 hover:bg-slate-200 transition max-w-[9.5rem]">
-            <span class="truncate">{{ subject_name }}</span>
+                  class="flex items-center gap-1 rounded-full bg-brand-50 pl-3 pr-2 py-1.5 text-xs font-semibold text-brand-700 hover:bg-brand-100 transition">
+            <span class="whitespace-nowrap">{{ grade }}-р анги</span>
             <span class="text-[9px] leading-none" :class="open ? 'rotate-180' : ''">▼</span>
           </button>
           <div x-show="open" x-cloak x-transition.origin.top.left
-               class="absolute left-0 mt-1.5 w-52 rounded-xl bg-white shadow-lg border border-slate-200 py-1 z-40">
-            <div class="px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-slate-400">Хичээл сонгох</div>
-            {% for skey, sname in subjects.items() %}
-            <a href="/set-subject/{{ skey }}?next={{ request.path }}"
-               class="flex items-center justify-between px-3 py-2 text-sm {{ 'bg-brand-50 text-brand-700 font-semibold' if subject == skey else 'text-ink-700 hover:bg-slate-50' }}">
-              <span>{{ sname }}</span>
-              {% if subject == skey %}<span class="text-brand-600">✓</span>{% endif %}
+               class="absolute left-0 mt-1.5 w-44 rounded-xl bg-white shadow-lg border border-slate-200 py-1 z-40">
+            <div class="px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-slate-400">Анги солих</div>
+            {% for g in grades %}
+            <a href="/set-grade/{{ g }}?next={{ request.path }}"
+               class="flex items-center justify-between px-3 py-2 text-sm {{ 'bg-brand-50 text-brand-700 font-semibold' if grade == g else 'text-ink-700 hover:bg-slate-50' }}">
+              <span>{{ g }}-р анги</span>
+              {% if grade == g %}<span class="text-brand-600">✓</span>{% endif %}
             </a>
             {% endfor %}
           </div>
         </div>
+        {% endif %}
+        {% if subject_name and grade and subject_in_grade and request.path != '/' %}
+        <span class="hidden sm:inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-ink-700 max-w-[9.5rem]">
+          <span class="truncate">{{ subject_name }}</span>
+        </span>
         {% endif %}
       </div>
       <nav class="hidden sm:flex items-center gap-1 text-sm font-medium">
@@ -78,6 +85,10 @@
         <div id="gamify-slot" class="hidden sm:flex items-center gap-1.5"></div>
         <div id="streak-slot"></div>
         <div id="profile-slot"></div>
+        <a href="/teacher" title="Багшийн удирдлага"
+           class="hidden sm:inline-flex items-center gap-1 text-xs px-2 py-1 rounded-lg transition {{ 'bg-brand-50 text-brand-700' if request.path == '/teacher' else 'text-slate-500 hover:bg-slate-100' }}">
+          <span>🎓</span><span class="hidden md:inline">Багш</span>
+        </a>
         {% if ai_enabled is defined %}
         <span class="hidden sm:inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-full {{ 'bg-emerald-50 text-emerald-700' if ai_enabled else 'bg-slate-100 text-slate-500' }}">
           <span class="w-1.5 h-1.5 rounded-full {{ 'bg-emerald-500' if ai_enabled else 'bg-slate-400' }}"></span>

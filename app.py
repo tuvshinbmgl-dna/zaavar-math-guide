@@ -25,27 +25,77 @@ import store
 app = Flask(__name__)
 
 
+COOKIE_MAX_AGE = 60 * 60 * 24 * 365  # a school year outlives one term
+
+
 def _subject() -> str:
     """Active subject from the `subject` cookie (math default), validated."""
     s = request.cookies.get("subject", store.DEFAULT_SUBJECT)
     return s if s in store.SUBJECTS else store.DEFAULT_SUBJECT
 
 
+def _grade() -> int | None:
+    """Active grade from the `grade` cookie. None = the student has not picked
+    one yet, which is what sends `/` to the grade picker."""
+    try:
+        g = int(request.cookies.get("grade", ""))
+    except (TypeError, ValueError):
+        return None
+    return g if g in store.GRADE_SUBJECTS else None
+
+
+def _safe_next(default: str = "/") -> str:
+    """Only ever redirect within this site. `//host` is a protocol-relative URL
+    and would leave the site, so it is rejected alongside absolute URLs."""
+    nxt = request.args.get("next", default)
+    if not nxt.startswith("/") or nxt.startswith("//"):
+        return default
+    return nxt
+
+
 @app.context_processor
 def _inject_subject():
     s = _subject()
-    return {"subject": s, "subject_name": store.SUBJECTS.get(s, ""), "subjects": store.SUBJECTS}
+    g = _grade()
+    return {
+        "subject": s,
+        "subject_name": store.SUBJECTS.get(s, ""),
+        "subjects": store.SUBJECTS,          # teacher console only (T-TEACHER)
+        "grade": g,
+        "grades": store.grades(),
+        "grade_subjects": store.subjects_for_grade(g),
+        "subject_in_grade": store.subject_in_grade(s, g),
+    }
 
 
 @app.route("/set-subject/<subject>")
 def set_subject(subject):
-    """Switch the active subject (Math/Physics) via cookie, then return home."""
+    """Switch the active subject via cookie. Reached from the grade dashboard's
+    subject cards (students) and from the teacher console (F-TEACHER)."""
     target = subject if subject in store.SUBJECTS else store.DEFAULT_SUBJECT
-    nxt = request.args.get("next", "/")
-    if not nxt.startswith("/"):
-        nxt = "/"
-    resp = redirect(nxt)
-    resp.set_cookie("subject", target, max_age=60 * 60 * 24 * 365, samesite="Lax")
+    resp = redirect(_safe_next())
+    resp.set_cookie("subject", target, max_age=COOKIE_MAX_AGE, samesite="Lax")
+    return resp
+
+
+@app.route("/set-grade/<grade>")
+def set_grade(grade):
+    """F-GRADE — the student's own grade. Everything the student browses
+    (хөтөлбөр, зам, түвшин тогтоох, баталгаа, mock) is filtered to it."""
+    try:
+        target = int(grade)
+    except (TypeError, ValueError):
+        target = store.DEFAULT_GRADE
+    if target not in store.GRADE_SUBJECTS:
+        target = store.DEFAULT_GRADE
+    resp = redirect(_safe_next())
+    resp.set_cookie("grade", str(target), max_age=COOKIE_MAX_AGE, samesite="Lax")
+    # A subject that isn't taught in the new grade would show a fallback tree and
+    # read as a bug; move to the first subject of the grade instead.
+    if not store.subject_in_grade(_subject(), target):
+        subs = store.subjects_for_grade(target)
+        if subs:
+            resp.set_cookie("subject", next(iter(subs)), max_age=COOKIE_MAX_AGE, samesite="Lax")
     return resp
 
 
@@ -79,12 +129,48 @@ def richtext(text: str) -> Markup:
 
 @app.route("/")
 def home():
+    """Сурагчийн нүүр. Анги сонгоогүй бол ангиа сонгуулна; сонгосон бол тэр
+    ангийн ХИЧЭЭЛҮҮДийг картаар үзүүлнэ (F-GRADE)."""
+    g = _grade()
+    if g is None:
+        return render_template("pick_grade.html",
+                               overview=store.grade_overview(),
+                               ai_enabled=claude.is_configured())
+    subs = store.subjects_for_grade(g)
+    cards = [{"key": k, "name": name,
+              "lessons": store.lesson_count(k, g),
+              "topics": len(store.level_topics(k, g))}
+             for k, name in subs.items()]
+    cards.sort(key=lambda c: (-c["lessons"], c["name"]))
     s = _subject()
-    featured = store.featured_lessons(s)
+    active = s if s in subs else None
+    featured = store.featured_lessons(active, g) if active else None
     return render_template(
         "home.html",
-        lessons=featured["lessons"],
+        cards=cards,
+        active_subject=active,
+        lessons=(featured or {}).get("lessons", []),
         featured=featured,
+        ai_enabled=claude.is_configured(),
+    )
+
+
+@app.route("/pick-grade")
+def pick_grade():
+    """Forget the chosen grade so `/` shows the picker again."""
+    resp = redirect("/")
+    resp.delete_cookie("grade", samesite="Lax")
+    return resp
+
+
+@app.route("/teacher")
+def teacher():
+    """F-TEACHER — багшийн удирдлага. Хичээл солих (өмнө нь толгой дээрх
+    сонгогч байсан) ба контентын нэгдсэн тооллого энд байрлана."""
+    return render_template(
+        "teacher.html",
+        catalog=store.catalog(),
+        grade_map={g: store.subjects_for_grade(g) for g in store.grades()},
         ai_enabled=claude.is_configured(),
     )
 
@@ -93,7 +179,7 @@ def home():
 def curriculum():
     return render_template(
         "curriculum.html",
-        curriculum=store.curriculum(_subject()),
+        curriculum=store.curriculum(_subject(), _grade()),
         ai_enabled=claude.is_configured(),
     )
 
@@ -102,7 +188,7 @@ def curriculum():
 def learning_path():
     """F-PATH — Duolingo маягийн ороомог зам. Хөтөлбөрийн модыг нэг шугаман
     дараалал болгож хувиргана; түгжээ/явцыг клиент тал (localStorage) шийднэ."""
-    cur = store.curriculum(_subject())
+    cur = store.curriculum(_subject(), _grade())
     grades = []
     for g in cur.get("grades", []):
         nodes = []
@@ -152,7 +238,7 @@ def lesson(lesson_id: str):
 def diagnostic():
     return render_template(
         "leveltest.html",
-        topics=store.level_topics(_subject()),
+        topics=store.level_topics(_subject(), _grade()),
         ai_enabled=claude.is_configured(),
     )
 
@@ -169,7 +255,7 @@ def chat():
 def mastery():
     return render_template(
         "mastery.html",
-        topics=store.mastery_topics(_subject()),
+        topics=store.mastery_topics(_subject(), _grade()),
         ai_enabled=claude.is_configured(),
     )
 

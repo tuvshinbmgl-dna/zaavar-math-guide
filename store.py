@@ -99,11 +99,104 @@ MASTERY = _SUBJ["math"]["mastery"]
 
 
 # --------------------------------------------------------------------------- #
+# Grades (F-GRADE) — сурагчийн хэсэг АНГИАР зохион байгуулагдана.
+# Хичээл сонгох нь багшийн удирдлагад (F-TEACHER) шилжсэн; сурагч эхлээд
+# ангиа сонгож, тэр ангид ЗААГДДАГ хичээлүүдийг л хардаг.
+# --------------------------------------------------------------------------- #
+
+def subject_grades(subject: str) -> list[int]:
+    """Grades this subject has curriculum entries for, ascending."""
+    return sorted({g["grade"] for g in _sub(subject)["curriculum"].get("grades", [])
+                   if g.get("grade") is not None})
+
+
+# grade -> [subject keys], built once at import from the curricula on disk. A new
+# subject folder therefore appears in its grade with no code change (as with
+# SUBJECT-AUTOHIDE-1).
+GRADE_SUBJECTS: dict[int, list[str]] = {}
+for _k in SUBJECTS:
+    for _g in subject_grades(_k):
+        GRADE_SUBJECTS.setdefault(_g, []).append(_k)
+
+DEFAULT_GRADE = max(GRADE_SUBJECTS) if GRADE_SUBJECTS else 12
+
+
+def grades() -> list[int]:
+    """Grades that have content, highest first — drives the grade picker."""
+    return sorted(GRADE_SUBJECTS, reverse=True)
+
+
+def subjects_for_grade(grade: int | None) -> dict[str, str]:
+    """{key: name_mn} taught in that grade. None → every subject."""
+    if grade is None:
+        return dict(SUBJECTS)
+    return {k: SUBJECTS[k] for k in GRADE_SUBJECTS.get(grade, []) if k in SUBJECTS}
+
+
+def subject_in_grade(subject: str, grade: int | None) -> bool:
+    return grade is None or subject in GRADE_SUBJECTS.get(grade, [])
+
+
+def lesson_count(subject: str, grade: int | None = None) -> int:
+    return sum(1 for l in _sub(subject)["lessons"].values()
+               if grade is None or l.get("grade") == grade)
+
+
+def subject_stats(subject: str) -> dict:
+    """Content inventory for one subject — feeds the teacher console (T-TEACHER)."""
+    b = _sub(subject)
+    topics = b["leveltest"]["topics"]
+    cur_grades = b["curriculum"].get("grades", [])
+    return {
+        "key": subject,
+        "name": SUBJECTS.get(subject, subject),
+        "grades": subject_grades(subject),
+        "lessons": len(b["lessons"]),
+        "chapters": sum(len(g.get("chapters", [])) for g in cur_grades),
+        "level_topics": len(topics),
+        "level_questions": sum(len(t["questions"]) for t in topics),
+        "mastery_topics": len(b["mastery"]["topics"]),
+        "books": [{"grade": g.get("grade"), "book_id": g.get("book_id"),
+                   "reader_url": g.get("reader_url", "")}
+                  for g in cur_grades if g.get("book_id")],
+    }
+
+
+def grade_overview() -> list[dict]:
+    """One card per grade for the picker: how many subjects and lessons it holds."""
+    out = []
+    for g in grades():
+        subs = subjects_for_grade(g)
+        out.append({
+            "grade": g,
+            "subjects": list(subs.values()),
+            "n_subjects": len(subs),
+            "lessons": sum(lesson_count(k, g) for k in subs),
+        })
+    return out
+
+
+def catalog() -> list[dict]:
+    """Every registered subject's stats, richest first — the teacher console table."""
+    return sorted((subject_stats(k) for k in SUBJECTS),
+                  key=lambda s: (-s["lessons"], s["name"]))
+
+
+# --------------------------------------------------------------------------- #
 # Curriculum / lessons
 # --------------------------------------------------------------------------- #
 
-def curriculum(subject: str = "math") -> dict:
-    return _sub(subject)["curriculum"]
+def curriculum(subject: str = "math", grade: int | None = None) -> dict:
+    """The subject's grade→chapter→lesson tree.
+
+    With `grade`, only that grade is returned. A subject that does not run in
+    that grade falls back to its full tree rather than rendering an empty page.
+    """
+    cur = _sub(subject)["curriculum"]
+    if grade is None:
+        return cur
+    kept = [g for g in cur.get("grades", []) if g.get("grade") == grade]
+    return {**cur, "grades": kept} if kept else cur
 
 
 def lesson(lesson_id: str) -> dict | None:
@@ -114,15 +207,18 @@ def lesson_subject(lesson_id: str) -> str:
     return LESSON_SUBJECT.get(lesson_id, DEFAULT_SUBJECT)
 
 
-def available_lessons(subject: str = "math") -> list[dict]:
-    """Every fully built lesson of a subject, in id order."""
+def available_lessons(subject: str = "math", grade: int | None = None) -> list[dict]:
+    """Every fully built lesson of a subject, in id order (optionally one grade)."""
     b = _sub(subject)
-    return [b["lessons"][k] for k in sorted(b["lessons"].keys())]
+    ls = [b["lessons"][k] for k in sorted(b["lessons"].keys())]
+    if grade is None:
+        return ls
+    return [l for l in ls if l.get("grade") == grade] or ls
 
 
-def featured_lessons(subject: str = "math") -> dict:
+def featured_lessons(subject: str = "math", grade: int | None = None) -> dict:
     """Home-page featured slice: the built lessons of the subject's richest chapter."""
-    ls = available_lessons(subject)
+    ls = available_lessons(subject, grade)
     if not ls:
         return {"grade": None, "chapter_num": None, "chapter_title_mn": "", "lessons": []}
     # pick the (grade, chapter) with the most built lessons; math keeps derivatives if present.
@@ -303,9 +399,9 @@ def _level_label(score: int) -> tuple[str, str]:
     return "Эхлэн суралцах", "low"
 
 
-def level_topics(subject: str = "math") -> list[dict]:
-    """Topic cards (no questions/answers) in authored order."""
-    return [
+def level_topics(subject: str = "math", grade: int | None = None) -> list[dict]:
+    """Topic cards (no questions/answers) in authored order, optionally one grade."""
+    cards = [
         {
             "skill_id": t["skill_id"],
             "title_mn": t["title_mn"],
@@ -316,6 +412,9 @@ def level_topics(subject: str = "math") -> list[dict]:
         }
         for t in _sub(subject)["leveltest"]["topics"]
     ]
+    if grade is None:
+        return cards
+    return [c for c in cards if c["grade"] == grade] or cards
 
 
 def level_questions(subject: str, topic_id: str) -> list[dict] | None:
@@ -378,17 +477,23 @@ def grade_level_topic(subject: str, topic_id: str, answers: list) -> dict | None
 RAPID_MS = {"two_tier": 2500, "order": 5000}
 
 
-def mastery_topics(subject: str = "math") -> list[dict]:
-    return [
+def mastery_topics(subject: str = "math", grade: int | None = None) -> list[dict]:
+    """Mastery cards. Mastery topics carry no grade of their own, so the grade
+    filter is resolved through the lesson each topic confirms."""
+    cards = [
         {
             "skill_id": t["skill_id"],
             "title_mn": t["title_mn"],
             "lesson_id": t.get("lesson_id"),
+            "grade": (LESSONS.get(t.get("lesson_id") or "") or {}).get("grade"),
             "n_order": len(t["ordering"]),
             "n_tier": len(t["two_tier"]),
         }
         for t in _sub(subject)["mastery"]["topics"]
     ]
+    if grade is None:
+        return cards
+    return [c for c in cards if c["grade"] == grade] or cards
 
 
 def mastery_items(subject: str, topic_id: str) -> dict | None:

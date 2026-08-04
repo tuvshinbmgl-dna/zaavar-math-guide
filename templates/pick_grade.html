@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Ангиа сонго — Заавар{% endblock %}
+{% block content %}
+{# F-GRADE — анги сонгоогүй сурагчийн эхний дэлгэц. Анги сонгосны дараа
+   бүх хуудас тэр ангиар шүүгдэнэ. #}
+<div class="max-w-3xl mx-auto">
+
+  <section class="card p-6 sm:p-8 mb-6 bg-gradient-to-br from-brand-600 to-brand-800 text-white border-0 text-center">
+    <p class="text-brand-100 text-sm font-medium mb-1">Заавар — өөрөө сурах платформ</p>
+    <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-2">Аль ангид сурч байна вэ?</h1>
+    <p class="text-brand-100/90 max-w-lg mx-auto text-sm">Ангиа сонгосны дараа тухайн ангид үздэг бүх хичээл, сурах бичиг чамд харагдана. Дараа нь толгой хэсгээс хэдийд ч солиж болно.</p>
+  </section>
+
+  <div class="grid sm:grid-cols-2 gap-3 mb-6">
+    {% for gr in overview %}
+    <a href="/set-grade/{{ gr.grade }}?next=/"
+       class="card p-5 hover:border-brand-300 hover:shadow-md transition group">
+      <div class="flex items-baseline justify-between gap-3 mb-2">
+        <div class="text-2xl font-extrabold text-brand-700 group-hover:text-brand-800">{{ gr.grade }}-р анги</div>
+        <div class="text-xs text-slate-500 shrink-0">{{ gr.n_subjects }} хичээл · {{ gr.lessons }} нэгж</div>
+      </div>
+      <p class="text-sm text-slate-600 leading-snug">{{ gr.subjects | join(' · ') }}</p>
+      <div class="mt-3 text-sm font-semibold text-brand-600 opacity-0 group-hover:opacity-100 transition">Сонгох →</div>
+    </a>
+    {% else %}
+    <div class="card p-6 text-center text-slate-500 sm:col-span-2">
+      <p class="text-3xl mb-2">📚</p>
+      <p class="font-semibold text-ink-800">Контент бэлтгэгдэж байна</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <p class="text-xs text-slate-400 text-center">Эх сурвалж: econtent.edu.mn — БШУЯ-ны албан ёсны сурах бичиг. Зөвхөн сурахад туслах зорилготой загвар.</p>
+  <p class="text-xs text-slate-400 text-center mt-2">Багш байна уу? <a href="/teacher" class="text-brand-600 hover:underline">Багшийн удирдлага →</a></p>
+</div>
+{% endblock %}

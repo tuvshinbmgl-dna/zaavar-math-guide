@@ -4,7 +4,7 @@
 
   <!-- Hero -->
   <section class="card p-6 sm:p-8 mb-6 bg-gradient-to-br from-brand-600 to-brand-800 text-white border-0">
-    <p class="text-brand-100 text-sm font-medium mb-1">{{ subject_name }} — өөрөө сурах платформ</p>
+    <p class="text-brand-100 text-sm font-medium mb-1">{{ grade }}-р анги — өөрөө сурах платформ</p>
     <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-2">Сурах бичгээ <span class="text-accent-400">ганцаараа</span> сурахад туслах заавар</h1>
     <p class="text-brand-100/90 max-w-xl">Үндэсний сурах бичигт суурилсан алхам алхмаар хөтлөх заавар, түвшнээ мэдэх шалгалт, мөн "аль хичээлийг үзэх вэ" гэдгийг хэлдэг AI багш.</p>
     <div class="flex flex-wrap gap-2 mt-4">
@@ -42,6 +42,38 @@
     </a>
   </template>
 
+  <!-- Хичээлүүд (F-GRADE) — сонгосон ангид заагддаг бүх хичээл -->
+  <section class="mb-6">
+    <div class="flex items-center justify-between mb-3">
+      <div>
+        <h2 class="font-bold text-ink-900">{{ grade }}-р ангийн хичээлүүд</h2>
+        <p class="text-sm text-slate-500">{{ cards | length }} хичээл · {{ cards | sum(attribute='lessons') }} нэгж хичээл бэлэн</p>
+      </div>
+      <a href="/pick-grade" class="text-sm text-brand-700 hover:underline">Анги солих</a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {% for c in cards %}
+      <a href="/set-subject/{{ c.key }}?next=/curriculum"
+         class="card p-4 hover:border-brand-300 hover:shadow-md transition group {{ 'border-brand-300 bg-brand-50/40' if c.key == active_subject }}">
+        <div class="font-semibold text-ink-900 group-hover:text-brand-700 leading-snug">{{ c.name }}</div>
+        <div class="text-xs text-slate-500 mt-1">{{ c.lessons }} хичээл{% if c.topics %} · {{ c.topics }} сэдэв{% endif %}</div>
+        <div class="mt-2 flex items-center justify-between">
+          <span x-show="subjDone['{{ c.key }}'] > 0" x-cloak
+                class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5"
+                x-text="`✓ ${subjDone['{{ c.key }}']} эзэмшсэн`"></span>
+          <span class="ml-auto text-xs text-brand-600 opacity-0 group-hover:opacity-100 transition">Үзэх →</span>
+        </div>
+      </a>
+      {% else %}
+      <div class="card p-6 text-center text-slate-500 sm:col-span-2 lg:col-span-3">
+        <p class="text-3xl mb-2">📚</p>
+        <p class="font-semibold text-ink-800 mb-1">{{ grade }}-р ангийн хичээл бэлтгэгдэж байна</p>
+        <p class="text-sm">Өөр анги сонгож үзнэ үү.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
   <!-- Level-test summary (if any topic tested) -->
   <template x-if="levels.length">
     <section class="card p-5 mb-6">
@@ -63,12 +95,13 @@
     </section>
   </template>
 
-  <!-- Lessons (deep slice) -->
+  <!-- Lessons (deep slice) — зөвхөн энэ ангид заагддаг идэвхтэй хичээлийнх -->
+  {% if active_subject %}
   <section class="mb-6">
     <div class="flex items-center justify-between mb-3">
       <div>
         {% if lessons %}
-        <h2 class="font-bold text-ink-900">{{ featured.grade }}-р анги · Бүлэг {{ featured.chapter_num }} — {{ featured.chapter_title_mn }}</h2>
+        <h2 class="font-bold text-ink-900">{{ subject_name }} · Бүлэг {{ featured.chapter_num }} — {{ featured.chapter_title_mn }}</h2>
         <p class="text-sm text-slate-500">Бүрэн боловсруулсан хичээлүүд</p>
         {% else %}
         <h2 class="font-bold text-ink-900">{{ subject_name }} хичээлүүд</h2>
@@ -99,6 +132,7 @@
     </div>
     {% endif %}
   </section>
+  {% endif %}
 
   <p class="text-xs text-slate-400 text-center">Эх сурвалж: econtent.edu.mn — БШУЯ-ны албан ёсны сурах бичиг. Зөвхөн сурахад туслах зорилготой загвар.</p>
 </div>
@@ -106,12 +140,21 @@
 <script>
 function homeView() {
   return {
-    done: {}, last: null, doneCount: 0, levels: [], streak: { count: 0, best: 0, alive: false, doneToday: false },
+    done: {}, subjDone: {}, last: null, doneCount: 0, levels: [], streak: { count: 0, best: 0, alive: false, doneToday: false },
     init() {
       const ls = Progress.lessons;
       for (const k in ls) this.done[k] = ls[k].done;
       this.doneCount = Progress.doneCount;
       this.last = Progress.last;
+      // Per-subject done counts for the grade grid. Progress is scoped per
+      // subject (`zaavar.<subject>.progress.v1`), so read each key directly
+      // rather than the active subject's Progress object.
+      for (const k of {{ cards | map(attribute='key') | list | tojson }}) {
+        try {
+          const p = JSON.parse(localStorage.getItem('zaavar.' + k + '.progress.v1')) || {};
+          this.subjDone[k] = Object.keys(p.lessons || {}).length;
+        } catch (e) { this.subjDone[k] = 0; }
+      }
       // streak (global across subjects)
       try {
         const s = Streak.get();
@@ -120,12 +163,14 @@ function homeView() {
           alive: !!(s.last && Streak._dayDiff(s.last, today) <= 1 && s.count > 0),
           doneToday: s.last === today };
       } catch (e) {}
-      // level-test results
+      // level-test results (only for a subject actually taught in this grade)
+      {% if active_subject %}
       try {
-        const lt = (JSON.parse(localStorage.getItem('zaavar.{{ subject }}.leveltest')) || {}).topics || {};
+        const lt = (JSON.parse(localStorage.getItem('zaavar.{{ active_subject }}.leveltest')) || {}).topics || {};
         this.levels = Object.keys(lt).map(k => Object.assign({ skill_id: k }, lt[k]))
           .sort((a, b) => (a.score - b.score));
       } catch (e) { this.levels = []; }
+      {% endif %}
       this.$nextTick(() => renderMath(this.$root));
     }
   }

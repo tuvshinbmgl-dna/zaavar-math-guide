@@ -52,19 +52,32 @@
 
 | ID | Файл | Хариуцах зүйл |
 |---|---|---|
-| `S-APP` | `app.py` | Бүх route: хуудас render + JSON API. `_subject()` нь `subject` cookie уншиж идэвхтэй хичээлийг тодорхойлно. |
-| `S-STORE` | `store.py` | Зөвхөн уншдаг өгөгдлийн давхарга. Импортын үед бүх JSON-г санах ойд ачаална. Нийтийн функц бүр `subject` аргумент авна. |
+| `S-APP` | `app.py` | Бүх route: хуудас render + JSON API. `_subject()` нь `subject` cookie, `_grade()` нь `grade` cookie уншина. `_safe_next()` нь `next=` дахин чиглүүлэлтийг сайт дотор хязгаарлана. |
+| `S-STORE` | `store.py` | Зөвхөн уншдаг өгөгдлийн давхарга. Импортын үед бүх JSON-г санах ойд ачаална. Нийтийн функц бүр `subject`, ихэнх нь нэмэлт `grade` аргумент авна. |
 | `S-CLAUDE` | `claude_client.py` | Stdlib `urllib`-ээр Anthropic API руу хандах. Tutor = Sonnet (SSE stream), router = Haiku (structured). |
+
+### Хоёр cookie — хэн юуг хардгийг шийднэ
+
+| Cookie | Утга | Хэн тавьдаг |
+|---|---|---|
+| `grade` | Сурагчийн анги (`F-GRADE`). Байхгүй бол `/` нь ангиа сонгуулна. | `/set-grade/<g>`, `/pick-grade` (устгана) |
+| `subject` | Идэвхтэй хичээл. Сурагч нүүрний хичээлийн картаас, багш `/teacher`-ээс тавина. | `/set-subject/<s>`, мөн `/set-grade` (анги солиход тухайн ангид байхгүй хичээлээс автоматаар шилжүүлнэ) |
 
 ### `store.py`-ийн гол функцууд
 
 | Функц | Юу буцаана | Хэрэглэгддэг газар |
 |---|---|---|
-| `curriculum(subject)` | Анги → бүлэг → хичээлийн мод | `T-CURRICULUM` |
-| `lesson(subject, id)` | Нэг хичээлийн бүтэн бүтэц | `T-LESSON` |
-| `level_topics(subject)` | Сэдвийн карт (асуулт БАЙХГҮЙ) | `T-LEVELTEST` |
+| `grades()` | Контенттой ангиуд, 12-оос уруудаж | `T-PICKGRADE`, `T-BASE` |
+| `subjects_for_grade(g)` | Тэр ангид заагддаг `{түлхүүр: нэр}` | `T-HOME`, `T-TEACHER` |
+| `subject_grades(s)` | Хичээлийн хамрах ангиуд | `T-TEACHER` |
+| `grade_overview()` | Анги бүрийн хичээл/нэгжийн тоо | `T-PICKGRADE` |
+| `subject_stats(s)` / `catalog()` | Контентын тооллого | `T-TEACHER` |
+| `curriculum(subject, grade=None)` | Анги → бүлэг → хичээлийн мод (ангиар шүүнэ) | `T-CURRICULUM`, `T-PATH` |
+| `lesson(id)` | Нэг хичээлийн бүтэн бүтэц | `T-LESSON` |
+| `level_topics(subject, grade=None)` | Сэдвийн карт (асуулт БАЙХГҮЙ) | `T-LEVELTEST` |
 | `level_questions(subject, topic)` | Асуултууд, **answer талбаргүй** | `A-LEVELTEST-Q` |
 | `grade_level_topic(...)` | Оноо + band + тайлбар | `A-LEVELTEST-GRADE` |
+| `mastery_topics(subject, grade=None)` | Баталгааны карт (анги нь хичээлээрээ тодорхойлогдоно) | `T-MASTERY` |
 | `mastery_items(subject, topic)` | ordering (холисон) + two_tier, **хариултгүй** | `A-MASTERY-CHECK` |
 | `grade_mastery(...)` | Баталгааны дүгнэлт | `A-MASTERY-GRADE` |
 | `mock_grades(subject)` | Аль ангиудад сэдэв байгаа | `T-MOCK` (анги сонгогч) |
@@ -78,8 +91,10 @@
 
 | ID | Route | Template | Тайлбар |
 |---|---|---|---|
-| `T-HOME` | `/` | `home.html` | Нүүр, streak, үргэлжлүүлэх |
-| `T-CURRICULUM` | `/curriculum` | `curriculum.html` | Анги/бүлэг/хичээлийн жагсаалт |
+| `T-PICKGRADE` | `/` (анги сонгоогүй) | `pick_grade.html` | **Ангиа сонго** — `F-GRADE`-ийн эхний дэлгэц. Анги бүрд хэдэн хичээл, хэдэн нэгж байгааг харуулна. |
+| `T-HOME` | `/` (анги сонгосон) | `home.html` | **Ангийн самбар** — streak, үргэлжлүүлэх, тэр ангид заагддаг ХИЧЭЭЛҮҮДийн карт (карт дарахад `subject` cookie тавигдаж `/curriculum` руу орно). |
+| `T-TEACHER` | `/teacher` | `teacher.html` | **Багшийн удирдлага** (`F-TEACHER`) — хичээл сонгох (өмнө нь толгой дээрх toggle байсан), анги бүрд юу заагддаг, контентын тооллого, эх сурах бичгийн холбоос. |
+| `T-CURRICULUM` | `/curriculum` | `curriculum.html` | Анги/бүлэг/хичээлийн жагсаалт — **сонгосон ангиар шүүгдэнэ** |
 | `T-LESSON` | `/lesson/<id>` | `lesson.html` | 5 үе шат: Сэргээх → Ойлголт → Жишээ → Дасгал → Шалгалт |
 | `T-LEVELTEST` | `/diagnostic` | `leveltest.html` | Түвшин тогтоох, **анги сонгогчтой** |
 | `T-MASTERY` | `/mastery` | `mastery.html` | Баталгаа (ordering + two-tier) |
@@ -89,7 +104,14 @@
 | `T-REPORT` | `/report` | `report.html` | Суралцагчийн тайлан + **гэйм хураангуй** (`#report-gamify`: түвшин, XP, өдрийн зорилт, 13 тэмдгийн сүлжээ). `J-GAMIFY` ачаалагдаагүй бол блок бүхэлдээ нуугдана. |
 | `T-CHAT` | `/chat` | `chat.html` | AI багш |
 | `T-404` | — | `not_found.html` | Хичээл олдоогүй |
-| `T-BASE` | — | `base.html` | Толгой, KaTeX/Alpine/Tailwind CDN, хичээл сонгогч |
+| `T-BASE` | — | `base.html` | Толгой, KaTeX/Alpine/Tailwind CDN, **АНГИ сонгогч** (хичээл сонгогч биш — тэр нь `T-TEACHER` рүү шилжсэн), 🎓 Багш холбоос |
+
+> **Анги нь юуг шүүдэг вэ.** `T-CURRICULUM`, `T-PATH`, `T-LEVELTEST`, `T-MASTERY`
+> нь сонгосон ангийн бичлэгийг л харуулна; `T-MOCK` нь анги сонгогчоо тухайн
+> ангиар анхдагчаар тохируулна. Хичээл тэр ангид ажилладаггүй бол (жишээ нь
+> физик 12-т) хоосон хуудас үзүүлэхийн оронд бүтэн модруугаа буцаж уналттай
+> ажиллана — гэхдээ ийм тохиолдол хэрэглэгчид тохиолдохгүй, учир нь `/set-grade`
+> нь ангид байхгүй хичээлээс автоматаар шилжүүлдэг.
 
 ---
 

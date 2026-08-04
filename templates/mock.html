@@ -121,8 +121,10 @@ function mockTest(versions, grades) {
     loading: false, slowWake: false, busy: false, _wake: null, lastTs: 0, _ms: [],
 
     init() {
-      // mirror the level test: prefer grade 11 when present, else the lowest grade
-      this.grade = this.grades.includes(11) ? 11 : (this.grades[0] ?? null);
+      // Prefer the student's own grade (F-GRADE); fall back to 11, then lowest.
+      const mine = {{ grade if grade else 'null' }};
+      this.grade = this.grades.includes(mine) ? mine
+                 : (this.grades.includes(11) ? 11 : (this.grades[0] ?? null));
     },
     randomV() { return Math.floor(Math.random() * this.versions); },
     mocksDone() { try { return ((JSON.parse(localStorage.getItem('zaavar.{{ subject }}.mastery')) || {}).mocks || []).length; } catch (e) { return 0; } },
