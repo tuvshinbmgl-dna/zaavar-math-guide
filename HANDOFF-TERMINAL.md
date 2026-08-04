@@ -4,7 +4,35 @@
 > `C:\Users\tuvsh\Claude\Projects\EDM - Secondary education\zaavar-math-guide`
 > and read this file first.
 >
-> Last updated: **2026-08-03** · HEAD: `0acd4e9` · 3 commits unpushed
+> Last updated: **2026-08-04** · run `git log --oneline origin/main..HEAD` for the
+> real unpushed list rather than trusting a number written here.
+
+---
+
+## 0a. 12-р ангийн контент — БАРАГ ДУУССАН (2026-08-04)
+
+12-р ангийн **9 хичээл** бэлэн: Математик, Мэдээллийн технологи, Англи хэл,
+Монгол хэл, Эрүүл мэнд, Уран зохиол, **Дизайн технологи**, **Орос хэл**,
+**Иргэний ёс зүй**. Сүүлийн гурвыг 2026-08-04-нд нэмсэн (`G12-COMPLETE`).
+
+**Үлдсэн ганц ном: Үндэсний бичиг (Монгол бичиг) XII — 337.**
+ГАРЧИГ нь 3-р хуудсанд, бүхэлдээ **босоо монгол бичгээр**. Хуудсыг татаж,
+эргүүлж, томруулж уншихыг оролдоод бүтэц (3 бүлэг + ~11 бичлэг) харагдсан ч
+нэрийг үсэгчлэн найдвартай гаргаж чадсангүй. **Эзнээс бичсэн ГАРЧИГ хүсэх
+хэрэгтэй** — дэлгэрэнгүй `docs/authoring/toc-grade12.md` §5-д.
+Хуудасны зураг татагддаг нь батлагдсан:
+`https://econtent.edu.mn/content/12rangi/monb/pages/monb-337-<N>.jpg` (ГАРЧИГ = 3).
+
+**Шинэ ном нэмэх бол** `ARCHITECTURE.md` §5-ын «Шинэ хичээл нэмэх дараалал»-ыг
+дага. Workflow-ийн үр дүнг чат руу буцаахын оронд `W-JOURNAL`-ийг ашигла —
+хэдэн МБ-ын JSON-г дискнээс шууд авна, тасарсан ажиллагаанаас ч сэргээнэ:
+
+```
+python docs/authoring/wf_result_from_journal.py <run_dir> /tmp/<slug>.json
+SUBJECT_DIR="$PWD/data/<slug>" SUBJECT_TITLE="<Гарчиг>" \
+  BOOK_MAP='{"12": <book_id>}' python docs/authoring/write_subject.py /tmp/<slug>.json
+python docs/authoring/audit_content.py data/<slug>      # exit 0 байх ёстой
+```
 
 ---
 

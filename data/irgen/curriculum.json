@@ -1,0 +1,193 @@
+{
+  "note": "Иргэний ёс зүй — 12-р анги. econtent.edu.mn дээрх албан ёсны сурах бичгийн бүтцэд нийцүүлэв.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Иргэний ёс зүй 12",
+      "book_id": 431,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=431",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Өөрийгөө таньж хөгжүүлье",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1.1",
+              "title_mn": "Зовлон үнэнийг танин мэдэх",
+              "lesson_id": "ie12-1-1-1",
+              "skill_id": "ie12-zovlon-unen"
+            },
+            {
+              "num": "1.1.2",
+              "title_mn": "Зовлонгийн шалтгааны үнэнийг танин мэдэх",
+              "lesson_id": "ie12-1-1-2",
+              "skill_id": "ie12-shaltgaan-unen"
+            },
+            {
+              "num": "1.1.3",
+              "title_mn": "Зовлонгийн шалтгааны үнэнийг ухаарч, хорих",
+              "lesson_id": "ie12-1-1-3",
+              "skill_id": "ie12-shaltgaan-horih"
+            },
+            {
+              "num": "1.2.1",
+              "title_mn": "Хорихуй үнэнийг танин мэдэх",
+              "lesson_id": "ie12-1-2-1",
+              "skill_id": "ie12-horihui-unen"
+            },
+            {
+              "num": "1.2.2",
+              "title_mn": "Мөрийн үнэнийг танин мэдэх",
+              "lesson_id": "ie12-1-2-2",
+              "skill_id": "ie12-moriin-unen"
+            },
+            {
+              "num": "1.2.3",
+              "title_mn": "Хорихуй үнэн, мөрийн үнэнийг өдөр тутамд дадуулах",
+              "lesson_id": "ie12-1-2-3",
+              "skill_id": "ie12-oodor-tutam-daduulah"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Бусдыг хүндэлж, баярлуулъя",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1.1",
+              "title_mn": "Мэргэжлийн ёс зүйн нийтлэг болон онцлог хэм хэмжээ, шаардлагыг танин мэдэх",
+              "lesson_id": "ie12-2-1-1",
+              "skill_id": "ie12-mergejliin-yos-zui"
+            },
+            {
+              "num": "2.1.2",
+              "title_mn": "Тухайн мэргэжлийг эзэмшихэд зайлшгүй даван туулах бэрхшээл, асуудлыг танин мэдэх",
+              "lesson_id": "ie12-2-1-2",
+              "skill_id": "ie12-berhsheel-davan"
+            },
+            {
+              "num": "2.1.3",
+              "title_mn": "Өргөн мэдлэгтэй байх",
+              "lesson_id": "ie12-2-1-3",
+              "skill_id": "ie12-urgun-medlegtei"
+            },
+            {
+              "num": "2.1.4",
+              "title_mn": "Нарийн ур чадвартай байх",
+              "lesson_id": "ie12-2-1-4",
+              "skill_id": "ie12-nariin-ur-chadvar"
+            },
+            {
+              "num": "2.1.5",
+              "title_mn": "Зөв сэтгэлтэй байх",
+              "lesson_id": "ie12-2-1-5",
+              "skill_id": "ie12-zov-setgeltei"
+            },
+            {
+              "num": "2.1.6",
+              "title_mn": "Ажилдаа чин сэтгэлээсээ хандах",
+              "lesson_id": "ie12-2-1-6",
+              "skill_id": "ie12-chin-setgeleer"
+            },
+            {
+              "num": "2.1.7",
+              "title_mn": "Мэргэжлийн нэр төрийг эрхэмлэх",
+              "lesson_id": "ie12-2-1-7",
+              "skill_id": "ie12-ner-tor-erhemleh"
+            },
+            {
+              "num": "2.2.1",
+              "title_mn": "Эцэг эхийн үүрэг хариуцлагыг танин мэдэх",
+              "lesson_id": "ie12-2-2-1",
+              "skill_id": "ie12-etseg-eh-uureg"
+            },
+            {
+              "num": "2.2.2",
+              "title_mn": "Эцэг эхийн үүрэг хариуцлагаа хөсөрдүүлсний гэмийг танин мэдэх",
+              "lesson_id": "ie12-2-2-2",
+              "skill_id": "ie12-uureg-hosordson"
+            },
+            {
+              "num": "2.2.3",
+              "title_mn": "Үүрэг хариуцлагаа ухамсарласан эцэг эх болох",
+              "lesson_id": "ie12-2-2-3",
+              "skill_id": "ie12-uhamsarlasan-etseg-eh"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Уламжлалт өв соёлоосоо суралцъя",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1.1",
+              "title_mn": "Монголчуудын номын өв соёлыг цаг үе, хэл бичиг, цар хүрээгээр нь тоймлон мэдэх",
+              "lesson_id": "ie12-3-1-1",
+              "skill_id": "ie12-nomiin-uv-toim"
+            },
+            {
+              "num": "3.1.2",
+              "title_mn": "Үндэсний монгол бичгээр туурвисан ном бичгийн өв соёлыг мэдэх",
+              "lesson_id": "ie12-3-1-2",
+              "skill_id": "ie12-mongol-bichgiin-uv"
+            },
+            {
+              "num": "3.1.3",
+              "title_mn": "Монголчуудын ном бичгийн хэрэглүүрийг мэдэх",
+              "lesson_id": "ie12-3-1-3",
+              "skill_id": "ie12-nom-bichgiin-hereglüür"
+            },
+            {
+              "num": "3.1.4",
+              "title_mn": "Монголчуудын ном бүтээсэн барын соёлыг мэдэх",
+              "lesson_id": "ie12-3-1-4",
+              "skill_id": "ie12-bariin-soyol"
+            },
+            {
+              "num": "3.1.5",
+              "title_mn": "Дэлхийн соёлын өвд бүртгэгдсэн монгол ном судар, түүний агуулгыг мэдэх, бахархах",
+              "lesson_id": "ie12-3-1-5",
+              "skill_id": "ie12-delhiin-uvd-burtgegdsen"
+            },
+            {
+              "num": "3.2.1",
+              "title_mn": "Газар орны дэвсгэр болон оноосон нэрийн учрыг ухаарах",
+              "lesson_id": "ie12-3-2-1",
+              "skill_id": "ie12-devsger-onooson-ner"
+            },
+            {
+              "num": "3.2.2",
+              "title_mn": "Газар усандаа нэр өгдөг уламжлал, бэлгэдлийн учрыг ухаарах",
+              "lesson_id": "ie12-3-2-2",
+              "skill_id": "ie12-ner-ugoh-ulamjlal"
+            },
+            {
+              "num": "3.2.3",
+              "title_mn": "Газар орны хэвлий дэх баялаг газар усны нэртэй тохирдог онцлогийг мэдэх",
+              "lesson_id": "ie12-3-2-3",
+              "skill_id": "ie12-hevliin-bayalag"
+            },
+            {
+              "num": "3.2.4",
+              "title_mn": "Түүхэн домогтой холбоотой газар усны нэрийг дэлгэрүүлэн мэдэх",
+              "lesson_id": "ie12-3-2-4",
+              "skill_id": "ie12-domogt-holbootoi-ner"
+            },
+            {
+              "num": "3.2.5",
+              "title_mn": "Газар усаа дэвсгэр болон оноосон нэрээр нь нэрлэж занших",
+              "lesson_id": "ie12-3-2-5",
+              "skill_id": "ie12-zov-nerleh"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "note": "Дизайн технологи — 12-р анги. econtent.edu.mn дээрх албан ёсны сурах бичгийн бүтцэд нийцүүлэв.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Дизайн технологи 12",
+      "book_id": 341,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=341",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Дүрслэх геометр",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Цэг, шулуун, хавтгайгаас гадаргуу үүсгэх",
+              "lesson_id": "dt12-1-1",
+              "skill_id": "dt12-proekts-uusgeh"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Гадаргуу ба хавтгайн огтлолцол",
+              "lesson_id": "dt12-1-2",
+              "skill_id": "dt12-ogtloltson"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Огтлолын бодит хэмжээг хавтгай солих буюу эргүүлэх аргаар тодорхойлох",
+              "lesson_id": "dt12-1-3",
+              "skill_id": "dt12-bodit-hemjee"
+            },
+            {
+              "num": "1.4",
+              "title_mn": "Гадаргуугийн дэлгээс байгуулах",
+              "lesson_id": "dt12-1-4",
+              "skill_id": "dt12-delgees"
+            },
+            {
+              "num": "1.5",
+              "title_mn": "Огтлогдсон биетийн проекц дүрслэл байгуулах",
+              "lesson_id": "dt12-1-5",
+              "skill_id": "dt12-proekts-durslel"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Медиа дизайн",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Гэрэл зургийн урлаг",
+              "lesson_id": "dt12-2-1",
+              "skill_id": "dt12-gerel-zurag"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Хүүхэлдэйн кино урлаг",
+              "lesson_id": "dt12-2-2",
+              "skill_id": "dt12-huuheldei-kino"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Механик ба электроник",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Механизмын хэрэглээ, ажиллах зарчим",
+              "lesson_id": "dt12-3-1",
+              "skill_id": "dt12-mehanizm"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Хавтгайн механизмын байрлалын план байгуулах энгийн арга",
+              "lesson_id": "dt12-3-2",
+              "skill_id": "dt12-bairlaliin-plan"
+            },
+            {
+              "num": "3.3",
+              "title_mn": "Логик функц",
+              "lesson_id": "dt12-3-3",
+              "skill_id": "dt12-logik-funkts"
+            },
+            {
+              "num": "3.4",
+              "title_mn": "Ухаалаг техник, роботын тухай энгийн ойлголт, хэрэглээ",
+              "lesson_id": "dt12-3-4",
+              "skill_id": "dt12-robot"
+            },
+            {
+              "num": "3.5",
+              "title_mn": "Микрокомпьютер ба микропроцессорын тухай ерөнхий ойлголт",
+              "lesson_id": "dt12-3-5",
+              "skill_id": "dt12-mikrokompyuter"
+            },
+            {
+              "num": "3.6",
+              "title_mn": "Микропроцессорын программчлалын тухай ерөнхий ойлголт",
+              "lesson_id": "dt12-3-6",
+              "skill_id": "dt12-programmchlal-oilgolt"
+            },
+            {
+              "num": "3.7",
+              "title_mn": "Микрокомпьютерын программчлал",
+              "lesson_id": "dt12-3-7",
+              "skill_id": "dt12-mikro-programmchlal"
+            },
+            {
+              "num": "3.8",
+              "title_mn": "Ухаалаг удирдлагын систем",
+              "lesson_id": "dt12-3-8",
+              "skill_id": "dt12-udirdlagiin-sistem"
+            }
+          ]
+        },
+        {
+          "num": "IV",
+          "title_mn": "Гоёлын даашинзны зохион бүтээлт",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "4.1",
+              "title_mn": "Гоёлын даашинз",
+              "lesson_id": "dt12-4-1",
+              "skill_id": "dt12-goyoliin-daashinz"
+            },
+            {
+              "num": "4.2",
+              "title_mn": "Нэхмэл материалд тавигдах шаардлага",
+              "lesson_id": "dt12-4-2",
+              "skill_id": "dt12-nehmel-material"
+            }
+          ]
+        },
+        {
+          "num": "V",
+          "title_mn": "Хоолны технологи",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "5.1",
+              "title_mn": "Хоолны технологи",
+              "lesson_id": "dt12-5-1",
+              "skill_id": "dt12-hoolnii-tehnologi"
+            },
+            {
+              "num": "5.2",
+              "title_mn": "Эрүүл хооллолт ба хооллох дэглэм",
+              "lesson_id": "dt12-5-2",
+              "skill_id": "dt12-eruul-hoollolt"
+            },
+            {
+              "num": "5.3",
+              "title_mn": "Ширээ засалт",
+              "lesson_id": "dt12-5-3",
+              "skill_id": "dt12-shiree-zasalt"
+            }
+          ]
+        },
+        {
+          "num": "VI",
+          "title_mn": "Уламжлалт технологи",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "6.1",
+              "title_mn": "Бүтээгдэхүүнийг бөөнөөр үйлдвэрлэх технологи",
+              "lesson_id": "dt12-6-1",
+              "skill_id": "dt12-boonoor-uildverleh"
+            },
+            {
+              "num": "6.2",
+              "title_mn": "Бичил бизнесийн төсөл бичих арга зүй",
+              "lesson_id": "dt12-6-2",
+              "skill_id": "dt12-bichil-biznes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

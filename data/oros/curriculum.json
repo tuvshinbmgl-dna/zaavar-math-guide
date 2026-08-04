@@ -1,0 +1,163 @@
+{
+  "note": "Орос хэл — 12-р анги. econtent.edu.mn дээрх албан ёсны сурах бичгийн бүтцэд нийцүүлэв.",
+  "grades": [
+    {
+      "grade": 12,
+      "title_mn": "Орос хэл 12",
+      "book_id": 344,
+      "reader_url": "https://econtent.edu.mn/pages/more.php?id=344",
+      "chapters": [
+        {
+          "num": "I",
+          "title_mn": "Социально-бытовая сфера",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "1.1",
+              "title_mn": "Мои личные ценности (Миний хувийн үнэт зүйлс)",
+              "lesson_id": "ru12-1-1",
+              "skill_id": "ru12-lichnye-tsennosti"
+            },
+            {
+              "num": "1.2",
+              "title_mn": "Мечты сбываются (Мөрөөдөл биелдэг)",
+              "lesson_id": "ru12-1-2",
+              "skill_id": "ru12-mechty-sbyvayutsya"
+            },
+            {
+              "num": "1.3",
+              "title_mn": "Моя экономика (Миний хувийн санхүү)",
+              "lesson_id": "ru12-1-3",
+              "skill_id": "ru12-moya-ekonomika"
+            },
+            {
+              "num": "1.4",
+              "title_mn": "Роль информационных технологий в нашей жизни (МТ-ийн үүрэг)",
+              "lesson_id": "ru12-1-4",
+              "skill_id": "ru12-rol-it"
+            },
+            {
+              "num": "1.5",
+              "title_mn": "Как мы говорим в разных ситуациях (Нөхцөл байдал бүрд хэрхэн ярих вэ)",
+              "lesson_id": "ru12-1-5",
+              "skill_id": "ru12-kak-my-govorim"
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "title_mn": "Социально-культурная сфера",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "2.1",
+              "title_mn": "Моё путешествие по России (Оросоор аялсан минь)",
+              "lesson_id": "ru12-2-1",
+              "skill_id": "ru12-puteshestvie-rossiya"
+            },
+            {
+              "num": "2.2",
+              "title_mn": "Человек и охрана природы (Хүн ба байгаль хамгаалал)",
+              "lesson_id": "ru12-2-2",
+              "skill_id": "ru12-ohrana-prirody"
+            },
+            {
+              "num": "2.3",
+              "title_mn": "Русское чаепитие — национальная традиция (Оросын цайллагын ёс)",
+              "lesson_id": "ru12-2-3",
+              "skill_id": "ru12-chaepitie"
+            },
+            {
+              "num": "2.4",
+              "title_mn": "Русская берёза — символ России (Оросын хус — бэлгэ тэмдэг)",
+              "lesson_id": "ru12-2-4",
+              "skill_id": "ru12-russkaya-bereza"
+            },
+            {
+              "num": "2.5",
+              "title_mn": "М.Ю. Лермонтов — мой любимый писатель (Лермонтов — миний дуртай зохиолч)",
+              "lesson_id": "ru12-2-5",
+              "skill_id": "ru12-lermontov"
+            },
+            {
+              "num": "2.6",
+              "title_mn": "Из истории России — царь Пётр I (Оросын түүхээс — Пётр I хаан)",
+              "lesson_id": "ru12-2-6",
+              "skill_id": "ru12-petr-pervyy"
+            },
+            {
+              "num": "2.7",
+              "title_mn": "Этикет в транспорте (Тээвэр дэх ёс зүй)",
+              "lesson_id": "ru12-2-7",
+              "skill_id": "ru12-etiket-transport"
+            }
+          ]
+        },
+        {
+          "num": "III",
+          "title_mn": "Учебно-трудовая сфера",
+          "title_en": "",
+          "deep": true,
+          "lessons": [
+            {
+              "num": "3.1",
+              "title_mn": "Школьные годы чудесные (Сургуулийн гайхамшигт жилүүд)",
+              "lesson_id": "ru12-3-1",
+              "skill_id": "ru12-shkolnye-gody"
+            },
+            {
+              "num": "3.2",
+              "title_mn": "Система образования в России (Оросын боловсролын систем)",
+              "lesson_id": "ru12-3-2",
+              "skill_id": "ru12-obrazovanie-rossii"
+            },
+            {
+              "num": "3.3",
+              "title_mn": "Лучшие вузы мира (Дэлхийн шилдэг их сургуулиуд)",
+              "lesson_id": "ru12-3-3",
+              "skill_id": "ru12-luchshie-vuzy"
+            },
+            {
+              "num": "3.4",
+              "title_mn": "Крупнейшие университеты Монголии (Монголын томоохон их сургуулиуд)",
+              "lesson_id": "ru12-3-4",
+              "skill_id": "ru12-universitety-mongolii"
+            },
+            {
+              "num": "3.5",
+              "title_mn": "В мире профессий (Мэргэжлийн ертөнцөд)",
+              "lesson_id": "ru12-3-5",
+              "skill_id": "ru12-mir-professiy"
+            },
+            {
+              "num": "3.6",
+              "title_mn": "Все работы хороши (Ажил бүр сайхан)",
+              "lesson_id": "ru12-3-6",
+              "skill_id": "ru12-vse-raboty-horoshi"
+            },
+            {
+              "num": "3.7",
+              "title_mn": "Счастливого пути! (Сайн яваарай!)",
+              "lesson_id": "ru12-3-7",
+              "skill_id": "ru12-schastlivogo-puti"
+            },
+            {
+              "num": "3.8",
+              "title_mn": "Как забронировать номер в гостинице? (Зочид буудлын өрөө хэрхэн захиалах вэ?)",
+              "lesson_id": "ru12-3-8",
+              "skill_id": "ru12-zabronirovat-nomer"
+            },
+            {
+              "num": "3.9",
+              "title_mn": "Экскурсия по городу (Хотоор аялах)",
+              "lesson_id": "ru12-3-9",
+              "skill_id": "ru12-ekskursiya-po-gorodu"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -25,7 +25,9 @@ def _load(name: str) -> dict:
 
 SUBJECTS = {"math": "Математик", "physics": "Физик", "it": "Мэдээллийн технологи",
             "english": "Англи хэл", "mongolian": "Монгол хэл",
-            "health": "Эрүүл мэнд", "uran": "Уран зохиол"}
+            "health": "Эрүүл мэнд", "uran": "Уран зохиол",
+            "dtech": "Дизайн технологи", "oros": "Орос хэл",
+            "irgen": "Иргэний ёс зүй"}
 DEFAULT_SUBJECT = "math"
 
 
@@ -68,6 +70,12 @@ _SUBJ = {
                             DATA / "health" / "mastery_bank.json", DATA / "health" / "lessons"),
     "uran": _load_subject(DATA / "uran" / "curriculum.json", DATA / "uran" / "level_test.json",
                           DATA / "uran" / "mastery_bank.json", DATA / "uran" / "lessons"),
+    "dtech": _load_subject(DATA / "dtech" / "curriculum.json", DATA / "dtech" / "level_test.json",
+                           DATA / "dtech" / "mastery_bank.json", DATA / "dtech" / "lessons"),
+    "oros": _load_subject(DATA / "oros" / "curriculum.json", DATA / "oros" / "level_test.json",
+                          DATA / "oros" / "mastery_bank.json", DATA / "oros" / "lessons"),
+    "irgen": _load_subject(DATA / "irgen" / "curriculum.json", DATA / "irgen" / "level_test.json",
+                           DATA / "irgen" / "mastery_bank.json", DATA / "irgen" / "lessons"),
 }
 
 
